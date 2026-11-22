@@ -1,0 +1,122 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Sofia+Sans+Extra+Condensed:wght@300..900&family=Sofia+Sans:wght@300..900&display=block" rel="stylesheet">
+<link rel="stylesheet" href="strata.css"></head><body>
+<div class="board"><div class="flex">
+ <div class="side"><div class="sub">STRATA 1.5, from the second critique</div><h1>One year, five worlds</h1>
+  <p>The reveal was a slideshow of similar pages. Now every story has its own <b>verb</b>: inspect, read and compare, trace, scale. The look stays consistent; the hands do different things.</p>
+  <p>The entry is a <b>survey grid</b> instead of a list: five pins in date order, with the Moon and the world as off-grid stops. There are no coastlines, so positions are approximate and the screen says so.</p>
+  <p>Story 4 is <b>in research</b>: the first Pan-African Cultural Festival, Algiers, 21 July to 1 August 1969. Several sources agree on those dates. It stays a dashed pin until it has a real source record and rights-cleared material.</p>
+  <p>The Stonewall page <b>shows no document</b> because I will not fake one. It shows the slot, the provenance fields and the two tabs, so the design is honest about what content must arrive.</p>
+  <p>Exit is plain: play again, save to the archive, open sources, share. Nothing forces the four stories.</p></div>
+ <div class="grid3" id="grid"></div></div></div>
+<script src="lib.js"></script><script src="lib15.js"></script>
+<script>
+const grid=document.getElementById('grid');
+function cell(cap){const c=document.createElement('div');c.className='cell';grid.appendChild(c);const h=document.createElement('div');h.className='holder';c.appendChild(h);return {h,cap:()=>{const d=document.createElement('div');d.className='cap';d.innerHTML=cap;c.appendChild(d)}}}
+function tags(s,y,list){let x=26;list.forEach(t=>{const w=t.t.length*6.8+16;el('rect',{x:x,y:y,width:w,height:26,fill:t.fill?C.coal:'none',stroke:C.coal,'stroke-width':1.2},s);T(s,x+8,y+17.5,t.t,{s:13,w:600,c:t.fill?C.bone:C.coal});x+=w+6})}
+function head(s,n,tl){T(s,26,78,'1969',{f:F.disp,s:20});T(s,364,78,'Story '+n+' of 4',{s:14.5,c:C.muted,a:'end'});el('line',{x1:26,x2:364,y1:90,y2:90,stroke:C.coal,'stroke-width':1.2},s);tags(s,102,tl)}
+function nav(s,next){T(s,26,728,'Draft copy: facts to be verified before release.',{s:13,c:C.muted});btn(s,26,744,96,48,'Back','ghost',{s:16});btn(s,134,744,230,48,next,'dark',{s:16})}
+function note(s,y,h,head,lines){el('rect',{x:26,y:y,width:338,height:h,fill:C.paper,stroke:C.coal,'stroke-width':1},s);el('rect',{x:26,y:y,width:5,height:h,fill:C.patina},s);T(s,42,y+24,head,{s:14.5,w:700,c:C.patina});P(s,42,y+46,lines,{s:14.5,lh:19})}
+
+// 1 ENTRY
+{const C1=cell('<b>Entry.</b> A survey grid with five pins in date order. Moon and world are off-grid. The player can start anywhere; the route is a suggestion, not a gate.');
+ const s=phone(C1.h);
+ T(s,26,80,'Daily Hunt 42',{s:15,w:600});T(s,364,80,'Found in 4',{s:15,c:C.muted,a:'end'});
+ T(s,24,196,'1969',{f:F.disp,s:112});T(s,26,236,'One year. Five worlds.',{f:F.disp,s:26});
+ T(s,26,264,'Five stories in date order: a shared calendar, not a cause.',{s:14.5,c:C.muted});
+ const g=el('g',{transform:'translate(24,280)'},s);const W=342,H=290;el('rect',{x:0,y:0,width:W,height:H,fill:C.paper,stroke:C.coal,'stroke-width':1},g);
+ const X=lon=>14+(lon+100)/140*310,Y=lat=>14+(58-lat)/43*250;
+ for(let lon=-100;lon<=40;lon+=20){el('line',{x1:X(lon),x2:X(lon),y1:14,y2:264,stroke:C.hair,'stroke-width':1},g);T(g,X(lon),284,Math.abs(lon)+'°'+(lon<0?'W':lon>0?'E':''),{s:12.5,c:C.muted,a:'middle',f:F.inst})}
+ for(let lat=20;lat<=50;lat+=10){el('line',{x1:14,x2:324,y1:Y(lat),y2:Y(lat),stroke:C.hair,'stroke-width':1},g);T(g,18,Y(lat)-4,lat+'°N',{s:12.5,c:C.muted,f:F.inst})}
+ const pins={1:[X(1.4),Y(43.6)],2:[X(-74),Y(40.7)],4:[X(3),Y(36.8)]};
+ el('rect',{x:238,y:24,width:92,height:46,fill:C.bone,stroke:C.coal,'stroke-width':1.2,'stroke-dasharray':'4 3'},g);T(g,284,44,'Off Earth',{s:13,c:C.muted,a:'middle'});T(g,284,62,'The Moon',{s:14.5,w:700,a:'middle'});pins[3]=[218,47];
+ el('circle',{cx:52,cy:222,r:30,fill:'none',stroke:C.coal,'stroke-width':1.2,'stroke-dasharray':'4 3'},g);T(g,52,262,'Worldwide',{s:13,c:C.muted,a:'middle'});pins[5]=[52,216];
+ const order=[1,2,3,4,5];el('path',{d:'M'+order.map(k=>pins[k].join(',')).join('L'),fill:'none',stroke:C.verm,'stroke-width':1.5,'stroke-dasharray':'2 5','stroke-linecap':'round'},g);
+ order.forEach(k=>{const p=pins[k];const rs=k===4;el('circle',{cx:p[0],cy:p[1],r:13,fill:rs?C.paper:C.coal,stroke:C.coal,'stroke-width':1.6,'stroke-dasharray':rs?'3 2.5':'0'},g);T(g,p[0],p[1]+5.5,k,{f:F.inst,s:17,w:800,c:rs?C.coal:C.bone,a:'middle'})});
+ T(g,pins[1][0]-20,pins[1][1]-18,'Toulouse',{s:14,w:700,a:'end'});T(g,pins[2][0]+20,pins[2][1]-14,'New York',{s:14,w:700});T(g,pins[4][0]-20,pins[4][1]+20,'Algiers, in research',{s:14,c:C.muted,a:'end'});
+ T(g,330,254,'Positions approximate',{s:12.5,c:C.muted,a:'end'});
+ const L=[['1','2 Mar','Concorde 001','Inspect'],['2','28 Jun','Stonewall','Read and compare'],['3','20 Jul','Apollo 11','Trace'],['4','21 Jul','Algiers festival','In research'],['5','1969','World population','Scale']];
+ L.forEach((l,i)=>{const y=600+i*25,m=i===3;T(s,26,y,l[0],{f:F.inst,s:18,w:800,c:m?C.muted:C.verm});T(s,46,y,l[1],{f:F.inst,s:19,w:700,c:m?C.muted:C.coal});T(s,110,y,l[2],{s:15.5,c:m?C.muted:C.coal});T(s,364,y,l[3],{s:14,c:C.muted,a:'end'})});
+ btn(s,26,738,190,52,'Begin with 1','primary',{s:17});T(s,364,770,'Skip to sources',{s:14.5,c:C.muted,a:'end'});
+ C1.cap()}
+
+// 2 CONCORDE
+function concorde(g,cy,hl){el('path',{d:`M14,${cy} C60,${cy-6} 90,${cy-7} 120,${cy-8} C170,${cy-44} 230,${cy-86} 294,${cy-98} L314,${cy-98} L314,${cy-12} L322,${cy-8} L322,${cy+8} L314,${cy+12} L314,${cy+98} L294,${cy+98} C230,${cy+86} 170,${cy+44} 120,${cy+8} C90,${cy+7} 60,${cy+6} 14,${cy} Z`,fill:'url(#exE2)',stroke:C.coal,'stroke-width':1.8},g);
+ el('line',{x1:14,x2:322,y1:cy,y2:cy,stroke:C.coal,'stroke-width':1,'stroke-dasharray':'6 4'},g);[-34,-56,34,56].forEach(a=>el('rect',{x:252,y:cy+a-6,width:46,height:12,fill:C.coal},g));
+ if(hl==='nose'){el('ellipse',{cx:46,cy:cy,rx:44,ry:20,fill:'none',stroke:C.verm,'stroke-width':3},g)}}
+{const C2=cell('<b>Inspect.</b> Tap a part to isolate it. The drawing is a plan view, so it is labelled a schematic. The same row of tags opens every story: the verb, where, when, how sure.');
+ const s=phone(C2.h);head(s,1,[{t:'Inspect',fill:1},{t:'Toulouse'},{t:'2 March'},{t:'Documented'}]);
+ T(s,26,170,'Concorde 001',{f:F.disp,s:30});
+ const g=el('g',{transform:'translate(26,192)'},s);el('rect',{x:0,y:0,width:338,height:238,fill:C.paper,stroke:C.coal,'stroke-width':1},g);concorde(g,122,'nose');T(g,326,18,'Top view, schematic',{s:12.5,c:C.muted,a:'end'});
+ [['Wing',0],['Nose',1],['Engines',2]].forEach(a=>{const x=26+a[1]*116;btn(s,x,448,108,46,a[0],a[1]===1?'dark':'ghost',{s:16})});
+ T(s,26,540,'Droop nose',{f:F.disp,s:24});P(s,26,568,wrapText('The nose tilts down at low speeds so the crew can see the runway during take-off and landing.',44),{s:16,lh:23});
+ T(s,26,650,'First flight of prototype 001: Toulouse, 2 March 1969.',{s:14.5,c:C.muted});T(s,26,672,'Source record: to be attached at editorial review.',{s:14.5,c:C.muted});
+ nav(s,'Next: Stonewall');C2.cap()}
+
+// 3 STONEWALL
+{const C3=cell('<b>Read and compare.</b> Two tabs hold two kinds of source. The frame is an honest empty slot: no fake facsimile. Provenance fields are visible even while they are still empty.');
+ const s=phone(C3.h);head(s,2,[{t:'Read',fill:1},{t:'New York'},{t:'28 June'},{t:'Documented'}]);
+ T(s,26,168,'The Stonewall uprising',{f:F.disp,s:25});
+ el('rect',{x:26,y:188,width:338,height:46,fill:'none',stroke:C.coal,'stroke-width':1.3},s);el('rect',{x:26,y:188,width:169,height:46,fill:C.coal},s);
+ T(s,110,217,'Contemporary account',{s:15,w:600,c:C.bone,a:'middle'});T(s,280,217,'Later interpretation',{s:15,w:600,a:'middle'});
+ el('rect',{x:26,y:250,width:338,height:214,fill:'url(#exE2)',stroke:C.coal,'stroke-width':1.2,'stroke-dasharray':'6 4'},s);
+ el('rect',{x:62,y:312,width:266,height:90,fill:C.paper,stroke:C.coal,'stroke-width':1},s);P(s,195,340,['No document shown yet.','A rights-cleared report from the time','goes here, with its source and date.'],{s:15,lh:21,a:'middle'});
+ [['Source','To be confirmed'],['Date','To be confirmed'],['Rights','To be cleared']].forEach((r,i)=>{T(s,26,494+i*24,r[0],{s:14.5,w:700});T(s,100,494+i*24,r[1],{s:14.5,c:C.muted})});
+ note(s,576,100,'How we word this',wrapText('People at Stonewall described themselves in different ways. We keep each source’s own words and mark them as such.',48));
+ T(s,26,704,'Began early on 28 June 1969: Library of Congress.',{s:14,c:C.muted});
+ nav(s,'Next: Apollo 11');C3.cap()}
+
+// 4 APOLLO
+{const C4=cell('<b>Trace.</b> Drag the handle along the mission, or step with the buttons. The solid line is what has happened so far. Dates, not distances: the drawing says it is not to scale.');
+ const s=phone(C4.h);head(s,3,[{t:'Trace',fill:1},{t:'Earth–Moon'},{t:'16–24 July'},{t:'Documented'}]);
+ T(s,26,170,'Apollo 11: the route',{f:F.disp,s:28});
+ const g=el('g',{transform:'translate(26,190)'},s);el('rect',{x:0,y:0,width:338,height:226,fill:C.paper,stroke:C.coal,'stroke-width':1},g);
+ el('circle',{cx:62,cy:176,r:30,fill:'url(#exG2)',stroke:C.coal,'stroke-width':1.6},g);T(g,62,222,'Earth',{s:13,w:700,a:'middle'});
+ el('circle',{cx:272,cy:62,r:22,fill:C.tones[1],stroke:C.coal,'stroke-width':1.6},g);T(g,272,22,'Moon',{s:13,w:700,a:'middle'});el('circle',{cx:272,cy:62,r:38,fill:'none',stroke:C.coal,'stroke-width':1,'stroke-dasharray':'3 4'},g);
+ el('path',{d:'M90,158 C140,112 180,84 236,52',fill:'none',stroke:C.coal,'stroke-width':2.6},g);
+ el('path',{d:'M262,82 C246,138 170,178 94,194',fill:'none',stroke:C.muted,'stroke-width':2,'stroke-dasharray':'6 5'},g);
+ [[90,158,'1',0],[236,52,'2',0],[262,82,'3',1],[94,194,'4',0]].forEach(a=>{el('circle',{cx:a[0],cy:a[1],r:11,fill:a[3]?C.verm:C.bone,stroke:C.coal,'stroke-width':1.6},g);T(g,a[0],a[1]+5,a[2],{f:F.inst,s:15,w:800,c:a[3]?C.bone:C.coal,a:'middle'})});
+ T(g,326,218,'Not to scale',{s:12.5,c:C.muted,a:'end'});
+ // scrubber
+ el('line',{x1:40,x2:350,y1:452,y2:452,stroke:C.hair,'stroke-width':3},s);el('line',{x1:40,x2:195,y1:452,y2:452,stroke:C.coal,'stroke-width':3},s);
+ [[40,'16 Jul'],[156,'19 Jul'],[195,'20 Jul'],[350,'24 Jul']].forEach((a,i)=>{el('circle',{cx:a[0],cy:452,r:5,fill:C.coal},s);T(s,a[0],484,a[1],{f:F.inst,s:17,w:600,a:'middle'})});
+ el('circle',{cx:195,cy:452,r:16,fill:C.verm,stroke:C.paper,'stroke-width':3},s);
+ T(s,26,540,'20 July',{f:F.disp,s:24});P(s,26,568,wrapText('The lunar module sets down in the Sea of Tranquility.',44),{s:16,lh:23});
+ btn(s,26,626,164,46,'◀  Previous stop','ghost',{s:15.5});btn(s,200,626,164,46,'Next stop  ▶','ghost',{s:15.5});
+ T(s,26,704,'Source: NASA, Apollo 11 mission overview.',{s:14,c:C.muted});
+ nav(s,'Next: World population');C4.cap()}
+
+// 5 POPULATION
+{const C5=cell('<b>Scale.</b> Drag the marker along the line or pick a year to compare. Units and certainty stay on screen. The figures are approximate placeholders until the exact UN revision is chosen.');
+ const s=phone(C5.h);head(s,4,[{t:'Scale',fill:1},{t:'Worldwide'},{t:'1969'},{t:'Estimate'}]);
+ title2(s);function title2(s){T(s,26,168,'How many of us',{f:F.disp,s:27});T(s,26,200,'were there?',{f:F.disp,s:27})}
+ const g=el('g',{transform:'translate(26,222)'},s);el('rect',{x:0,y:0,width:338,height:244,fill:C.paper,stroke:C.coal,'stroke-width':1},g);
+ const x0=52,x1=318,yb=204,yt=30,X=t=>x0+(t-1950)*(x1-x0)/40,Y=v=>yb-v*(yb-yt)/6;
+ for(let v=0;v<=6;v+=2){el('line',{x1:x0,x2:x1,y1:Y(v),y2:Y(v),stroke:C.hair,'stroke-width':1},g);T(g,x0-8,Y(v)+5,v,{f:F.inst,s:17,w:600,a:'end'})}
+ T(g,12,20,'Billions of people',{s:13.5,c:C.muted});
+ for(let t=1950;t<=1990;t+=10){el('line',{x1:X(t),x2:X(t),y1:yb,y2:yb+6,stroke:C.coal,'stroke-width':1.2},g);T(g,X(t),yb+26,t,{f:F.inst,s:17,w:600,a:'middle'})}
+ const pts=[[1950,2.5],[1960,3.0],[1970,3.7],[1980,4.4],[1990,5.3]];
+ el('path',{d:'M'+pts.map(p=>X(p[0])+','+Y(p[1])).join('L')+`L${X(1990)},${yb}L${X(1950)},${yb}Z`,fill:'url(#exE2)'},g);
+ el('path',{d:'M'+pts.map(p=>X(p[0])+','+Y(p[1])).join('L'),fill:'none',stroke:C.coal,'stroke-width':2.6},g);
+ el('line',{x1:X(1950),x2:X(1969),y1:Y(2.5),y2:Y(2.5),stroke:C.coal,'stroke-width':1.2,'stroke-dasharray':'3 3'},g);el('circle',{cx:X(1950),cy:Y(2.5),r:6,fill:C.paper,stroke:C.coal,'stroke-width':2},g);
+ el('line',{x1:X(1969),x2:X(1969),y1:Y(3.62),y2:yb,stroke:C.verm,'stroke-width':2,'stroke-dasharray':'4 3'},g);el('circle',{cx:X(1969),cy:Y(3.62),r:12,fill:C.verm,stroke:C.paper,'stroke-width':3},g);
+ tri(g,X(1969)-24,Y(3.62),8,'left',C.verm);tri(g,X(1969)+24,Y(3.62),8,'right',C.verm);
+ T(s,26,486,'Compare 1969 with',{s:14.5,w:700});
+ [['1950',1],['1990',0]].forEach((a,i)=>{const x=170+i*86;el('rect',{x:x,y:468,width:78,height:34,fill:a[1]?C.coal:'none',stroke:C.coal,'stroke-width':1.2},s);T(s,x+39,490,a[0],{f:F.inst,s:18,w:700,c:a[1]?C.bone:C.coal,a:'middle'})});
+ T(s,26,540,'1950: about 2.5 billion',{s:16.5});T(s,26,566,'1969: about 3.6 billion',{s:16.5,w:700});T(s,26,592,'About 1.4 times as many.',{s:16.5,c:C.patina,w:700});
+ T(s,26,628,'How sure we are',{s:13.5,w:700});let lx=26;['Measured','Reconstructed','Inferred','Estimated','Unknown'].forEach((c,i)=>{const sel=i===3;const w=c.length*5.6+12;el('rect',{x:lx,y:638,width:w,height:24,fill:sel?C.coal:'none',stroke:C.coal,'stroke-width':1.1,opacity:sel?1:.6},s);T(s,lx+6,654,c,{s:12.5,w:600,c:sel?C.bone:C.coal});lx+=w+3});
+ T(s,26,692,'UN DESA, World Population Prospects: revision to confirm.',{s:14,c:C.muted});
+ nav(s,'Finish');C5.cap()}
+
+// 6 EXIT
+{const C6=cell('<b>Exit.</b> Plain and fast. Replay is the main button; saving and sources are one tap away. Stories already seen are marked, and any can be reopened from here or from the Archive.');
+ const s=phone(C6.h);
+ T(s,26,82,'Daily Hunt 42',{s:15,w:600});T(s,364,82,'1969',{f:F.disp,s:20,a:'end'});
+ T(s,24,164,'That was 1969.',{f:F.disp,s:36});T(s,26,196,'You opened all 4 stories.',{s:16.5,c:C.muted});
+ [['Concorde 001','Inspect'],['Stonewall','Read'],['Apollo 11','Trace'],['World population','Scale']].forEach((r,i)=>{const y=224+i*56;el('line',{x1:26,x2:364,y1:y,y2:y,stroke:C.hair,'stroke-width':1},s);
+  T(s,26,y+34,r[0],{s:18,w:600});el('rect',{x:196,y:y+16,width:r[1].length*7+16,height:24,fill:'none',stroke:C.coal,'stroke-width':1.1},s);T(s,204,y+33,r[1],{s:13.5,w:600});T(s,364,y+34,'Reopen',{s:14.5,w:700,c:C.patina,a:'end'})});
+ el('line',{x1:26,x2:364,y1:448,y2:448,stroke:C.hair,'stroke-width':1},s);
+ btn(s,26,478,338,58,'Play another hunt','primary',{s:18});
+ btn(s,26,550,338,52,'Save 1969 to the Archive','ghost',{s:16.5});btn(s,26,614,338,52,'Open all sources (9)','ghost',{s:16.5});btn(s,26,678,338,52,'Share my result','ghost',{s:16.5});
+ T(s,26,764,'Stories stay in the Archive. Nothing here expires.',{s:14.5,c:C.muted});C6.cap()}
+</script></body></html>

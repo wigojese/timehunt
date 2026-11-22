@@ -1,0 +1,17 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Sofia+Sans+Extra+Condensed:wght@300..900&family=Sofia+Sans:wght@300..900&display=block" rel="stylesheet">
+<link rel="stylesheet" href="strata.css"></head><body>
+<div class="board">
+ <div class="head"><div><div class="sub">STRATA 1.5, from the second critique</div><h1>The hunt, with less machinery</h1></div>
+ <p>One question at a time: the year, what is left, one control, one button. Guess history, evidence provenance and the fine-tune keys moved behind Details. Decade patterns are gone from the field; only the two ruled-out states keep a texture, and a lighter one. The clue now reads "true on 1 January of the year", which makes 1958 the first valid year and keeps the 27-year corridor honest. Previews describe a clue's power on your range and never where it cuts.</p></div>
+ <div class="row" id="row"></div>
+</div>
+<script src="lib.js"></script><script src="lib15.js"></script>
+<script>
+const row=document.getElementById('row');
+function wrap(cap){const w=document.createElement('div');w.className='pw';row.appendChild(w);return {w,cap:()=>{const c=document.createElement('div');c.className='cap';c.innerHTML=cap;w.appendChild(c)}}}
+{const W=wrap('<b>Home.</b> A marker is already on the core so there is something to drag. The copy says it is a starting point, not the answer. The wheel no longer carries a gold index that could look like a hidden target.');const s=phone(W.w);home15(s);W.cap()}
+{const W=wrap('<b>Hunt, play mode.</b> Year, what is left, one control, one button. The result of the clue appears once, as a strip, with the actual numbers. The field shows only boundaries and two light textures. Tap the green i to read the clue.');const s=phone(W.w);hunt15(s);W.cap()}
+{const W=wrap('<b>Evidence.</b> "Reveal" instead of "Buy". Each row says what it asks, how strong it is on your range, and its grade. Strength is shown without saying where it cuts. The free item is a Discovery, not a clue.');const s=phone(W.w);evidence15(s);W.cap()}
+{const W=wrap('<b>Details.</b> The inspect layer: every guess with what it ruled out, the clue with its rule and its real effect, and the fine-tune keys. Nothing here is needed to play.');const s=phone(W.w);details15(s);W.cap()}
+</script></body></html>

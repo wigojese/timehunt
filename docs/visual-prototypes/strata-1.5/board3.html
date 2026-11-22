@@ -1,0 +1,71 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Sofia+Sans+Extra+Condensed:wght@300..900&family=Sofia+Sans:wght@300..900&display=block" rel="stylesheet">
+<link rel="stylesheet" href="strata.css"></head><body>
+<div class="board"><div class="flex">
+ <div class="side"><div class="sub">STRATA 1.5, from the second critique</div><h1>Motion you can read in stills</h1>
+  <p>The critique's biggest gap was motion shown only as posters. These are storyboard frames of the three moments that carry the game: pinch-zoom, revealing a clue, and the solve. Each has a reduced-motion twin that keeps every piece of information.</p>
+  <p><b>Rule for all three:</b> the camera never loses where you are. The year under your fingers stays put, and the view comes back exactly as you left it.</p>
+  <p>These frames are drawn, not recorded. Smoothness on a mid-range phone is still unproven and needs a running build.</p>
+  <p>Timings are design targets: feedback about 100 to 220 ms, redraw 250 to 450 ms, solve 500 to 900 ms and skippable.</p></div>
+ <div class="main" id="main"></div></div></div>
+<script src="lib.js"></script><script src="lib15.js"></script>
+<script>
+const main=document.getElementById('main');
+function mark2(p,cx,cy,s,fg,acc){const n=4,bh=s*0.2,gap=s*0.28,half=s*0.4,slip=s*0.2,y0=cy-(n-1)/2*gap-slip/2;
+  for(let i=0;i<n;i++){const y=y0+i*gap;el('rect',{x:cx-half-s*0.02,y:y-bh/2,width:half-s*0.05,height:bh,fill:fg},p);el('rect',{x:cx+s*0.05,y:y-bh/2+slip,width:half-s*0.02,height:bh,fill:fg},p)}
+  el('line',{x1:cx+s*0.2,y1:cy-s*0.5,x2:cx-s*0.2,y2:cy+s*0.5,stroke:acc,'stroke-width':s*0.09,'stroke-linecap':'round'},p)}
+function section(title,note,rm){const d=document.createElement('div');d.innerHTML=`<div class="rowh">${title}</div><div class="rown">${note}</div><div class="frs"></div><div class="rm"><b>Reduced motion:</b> ${rm}</div>`;main.appendChild(d);return d.querySelector('.frs')}
+function fr(parent,cap){const d=document.createElement('div');d.className='fr';const s=el('svg',{width:190,height:330,viewBox:'0 0 190 330'},d);el('rect',{width:190,height:330,fill:C.bone},s);parent.appendChild(d);const c=document.createElement('div');c.className='c';c.innerHTML=cap;d.appendChild(c);return s}
+const FX={x:52,w:122,top:10,bot:320};
+function smallLoc(s,yl,x0,x1,txt){el('line',{x1:x0,x2:x1,y1:yl,y2:yl,stroke:C.verm,'stroke-width':2.4},s);el('path',{d:`M${x0},${yl} L${x0+10},${yl-13} H${x0+46} V${yl+13} H${x0+10} Z`,fill:C.verm},s);T(s,x0+28,yl+6,txt,{f:F.inst,s:17,w:700,c:C.bone,a:'middle'})}
+
+// A. pinch zoom
+{const row=section('Pinch-zoom keeps the year under your fingers','Same pivot, four scales. 1962 sits at the same height in every frame, and the widest view stops at 2000 because the range ends there. Labels change meaning as you zoom: decades, then fives, then single years.','Plus and minus keys step the same four scales, anchored on the locator. The view jumps to the new scale and the ruler redraws; the text reads "About 20 years in view, 1953 to 1972".');
+ const ks=[2.6,5,9,16],yf=105;
+ ks.forEach((k,i)=>{const s=fr(row,`<b>Frame ${i+1}</b> · about ${Math.round(310/k)} years in view`);
+  const t0=1962-(FX.bot-yf)/k,t1=t0+(FX.bot-FX.top)/k;const o={x:FX.x,w:FX.w,top:FX.top,bot:FX.bot,t0:t0,t1:t1,exG:[[1985,2000]],exE:[[1881,1957]],labelEvery:k<=5.5?10:(k<=10?5:1),allTicks:k>=9,rulerX:FX.x-2,labelSize:15};
+  field15(s,o);const y=t=>yOf(t,o);if(y(1984.5)>10&&y(1984.5)<320)el('line',{x1:FX.x,x2:FX.x+FX.w,y1:y(1984.5),y2:y(1984.5),stroke:C.coal,'stroke-width':2.2},s);
+  if(y(1957.5)>10&&y(1957.5)<320)el('line',{x1:FX.x,x2:FX.x+FX.w,y1:y(1957.5),y2:y(1957.5),stroke:C.patina,'stroke-width':2.4},s);
+  smallLoc(s,yf,FX.x,FX.x+FX.w,'1962');
+  [yf-50,yf+62].forEach(yy=>el('circle',{cx:150,cy:yy,r:17,fill:C.coal,opacity:.18,stroke:C.coal,'stroke-width':1.2},s));el('line',{x1:150,x2:150,y1:yf-50,y2:yf+62,stroke:C.coal,'stroke-width':1,'stroke-dasharray':'3 3',opacity:.5},s)})}
+
+// B. clue reveal
+{const row=section('Revealing a clue: the cut draws in, the camera stays','The view does not move. The boundary draws in at the cut, the removed years fill with stipple, and the result strip lands at the top with the real numbers.','The boundary and stipple appear at once with no travel. A text line says "Clue revealed: 104 → 27 possible years, 77 removed (74%)." Screen readers get the same sentence.');
+ const o={x:FX.x,w:FX.w,top:60,bot:320,t0:1940,t1:2000};const y=t=>yOf(t,o);
+ [['Before. The range is 1881–1984. Camera fixed.',[],0,0],['<b>~150 ms</b>. The boundary draws in at 1957 and 1958; stipple begins.',[[1950,1957,.5]],1,0],['<b>~350 ms</b>. The removed years are stippled. The i marker appears.',[[1940,1957]],1,1],['<b>~450 ms</b>. Result strip lands. Same camera as frame 1.',[[1940,1957]],1,2]].forEach((f,i)=>{const s=fr(row,f[0].startsWith('<')?f[0]:'<b>Frame '+(i+1)+'</b> · '+f[0]);
+  const oo={x:FX.x,w:FX.w,top:60,bot:320,t0:1940,t1:2000,exG:[[1985,2000]],exE:f[1],labelEvery:10,rulerX:FX.x-2,labelSize:15};field15(s,oo);
+  el('line',{x1:FX.x,x2:FX.x+FX.w,y1:y(1984.5),y2:y(1984.5),stroke:C.coal,'stroke-width':2.2},s);
+  if(f[2])el('line',{x1:FX.x,x2:FX.x+FX.w,y1:y(1957.5),y2:y(1957.5),stroke:C.patina,'stroke-width':2.6,'stroke-dasharray':i===1?'6 4':'0'},s);
+  if(f[3]){el('circle',{cx:150,cy:y(1957.5),r:12,fill:C.patina,stroke:C.paper,'stroke-width':2},s);T(s,150,y(1957.5)+5,'i',{f:F.disp,s:15,c:C.bone,a:'middle'})}
+  smallLoc(s,y(1962),FX.x,FX.x+FX.w,'1962');
+  if(f[3]===2){el('rect',{x:8,y:8,width:174,height:42,fill:C.paper,stroke:C.coal,'stroke-width':1},s);el('rect',{x:8,y:8,width:4,height:42,fill:C.patina},s);T(s,20,26,'Clue revealed',{s:13.5,w:700});T(s,20,43,'104 → 27 possible years',{s:13.5,c:C.muted})}
+ })}
+
+// C. solve
+{const row=section('The solve: the layers split along the cut you saw','The year opens from the line you were already looking at. No unrelated splash. The background moves from bone to soot as the year grows. Tap anywhere to skip to the end.','The split is replaced by a straight cut to the solved screen: dark background, 1969 in place, the same path summary. Nothing is hidden and nothing waits.');
+ const o={x:0,w:190,top:10,bot:320,t0:1940,t1:2000};o.x=52;o.w=122;const yL=yOf(1969,o);
+ const lerp=(a,b,t)=>Math.round(a+(b-a)*t);const mix=t=>{const A=[242,236,224],B=[23,24,23];return `rgb(${lerp(A[0],B[0],t)},${lerp(A[1],B[1],t)},${lerp(A[2],B[2],t)})`};
+ [[0,0,0,'<b>0%</b> · Lock in 1969. The field is as you left it.'],[.25,.2,14,'<b>25%</b> · The field parts at the cut.'],[.5,.65,64,'<b>50%</b> · Brass rules appear. The year starts to show.'],[.75,.9,112,'<b>75%</b> · The year grows in the gap.'],[1,1,150,'<b>100%</b> · The solved screen. Same layout as the lock screen.']].forEach((f,i)=>{
+  const s=fr(row,f[3]);el('rect',{width:190,height:330,fill:mix(f[1])},s);const g=f[2],a=f[1]*0.8;
+  [['up',-g/2,10,yL],['dn',g/2,yL,320]].forEach(sl=>{const gg=el('g',{transform:`translate(0,${sl[1]})`},s);const cid='sl'+i+sl[0]+Math.floor(Math.random()*1e6);const cp=el('clipPath',{id:cid},gg);el('rect',{x:0,y:sl[2],width:190,height:sl[3]-sl[2]},cp);
+   const w=el('g',{'clip-path':`url(#${cid})`},gg);field15(w,Object.assign({},o,{exG:[[1985,2000]],exE:[[1940,1957]],labelEvery:10,rulerX:50,labelSize:15}));el('rect',{x:0,y:sl[2],width:190,height:sl[3]-sl[2],fill:C.soot,opacity:a},w)});
+  if(f[1]<=.25)el('line',{x1:FX.x,x2:FX.x+FX.w,y1:yL,y2:yL,stroke:C.verm,'stroke-width':2.4,opacity:f[1]?.5:1},s);
+  if(g>=60){[yL-g/2,yL+g/2].forEach(yy=>el('line',{x1:0,x2:190,y1:yy,y2:yy,stroke:C.brass,'stroke-width':2},s));T(s,95,yL+(g>=150?27:g>=100?20:11),'1969',{f:F.disp,s:[0,0,34,58,74][i],c:C.bone,a:'middle'})}
+ })}
+
+// panels
+{const d=document.createElement('div');d.className='pans';main.appendChild(d);
+ // textures
+ let p=document.createElement('div');p.className='pan';p.innerHTML='<h3>Texture, before and after</h3><div class="n">Six decade patterns became two quiet tones. Texture now carries only two meanings: ruled out by a guess (hatch), ruled out by evidence (stipple).</div><svg id="tx" width="370" height="150"></svg>';d.appendChild(p);
+ const t=document.getElementById('tx');patRoot();pat2();
+ T(t,0,12,'Before',{s:13.5,c:C.mutedDark});for(let i=0;i<6;i++)el('rect',{x:i*60,y:20,width:58,height:50,fill:decFill(i+190),stroke:'#0004'},t);
+ T(t,0,92,'After',{s:13.5,c:C.mutedDark});[0,1,0,1,0,1].forEach((v,i)=>el('rect',{x:i*60,y:100,width:58,height:50,fill:`url(#lam${v})`,stroke:'#0004'},t));
+ el('rect',{x:240,y:100,width:58,height:50,fill:'url(#exG2)',stroke:'#0004'},t);el('rect',{x:300,y:100,width:58,height:50,fill:'url(#exE2)',stroke:'#0004'},t);
+ // marks
+ p=document.createElement('div');p.className='pan';p.innerHTML='<h3>The mark at small sizes</h3><div class="n">The critique said the fault can read as a scratch at tiny sizes. Version 2 slips the layers further and thickens the line.</div><svg id="mk" width="370" height="172"></svg>';d.appendChild(p);
+ const m=document.getElementById('mk');T(m,0,14,'Version 1',{s:13.5,c:C.mutedDark});T(m,0,92,'Version 2',{s:13.5,c:C.mutedDark});
+ [[18,24],[56,32],[110,48],[190,64]].forEach((a,i)=>{[[0,mark],[78,mark2]].forEach(r=>{const cy=44+r[0],sz=a[1],cx=a[0]+sz/2+2;el('rect',{x:cx-sz/2,y:cy-sz/2,width:sz,height:sz,rx:sz*.225,fill:C.soot,stroke:'#0005'},m);r[1](m,cx,cy,sz*.72,C.bone,'#D9694F')})});
+ T(m,0,166,'Sizes: 24, 32, 48 and 64 px',{s:13,c:C.mutedDark});
+ // sizes
+ p=document.createElement('div');p.className='pan';p.innerHTML='<h3>Size floors</h3><div class="n">The critique called the first boards small. These are the floors in the prototypes now.</div><div class="szl">Body copy <span>16 px</span><br>Secondary text and captions <span>14 px</span><br>Source notes <span>13 px, or behind a disclosure</span><br>Ruler and year numbers <span>17 px</span><br>Touch targets <span>46 px or more</span><br>Test at <span>100, 130, 160 and 200% text</span><br>Georgian <span>needs a tested fallback font</span></div>';d.appendChild(p)}
+</script></body></html>
