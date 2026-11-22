@@ -16,3 +16,23 @@ Concorde first flight 2 March 1969 and service 1976; Stonewall 28 June 1969; Apo
 
 ## Blocked
 Library of Congress, MoMA and Historic England return a Cloudflare challenge to automated requests. A human must confirm anything that depends on them.
+
+## Stage 1 competitor reads (2026-11-22)
+Level A means I opened or ran the page. Level B means search-result summary only.
+
+| Claim | Source | Level |
+|---|---|---|
+| Globle: daily mystery country; wrong guesses coloured by closeness; distance is minimum land-border distance; colour-blind mode; resets at midnight in the player's time zone | https://globle-game.com/ and /faq | A |
+| Chronophoto: five rounds; year slider about 1900 to 2020; year-range setting needs at least 10 years; party mode with shared passcode and timer options Off / Per photo / Whole game; streaks sync if you sign in; daily email | https://www.chronophoto.app/ and /about | A |
+| Chronophoto scores 0 to 1,000 per image, 5,000 per game | PetaPixel via search summary | B |
+| TimeGuessr: Singleplayer, Multiplayer, Daily; five rounds; year selector with arrows plus map pin | https://timeguessr.com/ (daily mode opened) | A |
+| TimeGuessr up to 5,000 points for each of two guesses | Forum thread via search summary | B, weak |
+| Wordle: six tries, per-letter colour feedback, one puzzle a day | Secondary guides | B |
+| Return of the Obra Dinn confirms fates in sets of three, with an end-game exception | Wikipedia and Film Stories via search summary | B |
+| Golden Idol has Exploring and Thinking modes and a hint system | Review and store summaries | B |
+| Baba Is You: rules are word blocks you push | Reviews and Wikipedia via search summary | B |
+| The Pudding is a digital publication of visual essays; homepage lists issues through Nov 2026 | https://pudding.cool/ | A |
+| FTC: dark patterns are "design practices that trick or manipulate users into making choices they would not otherwise have made" | FTC 2022 staff report, via search summary | B |
+| Information arithmetic (log2 values, 2^G - 1, 3,650 cases a year) | Computed | C |
+
+Blocked by bot protection: neal.fun, FTC dark-patterns page, OECD dark-patterns page.

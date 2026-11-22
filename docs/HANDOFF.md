@@ -1,13 +1,13 @@
 # Handoff
 
-**As of:** 2026-11-22, end of Stage 0. **Branch:** `claude/peaceful-fermat-j8inv8`. **Remote:** `origin` (github.com/wigojese/timehunt).
+**As of:** 2026-11-22, end of Stage 1. **Branch:** `claude/peaceful-fermat-j8inv8`. **Remote:** `origin` (github.com/wigojese/timehunt).
 
 ## State in one paragraph
-There is no application. The repo holds the operative spec, the preserved source documents, design boards, one single-case gray-box and one simulation script. Stage 0 is done and awaits approval. Do not start Stage 1 without `APPROVE STAGE 0`.
+There is no application. The repo holds the operative spec, the preserved source documents, design boards, one single-case gray-box and one simulation script. Stage 0 is approved. Stage 1 (research) is done and awaits approval. Do not start Stage 2 without `APPROVE STAGE 1`.
 
 ## Read first
 1. `TIMEHUNT_MASTER_PROMPT.md` (operative spec). Sections 0, 1, 9 and 11 matter most.
-2. `STAGE_0_AUDIT.md` (what exists, what is verified, what to replace).
+2. `STAGE_0_AUDIT.md` (what exists, what is verified, what to replace) and `STAGE_1_RESEARCH.md` (competitors, the bit-budget finding, hypotheses, risks).
 3. `DECISIONS.md` and `OPEN_QUESTIONS.md`.
 
 ## File map
@@ -31,4 +31,4 @@ There is no application. The repo holds the operative spec, the preserved source
 - No historical editor is named (Q-10).
 
 ## Next step
-Wait for `APPROVE STAGE 0`. Then Stage 1 only: product research and differentiation.
+Wait for `APPROVE STAGE 1`. Then Stage 2 only: Daily Ten economy and formal rules, starting from D-013.

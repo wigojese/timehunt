@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-11-22: Stage 1
+- Added `STAGE_1_RESEARCH.md`: competitor matrix, differentiation statement, why free earlier/later failed, the bit-budget finding, three player types and two accessibility contexts, wrong-answer analysis, six falsifiable hypotheses, top ten retention risks.
+- Recorded the Stage 0 approval and the user's answers (D-009 fixed, D-011 editor method, D-012, D-013).
+- Added open questions Q-20 to Q-25.
+- Extended `RESEARCH_LOG.md` with competitor reads and evidence levels.
+- No code written.
+- Environment note: network access for globle-game.com, chronophoto.app, timeguessr.com, pudding.cool, neal.fun, ftc.gov and oecd.org was added to the Timehunt cloud environment for this research. neal.fun, ftc.gov and oecd.org still blocked automated reads.
+
 ## 2026-11-22: Stage 0
 - Added `TIMEHUNT_MASTER_PROMPT.md` (master prompt v2, the operative spec).
 - Preserved the five earlier source documents under `source-documents/`. The v1 master prompt is marked superseded.
