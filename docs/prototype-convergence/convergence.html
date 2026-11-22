@@ -1,0 +1,128 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Timehunt Convergence gray-box</title>
+<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@400;600;700&family=Sofia+Sans+Extra+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EFEDE8;--ink:#1d1c1a;--mut:#615c54;--line:#bdb7aa;--cand:#33403e;--out:#E3DFD6;--acc:#B4412D;--ok:#2f6b4f}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#cfcac0;font:16px/1.35 'Sofia Sans',system-ui,sans-serif;color:var(--ink);display:flex;justify-content:center}
+#app{width:390px;min-height:844px;background:var(--bg);padding:18px 18px 22px;position:relative;overflow:hidden}
+h1{font:700 15px/1 'Sofia Sans';letter-spacing:.2px}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.gear{border:1.5px solid var(--ink);background:none;width:44px;height:36px;font:600 14px 'Sofia Sans';cursor:pointer}
+.res{display:flex;justify-content:space-between;gap:12px;margin-bottom:10px}
+.res b{font-size:14px;color:var(--mut);display:block;margin-bottom:3px;font-weight:600}
+.pips{display:flex;gap:3px}.pip{width:10px;height:16px;border:1.5px solid var(--ink)}.pip.on{background:var(--ink)}
+.lk{width:18px;height:18px;border:1.5px solid var(--ink);transform:rotate(45deg);margin:2px 5px 0 2px}.lk.on{background:var(--ink)}
+.hero{margin:4px 0 8px}.hero .k{font:700 38px/1 'Sofia Sans Extra Condensed';letter-spacing:.3px}.hero .s{font-size:16px;color:var(--mut);margin-top:3px}
+.stage{display:flex;gap:10px;align-items:stretch}
+#col{position:relative;width:206px;touch-action:none;user-select:none;border:1.5px solid var(--ink);background:#fff;cursor:pointer}
+.row{position:absolute;left:0;right:0;border-bottom:1px solid rgba(0,0,0,.08)}
+.row.cand{background:var(--cand)}.row.out{background:repeating-linear-gradient(45deg,var(--out) 0 4px,#cfcabc 4px 5px)}
+.row.sel{outline:2.5px solid var(--acc);outline-offset:-2px;z-index:3}
+.lab{position:absolute;left:-40px;width:34px;text-align:right;font:700 14px/1 'Sofia Sans Extra Condensed';color:var(--ink)}
+.mk{position:absolute;right:4px;font:700 11px/1 'Sofia Sans';color:#fff;background:#000;padding:1px 3px;z-index:4}
+.side{flex:1;display:flex;flex-direction:column;gap:7px;font-size:14px}
+.sel-box{border:1.5px solid var(--ink);padding:8px 10px;background:#fff}.sel-box .y{font:700 34px/1 'Sofia Sans Extra Condensed';color:var(--acc)}.sel-box .t{font-size:13.5px;color:var(--mut)}
+.step{display:flex;gap:6px;margin-top:6px}.step button{flex:1;height:36px;border:1.5px solid var(--ink);background:#fff;font:700 15px 'Sofia Sans';cursor:pointer}
+.log{flex:1;border-top:1.5px solid var(--ink);padding-top:6px;overflow:hidden}.log div{font-size:13.5px;margin-bottom:5px;line-height:1.25}.log b{font-weight:700}
+.btns{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.btn{height:50px;border:2px solid var(--ink);background:var(--bg);font:700 16px 'Sofia Sans';cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.05}
+.btn small{font:500 12.5px 'Sofia Sans';color:var(--mut)}.btn.pri{background:var(--acc);border-color:var(--acc);color:#fff}.btn.pri small{color:#f3d6cf}
+.btn.wide{grid-column:1/3;height:54px}.btn[disabled]{opacity:.4;cursor:not-allowed}
+.sheet{position:absolute;inset:0;background:rgba(20,18,15,.55);z-index:20;display:none}.sheet.on{display:block}
+.panel{position:absolute;left:0;right:0;bottom:0;background:#FBF9F4;border-top:3px solid var(--ink);padding:16px 18px 20px;max-height:92%;overflow:auto}
+.panel h2{font:700 22px/1 'Sofia Sans';margin-bottom:4px}.panel .n{font-size:14px;color:var(--mut);margin-bottom:10px}
+.card{border-top:1px solid var(--line);padding:10px 0}.card .h{display:flex;justify-content:space-between;align-items:baseline}.card .c{font:700 17px 'Sofia Sans'}.card .g{font-size:12.5px;font-weight:600;border:1px solid var(--ink);padding:1px 5px}
+.card .q{font-size:14px;color:var(--mut);margin:2px 0 7px}.card .b{display:flex;gap:8px;align-items:center;justify-content:space-between}.card .d{font-size:13.5px}
+.card button{height:42px;padding:0 12px;border:2px solid var(--ink);background:var(--ink);color:#fff;font:700 14.5px 'Sofia Sans';cursor:pointer}.card button.alt{background:none;color:var(--ink)}.card button[disabled]{opacity:.35;cursor:not-allowed}
+.card.free{opacity:.75}.card.done{opacity:.5}
+.close{position:absolute;right:16px;top:14px;border:1.5px solid var(--ink);background:none;width:44px;height:36px;font:700 14px 'Sofia Sans';cursor:pointer}
+.end{text-align:center;padding:6px 0}.end .big{font:700 62px/1 'Sofia Sans Extra Condensed'}.end p{margin:8px 0;font-size:15px}
+.fld{display:flex;justify-content:space-between;align-items:center;margin:8px 0;font-size:15px}.fld input{width:70px;height:38px;font:700 16px 'Sofia Sans';text-align:center;border:1.5px solid var(--ink)}
+.toast{position:absolute;left:18px;right:18px;top:62px;background:var(--ink);color:#fff;padding:8px 10px;font-size:14px;z-index:10;display:none}
+.tag{display:inline-block;font:600 12.5px 'Sofia Sans';border:1px solid var(--ink);padding:0 5px;margin-left:6px}
+</style></head><body><div id="app">
+ <div class="top"><h1>TIMEHUNT · CONVERGENCE · gray-box</h1><button class="gear" id="gear">Rules</button></div>
+ <div class="res"><div><b>Insight</b><div class="pips" id="pips"></div></div><div><b>Locks</b><div class="pips" id="locks"></div></div><div style="text-align:right"><b>Trace costs</b><span id="tc" style="font:700 16px 'Sofia Sans'"></span></div></div>
+ <div class="hero"><div class="k" id="rng"></div><div class="s" id="cnt"></div></div>
+ <div class="stage"><div style="width:38px"></div><div id="col"></div>
+  <div class="side"><div class="sel-box"><div class="t">Selected year</div><div class="y" id="sy"></div><div class="step"><button id="dn">−</button><button id="up">+</button></div></div><div class="log" id="log"></div></div></div>
+ <div class="btns"><button class="btn" id="bE">Evidence<small>1 to 3 Insight</small></button><button class="btn" id="bT">Trace<small id="bTs"></small></button><button class="btn pri wide" id="bL">Lock</button></div>
+ <div class="toast" id="toast"></div>
+ <div class="sheet" id="shE"><div class="panel"><button class="close" id="xE">Close</button><h2>Evidence</h2><div class="n">Each clue is true for the hidden year. "Focused" and "Broad" describe the clue, not where it cuts.</div><div id="cards"></div></div></div>
+ <div class="sheet" id="shR"><div class="panel"><button class="close" id="xR">Close</button><h2>Rules for this test</h2><div class="n">Change the economy and restart. Nothing here is final balance.</div>
+   <div class="fld">Insight<input id="fI" type="number" min="3" max="20"></div><div class="fld">Locks<input id="fL" type="number" min="1" max="4"></div><div class="fld">Trace cost<input id="fT" type="number" min="1" max="6"></div>
+   <div class="btns"><button class="btn" id="rec">Use the economy the simulation preferred<small>8 Insight, 2 locks, Trace 3</small></button><button class="btn pri" id="rs">Restart</button></div></div></div>
+ <div class="sheet" id="shEnd"><div class="panel" id="endP"></div></div>
+</div>
+<script>
+const PUZ={id:'tutorial-1969',lo:1950,hi:1980,hidden:1969,cards:[
+ {id:'concorde',cat:'Travel',cls:'Focused',cost:2,lo:1969,hi:1975,story:'The first Concorde prototype has flown, but scheduled Concorde passenger service has not begun.',rule:'First flight: 2 March 1969. Passenger service began in 1976. Counted by 31 December of the year.',src:'National Museums Scotland'},
+ {id:'apollo',cat:'Space',cls:'Focused',cost:3,lo:1969,hi:null,story:'People have already walked on the Moon.',rule:'Apollo 11 landing: 20 July 1969. Counted by 31 December of the year.',src:'NASA'},
+ {id:'stonewall',cat:'Queer history',cls:'Focused',cost:3,lo:1969,hi:null,story:'The Stonewall uprising in New York has already begun.',rule:'Began 28 June 1969. Counted by 31 December of the year.',src:'US National Park Service'},
+ {id:'micro',cat:'Computing',cls:'Broad',cost:2,lo:null,hi:1970,story:'The first single-chip microprocessor has not yet been released.',rule:'Intel 4004 released in November 1971. Not yet released by 31 December means 1970 or earlier.',src:'to confirm'}]};
+const q=new URLSearchParams(location.search);
+let CFG={ins:+(q.get('insight')||10),lk:+(q.get('locks')||2),tc:+(q.get('trace')||2)};
+let S;const $=id=>document.getElementById(id);
+function inR(c,y){return (c.lo==null||y>=c.lo)&&(c.hi==null||y<=c.hi)}
+function reset(){S={cand:new Set(),ins:CFG.ins,lk:CFG.lk,sel:1972,log:[],bought:new Set(),marks:{},over:false,won:null,spentIns:0};for(let y=PUZ.lo;y<=PUZ.hi;y++)S.cand.add(y);
+  S.log.push('Start: '+PUZ.lo+'–'+PUZ.hi+'. The year is hidden.');render()}
+function cands(){return [...S.cand].sort((a,b)=>a-b)}
+function range(){const c=cands();if(!c.length)return'';const a=c[0],b=c[c.length-1];return c.length===b-a+1?(a===b?''+a:a+'–'+b):a+'–'+b+' (gaps)'}
+function toast(t){const e=$('toast');e.textContent=t;e.style.display='block';clearTimeout(toast.t);toast.t=setTimeout(()=>e.style.display='none',2600)}
+function log(t){S.log.unshift(t);if(S.log.length>5)S.log.pop()}
+function marginal(c){return [...S.cand].filter(y=>!inR(c,y)).length}
+function buy(id){const c=PUZ.cards.find(x=>x.id===id);if(S.bought.has(id)||S.over)return;const rem=marginal(c);const cost=rem===0?0:c.cost;if(cost>S.ins){toast('Not enough Insight.');return}
+  const before=S.cand.size;S.cand=new Set([...S.cand].filter(y=>inR(c,y)));S.ins-=cost;S.spentIns+=cost;S.bought.add(id);
+  log('<b>Evidence</b> '+c.cat+': '+(rem===0?'nothing removed (free). ':before+' → '+S.cand.size+' possible years. ')+'');fix();render()}
+function trace(){if(S.over)return;const y=S.sel;if(!S.cand.has(y)&&![...S.cand].some(c=>c<y)&&![...S.cand].some(c=>c>y)){return}
+  const lowerSide=[...S.cand].some(c=>c<y),upperSide=[...S.cand].some(c=>c>y);
+  if(!S.cand.has(y)&&!(lowerSide&&upperSide)){toast('No new information: every possible year is '+(lowerSide?'earlier':'later')+' than '+y+'. Not charged.');return}
+  if(S.ins<CFG.tc){toast('Not enough Insight for a Trace.');return}
+  S.ins-=CFG.tc;S.spentIns+=CFG.tc;const h=PUZ.hidden;
+  if(h<y){S.cand=new Set([...S.cand].filter(c=>c<y));S.marks[y]='earlier';log('<b>Trace '+y+'</b>: earlier. Years from '+y+' up are out.')}
+  else if(h>y){S.cand=new Set([...S.cand].filter(c=>c>y));S.marks[y]='later';log('<b>Trace '+y+'</b>: later. Years up to '+y+' are out.')}
+  else{S.cand=new Set([y]);S.marks[y]='same';log('<b>Trace '+y+'</b>: neither earlier nor later. Lock it to finish.')}
+  fix();render()}
+function lock(){if(S.over)return;const y=S.sel;if(!S.cand.has(y)){toast(y+' is already ruled out.');return}
+  if(y===PUZ.hidden){S.over=true;S.won=true;const sc=1000+100*S.ins+150*S.lk;S.score=sc;render();endScreen();return}
+  S.lk--;S.cand.delete(y);S.marks[y]='wrong';log('<b>Lock '+y+'</b>: wrong. That year is out. No earlier or later hint.');
+  if(S.lk===0){S.over=true;S.won=false;render();endScreen();return}render()}
+function fix(){if(!S.cand.has(PUZ.hidden))throw new Error('hidden year lost')}
+function render(){const A=PUZ,n=A.hi-A.lo+1,H=372,rh=H/n;
+  $('pips').innerHTML=Array.from({length:Math.max(CFG.ins,S.ins)},(_,i)=>`<div class="pip ${i<S.ins?'on':''}"></div>`).join('');
+  $('locks').innerHTML=Array.from({length:CFG.lk},(_,i)=>`<div class="lk ${i<S.lk?'on':''}"></div>`).join('');$('tc').textContent=' '+CFG.tc+' Insight';
+  $('rng').textContent=range();$('cnt').textContent=S.cand.size+(S.cand.size===1?' possible year':' possible years');
+  const col=$('col');col.style.height=H+'px';col.innerHTML='';
+  for(let y=A.lo;y<=A.hi;y++){const r=document.createElement('div');r.className='row '+(S.cand.has(y)?'cand':'out')+(y===S.sel?' sel':'');r.style.top=((A.hi-y)*rh)+'px';r.style.height=rh+'px';
+    if(y%5===0){const l=document.createElement('div');l.className='lab';l.style.top=(rh/2-6)+'px';l.textContent=y;r.appendChild(l)}
+    if(S.marks[y]){const m=document.createElement('div');m.className='mk';m.style.top='0px';m.textContent={earlier:'▼ earlier',later:'▲ later',same:'= same',wrong:'× lock'}[S.marks[y]];r.appendChild(m)}
+    col.appendChild(r)}
+  $('sy').textContent=S.sel;$('log').innerHTML=S.log.map(t=>'<div>'+t+'</div>').join('');
+  $('bTs').textContent='test '+S.sel+' · '+CFG.tc+' Insight';$('bT').disabled=S.over||S.ins<CFG.tc;$('bE').disabled=S.over;
+  $('bL').innerHTML='Lock '+S.sel+'<small>'+S.lk+' lock'+(S.lk===1?'':'s')+' left. A wrong lock gives no hint.</small>';$('bL').disabled=S.over}
+function openE(){const w=$('cards');w.innerHTML='';PUZ.cards.forEach(c=>{const rem=marginal(c),done=S.bought.has(c.id),free=rem===0&&!done;
+  const d=document.createElement('div');d.className='card'+(free?' free':'')+(done?' done':'');
+  const price=free?'Free':c.cost+' Insight';
+  d.innerHTML=`<div class="h"><span class="c">${c.cat}</span><span class="g">${c.cls}</span></div><div class="q">${done?'<b>'+c.story+'</b><br>'+c.rule+' Source: '+c.src+'.':free?'Your range already satisfies this clue, so it removes no years. Free context.':'A statement that is true for the hidden year. Counted by 31 December.'}</div><div class="b"><span class="d">${done?'Revealed':'Cost: '+price}</span>${done?'':`<button class="${free?'alt':''}" ${(!free&&c.cost>S.ins)?'disabled':''} data-id="${c.id}">${free?'Keep · free':'Reveal · '+c.cost+' Insight'}</button>`}</div>`;w.appendChild(d)});
+  w.querySelectorAll('button[data-id]').forEach(b=>b.onclick=()=>{buy(b.dataset.id);openE()});$('shE').classList.add('on')}
+function endScreen(){const p=$('endP');const unused=S.lk;
+  p.innerHTML=S.won?`<div class="end"><div style="font-size:14px;color:var(--mut)">Solved</div><div class="big">${PUZ.hidden}</div><p>Insight spent: <b>${S.spentIns}</b> of ${CFG.ins} · Locks left: <b>${S.lk}</b> of ${CFG.lk}</p><p>Score ${S.score} <span style="color:var(--mut)">(1000 + 100 × ${S.ins} Insight + 150 × ${S.lk} locks)</span></p><p style="color:var(--mut);font-size:14px">The World Reveal is not built in this prototype.</p><div class="btns"><button class="btn" id="again">Play again</button><button class="btn pri" id="rl">Change rules</button></div></div>`
+   :`<div class="end"><div style="font-size:14px;color:var(--mut)">Out of locks</div><div class="big">${PUZ.hidden}</div><p>That was the year. Insight left: ${S.ins}.</p><div class="btns"><button class="btn" id="again">Play again</button><button class="btn pri" id="rl">Change rules</button></div></div>`;
+  $('shEnd').classList.add('on');$('again').onclick=()=>{$('shEnd').classList.remove('on');reset()};$('rl').onclick=()=>{$('shEnd').classList.remove('on');openR()}}
+function openR(){$('fI').value=CFG.ins;$('fL').value=CFG.lk;$('fT').value=CFG.tc;$('shR').classList.add('on')}
+function pick(e){const r=$('col').getBoundingClientRect(),n=PUZ.hi-PUZ.lo+1;const y=PUZ.hi-Math.floor((e.clientY-r.top)/(r.height/n));S.sel=Math.max(PUZ.lo,Math.min(PUZ.hi,y));render()}
+const col=$('col');let drag=false;col.onpointerdown=e=>{drag=true;col.setPointerCapture(e.pointerId);pick(e)};col.onpointermove=e=>{if(drag)pick(e)};col.onpointerup=()=>drag=false;
+$('up').onclick=()=>{S.sel=Math.min(PUZ.hi,S.sel+1);render()};$('dn').onclick=()=>{S.sel=Math.max(PUZ.lo,S.sel-1);render()};
+$('bE').onclick=openE;$('bT').onclick=trace;$('bL').onclick=lock;$('xE').onclick=()=>$('shE').classList.remove('on');$('gear').onclick=openR;$('xR').onclick=()=>$('shR').classList.remove('on');
+$('rec').onclick=()=>{$('fI').value=8;$('fL').value=2;$('fT').value=3};$('rs').onclick=()=>{CFG={ins:+$('fI').value,lk:+$('fL').value,tc:+$('fT').value};$('shR').classList.remove('on');reset()};
+// engine self-checks (the document's three sanity assertions)
+(function checks(){const out=[];const all=new Set();for(let y=PUZ.lo;y<=PUZ.hi;y++)all.add(y);
+ out.push(['hidden year is in the starting set',all.has(PUZ.hidden)]);
+ PUZ.cards.forEach(c=>out.push(['clue '+c.id+' keeps the hidden year',inR(c,PUZ.hidden)]));
+ PUZ.cards.forEach(c=>{const rem=[...all].filter(y=>!inR(c,y)).length;out.push(['clue '+c.id+' removes at least one year from the full range ('+rem+')',rem>0])});
+ const mid=new Set([...all].filter(y=>inR(PUZ.cards[1],y)));const dup=[...mid].filter(y=>!inR(PUZ.cards[2],y)).length;out.push(['Apollo and Stonewall overlap: second removes 0 after the first',dup===0]);
+ window.CHECKS=out})();
+window.TH={get S(){return S},select:y=>{S.sel=y;render()},openE,buy:id=>{buy(id)},trace,lock,reset,render,cfg:()=>CFG};
+reset();
+</script></body></html>
