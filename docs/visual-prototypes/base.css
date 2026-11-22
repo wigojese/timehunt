@@ -1,0 +1,30 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1800px; }
+body { -webkit-font-smoothing: antialiased; font-variant-numeric: tabular-nums lining-nums; }
+
+.board { width: 1800px; height: 1010px; padding: 56px 64px; display: grid;
+  grid-template-columns: 330px 1fr; gap: 56px; position: relative; overflow: hidden; }
+.phones { display: flex; gap: 40px; align-items: flex-start; }
+.phone-wrap { display: flex; flex-direction: column; gap: 14px; }
+.phone-cap { font-size: 15px; line-height: 1.3; opacity: .72; padding-left: 6px; }
+.phone { width: 390px; height: 844px; border-radius: 52px; position: relative; overflow: hidden;
+  box-shadow: 0 0 0 10px var(--bezel, #1b1d1e), 0 0 0 11px rgba(0,0,0,.25), 0 40px 80px -30px rgba(0,0,0,.45); }
+.status { position: absolute; top: 0; left: 0; right: 0; height: 50px; display: flex; justify-content: space-between;
+  align-items: center; padding: 0 30px 0 36px; font: 600 16px/1 "Inter", sans-serif; z-index: 20; }
+.status .isl { position: absolute; left: 50%; top: 11px; width: 122px; height: 35px; border-radius: 20px; background: #000; transform: translateX(-50%); }
+.status .bat { display: flex; gap: 6px; align-items: center; }
+.status .bat i { display: inline-block; width: 25px; height: 12px; border: 1.5px solid currentColor; border-radius: 4px; position: relative; opacity: .9; }
+.status .bat i::after { content: ""; position: absolute; inset: 1.5px; right: 6px; background: currentColor; border-radius: 1.5px; }
+.home-ind { position: absolute; bottom: 8px; left: 50%; width: 134px; height: 5px; border-radius: 3px; transform: translateX(-50%); z-index: 20; }
+
+.side h1 { font-size: 15px; font-weight: 500; opacity: .7; margin-bottom: 10px; }
+.side h2 { line-height: .95; margin-bottom: 22px; }
+.side p { font-size: 16px; line-height: 1.5; margin-bottom: 14px; max-width: 32ch; }
+.swatches { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin: 26px 0 8px; }
+.swatches div { height: 64px; border-radius: 4px; position: relative; }
+.swatch-names { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; font-size: 11.5px; line-height: 1.25; opacity: .75; }
+.spec { margin-top: 26px; padding-top: 18px; border-top: 1px solid currentColor; border-color: rgba(127,127,127,.35); }
+.spec .lab { font-size: 13px; opacity: .65; margin-bottom: 6px; }
+.icon-row { display: flex; gap: 18px; align-items: flex-end; margin-top: 26px; }
+.app-icon { width: 96px; height: 96px; border-radius: 22px; overflow: hidden; position: relative; box-shadow: 0 10px 24px -12px rgba(0,0,0,.5); }
+.app-icon.sm { width: 48px; height: 48px; border-radius: 11px; }

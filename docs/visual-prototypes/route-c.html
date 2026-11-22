@@ -1,0 +1,219 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Michroma&family=Hanken+Grotesk:wght@400;500;600;700&display=block" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<style>
+:root{ --alu:#C9CDD0; --alu-2:#B3B8BC; --cer:#F1F0EB; --eng:#16191B; --eng-2:#555C61; --cobalt:#2E4FD6; --needle:#D23A2A; --gun:#262A2E; }
+body{ color:var(--eng); font-family:"Hanken Grotesk",sans-serif; }
+.board{ background: linear-gradient(160deg,#D9DCDE,#B9BEC2); }
+.side h2{ font:400 40px/1.15 "Michroma"; letter-spacing:-.5px; }
+.side p{ font-size:17.5px; color:#2b3135; }
+.phone{ --bezel:#2a2e31;
+  background: repeating-linear-gradient(90deg, rgba(255,255,255,.05) 0 1px, rgba(0,0,0,.035) 1px 2px), linear-gradient(180deg,#CED2D5,#BEC3C6); }
+.status{ color:var(--eng); }
+.home-ind{ background:var(--eng); }
+.layer{ position:absolute; inset:0; z-index:2; }
+.mi{ font-family:"Michroma",sans-serif; }
+.plate{ background:var(--cer); border-radius:10px; box-shadow: inset 0 1px 2px rgba(0,0,0,.25), inset 0 -1px 0 rgba(255,255,255,.8), 0 1px 0 rgba(255,255,255,.6); }
+.key{ height:50px; display:flex; align-items:center; justify-content:center; border-radius:25px; font:600 16px/1 "Hanken Grotesk";
+  background:linear-gradient(180deg,#DADDDF,#BABFC2); box-shadow:0 1px 0 rgba(255,255,255,.8) inset, 0 2px 4px rgba(0,0,0,.25); }
+.key.dark{ background:linear-gradient(180deg,#2b3034,#16191B); color:#F1F0EB; box-shadow:0 1px 0 rgba(255,255,255,.15) inset, 0 3px 6px rgba(0,0,0,.35); }
+</style></head>
+<body>
+<div class="board">
+  <div class="side">
+    <h1>Route C</h1>
+    <h2>Deep-Time Instrument</h2>
+    <p style="margin-top:20px">A precision machine for measuring time. Anodized aluminium, a ceramic face, an engraved bezel and one red needle. You don't scroll a timeline, you turn a dial.</p>
+    <p>The zoom becomes a vernier: the outer bezel holds the whole range, the inner ring magnifies the corridor to single years.</p>
+    <div class="swatches">
+      <div style="background:#C9CDD0;box-shadow:inset 0 0 0 1px #0002"></div><div style="background:#F1F0EB;box-shadow:inset 0 0 0 1px #0002"></div><div style="background:#16191B"></div><div style="background:#2E4FD6"></div><div style="background:#D23A2A"></div>
+    </div>
+    <div class="swatch-names"><span>Anodized<br>#C9CDD0</span><span>Ceramic<br>#F1F0EB</span><span>Engraving<br>#16191B</span><span>Cobalt<br>#2E4FD6</span><span>Needle<br>#D23A2A</span></div>
+    <div class="spec" style="border-color:#0003">
+      <div class="lab">Scales and years: Michroma, engraved width</div>
+      <div class="mi" style="font-size:38px;line-height:1.1">1958–1984</div>
+      <div class="lab" style="margin-top:12px">UI and evidence: Hanken Grotesk</div>
+      <div style="font-size:20px;line-height:1.3;font-weight:500">Artificial satellites are already orbiting Earth.</div>
+    </div>
+    <div class="icon-row">
+      <div class="app-icon" id="iconC"></div><div class="app-icon sm" id="iconC2"></div>
+      <div style="font-size:13px;opacity:.7;max-width:14ch">Bezel and needle mark</div>
+    </div>
+  </div>
+
+  <div class="phones">
+    <!-- HOME -->
+    <div class="phone-wrap">
+      <div class="phone">
+        <div class="status"><span>9:41</span><span class="isl"></span><span class="bat"><i></i></span></div>
+        <div class="layer">
+          <div style="position:absolute;top:66px;left:26px;right:26px;display:flex;justify-content:space-between;align-items:center">
+            <div class="mi" style="font-size:15px;letter-spacing:2px">TIMEHUNT</div>
+            <div style="font:500 14px/1 'Hanken Grotesk';color:var(--eng-2)">Hunt 42, 22 Nov</div>
+          </div>
+          <svg id="homeDial" width="390" height="400" style="position:absolute;top:104px;left:0"></svg>
+          <div style="position:absolute;top:530px;left:26px;right:26px">
+            <div style="font:600 28px/1.14 'Hanken Grotesk';letter-spacing:-.6px">One year between 1800 and 2000 is set inside this dial. Turn until you find it.</div>
+          </div>
+          <div class="key dark" style="position:absolute;left:26px;right:26px;bottom:92px;height:56px;border-radius:28px;font-size:17px">Start today's hunt</div>
+          <div style="position:absolute;left:30px;right:30px;bottom:42px;display:flex;justify-content:space-between;font:600 15px/1 'Hanken Grotesk'">
+            <span>Practice</span><span style="color:var(--eng-2);font-weight:500">Archive, 12 years</span>
+          </div>
+        </div>
+        <div class="home-ind"></div>
+      </div>
+      <div class="phone-cap" style="color:#2b3135">Home. The dial is the brand and the controller. The crown at right is a real control, not ornament.</div>
+    </div>
+
+    <!-- HUNT -->
+    <div class="phone-wrap">
+      <div class="phone">
+        <div class="status"><span>9:41</span><span class="isl"></span><span class="bat"><i></i></span></div>
+        <div class="layer">
+          <div style="position:absolute;top:62px;left:24px;right:24px;display:flex;justify-content:space-between;align-items:center;font:500 14px/1 'Hanken Grotesk';color:var(--eng-2)">
+            <span>Hunt 42</span>
+            <span style="display:flex;gap:16px"><span>Guesses <b class="mi" style="font-size:12px;color:var(--eng)">3</b> left</span><span>Insight <b class="mi" style="font-size:12px;color:var(--cobalt)">8</b> left</span></span>
+          </div>
+          <svg id="huntDial" width="390" height="400" style="position:absolute;top:84px;left:0"></svg>
+          <div style="position:absolute;top:488px;left:24px;right:24px;display:flex;justify-content:space-between;font:600 14px/1.3 'Hanken Grotesk'">
+            <span>Corridor 1958 to 1984</span><span style="color:var(--eng-2);font-weight:500">Inner ring: 1945–1995</span>
+          </div>
+          <div class="plate" style="position:absolute;top:522px;left:20px;right:20px;padding:14px 16px 14px 16px;display:flex;gap:14px">
+            <svg width="34" height="34" viewBox="0 0 34 34" style="flex:none;margin-top:2px"><circle cx="17" cy="17" r="15" fill="none" stroke="#2E4FD6" stroke-width="1.6"/><circle cx="17" cy="17" r="4" fill="#2E4FD6"/><ellipse cx="17" cy="17" rx="13" ry="5" fill="none" stroke="#2E4FD6" stroke-width="1.2" transform="rotate(-25 17 17)"/></svg>
+            <div>
+              <div style="font:600 13px/1 'Hanken Grotesk';color:var(--cobalt)">Technology, 2 Insight</div>
+              <div style="font:500 18px/1.25 'Hanken Grotesk';margin-top:6px">Artificial satellites are already orbiting Earth.</div>
+              <div style="font:500 12.5px/1.2 'Hanken Grotesk';color:var(--eng-2);margin-top:6px">Removes 1951–1957 from the bezel. Source grade A</div>
+            </div>
+          </div>
+          <div style="position:absolute;top:668px;left:20px;right:20px;display:flex;gap:10px">
+            <div class="key" style="width:58px">−1</div><div class="key" style="width:58px">+1</div><div class="key" style="flex:1">Evidence</div>
+          </div>
+          <div class="key dark" style="position:absolute;left:20px;right:20px;bottom:30px;height:56px;border-radius:28px;font-size:17px">Lock in 1962</div>
+        </div>
+        <div class="home-ind" style="background:#f1f0eb"></div>
+      </div>
+      <div class="phone-cap" style="color:#2b3135">Hunt in progress. Red index marks are past guesses; the cobalt arc is what's still possible.</div>
+    </div>
+
+    <!-- REVEAL -->
+    <div class="phone-wrap">
+      <div class="phone" style="background: repeating-linear-gradient(90deg, rgba(255,255,255,.025) 0 1px, rgba(0,0,0,.05) 1px 2px), linear-gradient(180deg,#2C3034,#1E2125);color:#F1F0EB">
+        <div class="status" style="color:#F1F0EB"><span>9:41</span><span class="isl"></span><span class="bat"><i></i></span></div>
+        <div class="layer">
+          <div class="mi" style="position:absolute;top:104px;left:0;right:0;text-align:center;font-size:74px;line-height:1;letter-spacing:-1px">1969</div>
+          <div style="position:absolute;top:196px;left:0;right:0;text-align:center;font:500 14px/1 'Hanken Grotesk';color:#9BA3A8">Locked in 4 guesses and 5 Insight</div>
+          <div style="position:absolute;top:234px;left:28px;right:28px;text-align:center;font:500 19px/1.3 'Hanken Grotesk';color:#D6D8D9">Four readings from one year. Each dial shows when in 1969 it happened.</div>
+          <svg id="subdials" width="390" height="560" style="position:absolute;top:300px;left:0"></svg>
+        </div>
+        <div class="home-ind" style="background:#F1F0EB"></div>
+      </div>
+      <div class="phone-cap" style="color:#2b3135">World Reveal. A chronograph of sub-dials; the hands point to the month, the last one to a population scale.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+const NS="http://www.w3.org/2000/svg";
+function el(t,a,p){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);p&&p.appendChild(e);return e;}
+function txt(p,x,y,t,a){const e=el('text',Object.assign({x,y},a),p);e.textContent=t;return e;}
+function pol(cx,cy,r,a){return [cx+r*Math.cos(a),cy+r*Math.sin(a)];}
+function arc(cx,cy,r,a0,a1){const [x0,y0]=pol(cx,cy,r,a0),[x1,y1]=pol(cx,cy,r,a1);return `M${x0},${y0} A${r},${r} 0 ${a1-a0>Math.PI?1:0} 1 ${x1},${y1}`;}
+const defs=el('defs',{},document.body.appendChild(el('svg',{width:0,height:0,style:'position:absolute'})));
+// brushed conic gradient via CSS in foreignObject is heavy; use radial + many fine circles instead
+function face(svg,cx,cy,r,dark){
+  const g=el('radialGradient',{id:'f'+svg.id,cx:'45%',cy:'40%',r:'70%'},defs);
+  el('stop',{offset:'0',['stop-color']:dark?'#3a3f44':'#FAF9F5'},g); el('stop',{offset:'1',['stop-color']:dark?'#202326':'#E4E2DB'},g);
+  el('circle',{cx,cy,r,fill:`url(#f${svg.id})`},svg);
+}
+function dial(svg,cx,cy,R,opts){
+  // outer bezel (aluminium)
+  const bg=el('linearGradient',{id:'b'+svg.id,x1:0,y1:0,x2:1,y2:1},defs);
+  el('stop',{offset:0,'stop-color':'#E9EBEC'},bg); el('stop',{offset:.5,'stop-color':'#AEB3B7'},bg); el('stop',{offset:1,'stop-color':'#D7DADC'},bg);
+  el('circle',{cx,cy,r:R+6,fill:'#9aa0a4'},svg);
+  el('circle',{cx,cy,r:R+4,fill:`url(#b${svg.id})`},svg);
+  for(let i=0;i<220;i++){ const a=i/220*Math.PI*2; const [x0,y0]=pol(cx,cy,R-26,a),[x1,y1]=pol(cx,cy,R+3,a); el('line',{x1:x0,y1:y0,x2:x1,y2:y1,stroke:i%2?'#ffffff':'#00000',['stroke-opacity']:i%2?.18:.05,'stroke-width':.6},svg);}
+  // ceramic face
+  face(svg,cx,cy,R-30,false);
+  el('circle',{cx,cy,r:R-30,fill:'none',stroke:'#0003','stroke-width':1},svg);
+  // outer scale: 1800..2000 over 300deg starting at -240deg (i.e. from lower-left clockwise)
+  const A0=-Math.PI*1.25+Math.PI/2*0.0, SPAN=Math.PI*1.5;
+  const ang=t=>A0+(t-1800)/200*SPAN;
+  if(opts.zones){ opts.zones.forEach(z=>{ el('path',{d:arc(cx,cy,R-13,ang(z[0]),ang(z[1])),fill:'none',stroke:z[2],'stroke-width':z[3]||10,'stroke-opacity':z[4]??1},svg);}); }
+  for(let t=1800;t<=2000;t+=5){ const a=ang(t), maj=t%50===0, mid=t%10===0;
+    const [x0,y0]=pol(cx,cy,R-(maj?24:mid?18:13),a),[x1,y1]=pol(cx,cy,R-3,a);
+    el('line',{x1:x0,y1:y0,x2:x1,y2:y1,stroke:'#16191B','stroke-width':maj?1.8:mid?1.1:.7},svg);
+    if(maj){ const [tx,ty]=pol(cx,cy,R+(opts.outerLabels?22:-40),a); txt(svg,tx,ty+4,t,{'text-anchor':'middle','font-family':'Michroma','font-size':opts.outerLabels?10.5:11,fill:'#16191B'}); } }
+  return ang;
+}
+function crown(svg,x,y){ el('rect',{x,y:y-20,width:16,height:40,rx:4,fill:'#B9BEC2',stroke:'#80868a'},svg);
+  for(let i=0;i<9;i++) el('line',{x1:x+2,x2:x+14,y1:y-17+i*4.2,y2:y-17+i*4.2,stroke:'#6f767a','stroke-width':.8},svg); }
+
+// HOME
+{ const s=document.getElementById('homeDial'); const cx=190,cy=200,R=172;
+  crown(s,cx+R+5,cy); const ang=dial(s,cx,cy,R,{});
+  // inner minute-ish ring of years ticks
+  for(let i=0;i<100;i++){ const a=i/100*Math.PI*2; const [x0,y0]=pol(cx,cy,R-70,a),[x1,y1]=pol(cx,cy,R-(i%10?64:58),a); el('line',{x1:x0,y1:y0,x2:x1,y2:y1,stroke:'#555C61','stroke-width':i%10?.6:1.1},s);}
+  // aperture window
+  const a=ang(1800)-0.12; const [nx,ny]=pol(cx,cy,R-30,a); el('line',{x1:cx,y1:cy,x2:nx,y2:ny,stroke:'#D23A2A','stroke-width':2.4,'stroke-linecap':'round'},s);
+  el('circle',{cx,cy,r:9,fill:'#16191B'},s); el('circle',{cx,cy,r:3,fill:'#D23A2A'},s);
+  el('rect',{x:cx-62,y:cy+30,width:124,height:42,rx:6,fill:'#16191B'},s);
+  txt(s,cx,cy+59,'? ? ? ?',{'text-anchor':'middle','font-family':'Michroma','font-size':17,fill:'#F1F0EB','letter-spacing':2});
+  txt(s,cx,cy-48,'TIMEHUNT',{'text-anchor':'middle','font-family':'Michroma','font-size':9,fill:'#555C61','letter-spacing':3});
+}
+// HUNT
+{ const s=document.getElementById('huntDial'); const cx=186,cy=206,R=150;
+  crown(s,cx+R+5,cy);
+  const ang=dial(s,cx,cy,R,{outerLabels:true,zones:[[1800,1950.5,'#16191B',10,.18],[1984.5,2000,'#16191B',10,.18],[1950.5,1957.5,'#2E4FD6',10,.25],[1957.5,1984.5,'#2E4FD6',10,1]]});
+  // guess index marks
+  [[1880,'1880'],[1950,'1950'],[1985,'1985']].forEach(([t])=>{ const a=ang(t); const [x0,y0]=pol(cx,cy,R+5,a),[x1,y1]=pol(cx,cy,R-8,a+0.035),[x2,y2]=pol(cx,cy,R-8,a-0.035);
+    el('path',{d:`M${x0},${y0} L${x1},${y1} L${x2},${y2}z`,fill:'#D23A2A'},s); });
+  // inner vernier ring 1945..1995 full 300deg
+  const B0=-Math.PI*1.25, BS=Math.PI*1.5, ib=t=>B0+(t-1945)/50*BS, ri=R-46;
+  el('path',{d:arc(cx,cy,ri+6,ib(1957.5),ib(1984.5)),fill:'none',stroke:'#2E4FD6','stroke-width':4},s);
+  el('path',{d:arc(cx,cy,ri+6,ib(1950.5),ib(1957.5)),fill:'none',stroke:'#2E4FD6','stroke-width':4,'stroke-opacity':.25,'stroke-dasharray':'1.5 2.5'},s);
+  for(let t=1945;t<=1995;t++){ const a=ib(t), d=t%10===0, f=t%5===0; const [x0,y0]=pol(cx,cy,ri-(d?12:f?8:5),a),[x1,y1]=pol(cx,cy,ri,a);
+    el('line',{x1:x0,y1:y0,x2:x1,y2:y1,stroke:'#16191B','stroke-width':d?1.4:.7},s);
+    if(d){ const [tx,ty]=pol(cx,cy,ri-23,a); txt(s,tx,ty+3.5,t,{'text-anchor':'middle','font-family':'Michroma','font-size':9,fill:'#16191B'}); } }
+  [1950,1985].forEach(t=>{ const [x,y]=pol(cx,cy,ri+6,ib(t)); el('circle',{cx:x,cy:y,r:4,fill:'#D23A2A'},s); });
+  // aperture
+  el('rect',{x:cx-54,y:cy+24,width:108,height:42,rx:6,fill:'#16191B'},s);
+  txt(s,cx,cy+53,'1962',{'text-anchor':'middle','font-family':'Michroma','font-size':22,fill:'#F1F0EB'});
+  // needle to 1962 on inner ring (extends to outer)
+  const a=ib(1962); const [nx,ny]=pol(cx,cy,ri+2,a); const [tx,ty]=pol(cx,cy,26,a+Math.PI);
+  el('line',{x1:tx,y1:ty,x2:nx,y2:ny,stroke:'#D23A2A','stroke-width':2.4,'stroke-linecap':'round'},s);
+  el('circle',{cx,cy,r:9,fill:'#16191B'},s); el('circle',{cx,cy,r:3,fill:'#D23A2A'},s);
+}
+// icons
+function icon(id,size){ const d=document.getElementById(id); d.style.background='linear-gradient(160deg,#E2E5E7,#A9AEB2)';
+  const s=el('svg',{width:size,height:size,viewBox:'0 0 100 100'}); d.appendChild(s); const big=size>60;
+  el('circle',{cx:50,cy:50,r:36,fill:'#F1F0EB',stroke:'#16191B','stroke-width':big?2:3.5},s);
+  for(let i=0;i<(big?24:12);i++){ const a=i/(big?24:12)*Math.PI*2; const [x0,y0]=pol(50,50,36,a),[x1,y1]=pol(50,50,i%(big?6:3)?31:26,a); el('line',{x1:x0,y1:y0,x2:x1,y2:y1,stroke:'#16191B','stroke-width':big?1.4:2.5},s);}
+  el('path',{d:arc(50,50,22,-2.4,-0.6),fill:'none',stroke:'#2E4FD6','stroke-width':big?5:8},s);
+  const [nx,ny]=pol(50,50,30,-1.15); el('line',{x1:50,y1:50,x2:nx,y2:ny,stroke:'#D23A2A','stroke-width':big?3:5,'stroke-linecap':'round'},s); el('circle',{cx:50,cy:50,r:big?4:6,fill:'#16191B'},s); }
+icon('iconC',96); icon('iconC2',48);
+// REVEAL subdials
+{ const s=document.getElementById('subdials');
+  const items=[
+    {cx:105,cy:80,type:'m',v:5+27/30,t:'New York, 28 June',l:['Stonewall Inn raid;','the crowd resists.'],src:'Library of Congress'},
+    {cx:285,cy:80,type:'m',v:6+19/31,t:'Sea of Tranquility, 20 July',l:['Apollo 11 lands','on the Moon.'],src:'NASA'},
+    {cx:105,cy:330,type:'m',v:9+28/31,t:'UCLA to SRI, 29 October',l:['First ARPANET','message sent.'],src:'Internet Society'},
+    {cx:285,cy:330,type:'p',v:3.6,t:'People alive',l:['About 3.6 billion,','a UN estimate.'],src:'UN WPP'},
+  ];
+  items.forEach(it=>{ const r=68, {cx,cy}=it;
+    el('circle',{cx,cy,r:r+3,fill:'#14171A'},s); face(s,cx,cy,r,true); el('circle',{cx,cy,r,fill:'none',stroke:'#ffffff22'},s);
+    const n= it.type==='m'?12:8, A0=-Math.PI/2;
+    for(let i=0;i<(it.type==='m'?60:40);i++){ const a=A0+i/(it.type==='m'?60:40)*Math.PI*2, maj=i%(it.type==='m'?5:5)===0; const [x0,y0]=pol(cx,cy,r-(maj?9:5),a),[x1,y1]=pol(cx,cy,r-2,a); el('line',{x1:x0,y1:y0,x2:x1,y2:y1,stroke:'#C9CDD0','stroke-width':maj?1.2:.5},s);}
+    const labs= it.type==='m'?['J','F','M','A','M','J','J','A','S','O','N','D']:['0','1','2','3','4','5','6','7'];
+    labs.forEach((L,i)=>{ const [x,y]=pol(cx,cy,r-19,A0+(i+(it.type==='m'?0.5:0))/labs.length*Math.PI*2); txt(s,x,y+3.5,L,{'text-anchor':'middle','font-family':'Michroma','font-size':8.5,fill:'#9BA3A8'}); });
+    if(it.type==='p') txt(s,cx,cy-26,'billion',{'text-anchor':'middle','font-family':'Hanken Grotesk','font-size':10,fill:'#9BA3A8'});
+    const a=A0+it.v/(it.type==='m'?12:8)*Math.PI*2; const [nx,ny]=pol(cx,cy,r-6,a);
+    el('line',{x1:cx,y1:cy,x2:nx,y2:ny,stroke:'#D23A2A','stroke-width':2,'stroke-linecap':'round'},s); el('circle',{cx,cy,r:5,fill:'#F1F0EB'},s);
+    txt(s,cx-r,cy+r+24,it.t,{'font-family':'Hanken Grotesk','font-size':13,'font-weight':700,fill:'#F1F0EB'});
+    it.l.forEach((l,k)=>txt(s,cx-r,cy+r+43+k*17,l,{'font-family':'Hanken Grotesk','font-size':14,fill:'#D6D8D9'}));
+    txt(s,cx-r,cy+r+43+it.l.length*17+2,it.src,{'font-family':'Hanken Grotesk','font-size':11.5,fill:'#8a9297'});
+  });
+}
+</script>
+</body></html>

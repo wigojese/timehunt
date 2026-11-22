@@ -1,0 +1,258 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=block" rel="stylesheet">
+<link rel="stylesheet" href="base.css">
+<style>
+:root{
+  --paper:#E3E4DC; --paper-hi:#EEEFE8; --ink:#1E2629; --ink-2:#5A6566; --contour:#8E9A97;
+  --verdigris:#2C7466; --cadmium:#E0961A; --copper:#9A5B3E;
+}
+body{ background:#C9CBC2; color:var(--ink); font-family:"Archivo",sans-serif; }
+.board{ background:
+  radial-gradient(1200px 700px at 80% 20%, #D3D5CC 0%, #C4C6BD 100%); }
+.side h2{ font: 800 64px/0.9 "Archivo"; font-stretch:68%; letter-spacing:-0.5px; }
+.side p{ font-family:"Newsreader"; font-size:18px; }
+.phone{ background:var(--paper); --bezel:#20282a; }
+.phone .status{ color:var(--ink); }
+.home-ind{ background:var(--ink); }
+.grain{ position:absolute; inset:0; pointer-events:none; opacity:.55; mix-blend-mode:multiply; z-index:1; }
+.layer{ position:absolute; inset:0; z-index:2; }
+.cond{ font-stretch:66%; }
+.serif{ font-family:"Newsreader", serif; }
+.btn{ display:flex; align-items:center; justify-content:center; height:56px; border-radius:3px;
+  background:var(--ink); color:var(--paper-hi); font: 600 17px/1 "Archivo"; letter-spacing:.1px; }
+.ghost{ height:44px; display:flex; align-items:center; justify-content:center; border:1.25px solid var(--ink); border-radius:3px; font:600 15px/1 "Archivo"; }
+.small{ font-size:13px; color:var(--ink-2); }
+.ko{ text-shadow:0 0 4px #1E2629,0 0 8px #1E2629,0 0 12px #1E2629; }
+</style></head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <filter id="grainF"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7"/><feColorMatrix values="0 0 0 0 0.12  0 0 0 0 0.15  0 0 0 0 0.16  0 0 0 0.09 0"/></filter>
+    <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="7" stroke="#1E2629" stroke-width="1.1" stroke-opacity=".38"/></pattern>
+    <pattern id="dots" width="6" height="6" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="0.95" fill="#2C7466" fill-opacity=".55"/></pattern>
+  </defs>
+</svg>
+
+<div class="board">
+  <div class="side">
+    <h1>Route A</h1>
+    <h2>Chrono&shy;metric Atlas</h2>
+    <p>Time as a surveyed terrain. You are a navigator reading an instrument nobody has seen before. Guesses are survey pins driven into the ground; evidence is pinned to the map with leader lines.</p>
+    <p>I moved the palette off bone and copper toward cool limestone and slate. Warm cream with a copper accent is the look every generated "heritage" app lands on.</p>
+    <div class="swatches">
+      <div style="background:#E3E4DC;box-shadow:inset 0 0 0 1px #0002"></div><div style="background:#1E2629"></div><div style="background:#8E9A97"></div><div style="background:#2C7466"></div><div style="background:#E0961A"></div>
+    </div>
+    <div class="swatch-names"><span>Limestone<br>#E3E4DC</span><span>Slate ink<br>#1E2629</span><span>Contour<br>#8E9A97</span><span>Verdigris<br>#2C7466</span><span>Cadmium<br>#E0961A</span></div>
+    <div class="spec">
+      <div class="lab">Years and UI: Archivo, condensed width axis, tabular figures</div>
+      <div style="font:800 56px/1 Archivo;font-stretch:64%;letter-spacing:-.5px">1958–1984</div>
+      <div class="lab" style="margin-top:12px">Evidence and essays: Newsreader, optical sizes</div>
+      <div style="font:400 21px/1.3 Newsreader">Artificial satellites are already orbiting Earth.</div>
+    </div>
+    <div class="icon-row">
+      <div class="app-icon" id="iconA"></div>
+      <div class="app-icon sm" id="iconA2"></div>
+      <div class="small" style="max-width:14ch">Broken contour mark, at 96 and 48 px</div>
+    </div>
+  </div>
+
+  <div class="phones">
+    <!-- HOME -->
+    <div class="phone-wrap">
+      <div class="phone">
+        <svg class="grain" width="390" height="844"><rect width="390" height="844" filter="url(#grainF)"/></svg>
+        <div class="status"><span>9:41</span><span class="isl"></span><span class="bat"><i></i></span></div>
+        <div class="layer">
+          <div style="position:absolute;top:66px;left:26px;right:26px;display:flex;justify-content:space-between;align-items:center">
+            <div style="font:800 22px/1 Archivo;font-stretch:70%;letter-spacing:1.5px">TIMEHUNT</div>
+            <svg width="28" height="28" viewBox="0 0 28 28"><circle cx="14" cy="14" r="10" fill="none" stroke="#1E2629" stroke-width="1.5"/><circle cx="14" cy="14" r="3" fill="#1E2629"/></svg>
+          </div>
+          <svg id="homeRings" width="390" height="400" style="position:absolute;top:100px;left:0"></svg>
+          <svg id="homeAxis" width="390" height="60" style="position:absolute;top:488px;left:0"></svg>
+          <div style="position:absolute;top:566px;left:26px;right:26px">
+            <div class="serif" style="font-size:31px;line-height:1.12;font-weight:400;letter-spacing:-.2px">A year is hiding between 1800 and 2000. Find&nbsp;it.</div>
+            <div class="small" style="margin-top:12px;font-size:15px">Daily Hunt 42, Sunday 22 November</div>
+          </div>
+          <div style="position:absolute;left:26px;right:26px;bottom:92px" class="btn">Start today's hunt</div>
+          <div style="position:absolute;left:26px;right:26px;bottom:40px;display:flex;justify-content:space-between;font:600 15px/1 Archivo">
+            <span>Practice</span><span style="color:var(--ink-2);font-weight:500">Archive, 12 years found</span>
+          </div>
+        </div>
+        <div class="home-ind"></div>
+      </div>
+      <div class="phone-cap">Home. The mark is the hunt: its broken rings open into the timeline when you start.</div>
+    </div>
+
+    <!-- HUNT -->
+    <div class="phone-wrap">
+      <div class="phone">
+        <svg class="grain" width="390" height="844"><rect width="390" height="844" filter="url(#grainF)"/></svg>
+        <div class="status"><span>9:41</span><span class="isl"></span><span class="bat"><i></i></span></div>
+        <div class="layer">
+          <div style="position:absolute;top:64px;left:24px;right:24px;display:flex;justify-content:space-between;align-items:flex-start">
+            <div>
+              <div style="font:600 14px/1 Archivo;color:var(--ink-2)">Daily Hunt 42</div>
+              <div style="display:flex;gap:5px;margin-top:9px" id="guessPins"></div>
+              <div style="font:500 12.5px/1 Archivo;color:var(--ink-2);margin-top:7px">3 of 6 guesses left</div>
+            </div>
+            <div style="text-align:right">
+              <div style="font:600 14px/1 Archivo;color:var(--ink-2)">Insight</div>
+              <div style="display:flex;gap:3px;margin-top:9px;justify-content:flex-end" id="insightTicks"></div>
+              <div style="font:500 12.5px/1 Archivo;color:var(--ink-2);margin-top:7px">8 of 10 left</div>
+            </div>
+          </div>
+          <div style="position:absolute;top:140px;left:24px;display:flex;align-items:flex-end;gap:12px">
+            <div><div style="font:500 13px/1 Archivo;color:var(--ink-2);margin-bottom:10px">Locator</div><div style="font:800 112px/0.8 Archivo;font-stretch:62%;letter-spacing:-2px;color:var(--ink)">1962</div></div>
+          </div>
+          <svg id="huntField" width="390" height="400" style="position:absolute;top:244px;left:0"></svg>
+          <!-- evidence slip -->
+          <div style="position:absolute;top:126px;left:204px;width:164px;background:var(--paper-hi);padding:11px 12px 12px;box-shadow:0 1px 0 #0002, 0 8px 18px -10px #0006;border-left:3px solid var(--verdigris);z-index:5">
+            <div style="font:600 12px/1 Archivo;color:var(--verdigris)">Technology, 2 Insight</div>
+            <div class="serif" style="font-size:16.5px;line-height:1.25;margin-top:7px">Artificial satellites are already orbiting Earth.</div>
+            <div style="font:500 11.5px/1.2 Archivo;color:var(--ink-2);margin-top:8px">Rules out 1951–1957. Source grade A</div>
+          </div>
+          <div style="position:absolute;top:654px;left:24px;right:24px">
+            <div style="font:600 15px/1.3 Archivo">Viable corridor: 1958 to 1984</div>
+            <div style="font:500 13px/1.3 Archivo;color:var(--ink-2)">27 years. Last guess 1985 was too late.</div>
+          </div>
+          <div style="position:absolute;top:712px;left:24px;right:24px;display:flex;gap:8px">
+            <div class="ghost" style="width:44px">−</div><div class="ghost" style="width:44px">+</div>
+            <div class="ghost" style="flex:1">Fit corridor</div><div class="ghost" style="flex:1;border-color:var(--verdigris);color:var(--verdigris)">Evidence</div>
+          </div>
+          <div style="position:absolute;left:24px;right:24px;bottom:30px;height:52px;background:var(--ink);color:var(--paper-hi);display:flex;align-items:center;justify-content:center;border-radius:3px;font:600 17px/1 Archivo">Place guess at 1962</div>
+        </div>
+        <div class="home-ind" style="background:var(--paper)"></div>
+      </div>
+      <div class="phone-cap">Hunt in progress. Guesses hatch out ruled time; bought evidence gets its own dotted texture so you can see what told you what.</div>
+    </div>
+
+    <!-- REVEAL -->
+    <div class="phone-wrap">
+      <div class="phone" style="background:var(--ink);--bezel:#20282a">
+        <div class="status" style="color:var(--paper)"><span>9:41</span><span class="isl"></span><span class="bat"><i></i></span></div>
+        <div class="layer">
+          <svg id="revealRings" width="390" height="300" style="position:absolute;top:40px;left:0"></svg>
+          <div style="position:absolute;top:104px;left:0;right:0;text-align:center;color:var(--paper)">
+            <div style="font:800 128px/0.8 Archivo;font-stretch:62%;letter-spacing:-2px">1969</div>
+            <div style="font:500 14px/1.3 Archivo;color:#A9B3B1;margin-top:16px">Found in 4 guesses, 5 Insight spent</div>
+          </div>
+          <div class="serif" style="position:absolute;top:312px;left:28px;right:28px;color:var(--paper);font-size:21px;line-height:1.3;font-style:italic">One year. Several worlds. They shared a calendar, not a cause.</div>
+          <svg id="revealPath" width="390" height="460" style="position:absolute;top:384px;left:0"></svg>
+          <div class="ko" style="position:absolute;top:404px;left:96px;right:24px;color:var(--paper)">
+            <div style="font:600 13px/1 Archivo;color:var(--cadmium)">New York, 28 June</div>
+            <div class="serif" style="font-size:17px;line-height:1.3;margin-top:6px">Police raid the Stonewall Inn. Patrons and neighbours push back, for several nights.</div>
+            <div style="font:500 11.5px/1 Archivo;color:#8E9A97;margin-top:7px">Library of Congress</div>
+          </div>
+          <div class="ko" style="position:absolute;top:540px;left:24px;right:110px;color:var(--paper);text-align:right">
+            <div style="font:600 13px/1 Archivo;color:var(--cadmium)">Sea of Tranquility, 20 July</div>
+            <div class="serif" style="font-size:17px;line-height:1.3;margin-top:6px">Apollo 11's lunar module sets down on the Moon.</div>
+            <div style="font:500 11.5px/1 Archivo;color:#8E9A97;margin-top:7px">NASA</div>
+          </div>
+          <div class="ko" style="position:absolute;top:660px;left:96px;right:24px;color:var(--paper)">
+            <div style="font:600 13px/1 Archivo;color:var(--cadmium)">UCLA to SRI, 29 October</div>
+            <div class="serif" style="font-size:17px;line-height:1.3;margin-top:6px">The first message crosses ARPANET. It is two letters long.</div>
+            <div style="font:500 11.5px/1 Archivo;color:#8E9A97;margin-top:7px">Internet Society</div>
+          </div>
+        </div>
+        <div class="home-ind" style="background:var(--paper)"></div>
+      </div>
+      <div class="phone-cap">World Reveal. Scrolling walks a survey path between evidence islands, each cited where the claim is made.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+const NS="http://www.w3.org/2000/svg";
+function el(tag, attrs, parent){ const e=document.createElementNS(NS,tag); for(const k in attrs) e.setAttribute(k,attrs[k]); parent&&parent.appendChild(e); return e; }
+function rng(seed){ return ()=>{ seed=(seed*16807)%2147483647; return (seed-1)/2147483646; }; }
+// etched broken ring
+function ring(svg,cx,cy,r,gapA,gapLen,opts={}){
+  const R=rng(opts.seed||3); const ph=[R()*6.28,R()*6.28,R()*6.28]; const pts=[];
+  const a0=gapA+gapLen/2, a1=gapA+2*Math.PI-gapLen/2, n=180;
+  for(let i=0;i<=n;i++){ const a=a0+(a1-a0)*i/n;
+    const w=(opts.wob??1.4)*(Math.sin(a*3+ph[0])*0.6+Math.sin(a*7+ph[1])*0.3+Math.sin(a*13+ph[2])*0.15);
+    pts.push([(cx+(r+w)*Math.cos(a)).toFixed(2),(cy+(r+w)*Math.sin(a)).toFixed(2)]); }
+  return el('path',{d:'M'+pts.map(p=>p.join(',')).join('L'),fill:'none',stroke:opts.stroke||'#1E2629','stroke-width':opts.sw||1.2,'stroke-linecap':'round','stroke-opacity':opts.op??1},svg);
+}
+function markRings(svg,cx,cy,rMax,count,opts={}){
+  for(let i=0;i<count;i++){ const r=rMax*(i+1)/count; const t=i/(count-1);
+    const gap = opts.closed? 0.0001 : (opts.gap0??0.95) - (opts.gap0??0.95)*0.55*t;
+    const dx=(opts.drift||0)*t*Math.cos(0.7), dy=(opts.drift||0)*t*Math.sin(0.7);
+    ring(svg,cx-dx,cy-dy,r,(opts.rot||-1.2)+t*(opts.twist??1.1),gap,{seed:11+i*7,sw:(opts.sw||1.2)*(i===count-1?1.4:1),stroke:opts.stroke,op:opts.op?opts.op(i):1,wob:opts.wob}); }
+  if(opts.dot) el('circle',{cx,cy,r:opts.dot,fill:opts.dotFill||'#E0961A'},svg);
+}
+// HOME rings
+const hr=document.getElementById('homeRings');
+markRings(hr,200,206,176,11,{dot:7,op:i=>0.35+0.65*(i/10),sw:1.3,drift:22,twist:0.55,rot:-0.5});
+// HOME axis
+const ha=document.getElementById('homeAxis');
+el('line',{x1:26,x2:364,y1:14,y2:14,stroke:'#1E2629','stroke-width':1.2},ha);
+for(let y=1800;y<=2000;y+=10){ const x=26+(y-1800)*(338/200); const major=y%50===0;
+  el('line',{x1:x,x2:x,y1:14,y2:major?26:20,stroke:'#1E2629','stroke-width':major?1.3:0.8},ha);
+  if(major){ const t=el('text',{x,y:44,'text-anchor':'middle','font-family':'Archivo','font-size':13,'font-weight':600,'font-stretch':'70%',fill:'#5A6566'},ha); t.textContent=y; } }
+// icon
+function icon(id,size){ const d=document.getElementById(id); d.style.background='#1E2629';
+  const s=el('svg',{width:size,height:size,viewBox:'0 0 100 100'}); d.appendChild(s);
+  markRings(s,52,52,38,size>60?6:4,{stroke:'#E3E4DC',sw:size>60?2.6:4.2,dot:size>60?5:7,wob:0.5,gap0:1.2,twist:0.5,rot:-0.6,drift:6}); }
+icon('iconA',96); icon('iconA2',48);
+
+// HUNT field
+const hf=document.getElementById('huntField'); const W=390, H=400, L=14, Rr=362;
+const y0=1938, y1=2000; const X=t=>L+(t-y0)*(Rr-L)/(y1-y0);
+// terrain contours
+const R=rng(42); const phs=[...Array(6)].map(()=>R()*6.28);
+for(let i=0;i<20;i++){ const base=70+i*14.5; let d='';
+  for(let x=0;x<=W;x+=4){ const k=x/W;
+    const h=Math.sin(k*5.2+phs[0]+i*0.18)*7+Math.sin(k*11.3+phs[1]-i*0.31)*3.5+Math.sin(k*23+phs[2]+i*.7)*1.2 + Math.exp(-Math.pow((k-0.62)*3.2,2))*(-18+ i*0.9);
+    d+=(x?'L':'M')+x+','+(base+h).toFixed(1); }
+  el('path',{d,fill:'none',stroke:i%5===0?'#5A6566':'#8E9A97','stroke-width':i%5===0?1.1:0.7},hf); }
+// excluded by guesses (<=1950, >=1985)
+el('rect',{x:0,y:40,width:X(1950.5),height:320,fill:'url(#hatch)'},hf);
+el('rect',{x:X(1984.5),y:40,width:W-X(1984.5),height:320,fill:'url(#hatch)'},hf);
+// excluded by evidence 1951-1957
+el('rect',{x:X(1950.5),y:40,width:X(1957.5)-X(1950.5),height:320,fill:'url(#dots)'},hf);
+// corridor edges
+[1957.5,1984.5].forEach(t=>el('line',{x1:X(t),x2:X(t),y1:34,y2:366,stroke:'#2C7466','stroke-width':1.6},hf));
+el('line',{x1:X(1957.5),x2:X(1984.5),y1:34,y2:34,stroke:'#2C7466','stroke-width':1.6},hf);
+// ruler
+el('line',{x1:0,x2:W,y1:370,y2:370,stroke:'#1E2629','stroke-width':1.2},hf);
+for(let t=y0;t<=y1;t++){ const x=X(t); const dec=t%10===0;
+  el('line',{x1:x,x2:x,y1:370,y2:dec?383:(t%5===0?378:375),stroke:'#1E2629','stroke-width':dec?1.2:0.6},hf);
+  if(dec){ const tx=el('text',{x,y:397,'text-anchor':'middle','font-family':'Archivo','font-size':12.5,'font-weight':600,'font-stretch':'70%',fill:'#1E2629'},hf); tx.textContent=t; } }
+// leader from slip to evidence edge
+el('path',{d:`M262,-6 C 262,40 ${X(1957.5)},40 ${X(1957.5)},110`,fill:'none',stroke:'#2C7466','stroke-width':1.1,'stroke-dasharray':'3 3'},hf);
+el('circle',{cx:X(1957.5),cy:110,r:3.2,fill:'#2C7466'},hf);
+// survey pins
+function pin(t,label,dir){ const x=X(t);
+  el('line',{x1:x,x2:x,y1:200,y2:372,stroke:'#1E2629','stroke-width':1.6},hf);
+  el('path',{d:`M${x},200 l0,-26 l${dir>0?16:-16},7 l${dir>0?-16:16},7z`,fill:'#9A5B3E'},hf);
+  const tx=el('text',{x:x+(dir>0?-6:6),y:214,'text-anchor':dir>0?'end':'start','font-family':'Archivo','font-size':12.5,'font-weight':700,'font-stretch':'72%',fill:'#1E2629',stroke:'#E3E4DC','stroke-width':4,'paint-order':'stroke'},hf); tx.textContent=label; }
+pin(1950,'1950, later',1); pin(1985,'1985, earlier',-1);
+// locator
+const lx=X(1962);
+el('line',{x1:lx,x2:lx,y1:0,y2:370,stroke:'#E0961A','stroke-width':2.4},hf);
+el('circle',{cx:lx,cy:370,r:13,fill:'#E3E4DC',stroke:'#E0961A','stroke-width':2.4},hf);
+el('circle',{cx:lx,cy:370,r:4,fill:'#E0961A'},hf);
+// guess pins / insight ticks
+const gp=document.getElementById('guessPins');
+for(let i=0;i<6;i++){ const s=el('svg',{width:12,height:18}); gp.appendChild(s);
+  el('line',{x1:2,x2:2,y1:1,y2:18,stroke:i<3?'#1E2629':'#8E9A97','stroke-width':1.6},s);
+  el('path',{d:'M2,1 l9,4 l-9,4z',fill:i<3?'#9A5B3E':'none',stroke:i<3?'none':'#8E9A97'},s); }
+const it=document.getElementById('insightTicks');
+for(let i=0;i<10;i++){ const s=el('svg',{width:6,height:18}); it.appendChild(s);
+  el('rect',{x:0.5,y:0.5,width:5,height:17,fill:i<8?'#2C7466':'none',stroke:i<8?'none':'#8E9A97'},s); }
+
+// REVEAL rings (closed, locked)
+const rr=document.getElementById('revealRings');
+markRings(rr,195,118,150,9,{closed:true,stroke:'#E3E4DC',op:i=>0.06+0.12*(i/8),sw:1,wob:1.2});
+// REVEAL path + islands
+const rp=document.getElementById('revealPath');
+el('path',{d:'M60,-30 C 30,40 50,90 56,60 S 70,150 200,150 S 360,170 340,250 S 100,260 60,320 S 50,420 120,470',fill:'none',stroke:'#E0961A','stroke-width':1.4,'stroke-dasharray':'2 5','stroke-linecap':'round'},rp);
+function island(cx,cy,r,seed){ for(let i=0;i<5;i++) ring(rp,cx,cy,r*(1-i*0.19),0,0.0001,{seed:seed+i*5,stroke:'#E3E4DC',sw:i===0?1.2:0.8,op:0.85-i*0.12,wob:r*0.12}); el('circle',{cx,cy,r:3,fill:'#E0961A'},rp); }
+island(52,62,30,3); island(342,206,30,17); island(52,326,30,29);
+</script>
+</body></html>
