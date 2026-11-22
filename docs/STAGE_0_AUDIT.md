@@ -4,7 +4,7 @@
 
 ## 1. What exists
 
-Branch `claude/peaceful-fermat-j8inv8` (6 commits), remote `origin`. Working tree clean before this stage.
+Branch `claude/peaceful-fermat-j8inv8` (5 commits before this stage), remote `origin`. Working tree clean before this stage.
 
 ```
 README.md                                  10 bytes ("# timehunt")
@@ -91,7 +91,7 @@ So I have **not** visually inspected the user's reference images. I inspected my
 - Images and code in the repo were produced in this project for the user. I found no third-party imagery or code.
 - Fonts: Young Serif (NoirBlancRouge), Sofia Sans and Sofia Sans Extra Condensed (Lettersoup, Botio Nikoltchev, Ani Petrova). Third-party pages (Fontsource, Font Squirrel) list all as **SIL OFL 1.1**. I did **not** read the licence on Google's own pages, and the font files carry no licence text. Treat as likely OFL, not verified.
 - Fonts are loaded remotely, not bundled.
-- Historical facts and sources: unverified, section 8 of `RESEARCH_LOG.md`.
+- Historical facts and sources: unverified, see "Not verified by me" in `RESEARCH_LOG.md`.
 
 ## 7. Hidden duplicates, stale items, weak tests
 
