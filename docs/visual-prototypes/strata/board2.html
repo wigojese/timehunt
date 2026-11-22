@@ -1,0 +1,118 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Sofia+Sans+Extra+Condensed:wght@300..900&family=Sofia+Sans:wght@300..900&display=block" rel="stylesheet">
+<link rel="stylesheet" href="strata.css"></head><body>
+<div class="board">
+ <div class="head"><div><div class="sub">STRATA, pass 1: the World Reveal</div><h1>One year, four forms of evidence</h1></div>
+ <p>Each story takes the shape its evidence has: a documented event reads as text with its sources, a mechanism as a diagram, an object as a drawing, a statistic as a chart with units. Scenes run in date order within the year, and each opens with the same row: what kind of evidence, where, when, and how certain. Copy on these screens is placeholder pending editorial verification.</p></div>
+ <div class="row scaled" id="row"></div>
+</div>
+<script src="lib.js"></script>
+<script>
+const row=document.getElementById('row');
+function wrap(cap){const w=document.createElement('div');w.className='pw';row.appendChild(w);return {w,cap:()=>{const c=document.createElement('div');c.className='cap';c.innerHTML=cap;w.appendChild(c)}}}
+function wrapText(str,n){const w=str.split(' ');const out=[];let c='';w.forEach(x=>{if((c+' '+x).trim().length>n){out.push(c.trim());c=x}else c+=' '+x});out.push(c.trim());return out}
+function tags(s,y,list){let x=26;list.forEach(t=>{const w=t.t.length*6.4+16;
+  el('rect',{x:x,y:y,width:w,height:26,fill:t.fill?C.coal:'none',stroke:C.coal,'stroke-width':1.2},s);
+  T(s,x+8,y+17.5,t.t,{s:12.5,w:600,c:t.fill?C.bone:C.coal});x+=w+6})}
+function frame(s,n,tl){T(s,26,78,'1969',{f:F.disp,s:20});T(s,364,78,'Scene '+n+' of 4',{s:14,c:C.muted,a:'end'});
+  el('line',{x1:26,x2:364,y1:90,y2:90,stroke:C.coal,'stroke-width':1.2},s);
+  tags(s,102,tl);
+  // progress + next
+  for(let i=1;i<=4;i++){el('circle',{cx:34+(i-1)*20,cy:781,r:i===n?5.5:4,fill:i===n?C.coal:'none',stroke:C.coal,'stroke-width':1.3},s)}
+}
+function title(s,txt,size,n){const ls=wrapText(txt,n);ls.forEach((l,i)=>T(s,26,166+i*32,l,{f:F.disp,s:size}));return 166+(ls.length-1)*32}
+function foot(s,next){btn(s,196,758,168,46,next,'dark',{s:15.5});T(s,26,740,'Draft copy: facts to be verified before release.',{s:12.5,c:C.muted})}
+
+// ---- R1 intro ----
+{const W=wrap('<b>Entry.</b> After the lock, the year opens into a short path. Stories are in date order and each shows its form up front. The player can skip to sources at any time.');
+ const s=phone(W.w);
+ T(s,26,80,'Daily Hunt 42',{s:15,w:700});T(s,364,80,'Found in 4',{s:15,c:C.muted,a:'end'});
+ T(s,24,226,'1969',{f:F.disp,s:142});
+ T(s,26,274,'One year. Several worlds.',{f:F.disp,s:27});
+ P(s,26,308,['Four stories from the same year, in date order.','They share a calendar, not a cause.'],{s:16.5,lh:23,c:C.muted});
+ const items=[['2 March','Object','Concorde 001 takes off in Toulouse'],['28 June','Documents','The Stonewall uprising, New York'],['20 July','Schematic','Apollo 11 lands on the Moon'],['All year','Data','How many of us were there?']];
+ el('line',{x1:46,x2:46,y1:394,y2:660,stroke:C.coal,'stroke-width':1.6,'stroke-dasharray':'2 6','stroke-linecap':'round'},s);
+ items.forEach((it,i)=>{const y=404+i*88;el('circle',{cx:46,cy:y+6,r:9,fill:i===0?C.verm:C.bone,stroke:C.coal,'stroke-width':1.8},s);
+  T(s,72,y+8,it[0],{f:F.inst,s:25,w:700});
+  el('rect',{x:164,y:y-10,width:it[1].length*7.2+16,height:22,fill:'none',stroke:C.coal,'stroke-width':1.1},s);T(s,172,y+6,it[1],{s:13,w:600});
+  T(s,72,y+34,it[2],{s:16.5})});
+ btn(s,26,746,200,50,'Begin','primary',{s:17});T(s,364,777,'Skip to sources',{s:15,c:C.muted,a:'end'});
+ W.cap()}
+
+// ---- R4 Object ----
+{const W=wrap('<b>Object.</b> A technical drawing with labelled parts. It carries material history that a date alone cannot: what the thing was, how it was built.');
+ const s=phone(W.w);frame(s,1,[{t:'Object',fill:1},{t:'Toulouse, France'},{t:'2 March'},{t:'Documented'}]);
+ T(s,26,168,'Concorde 001',{f:F.disp,s:30});
+ const g=el('g',{transform:'translate(26,196)'},s);el('rect',{x:0,y:0,width:338,height:262,fill:C.paper,stroke:C.coal,'stroke-width':1},g);
+ // planform, nose left
+ const cy=140;
+ el('path',{d:`M14,${cy} C60,${cy-6} 90,${cy-7} 120,${cy-8} C170,${cy-44} 230,${cy-86} 294,${cy-98} L314,${cy-98} L314,${cy-12} L322,${cy-8} L322,${cy+8} L314,${cy+12} L314,${cy+98} L294,${cy+98} C230,${cy+86} 170,${cy+44} 120,${cy+8} C90,${cy+7} 60,${cy+6} 14,${cy} Z`,fill:'url(#exE)',stroke:C.coal,'stroke-width':1.8},g);
+ el('line',{x1:14,x2:322,y1:cy,y2:cy,stroke:C.coal,'stroke-width':1,'stroke-dasharray':'6 4'},g);
+ [[-34],[-56],[34],[56]].forEach(a=>el('rect',{x:252,y:cy+a[0]-6,width:46,height:12,fill:C.coal},g));
+ // callouts
+ const co=[[190,cy-62,'Ogival delta wing',60,34],[270,cy+34,'Four Olympus 593 engines',150,232],[34,cy,'Droop nose',30,214]];
+ el('line',{x1:190,y1:cy-62,x2:130,y2:36,stroke:C.verm,'stroke-width':1.3},g);el('circle',{cx:190,cy:cy-62,r:3.5,fill:C.verm},g);T(g,12,30,'Ogival delta wing',{s:14,w:700,c:C.verm});
+ el('line',{x1:270,y1:cy+34,x2:210,y2:232,stroke:C.verm,'stroke-width':1.3},g);el('circle',{cx:270,cy:cy+34,r:3.5,fill:C.verm},g);T(g,100,248,'Four Olympus 593 engines',{s:14,w:700,c:C.verm});
+ el('line',{x1:30,y1:cy,x2:30,y2:214,stroke:C.verm,'stroke-width':1.3},g);el('circle',{cx:30,cy:cy,r:3.5,fill:C.verm},g);T(g,12,230,'Droop nose',{s:14,w:700,c:C.verm});
+ T(g,326,16,'Top view, schematic',{s:12.5,c:C.muted,a:'end'});
+ P(s,26,494,wrapText('The first prototype made its maiden flight from Toulouse on 2 March 1969. Passenger service began in 1976.',44),{s:17,lh:24});
+ T(s,26,566,'Source',{s:13,w:700});T(s,26,584,'To be confirmed at editorial review',{s:13.5,c:C.muted});
+ foot(s,'Next: Stonewall');W.cap()}
+
+// ---- R2 Documents ----
+{const W=wrap('<b>Documents.</b> Reading text, sourced where the claim is made. A wording note sits beside the story, not buried in a footer, because how we name people is part of the history.');
+ const s=phone(W.w);frame(s,2,[{t:'Documents',fill:1},{t:'New York'},{t:'28 June'},{t:'Documented'}]);
+ T(s,26,168,'The Stonewall uprising',{f:F.disp,s:25});
+ const body=['In the early hours of 28 June 1969, police raided the Stonewall Inn, a bar on Christopher Street in Greenwich Village.','Patrons and neighbours resisted, and demonstrations went on over the following nights.','Gay liberation groups began organising in the months that followed.'];
+ let y=226;body.forEach(b=>{const ls=wrapText(b,44);P(s,26,y,ls,{s:17,lh:24});y+=ls.length*24+14});
+ el('rect',{x:26,y:y+6,width:338,height:128,fill:C.paper,stroke:C.coal,'stroke-width':1},s);el('rect',{x:26,y:y+6,width:5,height:128,fill:C.patina},s);
+ T(s,42,y+30,'How we word this',{s:14.5,w:700,c:C.patina});
+ P(s,42,y+52,wrapText('People at Stonewall described themselves in different ways, and the words in use then are not the words used now. We follow the sources and say when we are interpreting.',46),{s:14,lh:19,c:C.coal});
+ T(s,26,y+168,'Source',{s:13,w:700});T(s,26,y+186,'Library of Congress, Today in History: June 28',{s:13.5,c:C.muted});
+ T(s,26,y+206,'Interpretation of its wider significance: historians',{s:13.5,c:C.muted});
+ foot(s,'Next: Apollo 11');W.cap()}
+
+// ---- R3 Schematic ----
+{const W=wrap('<b>Schematic.</b> A mechanism shows how, not only when. Dated stops are numbered and listed below the drawing. The drawing says it is not to scale.');
+ const s=phone(W.w);frame(s,3,[{t:'Schematic',fill:1},{t:'Earth–Moon'},{t:'16–24 July'},{t:'Documented'}]);
+ title(s,'Apollo 11: how a landing works',27,20);
+ const g=el('g',{transform:'translate(26,228)'},s);
+ el('rect',{x:0,y:0,width:338,height:290,fill:C.paper,stroke:C.coal,'stroke-width':1},g);
+ // earth
+ el('circle',{cx:62,cy:232,r:34,fill:'url(#exG)',stroke:C.coal,'stroke-width':1.6},g);T(g,62,282,'Earth',{s:13,w:700,a:'middle'});
+ // moon
+ el('circle',{cx:268,cy:70,r:24,fill:C.tones[1],stroke:C.coal,'stroke-width':1.6},g);T(g,268,24,'Moon',{s:13,w:700,a:'middle'});
+ el('circle',{cx:268,cy:70,r:40,fill:'none',stroke:C.coal,'stroke-width':1.1,'stroke-dasharray':'3 4'},g);
+ el('path',{d:'M92,208 C150,150 190,150 232,98',fill:'none',stroke:C.coal,'stroke-width':2.2},g);
+ el('path',{d:'M262,112 C238,170 170,214 98,246',fill:'none',stroke:C.verm,'stroke-width':2.2,'stroke-dasharray':'7 5'},g);
+ const stops=[[92,208,'1'],[232,98,'2'],[268,104,'3'],[98,246,'4']];
+ stops.forEach(a=>{el('circle',{cx:a[0],cy:a[1],r:10,fill:C.bone,stroke:C.coal,'stroke-width':1.6},g);T(g,a[0],a[1]+5,a[2],{f:F.inst,s:15,w:800,a:'middle'})});
+ T(g,326,282,'Not to scale',{s:12.5,c:C.muted,a:'end'});
+ const li=[['1','16 July','Launch, Florida'],['2','19 July','Enters lunar orbit'],['3','20 July','Landing, Sea of Tranquility'],['4','24 July','Splashdown, Pacific Ocean']];
+ li.forEach((l,i)=>{const yy=552+i*28;T(s,26,yy,l[0],{f:F.inst,s:17,w:800,c:C.verm});T(s,48,yy,l[1],{f:F.inst,s:19,w:700});T(s,128,yy,l[2],{s:15.5})});
+ T(s,26,672,'Source',{s:13,w:700});T(s,26,690,'NASA, Apollo 11 mission overview and timeline',{s:13.5,c:C.muted});
+ foot(s,'Next: The whole year');W.cap()}
+
+
+// ---- R5 Data ----
+{const W=wrap('<b>Data.</b> A statistic keeps its axes, units and a plain statement of how sure we are. The certainty scale is the same on every data scene: measured, reconstructed, inferred, estimated, unknown.');
+ const s=phone(W.w);frame(s,4,[{t:'Data',fill:1},{t:'Worldwide'},{t:'1969'},{t:'Estimate'}]);
+ title(s,'How many of us were there?',27,19);
+ const g=el('g',{transform:'translate(26,228)'},s);el('rect',{x:0,y:0,width:338,height:268,fill:C.paper,stroke:C.coal,'stroke-width':1},g);
+ const x0=50,x1=316,yb=224,yt=34,X=t=>x0+(t-1950)*(x1-x0)/40,Y=v=>yb-v*(yb-yt)/6;
+ for(let v=0;v<=6;v+=2){el('line',{x1:x0,x2:x1,y1:Y(v),y2:Y(v),stroke:C.hair,'stroke-width':1},g);T(g,x0-8,Y(v)+5,v,{f:F.inst,s:16,w:600,a:'end'})}
+ T(g,12,22,'Billions of people',{s:13,c:C.muted});
+ for(let t=1950;t<=1990;t+=10){el('line',{x1:X(t),x2:X(t),y1:yb,y2:yb+6,stroke:C.coal,'stroke-width':1.2},g);T(g,X(t),yb+24,t,{f:F.inst,s:16,w:600,a:'middle'})}
+ const pts=[[1950,2.5],[1960,3.0],[1970,3.7],[1980,4.4],[1990,5.3]];
+ el('path',{d:'M'+pts.map(p=>X(p[0])+','+Y(p[1])).join('L'),fill:'none',stroke:C.coal,'stroke-width':2.4},g);
+ el('path',{d:'M'+pts.map(p=>X(p[0])+','+Y(p[1])).join('L')+`L${X(1990)},${yb}L${X(1950)},${yb}Z`,fill:'url(#exE)',opacity:.7},g);
+ el('line',{x1:X(1969),x2:X(1969),y1:Y(3.62),y2:yb,stroke:C.verm,'stroke-width':1.8,'stroke-dasharray':'4 3'},g);
+ el('circle',{cx:X(1969),cy:Y(3.62),r:6.5,fill:C.verm,stroke:C.paper,'stroke-width':2},g);
+ chip(g,X(1969)-96,Y(3.62)-64,128,40,[{t:'1969',o:{s:13,w:700}},{t:'About 3.6 billion',o:{s:13.5}}],{top:16,lh:17});
+ T(s,26,530,'How sure we are',{s:13.5,w:700});
+ let lx=26;['Measured','Reconstructed','Inferred','Estimated','Unknown'].forEach((c,i)=>{const sel=i===3;const w=c.length*5.8+13;
+  el('rect',{x:lx,y:540,width:w,height:24,fill:sel?C.coal:'none',stroke:C.coal,'stroke-width':1.1,opacity:sel?1:.6},s);T(s,lx+7,556,c,{s:12.5,w:600,c:sel?C.bone:C.coal});lx+=w+4});
+ P(s,26,596,wrapText('This is an estimate, not a headcount. It combines census data, surveys and demographic models.',44),{s:17,lh:24});
+ T(s,26,676,'Source',{s:13,w:700});T(s,26,694,'UN DESA, World Population Prospects (revision to confirm)',{s:13.5,c:C.muted});
+ btn(s,196,758,168,46,'Done: sources','dark',{s:15.5});T(s,26,740,'Draft copy: facts to be verified before release.',{s:12.5,c:C.muted});W.cap()}
+</script></body></html>

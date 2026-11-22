@@ -1,0 +1,90 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Sofia+Sans+Extra+Condensed:wght@300..900&family=Sofia+Sans:wght@300..900&display=block" rel="stylesheet">
+<link rel="stylesheet" href="strata.css">
+<style>
+.grid{display:grid;grid-template-columns:600px 600px 390px;gap:48px;align-items:start}
+.panel{background:#23211E;padding:22px 24px 24px;border:1px solid #3a362f}
+.panel h3{font:400 24px/1 'Young Serif';margin-bottom:6px}
+.panel .n{font-size:14.5px;color:#A59D8E;line-height:1.4;margin-bottom:16px;max-width:60ch}
+.sw{display:grid;grid-template-columns:repeat(4,1fr);gap:10px 12px;margin-bottom:18px}
+.sw div{font-size:12.5px;line-height:1.3;color:#CFC7B7}.sw i{display:block;height:44px;margin-bottom:5px;border:1px solid #0004}
+.sw b{display:block;color:#F2ECE0;font-size:13.5px}
+table{border-collapse:collapse;width:100%;font-size:13.5px}td,th{padding:5px 6px;border-bottom:1px solid #3a362f;text-align:left;font-weight:400}
+th{color:#A59D8E;font-weight:600}td.r{font-family:'Sofia Sans Extra Condensed';font-size:17px;font-weight:700}
+.ok{color:#9CC59E}.no{color:#E58C78}
+.demo{display:inline-block;padding:2px 8px;font-size:13.5px;font-weight:600}
+.stack{display:flex;flex-direction:column;gap:22px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.type1{font:400 74px/1 'Young Serif';color:#F2ECE0}.type2{font:700 54px/1 'Sofia Sans Extra Condensed';letter-spacing:.5px}.type3{font:400 17px/1.45 'Sofia Sans';max-width:46ch;color:#E5DECF}
+.lab{font-size:13px;color:#A59D8E;margin:12px 0 6px}
+</style></head><body>
+<div class="board">
+ <div class="head"><div><div class="sub">STRATA, pass 1: the system</div><h1>States, colour and type you can check</h1></div>
+ <p>Everything here is drawn from the same tokens as the screens. The contrast table is computed in the page from the hex values, not typed in. The greyscale phone at right is the hunt screen with all hue removed: if it still reads, colour is only a second signal.</p></div>
+ <div class="grid">
+  <div class="stack">
+   <div class="panel"><h3>Palette: Oxide &amp; Bone, plus strata tones</h3><div class="n">First eight are the evaluation's tokens. The last row is mine: five stone tones for decade bands and two inks I needed. Bone is only the margin; the field itself is stone.</div>
+    <div class="sw" id="sw"></div>
+    <table id="ct"><thead><tr><th>Pair in use</th><th>Ratio</th><th>Needs</th><th></th></tr></thead><tbody></tbody></table></div>
+   <div class="panel"><h3>Type: three roles, one family tree</h3><div class="n">Display for years and chapter openers. Instrument for any number that moves or sits on a ruler. Narrative for everything you read.</div>
+    <div class="type1">1958–1984</div><div class="lab">Young Serif, display. Used large and rarely.</div>
+    <div class="type2">1940 1950 1960 1970 1980</div><div class="lab">Sofia Sans Extra Condensed, instrument. Tabular figures, tall, stable while the ruler moves.</div>
+    <div class="type3">Artificial satellites are already orbiting Earth. The source is a documented date, so this clue carries grade A.</div><div class="lab">Sofia Sans, narrative and UI. It has no Georgian, so a Noto Sans Georgian fallback is needed and must be tested.</div></div>
+  </div>
+  <div class="stack">
+   <div class="panel"><h3>State language</h3><div class="n">Each state has a texture or shape, a word, and a colour. Remove any one and the other two still say it.</div><svg id="states" width="552" height="560"></svg></div>
+   <div class="panel"><h3>Mark and app icon</h3><div class="n">Strata with a fault: the right half of the layers has slipped. The vermilion line is the fault, and the year hides at the break. It holds at 29 px.</div><svg id="marks" width="552" height="150"></svg></div>
+   <div class="panel"><h3>Five ways to set a year</h3><div class="n">Nothing needs a gesture. Every control is at least 46 px tall.</div><svg id="ctl" width="552" height="136"></svg></div>
+  </div>
+  <div class="pw" id="gp"></div>
+ </div>
+</div>
+<script src="lib.js"></script>
+<script>
+const lum=h=>{const c=[1,3,5].map(i=>parseInt(h.slice(i,i+2),16)/255).map(v=>v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4));return .2126*c[0]+.7152*c[1]+.0722*c[2]};
+const ratio=(a,b)=>{const x=lum(a),y=lum(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05)};
+const toks=[['Bone',C.bone,'canvas'],['Paper',C.paper,'tags, reveal'],['Coal',C.coal,'text, marks'],['Soot',C.soot,'dark screens'],['Vermilion',C.verm,'locator, action'],['Patina',C.patina,'evidence, open'],['Brass',C.brass,'lock, on dark only'],['Pale rust',C.rust,'support fills'],
+ ['Muted ink',C.muted,'small text'],['Muted on dark',C.mutedDark,'small text'],['Stone 1',C.tones[0],'decade band'],['Stone 3',C.tones[2],'decade band']];
+const sw=document.getElementById('sw');toks.forEach(t=>{const d=document.createElement('div');d.innerHTML=`<i style="background:${t[1]}"></i><b>${t[0]}</b>${t[1]}<br>${t[2]}`;sw.appendChild(d)});
+const pairs=[['Coal on bone: body text',C.coal,C.bone,4.5],['Muted on bone: captions',C.muted,C.bone,4.5],['Muted on paper: tag notes',C.muted,C.paper,4.5],['Patina on paper: tag headings',C.patina,C.paper,4.5],
+ ['Bone on vermilion: primary button',C.bone,C.verm,4.5],['Vermilion on paper: locator edge',C.verm,C.paper,3],['Coal on darkest stone: labels on bands',C.coal,C.tones[4],4.5],
+ ['Bone on soot: dark screens',C.bone,C.soot,4.5],['Muted on dark on soot: captions',C.mutedDark,C.soot,4.5],['Brass on soot: lock rules, year label',C.brass,C.soot,4.5],['Coal on brass: lock button',C.coal,C.brass,4.5],
+ ['Brass on bone: never used for text',C.brass,C.bone,4.5],['Hairline rule on bone: decoration only',C.hair,C.bone,3]];
+const tb=document.querySelector('#ct tbody');pairs.forEach(p=>{const r=ratio(p[1],p[2]);const ok=r>=p[3];const tr=document.createElement('tr');
+ tr.innerHTML=`<td><span class="demo" style="background:${p[2]};color:${p[1]}">Aa</span> ${p[0]}</td><td class="r">${r.toFixed(2)}:1</td><td>${p[3]}:1</td><td class="${ok?'ok':'no'}">${ok?'Pass':'Fails: not used for this'}</td>`;tb.appendChild(tr)});
+
+// states
+{const s=document.getElementById('states');const cells=[
+ ['Open corridor','Solid stone, green edge, "27 years open".'],['Ruled out by a guess','Diagonal hatch on bone, with a "Guess 2" chip.'],
+ ['Ruled out by evidence','Green stipple, with the pinned tag.'],['Locator (your candidate)','Vermilion line, pointer and number.'],
+ ['Past guess','Coal notch on the ruler plus chip: later or earlier.'],['Evidence bought','Paper tag, green bar, pinned to the cut.'],
+ ['Free, no narrowing','Outlined and greyed; says why.'],['Solved','Brass rules, year in the gap. Plain-text result.']];
+ patRoot();
+ cells.forEach((c,i)=>{const col=i%2,r=Math.floor(i/2),x=col*282,y=r*140;const g=el('g',{transform:`translate(${x},${y})`},s);
+  el('rect',{x:0,y:0,width:270,height:78,fill:i===7?C.soot:C.bone,stroke:'#0006'},g);
+  if(i===0){const o={x:70,w:190,top:8,bot:70,t0:1960,t1:1969,};for(let k=0;k<3;k++)el('rect',{x:10+k*84,y:10,width:76,height:58,fill:decFill(196+k)},g);el('rect',{x:263,y:10,width:4,height:58,fill:C.patina},g)}
+  if(i===1)el('rect',{x:10,y:10,width:250,height:58,fill:'url(#exG)',stroke:C.coal},g);
+  if(i===2)el('rect',{x:10,y:10,width:250,height:58,fill:'url(#exE)',stroke:C.coal},g);
+  if(i===3){el('rect',{x:10,y:10,width:250,height:58,fill:decFill(197)},g);el('line',{x1:10,x2:260,y1:39,y2:39,stroke:C.verm,'stroke-width':2.6},g);el('path',{d:'M10,39 L22,26 H62 V52 H22Z',fill:C.verm},g);T(g,42,45,'1962',{f:F.inst,s:19,w:700,c:C.bone,a:'middle'})}
+  if(i===4){el('rect',{x:10,y:10,width:250,height:58,fill:'url(#exG)',stroke:C.coal},g);tri(g,22,39,10,'right',C.coal);chip(g,36,20,150,38,[{t:'Guess 2: 1985',o:{s:13,w:700}},{t:'Too late',o:{s:12.5,c:C.muted}}],{top:15,lh:15})}
+  if(i===5){el('rect',{x:10,y:10,width:250,height:58,fill:'url(#exE)'},g);el('circle',{cx:200,cy:10,r:4,fill:C.patina},g);chip(g,40,18,190,44,[{t:'Technology, 2 Insight',o:{s:12.5,w:700,c:C.patina}},{t:'Cuts 104 years down to 27.',o:{s:13}}],{bar:C.patina,top:17,lh:16})}
+  if(i===6){el('rect',{x:10,y:10,width:250,height:58,fill:'none',stroke:C.muted,'stroke-width':1.2,'stroke-dasharray':'5 4'},g);T(g,135,45,'Settled by your range',{s:15,c:C.muted,a:'middle'});}
+  if(i===7){el('line',{x1:0,x2:270,y1:14,y2:14,stroke:C.brass,'stroke-width':2.4},g);el('line',{x1:0,x2:270,y1:64,y2:64,stroke:C.brass,'stroke-width':2.4},g);T(g,135,53,'1969',{f:F.disp,s:36,c:C.bone,a:'middle'})}
+  T(s,x,y+100,c[0],{s:16,w:700,c:C.bone});T(s,x,y+118,c[1],{s:13.5,c:C.mutedDark})});}
+// marks
+{const s=document.getElementById('marks');
+ [[70,120,C.soot,C.bone,'#B4412D'],[210,120,C.bone,C.coal,'#B4412D']].forEach((a,i)=>{const g=el('g',{},s);el('rect',{x:a[0]-60,y:10,width:120,height:120,rx:27,fill:a[2],stroke:'#0005'},g);mark(g,a[0],70,84,a[3],a[4])});
+ [[320,64],[400,44],[460,32],[510,29]].forEach(a=>{el('rect',{x:a[0]-a[1]/2,y:70-a[1]/2,width:a[1],height:a[1],rx:a[1]*.225,fill:C.soot,stroke:'#0005'},s);mark(s,a[0],70,a[1]*.7,C.bone,'#D9694F')});
+ T(s,320,140,'64, 44, 32, 29 px',{s:13,c:C.mutedDark})}
+// controls
+{const s=document.getElementById('ctl');const bx=(x,w,l,sub)=>{el('rect',{x:x,y:6,width:w,height:46,rx:4,fill:'none',stroke:C.bone,'stroke-width':1.3},s);T(s,x+w/2,36,l,{s:16,w:700,c:C.bone,a:'middle',f:F.inst});T(s,x+w/2,76,sub,{s:12.5,c:C.mutedDark,a:'middle'})};
+ el('rect',{x:0,y:6,width:44,height:46,rx:8,fill:'#4a443c'},s);tri(s,22,17,8,'up',C.brass);tri(s,22,42,8,'down',C.brass);el('line',{x1:6,x2:38,y1:29.5,y2:29.5,stroke:C.brass,'stroke-width':2},s);T(s,0,76,'Drag wheel',{s:12.5,c:C.mutedDark});
+ bx(70,60,'−10 / +10','Step by ten');bx(144,60,'−1 / +1','Step by one');
+ el('rect',{x:218,y:6,width:130,height:46,rx:4,fill:'none',stroke:C.bone,'stroke-width':1.3},s);T(s,283,36,'Type: 1962',{s:16,w:600,c:C.bone,a:'middle'});T(s,283,76,'Type a year',{s:12.5,c:C.mutedDark,a:'middle'});
+ el('rect',{x:362,y:6,width:90,height:46,rx:4,fill:'none',stroke:C.bone,'stroke-width':1.3},s);T(s,407,36,'Tap ruler',{s:16,w:600,c:C.bone,a:'middle'});T(s,407,76,'Jump to a year',{s:12.5,c:C.mutedDark,a:'middle'});
+ el('rect',{x:462,y:6,width:86,height:46,rx:4,fill:'none',stroke:C.bone,'stroke-width':1.3},s);T(s,505,36,'↑ ↓ keys',{s:16,w:600,c:C.bone,a:'middle'});T(s,505,76,'Keys, switch',{s:12.5,c:C.mutedDark,a:'middle'});
+ T(s,0,108,'Pinch to zoom has a twin: "Fit 1958–1984" and ± zoom keys.',{s:13,c:C.mutedDark});T(s,0,126,'Left-handed players can move the wheel to the left edge.',{s:13,c:C.mutedDark})}
+// greyscale phone
+{const w=document.getElementById('gp');const s=phone(w);hunt(s);s.parentNode.style.filter='grayscale(1)';
+ const c=document.createElement('div');c.className='cap';c.innerHTML='<b>Hunt, greyscale.</b> Hatch, stipple, the pointer shape and the words still separate every state. Colour is a second signal, never the only one.';w.appendChild(c)}
+</script></body></html>

@@ -1,0 +1,78 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Sofia+Sans+Extra+Condensed:wght@300..900&family=Sofia+Sans:wght@300..900&display=block" rel="stylesheet">
+<link rel="stylesheet" href="strata.css"></head><body>
+<div class="board">
+ <div class="head"><div><div class="sub">STRATA, pass 1: the honest hunt</div><h1>Time as a core sample</h1></div>
+ <p>Older years sit lower, as they do in rock; later is up. Each decade has its own texture so you learn it by sight. Years ruled out by a guess are hatched, years ruled out by evidence are stippled in green, and both carry a text label. The clue below now removes 104 years from the range and says so. Same game state on every screen: guesses 1880 and 1985, one clue bought, target 1969.</p></div>
+ <div class="row" id="row"></div>
+</div>
+<script src="lib.js"></script>
+<script>
+const row=document.getElementById('row');
+function wrap(cap){const w=document.createElement('div');w.className='pw';row.appendChild(w);return {w,cap:()=>{const c=document.createElement('div');c.className='cap';c.innerHTML=cap;w.appendChild(c)}}}
+
+// ---------- HOME ----------
+{const W=wrap('<b>Home.</b> The whole 1800 to 2000 core is on show, so the question is the picture. Nothing implies the answer is one of a few shown years. The wheel on the right is already the control.');
+ const s=phone(W.w);
+ T(s,26,86,'Timehunt',{f:F.disp,s:25});T(s,364,84,'Sunday 22 November',{s:14.5,c:C.muted,a:'end'});
+ const o={x:76,w:214,top:118,bot:478,t0:1800,t1:2000,labelEvery:50,rulerX:68,labelSize:17};
+ strata(s,o);
+ el('rect',{x:70,y:112,width:226,height:372,fill:'none',stroke:C.verm,'stroke-width':2,'stroke-dasharray':'7 5'},s);
+ chip(s,82,100,150,26,[{t:'One hidden year in here',o:{s:13.5,w:700}}],{top:18});
+ wheel(s,322,118,50,360);
+ T(s,26,546,'A year is hiding',{f:F.disp,s:30});T(s,26,582,'between 1800 and 2000.',{f:F.disp,s:30});
+ T(s,26,626,'Drag the wheel, or use the keys, to set a year.',{s:15.5,c:C.muted});
+ btn(s,26,660,338,58,"Start today's hunt",'primary',{s:18});
+ T(s,26,770,'Practice',{s:16.5,w:700});T(s,364,770,'Archive: 12 years found',{s:16,c:C.muted,a:'end'});
+ T(s,26,806,'How it works',{s:15,c:C.muted});
+ W.cap()}
+
+// ---------- HUNT ----------
+{const W=wrap('<b>Hunt.</b> Years ▲ later, ▼ earlier. The strip on the left is the whole range with your current view boxed. Hatched years are ruled out by guesses, green stipple by evidence. The paper tag is pinned to the exact line where the clue cut the range.');
+ const s=phone(W.w);hunt(s);W.cap()}
+
+// ---------- EVIDENCE DRAWER ----------
+{const W=wrap('<b>Evidence.</b> Previews describe what a clue can do to <i>your</i> range, not what it says. A clue that adds nothing is labelled and costs nothing. Two clues that make the same cut say so before you pay for both.');
+ const s=phone(W.w);hunt(s);
+ el('rect',{width:390,height:844,fill:C.coal,opacity:.62},s);
+ el('rect',{x:0,y:228,width:390,height:616,fill:C.paper},s);el('rect',{x:0,y:228,width:390,height:3,fill:C.coal},s);
+ el('rect',{x:165,y:240,width:60,height:4,rx:2,fill:C.hair},s);
+ T(s,24,284,'Evidence',{f:F.disp,s:29});T(s,366,276,'Insight',{s:14,w:700,a:'end'});pips(s,276,283,8,10,C.coal);T(s,366,314,'8 left',{s:13,c:C.muted,a:'end'});
+ T(s,24,310,'Previews show what a clue can do to your range.',{s:13.5,c:C.muted});
+ const rows=[
+  {y:330,cat:'Spaceflight',meta:'Sharp · Worldwide',cost:'3',line:'Splits your 27 open years near the middle.',cut:[.4,.5],kind:'buy'},
+  {y:444,cat:'Queer history',meta:'Sharp · Americas',cost:'3',line:'Makes the same cut as Spaceflight. Buying both narrows nothing more.',cut:[.4,.5],kind:'dup'},
+  {y:558,cat:'Daily life',meta:'Broad · Europe',cost:'1',line:'Trims a small edge of your range.',cut:[.76,.9],kind:'buy'},
+  {y:672,cat:'Demographics',meta:'Broad · Worldwide',cost:'Free',line:'Your range already settles this. Saved for the World Reveal.',cut:null,kind:'free'}];
+ rows.forEach(r=>{el('line',{x1:24,x2:366,y1:r.y,y2:r.y,stroke:C.hair,'stroke-width':1},s);
+  const free=r.kind==='free',dup=r.kind==='dup';
+  T(s,24,r.y+28,r.cat,{s:19,w:700,c:free?C.muted:C.coal});T(s,366,r.y+28,r.meta,{s:13,c:C.muted,a:'end'});
+  P(s,24,r.y+50,wrapText(r.line,33),{s:14.5,c:free?C.muted:C.coal,lh:17});
+  // mini range bar
+  const bx=24,bw=150,by=r.y+(dup?92:80);el('rect',{x:bx,y:by,width:bw,height:9,fill:'none',stroke:C.coal,'stroke-width':1.1,opacity:free?.4:1},s);
+  if(r.cut){el('rect',{x:bx+bw*r.cut[0],y:by,width:bw*(r.cut[1]-r.cut[0]),height:9,fill:'url(#exG)'},s);el('rect',{x:bx+bw*r.cut[0],y:by,width:bw*(r.cut[1]-r.cut[0]),height:9,fill:'none',stroke:C.verm,'stroke-width':1.4},s)}
+  T(s,bx+bw+8,by+9,'1958–1984 open',{f:F.inst,s:14,c:C.muted});
+  if(free){btn(s,272,r.y+52,94,42,'Free','ghost',{s:15})}
+  else btn(s,272,r.y+52,94,42,'Buy '+r.cost,dup?'ghost':'dark',{s:16});
+ });
+ W.cap()}
+
+// ---------- SOLVED ----------
+{const W=wrap('<b>Lock.</b> The sealed layers slide apart and the year sits in the gap between two brass rules. Result and path are plain text. Share never blocks the reveal.');
+ const s=phone(W.w,{bg:C.soot,dark:true});
+ T(s,24,84,'Daily Hunt 42',{s:15,w:700,c:C.bone});T(s,366,84,'Solved',{s:15,c:C.mutedDark,a:'end'});
+ strata(s,{x:0,w:390,top:104,bot:250,t0:1900,t1:1968,dark:true,minor:false,labelEvery:100,rulerX:0,labelSize:1});
+ strata(s,{x:0,w:390,top:446,bot:584,t0:1970,t1:2000,dark:true,minor:false,labelEvery:100,rulerX:0,labelSize:1});
+ el('rect',{x:0,y:250,width:390,height:196,fill:C.soot},s);
+ el('line',{x1:0,x2:390,y1:262,y2:262,stroke:C.brass,'stroke-width':2.4},s);el('line',{x1:0,x2:390,y1:434,y2:434,stroke:C.brass,'stroke-width':2.4},s);
+ T(s,195,396,'1969',{f:F.disp,s:128,c:C.bone,a:'middle'});T(s,195,292,'Found',{s:17,w:600,c:C.brass,a:'middle'});
+ T(s,195,626,'Found in 4 of 6 guesses',{s:25,w:700,c:C.bone,a:'middle'});T(s,195,652,'5 of 10 Insight spent',{s:16.5,c:C.mutedDark,a:'middle'});
+ const gs=[['1880','later ▲'],['1985','earlier ▼'],['1962','later ▲'],['1969','found']];
+ el('line',{x1:60,x2:330,y1:690,y2:690,stroke:C.mutedDark,'stroke-width':1.2},s);
+ gs.forEach((g,i)=>{const x=60+i*90;el('circle',{cx:x,cy:690,r:i===3?7:5,fill:i===3?C.brass:C.soot,stroke:i===3?C.brass:C.bone,'stroke-width':1.6},s);
+  T(s,x,672,g[0],{f:F.inst,s:19,w:700,c:C.bone,a:'middle'});T(s,x,716,g[1],{s:13.5,c:C.mutedDark,a:'middle'})});
+ btn(s,24,750,150,56,'Share result','ghostDark',{s:16.5});btn(s,186,750,180,56,'Open 1969','brass',{s:17.5});
+ W.cap()}
+
+function wrapText(str,n){const w=str.split(' ');const out=[];let c='';w.forEach(x=>{if((c+' '+x).trim().length>n){out.push(c.trim());c=x}else c+=' '+x});out.push(c.trim());return out}
+</script></body></html>
