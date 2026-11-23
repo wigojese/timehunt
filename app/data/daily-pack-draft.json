@@ -1,0 +1,3415 @@
+{
+  "pack_id": "daily-draft-001",
+  "version": "0.1.0-draft",
+  "status": "DRAFT_NOT_PUBLISHABLE",
+  "date_convention": "end-of-year",
+  "year_numbering": "astronomical integers in JSON (1 BCE = 0); labels never show a year zero",
+  "theme": "The world was doing other things",
+  "finale_thesis": "Place the ten answers on one core and two of them land in the same year, 1977, for unrelated reasons: two spacecraft left for the outer solar system while the last natural case of smallpox was diagnosed. The Daily Trail shows simultaneity without claiming cause, and shows that our ten marks are a selection, not a sample of history.",
+  "sources": [
+    {
+      "id": "wp-concorde",
+      "title": "Concorde (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/Concorde",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "Infobox 'First flight 2 March 1969', 'Introduction date 21 January 1976'; section on 001 and André Turcat."
+    },
+    {
+      "id": "wp-boeing_737",
+      "title": "Boeing 737 (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/Boeing_737",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "Infobox: first flight April 9, 1967; introduction February 10, 1968."
+    },
+    {
+      "id": "wp-boeing_747",
+      "title": "Boeing 747 (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/Boeing_747",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "Infobox: first flight February 9, 1969; introduction January 22, 1970 with Pan Am."
+    },
+    {
+      "id": "wp-apollo_8",
+      "title": "Apollo 8 (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/Apollo_8",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "Launch December 21, 1968; landing date December 27, 1968."
+    },
+    {
+      "id": "wp-women%27s_suffrage_in_new_zealand",
+      "title": "Women's suffrage in New Zealand (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/Women%27s_suffrage_in_New_Zealand",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "Royal assent 19 September 1893; first vote 28 November 1893; petitions 1891, 1892, 1893."
+    },
+    {
+      "id": "wp-eiffel_tower",
+      "title": "Eiffel Tower (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/Eiffel_Tower",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "Infobox: completed 31 March 1889."
+    },
+    {
+      "id": "wp-lumi%c3%a8re_brothers",
+      "title": "Lumière brothers (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/Lumi%C3%A8re_brothers",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "First paid public screening 28 December 1895."
+    },
+    {
+      "id": "wp-world%27s_columbian_exposition",
+      "title": "World's Columbian Exposition (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/World%27s_Columbian_Exposition",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "Opening May 1, 1893; closure October 30, 1893."
+    },
+    {
+      "id": "wp-andr%c3%a9s_de_urdaneta",
+      "title": "Andrés de Urdaneta (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/Andr%C3%A9s_de_Urdaneta",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "Fleet sailed from La Navidad November 21, 1564; left Cebu 1 June 1565; reached Acapulco on 8 October 1565."
+    },
+    {
+      "id": "wp-miguel_l%c3%b3pez_de_legazpi",
+      "title": "Miguel López de Legazpi (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/Miguel_L%C3%B3pez_de_Legazpi",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "Capital moved to Manila in 1571; died 20 August 1572."
+    },
+    {
+      "id": "wp-manila_galleon",
+      "title": "Manila galleon (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/Manila_galleon",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "Route 'From 1565 to 1815'; inaugurated 1565 after Urdaneta pioneered the tornaviaje."
+    },
+    {
+      "id": "wp-mercator_1569_world_map",
+      "title": "Mercator 1569 world map (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/Mercator_1569_world_map",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "Map dated 1569."
+    },
+    {
+      "id": "wp-armistice_of_11_november_1918",
+      "title": "Armistice of 11 November 1918 (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/Armistice_of_11_November_1918",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "Title and lead."
+    },
+    {
+      "id": "wp-beer_hall_putsch",
+      "title": "Beer Hall Putsch (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/Beer_Hall_Putsch",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "Date 8-9 November 1923."
+    },
+    {
+      "id": "wp-treaty_of_versailles",
+      "title": "Treaty of Versailles (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/Treaty_of_Versailles",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "Signed 28 June 1919."
+    },
+    {
+      "id": "wp-magnus_hirschfeld",
+      "title": "Magnus Hirschfeld (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/Magnus_Hirschfeld",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "Institute opened 6 July 1919; film premiered May 1919; beaten by völkisch activists in 1920; 1933 looting and book burning."
+    },
+    {
+      "id": "wp-institut_f%c3%bcr_sexualwissenschaft",
+      "title": "Institut für Sexualwissenschaft (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/Institut_f%C3%BCr_Sexualwissenschaft",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "Established July 6, 1919; founders Hirschfeld, Kronfeld, Wertheim; confiscations 6 May 1933."
+    },
+    {
+      "id": "wp-rosetta_stone",
+      "title": "Rosetta Stone (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/Rosetta_Stone",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "Decree of 196 BC; found July 1799 by Pierre-François Bouchard; Greek translation 1803; Champollion 1822."
+    },
+    {
+      "id": "wp-french_campaign_in_egypt_and_syria",
+      "title": "French invasion of Egypt and Syria (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/French_campaign_in_Egypt_and_Syria",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "Date 28 June 1798 - 2 September 1801; Napoleon in command till 23 August 1799."
+    },
+    {
+      "id": "wp-battle_of_the_nile",
+      "title": "Battle of the Nile (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_the_Nile",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "Date 1-3 August 1798."
+    },
+    {
+      "id": "wp-battle_of_marengo",
+      "title": "Battle of Marengo (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Marengo",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "Date 14 June 1800."
+    },
+    {
+      "id": "wp-ali_maow_maalin",
+      "title": "Ali Maow Maalin (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/Ali_Maow_Maalin",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "Last person known infected with naturally occurring Variola minor; diagnosed October 1977."
+    },
+    {
+      "id": "wp-rahima_banu",
+      "title": "Rahima Banu (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/Rahima_Banu",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "Last known naturally occurring Variola major case, reported 16 October 1975."
+    },
+    {
+      "id": "wp-janet_parker",
+      "title": "Janet Parker and the 1978 smallpox outbreak in the United Kingdom (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/Janet_Parker",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "Laboratory-acquired outbreak in 1978; last recorded smallpox death."
+    },
+    {
+      "id": "wp-viking_1",
+      "title": "Viking 1 (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/Viking_1",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "Lander touched down on Mars July 20, 1976."
+    },
+    {
+      "id": "wp-star_wars_(film)",
+      "title": "Star Wars (film) (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/Star_Wars_(film)",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "Release date May 25, 1977."
+    },
+    {
+      "id": "wp-ibn_battuta",
+      "title": "Ibn Battuta (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/Ibn_Battuta",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "'On 2 Rajab 725 AH (14 June 1325 AD), Ibn Battuta set off from his home town at the age of 21'."
+    },
+    {
+      "id": "wp-marco_polo",
+      "title": "Marco Polo (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/Marco_Polo",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "Died 8 January 1324."
+    },
+    {
+      "id": "wp-mansa_musa",
+      "title": "Mansa Musa (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/Mansa_Musa",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "'Musa went on Hajj to Mecca in 1324'; spent time in Cairo."
+    },
+    {
+      "id": "wp-edward_ii_of_england",
+      "title": "Edward II of England (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/Edward_II_of_England",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "Reign ended 21 January 1327; Isabella invaded England in 1326."
+    },
+    {
+      "id": "wp-tenochtitlan",
+      "title": "Tenochtitlan (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/Tenochtitlan",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "Foundation 1325; infobox 'Unclear date, declared 13 March 1325'."
+    },
+    {
+      "id": "wp-hunminjeongeum",
+      "title": "Hunminjeongeum (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/Hunminjeongeum",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "Published around October 1446 (9th lunar month); alphabet introduced 12th month of 1443 (30 Dec 1443 - 28 Jan 1444)."
+    },
+    {
+      "id": "wp-cheugugi",
+      "title": "Ch'ŭgugi (rain gauge) (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/Cheugugi",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "Invented August 1441 (lunar); standardised 1442."
+    },
+    {
+      "id": "wp-yongbi_eocheonga",
+      "title": "Yongbiŏch'ŏn'ga (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/Yongbi_eocheonga",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "'The book was published in 1447'; first work written in Hangul."
+    },
+    {
+      "id": "wp-sejong_the_great",
+      "title": "Sejong the Great (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/Sejong_the_Great",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "Reigned 1418 to his death on April 8, 1450."
+    },
+    {
+      "id": "wp-battle_of_varna",
+      "title": "Battle of Varna (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/Battle_of_Varna",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "Date November 10, 1444."
+    },
+    {
+      "id": "wp-han_dynasty",
+      "title": "Han dynasty (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/Han_dynasty",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "'The first nationwide census in Chinese history was taken in 2 AD ... 57,671,400 individuals across 12,366,470 households.'"
+    },
+    {
+      "id": "wp-emperor_ping_of_han",
+      "title": "Emperor Ping of Han (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/Emperor_Ping_of_Han",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "Reign 17 October 1 BC to 3 February 6 AD; era Yuanshi 1-5 AD."
+    },
+    {
+      "id": "wp-voyager_1",
+      "title": "Voyager 1 (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/Voyager_1",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "Launch September 5, 1977; Jupiter closest approach March 5, 1979."
+    },
+    {
+      "id": "wp-voyager_2",
+      "title": "Voyager 2 (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/Voyager_2",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "Launch August 20, 1977."
+    },
+    {
+      "id": "who-smallpox",
+      "title": "History of smallpox vaccination",
+      "publisher": "World Health Organization",
+      "kind": "institutional",
+      "opened": true,
+      "url": "https://www.who.int/news-room/spotlight/history-of-vaccination/history-of-smallpox-vaccination",
+      "retrieved": "2026-11-23",
+      "note": "'smallpox was eliminated from South America in 1971, Asia in 1975 and Africa in 1977 ... In 1980, WHO declared smallpox officially eradicated'."
+    },
+    {
+      "id": "cdc-smallpox",
+      "title": "About smallpox",
+      "publisher": "US Centers for Disease Control and Prevention",
+      "kind": "institutional",
+      "opened": true,
+      "url": "https://www.cdc.gov/smallpox/about/index.html",
+      "retrieved": "2026-11-23",
+      "note": "'Smallpox has been eradicated, with no cases occurring since 1977.'"
+    },
+    {
+      "id": "nasa-voyager",
+      "title": "Voyager",
+      "publisher": "NASA Science",
+      "kind": "institutional",
+      "opened": true,
+      "url": "https://science.nasa.gov/mission/voyager/",
+      "retrieved": "2026-11-23",
+      "note": "Mission page: 'LAUNCH 1977'."
+    },
+    {
+      "id": "q-airbus-concorde",
+      "title": "The day Concorde flew into the history books",
+      "publisher": "Airbus",
+      "kind": "institutional",
+      "opened": false,
+      "url": "https://www.airbus.com/en/newsroom/stories/2019-03-the-day-concorde-flew-into-the-history-books",
+      "retrieved": "2026-11-23",
+      "note": "Quoted in search summary: takeoff 2 March 1969."
+    },
+    {
+      "id": "q-museeairespace",
+      "title": "BAC-Sud Aviation Concorde prototype 001 F-WTSS",
+      "publisher": "Musée de l'Air et de l'Espace",
+      "kind": "institutional",
+      "opened": false,
+      "url": "https://museeairespace.fr/en/collections/bac-sud-aviation-concorde-prototype-001-f-wtss",
+      "retrieved": "2026-11-23",
+      "note": "Blocked (403). Search summary only."
+    },
+    {
+      "id": "q-nzhistory",
+      "title": "Women's suffrage: how New Zealand voted first",
+      "publisher": "NZHistory (Ministry for Culture and Heritage)",
+      "kind": "institutional",
+      "opened": false,
+      "url": "https://nzhistory.govt.nz/politics/womens-suffrage",
+      "retrieved": "2026-11-23",
+      "note": "Blocked (403). Search summary: assent 19 Sept 1893, vote 28 Nov 1893, 'first self-governing country'."
+    },
+    {
+      "id": "q-ushmm",
+      "title": "Magnus Hirschfeld",
+      "publisher": "US Holocaust Memorial Museum, Holocaust Encyclopedia",
+      "kind": "institutional",
+      "opened": false,
+      "url": "https://encyclopedia.ushmm.org/content/en/article/magnus-hirschfeld-2",
+      "retrieved": "2026-11-23",
+      "note": "Connection failed. Search summary: May 1933 looting; does not give the 1919 opening date."
+    },
+    {
+      "id": "q-britannica-rosetta",
+      "title": "Rosetta Stone",
+      "publisher": "Encyclopaedia Britannica",
+      "kind": "encyclopedia",
+      "opened": false,
+      "url": "https://www.britannica.com/print/article/509988",
+      "retrieved": "2026-11-23",
+      "note": "Blocked. Search summary gives August 1799, an outlier against July in other sources."
+    },
+    {
+      "id": "q-unesco-hunmin",
+      "title": "Hunminjeongum Manuscript (nomination)",
+      "publisher": "UNESCO Memory of the World",
+      "kind": "institutional",
+      "opened": false,
+      "url": "https://en.unesco.org/silkroad/silk-road-themes/documentary-heritage/hunminjeongum-manuscript",
+      "retrieved": "2026-11-23",
+      "note": "Not opened. Search summary: published in the ninth lunar month of 1446 (9 October 1446)."
+    },
+    {
+      "id": "q-aramco-battuta",
+      "title": "The longest hajj: the journeys of Ibn Battuta",
+      "publisher": "Aramco World",
+      "kind": "news",
+      "opened": false,
+      "url": "https://www.aramcoworld.com/en/articles/2000/the-longest-hajj-the-journeys-of-ibn-battuta-intro",
+      "retrieved": "2026-11-23",
+      "note": "Search summary: set out in 1325, the year after Polo died; Thursday 14 June 1325 (2 Rajab 725 AH)."
+    },
+    {
+      "id": "q-historyofinfo-han",
+      "title": "The first census of which records are preserved (China, Han dynasty)",
+      "publisher": "historyofinformation.com",
+      "kind": "news",
+      "opened": false,
+      "url": "https://historyofinformation.com/detail.php?id=148",
+      "retrieved": "2026-11-23",
+      "note": "Search summary: first census with preserved records, 2 AD. Figures vary across sources."
+    },
+    {
+      "id": "q-nlm-mmwr-smallpox",
+      "title": "Last natural smallpox case: NLM and CDC MMWR accounts",
+      "publisher": "NLM and CDC",
+      "kind": "institutional",
+      "opened": false,
+      "url": "https://www.cdc.gov/Mmwr/preview/mmwrhtml/00049694.htm",
+      "retrieved": "2026-11-23",
+      "note": "Search summary: dates for the Somali case vary (22, 26, 31 October 1977), all in October 1977."
+    },
+    {
+      "id": "q-nasa-golden",
+      "title": "Greetings to the universe in 55 different languages",
+      "publisher": "NASA Science",
+      "kind": "institutional",
+      "opened": false,
+      "url": "https://science.nasa.gov/mission/voyager/golden-record-contents/greetings/",
+      "retrieved": "2026-11-23",
+      "note": "Search summary: greetings in 55 languages."
+    }
+  ],
+  "cases": [
+    {
+      "id": "case-01",
+      "order": 1,
+      "title": "A very fast prototype",
+      "lens": "A curious invention",
+      "region": [
+        "Europe"
+      ],
+      "era": "modern",
+      "difficulty": "entry",
+      "question": "In which year did the first Concorde prototype make its first flight?",
+      "corridor": [
+        1960,
+        1985
+      ],
+      "target": {
+        "year": 1969,
+        "event": "First flight of Concorde prototype 001 from Toulouse",
+        "definition": "The year of the first flight of prototype 001, not of supersonic flight (1 October 1969) and not of passenger service (1976).",
+        "precision": "day known (2 March); year used",
+        "calendar": "Gregorian",
+        "discovery_vs_event": "Event: first flight. Not the first supersonic flight, not certification, not scheduled service.",
+        "year_label": "1969"
+      },
+      "free": [
+        {
+          "id": "f1",
+          "text": "By the end of that year, the Boeing 737 had already made its first flight (9 April 1967).",
+          "anchor": {
+            "label": "Boeing 737 first flight",
+            "date": "9 April 1967",
+            "year": 1967,
+            "year_label": "1967",
+            "region": "North America"
+          },
+          "predicate": {
+            "op": "gte",
+            "year": 1967
+          },
+          "convention": "end-of-year",
+          "source_ids": [
+            "wp-boeing_737"
+          ],
+          "corroboration_ids": [],
+          "kind": "bound"
+        },
+        {
+          "id": "f2",
+          "text": "By the end of that year, the Boeing 747 had not yet carried passengers (first passenger service 22 January 1970).",
+          "anchor": {
+            "label": "Boeing 747 enters passenger service",
+            "date": "22 January 1970",
+            "year": 1970,
+            "year_label": "1970",
+            "region": "North America"
+          },
+          "predicate": {
+            "op": "lte",
+            "year": 1969
+          },
+          "convention": "end-of-year",
+          "source_ids": [
+            "wp-boeing_747"
+          ],
+          "corroboration_ids": [],
+          "kind": "bound"
+        },
+        {
+          "id": "f3",
+          "text": "It flew one calendar year after Apollo 8 first took people into lunar orbit (21 to 27 December 1968).",
+          "anchor": {
+            "label": "Apollo 8 lunar orbit mission",
+            "date": "21-27 December 1968",
+            "year": 1968,
+            "year_label": "1968",
+            "region": "North America"
+          },
+          "predicate": {
+            "op": "equals",
+            "year": 1969,
+            "rule": "anchor_year_plus_n",
+            "anchor_year": 1968,
+            "n": 1
+          },
+          "convention": "calendar-year-arithmetic",
+          "source_ids": [
+            "wp-apollo_8"
+          ],
+          "corroboration_ids": [],
+          "kind": "relation"
+        }
+      ],
+      "paid": [
+        {
+          "id": "p1",
+          "text": "By the end of that year, the Boeing 737 had already entered airline service (10 February 1968).",
+          "anchor": {
+            "label": "Boeing 737 enters service",
+            "date": "10 February 1968",
+            "year": 1968,
+            "year_label": "1968",
+            "region": "North America"
+          },
+          "predicate": {
+            "op": "gte",
+            "year": 1968
+          },
+          "convention": "end-of-year",
+          "source_ids": [
+            "wp-boeing_737"
+          ],
+          "corroboration_ids": [],
+          "tier": "nudge",
+          "cost": 1,
+          "category": "Aviation"
+        },
+        {
+          "id": "p2",
+          "text": "By the end of that year, the Boeing 747 had already made its first flight (9 February 1969).",
+          "anchor": {
+            "label": "Boeing 747 first flight",
+            "date": "9 February 1969",
+            "year": 1969,
+            "year_label": "1969",
+            "region": "North America"
+          },
+          "predicate": {
+            "op": "gte",
+            "year": 1969
+          },
+          "convention": "end-of-year",
+          "source_ids": [
+            "wp-boeing_747"
+          ],
+          "corroboration_ids": [],
+          "tier": "deep",
+          "cost": 2,
+          "category": "Aviation"
+        }
+      ],
+      "context_free": [
+        {
+          "text": "Concorde entered scheduled passenger service on 21 January 1976.",
+          "sources": [
+            "wp-concorde"
+          ]
+        }
+      ],
+      "reveal": [
+        {
+          "form": "Object drawing",
+          "title": "Prototype 001, F-WTSS",
+          "text": "Concorde 001 first flew from Toulouse on 2 March 1969 with André Turcat at the controls. It first went supersonic on 1 October 1969.",
+          "sources": [
+            "wp-concorde"
+          ]
+        },
+        {
+          "form": "Timeline",
+          "title": "Two bets, one month apart",
+          "text": "The Boeing 747 first flew on 9 February 1969, three weeks before Concorde 001 (2 March 1969).",
+          "sources": [
+            "wp-boeing_747",
+            "wp-concorde"
+          ]
+        }
+      ],
+      "editorial": {
+        "c0": [
+          1967,
+          1968,
+          1969
+        ],
+        "c0_labels": [
+          "1967",
+          "1968",
+          "1969"
+        ],
+        "uniqueness_proof": {
+          "1967": "1967 is -1 calendar years from Apollo 8 lunar orbit mission (1968); the clue needs +1.",
+          "1968": "1968 is +0 calendar years from Apollo 8 lunar orbit mission (1968); the clue needs +1."
+        },
+        "paid_effects": [
+          {
+            "id": "p1",
+            "tier": "nudge",
+            "cost": 1,
+            "keeps": [
+              1968,
+              1969
+            ],
+            "cuts": [
+              1967
+            ],
+            "remaining": 2,
+            "resolves": false,
+            "prints_target": false
+          },
+          {
+            "id": "p2",
+            "tier": "deep",
+            "cost": 2,
+            "keeps": [
+              1969
+            ],
+            "cuts": [
+              1967,
+              1968
+            ],
+            "remaining": 1,
+            "resolves": true,
+            "prints_target": true
+          }
+        ],
+        "fragment_levels": {
+          "free f1": "V1",
+          "free f2": "V1",
+          "free f3": "V1",
+          "paid p1": "V1",
+          "paid p2": "V1"
+        },
+        "blockers": [
+          "free f1 (Boeing 737 first flight) is V1",
+          "free f2 (Boeing 747 enters passenger service) is V1",
+          "free f3 (Apollo 8 lunar orbit mission) is V1",
+          "paid p1 (Boeing 737 enters service) is V1",
+          "paid p2 (Boeing 747 first flight) is V1"
+        ],
+        "target_fact_level": "V1",
+        "publishable": false,
+        "arithmetic_solvable_from_free": true,
+        "facts": [
+          {
+            "claim": "Concorde 001 made its first flight from Toulouse on 2 March 1969, piloted by André Turcat.",
+            "value": "2 March 1969",
+            "precision": "day",
+            "level": "V1",
+            "opened": [
+              "wp-concorde"
+            ],
+            "corroborated_by": [
+              "q-airbus-concorde",
+              "q-museeairespace"
+            ],
+            "note": "Some sources give 1 March; most give 2 March. Year is unaffected.",
+            "calendar": "Gregorian"
+          },
+          {
+            "claim": "Concorde entered service on 21 January 1976.",
+            "value": "21 January 1976",
+            "precision": "day",
+            "level": "V1",
+            "opened": [
+              "wp-concorde"
+            ],
+            "corroborated_by": [],
+            "note": "",
+            "calendar": "Gregorian"
+          },
+          {
+            "claim": "Concorde 001 first went supersonic on 1 October 1969.",
+            "value": "1 October 1969",
+            "precision": "day",
+            "level": "V1",
+            "opened": [
+              "wp-concorde"
+            ],
+            "corroborated_by": [],
+            "note": "",
+            "calendar": "Gregorian"
+          }
+        ],
+        "hold": [],
+        "sample_player": [
+          "The two dated anchors give a corridor of 1967 to 1969. The 737 had flown by 1967, and the 747 was not yet carrying passengers by the end of the year in question (that happened in January 1970).",
+          "The third fragment says one calendar year after Apollo 8, which was in December 1968. One year after 1968 is 1969.",
+          "1967 and 1968 fail the third fragment. Lock 1969."
+        ],
+        "miss_explanation": "1967 and 1968 fit the two bounds, but only 1969 is one calendar year after Apollo 8 (December 1968). The date known to historians is 2 March 1969."
+      }
+    },
+    {
+      "id": "case-02",
+      "order": 2,
+      "title": "The first nation where women voted",
+      "lens": "A political turning point",
+      "region": [
+        "Oceania"
+      ],
+      "era": "modern",
+      "difficulty": "entry",
+      "question": "In which year did New Zealand pass the law giving women the right to vote in parliamentary elections?",
+      "corridor": [
+        1880,
+        1905
+      ],
+      "target": {
+        "year": 1893,
+        "event": "Royal assent to the Electoral Act 1893 (19 September 1893)",
+        "definition": "The year the Act received royal assent. Women first voted in the general election of 28 November 1893, the same year. Women could vote before they could stand for Parliament; this case is about the vote.",
+        "precision": "day known (19 September); year used",
+        "calendar": "Gregorian",
+        "discovery_vs_event": "Event: assent to the Act. Not the first vote, and not women standing for Parliament.",
+        "year_label": "1893"
+      },
+      "free": [
+        {
+          "id": "f1",
+          "text": "By the end of that year, the Eiffel Tower had been completed in Paris (31 March 1889).",
+          "anchor": {
+            "label": "Eiffel Tower completed",
+            "date": "31 March 1889",
+            "year": 1889,
+            "year_label": "1889",
+            "region": "Europe"
+          },
+          "predicate": {
+            "op": "gte",
+            "year": 1889
+          },
+          "convention": "end-of-year",
+          "source_ids": [
+            "wp-eiffel_tower"
+          ],
+          "corroboration_ids": [],
+          "kind": "bound"
+        },
+        {
+          "id": "f2",
+          "text": "By the end of that year, the Lumière brothers had not yet held their first paid public film screening (28 December 1895).",
+          "anchor": {
+            "label": "Lumière first paid screening",
+            "date": "28 December 1895",
+            "year": 1895,
+            "year_label": "1895",
+            "region": "Europe"
+          },
+          "predicate": {
+            "op": "lte",
+            "year": 1894
+          },
+          "convention": "end-of-year",
+          "source_ids": [
+            "wp-lumi%c3%a8re_brothers"
+          ],
+          "corroboration_ids": [],
+          "kind": "bound"
+        },
+        {
+          "id": "f3",
+          "text": "It happened one calendar year after the second of three suffrage petitions was delivered to Parliament (1892).",
+          "anchor": {
+            "label": "Second suffrage petition delivered to Parliament",
+            "date": "1892",
+            "year": 1892,
+            "year_label": "1892",
+            "region": "Oceania"
+          },
+          "predicate": {
+            "op": "equals",
+            "year": 1893,
+            "rule": "anchor_year_plus_n",
+            "anchor_year": 1892,
+            "n": 1
+          },
+          "convention": "calendar-year-arithmetic",
+          "source_ids": [
+            "wp-women%27s_suffrage_in_new_zealand"
+          ],
+          "corroboration_ids": [],
+          "kind": "relation"
+        }
+      ],
+      "paid": [
+        {
+          "id": "p1",
+          "text": "By the end of that year, the first suffrage petition had already been delivered to Parliament (1891).",
+          "anchor": {
+            "label": "First suffrage petition delivered",
+            "date": "1891",
+            "year": 1891,
+            "year_label": "1891",
+            "region": "Oceania"
+          },
+          "predicate": {
+            "op": "gte",
+            "year": 1891
+          },
+          "convention": "end-of-year",
+          "source_ids": [
+            "wp-women%27s_suffrage_in_new_zealand"
+          ],
+          "corroboration_ids": [],
+          "tier": "nudge",
+          "cost": 1,
+          "category": "Politics"
+        },
+        {
+          "id": "p2",
+          "text": "By the end of that year, the World's Columbian Exposition had opened in Chicago (1 May 1893).",
+          "anchor": {
+            "label": "Chicago World's Columbian Exposition opens",
+            "date": "1 May 1893",
+            "year": 1893,
+            "year_label": "1893",
+            "region": "North America"
+          },
+          "predicate": {
+            "op": "gte",
+            "year": 1893
+          },
+          "convention": "end-of-year",
+          "source_ids": [
+            "wp-world%27s_columbian_exposition"
+          ],
+          "corroboration_ids": [],
+          "tier": "deep",
+          "cost": 2,
+          "category": "World events"
+        }
+      ],
+      "context_free": [],
+      "reveal": [
+        {
+          "form": "Timeline",
+          "title": "Three petitions, one law",
+          "text": "Petitions were delivered to Parliament in 1891, 1892 and 1893, each larger than the one before (counts HOLD). The Act received royal assent on 19 September 1893.",
+          "sources": [
+            "wp-women%27s_suffrage_in_new_zealand"
+          ]
+        },
+        {
+          "form": "Note on terms",
+          "title": "Vote, not candidacy",
+          "text": "The 1893 Act gave women the vote. Women's right to stand for Parliament came later. The date of the law and the date of the first vote are different facts: 19 September and 28 November 1893.",
+          "sources": [
+            "wp-women%27s_suffrage_in_new_zealand"
+          ]
+        }
+      ],
+      "editorial": {
+        "c0": [
+          1889,
+          1890,
+          1891,
+          1892,
+          1893,
+          1894
+        ],
+        "c0_labels": [
+          "1889",
+          "1890",
+          "1891",
+          "1892",
+          "1893",
+          "1894"
+        ],
+        "uniqueness_proof": {
+          "1889": "1889 is -3 calendar years from Second suffrage petition delivered to Parliament (1892); the clue needs +1.",
+          "1890": "1890 is -2 calendar years from Second suffrage petition delivered to Parliament (1892); the clue needs +1.",
+          "1891": "1891 is -1 calendar years from Second suffrage petition delivered to Parliament (1892); the clue needs +1.",
+          "1892": "1892 is +0 calendar years from Second suffrage petition delivered to Parliament (1892); the clue needs +1.",
+          "1894": "1894 is +2 calendar years from Second suffrage petition delivered to Parliament (1892); the clue needs +1."
+        },
+        "paid_effects": [
+          {
+            "id": "p1",
+            "tier": "nudge",
+            "cost": 1,
+            "keeps": [
+              1891,
+              1892,
+              1893,
+              1894
+            ],
+            "cuts": [
+              1889,
+              1890
+            ],
+            "remaining": 4,
+            "resolves": false,
+            "prints_target": false
+          },
+          {
+            "id": "p2",
+            "tier": "deep",
+            "cost": 2,
+            "keeps": [
+              1893,
+              1894
+            ],
+            "cuts": [
+              1889,
+              1890,
+              1891,
+              1892
+            ],
+            "remaining": 2,
+            "resolves": false,
+            "prints_target": true
+          }
+        ],
+        "fragment_levels": {
+          "free f1": "V1",
+          "free f2": "V1",
+          "free f3": "V1",
+          "paid p1": "V1",
+          "paid p2": "V1"
+        },
+        "blockers": [
+          "free f1 (Eiffel Tower completed) is V1",
+          "free f2 (Lumière first paid screening) is V1",
+          "free f3 (Second suffrage petition delivered to Parliament) is V1",
+          "paid p1 (First suffrage petition delivered) is V1",
+          "paid p2 (Chicago World's Columbian Exposition opens) is V1"
+        ],
+        "target_fact_level": "V1",
+        "publishable": false,
+        "arithmetic_solvable_from_free": true,
+        "facts": [
+          {
+            "claim": "The Electoral Act 1893 received royal assent on 19 September 1893.",
+            "value": "19 September 1893",
+            "precision": "day",
+            "level": "V1",
+            "opened": [
+              "wp-women%27s_suffrage_in_new_zealand"
+            ],
+            "corroborated_by": [
+              "q-nzhistory"
+            ],
+            "note": "",
+            "calendar": "Gregorian"
+          },
+          {
+            "claim": "Women voted for the first time on 28 November 1893.",
+            "value": "28 November 1893",
+            "precision": "day",
+            "level": "V1",
+            "opened": [
+              "wp-women%27s_suffrage_in_new_zealand"
+            ],
+            "corroborated_by": [
+              "q-nzhistory"
+            ],
+            "note": "",
+            "calendar": "Gregorian"
+          },
+          {
+            "claim": "Suffrage petitions were delivered to Parliament in 1891, 1892 and 1893.",
+            "value": "1891, 1892, 1893",
+            "precision": "year",
+            "level": "V1",
+            "opened": [
+              "wp-women%27s_suffrage_in_new_zealand"
+            ],
+            "corroborated_by": [],
+            "note": "Signature counts (about 9,000, 20,000, 32,000) are seen on the page but vary between sources; HOLD, not used.",
+            "calendar": "Gregorian"
+          },
+          {
+            "claim": "The Act enfranchised women aged 21 and over, including Māori women, who voted in the Māori seats.",
+            "value": "1893",
+            "precision": "year",
+            "level": "V1",
+            "opened": [],
+            "corroborated_by": [
+              "q-nzhistory"
+            ],
+            "note": "Seen in a search summary of NZHistory; Wikipedia's wording was not checked for Māori women. HOLD before use in the reveal.",
+            "calendar": "Gregorian"
+          }
+        ],
+        "hold": [
+          "Māori women's inclusion: second opened source needed (NZHistory blocked)."
+        ],
+        "sample_player": [
+          "The Eiffel Tower is 1889 and the first Lumière screening is 1895. The Act must be after 1889 and before 1895, so 1889 to 1894.",
+          "The petition of almost 20,000 signatures was in 1892. The third fragment says one calendar year after that, so 1893.",
+          "Lock 1893."
+        ],
+        "miss_explanation": "1889 to 1894 all fit the two bounds. Only 1893 is one calendar year after the 1892 petition."
+      }
+    },
+    {
+      "id": "case-03",
+      "order": 3,
+      "title": "The way back across the Pacific",
+      "lens": "Food and trade routes",
+      "region": [
+        "Asia",
+        "Americas"
+      ],
+      "era": "early modern",
+      "difficulty": "medium",
+      "question": "In which year did a Spanish ship first complete the return voyage across the Pacific from the Philippines to Mexico?",
+      "corridor": [
+        1555,
+        1580
+      ],
+      "target": {
+        "year": 1565,
+        "event": "Urdaneta's ship reaches Acapulco on 8 October 1565",
+        "definition": "The year of arrival at Acapulco of the first successful eastbound crossing (the tornaviaje). Not the year of the outward voyage and not the year Manila became the colony's capital.",
+        "precision": "day known (8 October); year used",
+        "calendar": "Gregorian",
+        "discovery_vs_event": "Event: the arrival that proved the return route. The route was then used until 1815.",
+        "year_label": "1565"
+      },
+      "free": [
+        {
+          "id": "f1",
+          "text": "By the end of that year, a Spanish fleet under Legazpi had already sailed from La Navidad in Mexico (21 November 1564).",
+          "anchor": {
+            "label": "Legazpi's fleet sails from La Navidad",
+            "date": "21 November 1564",
+            "year": 1564,
+            "year_label": "1564",
+            "region": "Americas"
+          },
+          "predicate": {
+            "op": "gte",
+            "year": 1564
+          },
+          "convention": "end-of-year",
+          "source_ids": [
+            "wp-andr%c3%a9s_de_urdaneta"
+          ],
+          "corroboration_ids": [],
+          "kind": "bound"
+        },
+        {
+          "id": "f2",
+          "text": "By the end of that year, Mercator had not yet published his world map (1569).",
+          "anchor": {
+            "label": "Mercator's world map",
+            "date": "1569",
+            "year": 1569,
+            "year_label": "1569",
+            "region": "Europe"
+          },
+          "predicate": {
+            "op": "lte",
+            "year": 1568
+          },
+          "convention": "end-of-year",
+          "source_ids": [
+            "wp-mercator_1569_world_map"
+          ],
+          "corroboration_ids": [],
+          "kind": "bound"
+        },
+        {
+          "id": "f3",
+          "text": "The return voyage reached Mexico one calendar year after the fleet sailed from La Navidad.",
+          "anchor": {
+            "label": "Fleet sails from La Navidad",
+            "date": "21 November 1564",
+            "year": 1564,
+            "year_label": "1564",
+            "region": "Americas"
+          },
+          "predicate": {
+            "op": "equals",
+            "year": 1565,
+            "rule": "anchor_year_plus_n",
+            "anchor_year": 1564,
+            "n": 1
+          },
+          "convention": "calendar-year-arithmetic",
+          "source_ids": [
+            "wp-andr%c3%a9s_de_urdaneta"
+          ],
+          "corroboration_ids": [],
+          "kind": "relation"
+        }
+      ],
+      "paid": [
+        {
+          "id": "p1",
+          "text": "By the end of that year, the Spanish fleet had already reached the Philippines (Samar, 13 February 1565).",
+          "anchor": {
+            "label": "Fleet reaches Samar",
+            "date": "13 February 1565",
+            "year": 1565,
+            "year_label": "1565",
+            "region": "Asia"
+          },
+          "predicate": {
+            "op": "gte",
+            "year": 1565
+          },
+          "convention": "end-of-year",
+          "source_ids": [
+            "wp-andr%c3%a9s_de_urdaneta"
+          ],
+          "corroboration_ids": [],
+          "tier": "nudge",
+          "cost": 1,
+          "category": "Exploration",
+          "editor_note": "Thin ladder: cuts one year. Needs a stronger clue (HOLD)."
+        }
+      ],
+      "context_free": [],
+      "reveal": [
+        {
+          "form": "Route map (schematic)",
+          "title": "Why the way back was the hard part",
+          "text": "Reaching the Philippines from Mexico was the easier direction. The hard part was finding a way back. Urdaneta left Cebu on 1 June 1565 and reached Acapulco on 8 October.",
+          "sources": [
+            "wp-andr%c3%a9s_de_urdaneta"
+          ]
+        },
+        {
+          "form": "Trade rhythm",
+          "title": "A route that lasted",
+          "text": "The Manila galleon route operated from 1565 to 1815.",
+          "sources": [
+            "wp-manila_galleon"
+          ]
+        }
+      ],
+      "editorial": {
+        "c0": [
+          1564,
+          1565,
+          1566,
+          1567,
+          1568
+        ],
+        "c0_labels": [
+          "1564",
+          "1565",
+          "1566",
+          "1567",
+          "1568"
+        ],
+        "uniqueness_proof": {
+          "1564": "1564 is +0 calendar years from Fleet sails from La Navidad (1564); the clue needs +1.",
+          "1566": "1566 is +2 calendar years from Fleet sails from La Navidad (1564); the clue needs +1.",
+          "1567": "1567 is +3 calendar years from Fleet sails from La Navidad (1564); the clue needs +1.",
+          "1568": "1568 is +4 calendar years from Fleet sails from La Navidad (1564); the clue needs +1."
+        },
+        "paid_effects": [
+          {
+            "id": "p1",
+            "tier": "nudge",
+            "cost": 1,
+            "keeps": [
+              1565,
+              1566,
+              1567,
+              1568
+            ],
+            "cuts": [
+              1564
+            ],
+            "remaining": 4,
+            "resolves": false,
+            "prints_target": true
+          }
+        ],
+        "fragment_levels": {
+          "free f1": "V1",
+          "free f2": "V1",
+          "free f3": "V1",
+          "paid p1": "V1"
+        },
+        "blockers": [
+          "free f1 (Legazpi's fleet sails from La Navidad) is V1",
+          "free f2 (Mercator's world map) is V1",
+          "free f3 (Fleet sails from La Navidad) is V1",
+          "paid p1 (Fleet reaches Samar) is V1"
+        ],
+        "target_fact_level": "V1",
+        "publishable": false,
+        "arithmetic_solvable_from_free": true,
+        "facts": [
+          {
+            "claim": "Urdaneta left Cebu on 1 June 1565 and reached Acapulco on 8 October 1565.",
+            "value": "8 October 1565",
+            "precision": "day",
+            "level": "V1",
+            "opened": [
+              "wp-andr%c3%a9s_de_urdaneta"
+            ],
+            "corroborated_by": [
+              "wp-manila_galleon"
+            ],
+            "note": "Several search results agree. Urdaneta's birth year is given as 1498 and 1508; not used.",
+            "calendar": "Gregorian"
+          },
+          {
+            "claim": "The fleet sailed from La Navidad on 21 November 1564.",
+            "value": "21 November 1564",
+            "precision": "day",
+            "level": "V1",
+            "opened": [
+              "wp-andr%c3%a9s_de_urdaneta"
+            ],
+            "corroborated_by": [],
+            "note": "",
+            "calendar": "Gregorian"
+          },
+          {
+            "claim": "The route operated from 1565 to 1815.",
+            "value": "1565 to 1815",
+            "precision": "year",
+            "level": "V1",
+            "opened": [
+              "wp-manila_galleon"
+            ],
+            "corroborated_by": [],
+            "note": "",
+            "calendar": "Gregorian"
+          },
+          {
+            "claim": "The Spanish colonial capital moved to Manila in 1571.",
+            "value": "1571",
+            "precision": "year",
+            "level": "V1",
+            "opened": [
+              "wp-miguel_l%c3%b3pez_de_legazpi"
+            ],
+            "corroborated_by": [],
+            "note": "",
+            "calendar": "Gregorian"
+          }
+        ],
+        "hold": [
+          "Clue ladder is thin: one paid clue that cuts one year. Find a verified event dated 1566 or 1567."
+        ],
+        "sample_player": [
+          "The fleet sailed in November 1564, so the target is 1564 or later. Mercator's map is 1569, so the target is before that: 1564 to 1568.",
+          "The third fragment says one calendar year after the fleet sailed, which is 1565.",
+          "Lock 1565."
+        ],
+        "miss_explanation": "1564 to 1568 fit the bounds. Only 1565 is one calendar year after the fleet sailed in November 1564."
+      }
+    },
+    {
+      "id": "case-04",
+      "order": 4,
+      "title": "A research institute in Berlin",
+      "lens": "Queer communities and institutions",
+      "region": [
+        "Europe"
+      ],
+      "era": "modern",
+      "difficulty": "medium",
+      "question": "In which year did the Institute for Sexual Science open in Berlin?",
+      "corridor": [
+        1910,
+        1935
+      ],
+      "target": {
+        "year": 1919,
+        "event": "The Institut für Sexualwissenschaft opens in Berlin (6 July 1919)",
+        "definition": "The year the Institute opened. Some sources mention an inauguration speech on 1 July; the year is the same.",
+        "precision": "day (6 July per Wikipedia); year used",
+        "calendar": "Gregorian",
+        "discovery_vs_event": "Event: opening of the Institute. Not its destruction in 1933.",
+        "year_label": "1919"
+      },
+      "free": [
+        {
+          "id": "f1",
+          "text": "By the end of that year, the armistice that ended fighting in the First World War had been signed (11 November 1918).",
+          "anchor": {
+            "label": "Armistice of 11 November 1918",
+            "date": "11 November 1918",
+            "year": 1918,
+            "year_label": "1918",
+            "region": "Europe"
+          },
+          "predicate": {
+            "op": "gte",
+            "year": 1918
+          },
+          "convention": "end-of-year",
+          "source_ids": [
+            "wp-armistice_of_11_november_1918"
+          ],
+          "corroboration_ids": [],
+          "kind": "bound"
+        },
+        {
+          "id": "f2",
+          "text": "By the end of that year, the Beer Hall Putsch in Munich had not yet taken place (8 to 9 November 1923).",
+          "anchor": {
+            "label": "Beer Hall Putsch",
+            "date": "8-9 November 1923",
+            "year": 1923,
+            "year_label": "1923",
+            "region": "Europe"
+          },
+          "predicate": {
+            "op": "lte",
+            "year": 1922
+          },
+          "convention": "end-of-year",
+          "source_ids": [
+            "wp-beer_hall_putsch"
+          ],
+          "corroboration_ids": [],
+          "kind": "bound"
+        },
+        {
+          "id": "f3",
+          "text": "It opened one calendar year after the armistice of November 1918.",
+          "anchor": {
+            "label": "Armistice",
+            "date": "11 November 1918",
+            "year": 1918,
+            "year_label": "1918",
+            "region": "Europe"
+          },
+          "predicate": {
+            "op": "equals",
+            "year": 1919,
+            "rule": "anchor_year_plus_n",
+            "anchor_year": 1918,
+            "n": 1
+          },
+          "convention": "calendar-year-arithmetic",
+          "source_ids": [
+            "wp-armistice_of_11_november_1918"
+          ],
+          "corroboration_ids": [],
+          "kind": "relation"
+        }
+      ],
+      "paid": [
+        {
+          "id": "p1",
+          "text": "By the end of that year, Hirschfeld's film 'Anders als die Andern' had premiered (May 1919).",
+          "anchor": {
+            "label": "Premiere of 'Anders als die Andern'",
+            "date": "May 1919",
+            "year": 1919,
+            "year_label": "1919",
+            "region": "Europe"
+          },
+          "predicate": {
+            "op": "gte",
+            "year": 1919
+          },
+          "convention": "end-of-year",
+          "source_ids": [
+            "wp-magnus_hirschfeld"
+          ],
+          "corroboration_ids": [],
+          "tier": "nudge",
+          "cost": 1,
+          "category": "Film and culture"
+        },
+        {
+          "id": "p2",
+          "text": "By the end of that year, Hirschfeld had not yet been beaten by völkisch activists (1920).",
+          "anchor": {
+            "label": "Hirschfeld beaten by völkisch activists",
+            "date": "1920",
+            "year": 1920,
+            "year_label": "1920",
+            "region": "Europe"
+          },
+          "predicate": {
+            "op": "lte",
+            "year": 1919
+          },
+          "convention": "end-of-year",
+          "source_ids": [
+            "wp-magnus_hirschfeld"
+          ],
+          "corroboration_ids": [],
+          "tier": "deep",
+          "cost": 2,
+          "category": "Biography"
+        }
+      ],
+      "context_free": [
+        {
+          "text": "It was founded by Magnus Hirschfeld together with Arthur Kronfeld and Friedrich Wertheim.",
+          "sources": [
+            "wp-institut_f%c3%bcr_sexualwissenschaft"
+          ]
+        }
+      ],
+      "reveal": [
+        {
+          "form": "Source excerpts",
+          "title": "Founders and date",
+          "text": "Founded by Magnus Hirschfeld with Arthur Kronfeld and Friedrich Wertheim, the Institute opened on 6 July 1919.",
+          "sources": [
+            "wp-institut_f%c3%bcr_sexualwissenschaft"
+          ]
+        },
+        {
+          "form": "Note on language",
+          "title": "Words of the period",
+          "text": "The Institute used the vocabulary of its time. Those terms are not current self-descriptions. The reveal quotes the sources' wording, marks it as period language, and makes no claim about any individual's identity.",
+          "sources": []
+        },
+        {
+          "form": "What survived",
+          "title": "May 1933",
+          "text": "In May 1933 the Institute was looted and its books were burned.",
+          "sources": [
+            "wp-magnus_hirschfeld"
+          ]
+        }
+      ],
+      "editorial": {
+        "c0": [
+          1918,
+          1919,
+          1920,
+          1921,
+          1922
+        ],
+        "c0_labels": [
+          "1918",
+          "1919",
+          "1920",
+          "1921",
+          "1922"
+        ],
+        "uniqueness_proof": {
+          "1918": "1918 is +0 calendar years from Armistice (1918); the clue needs +1.",
+          "1920": "1920 is +2 calendar years from Armistice (1918); the clue needs +1.",
+          "1921": "1921 is +3 calendar years from Armistice (1918); the clue needs +1.",
+          "1922": "1922 is +4 calendar years from Armistice (1918); the clue needs +1."
+        },
+        "paid_effects": [
+          {
+            "id": "p1",
+            "tier": "nudge",
+            "cost": 1,
+            "keeps": [
+              1919,
+              1920,
+              1921,
+              1922
+            ],
+            "cuts": [
+              1918
+            ],
+            "remaining": 4,
+            "resolves": false,
+            "prints_target": true
+          },
+          {
+            "id": "p2",
+            "tier": "deep",
+            "cost": 2,
+            "keeps": [
+              1918,
+              1919
+            ],
+            "cuts": [
+              1920,
+              1921,
+              1922
+            ],
+            "remaining": 2,
+            "resolves": false,
+            "prints_target": false
+          }
+        ],
+        "fragment_levels": {
+          "free f1": "V1",
+          "free f2": "V1",
+          "free f3": "V1",
+          "paid p1": "V1",
+          "paid p2": "V1"
+        },
+        "blockers": [
+          "free f1 (Armistice of 11 November 1918) is V1",
+          "free f2 (Beer Hall Putsch) is V1",
+          "free f3 (Armistice) is V1",
+          "paid p1 (Premiere of 'Anders als die Andern') is V1",
+          "paid p2 (Hirschfeld beaten by völkisch activists) is V1"
+        ],
+        "target_fact_level": "V1",
+        "publishable": false,
+        "arithmetic_solvable_from_free": true,
+        "facts": [
+          {
+            "claim": "The Institut für Sexualwissenschaft opened on 6 July 1919.",
+            "value": "6 July 1919",
+            "precision": "day",
+            "level": "V1",
+            "opened": [
+              "wp-institut_f%c3%bcr_sexualwissenschaft",
+              "wp-magnus_hirschfeld"
+            ],
+            "corroborated_by": [],
+            "note": "Both are Wikipedia. The USHMM article, seen in a search summary, does not give the opening date. One entry mentions a speech on 1 July. Year-level only.",
+            "calendar": "Gregorian"
+          },
+          {
+            "claim": "The Institute was looted and its books burned by Nazis in May 1933.",
+            "value": "May 1933",
+            "precision": "month",
+            "level": "V1",
+            "opened": [
+              "wp-magnus_hirschfeld"
+            ],
+            "corroborated_by": [
+              "q-ushmm"
+            ],
+            "note": "USHMM confirms May 1933 in a search summary; the page could not be opened.",
+            "calendar": "Gregorian"
+          },
+          {
+            "claim": "Hirschfeld and the Institute issued passes to trans people to prevent police harassment.",
+            "value": "1920s",
+            "precision": "decade",
+            "level": "V1",
+            "opened": [
+              "wp-magnus_hirschfeld"
+            ],
+            "corroborated_by": [],
+            "note": "Single source. HOLD before use in the reveal.",
+            "calendar": "Gregorian"
+          }
+        ],
+        "hold": [
+          "Second opened source for the 6 July 1919 date (USHMM could not be opened). Identity-language note needs a named sensitivity review before release; the agent cannot supply one."
+        ],
+        "sample_player": [
+          "The armistice is 1918 and the putsch is 1923, so the Institute opened from 1918 to 1922.",
+          "The third fragment says one calendar year after the armistice. One year after 1918 is 1919.",
+          "Lock 1919."
+        ],
+        "miss_explanation": "1918 to 1922 fit the bounds. Only 1919 is one calendar year after the November 1918 armistice."
+      }
+    },
+    {
+      "id": "case-05",
+      "order": 5,
+      "title": "A slab found by soldiers",
+      "lens": "Archaeology: found, made, decoded",
+      "region": [
+        "Africa",
+        "Europe"
+      ],
+      "era": "early modern",
+      "difficulty": "medium",
+      "question": "In which year was the Rosetta Stone found?",
+      "corridor": [
+        1790,
+        1815
+      ],
+      "target": {
+        "year": 1799,
+        "event": "French soldiers find the stone at Rashid (Rosetta) during the French invasion",
+        "definition": "The year of discovery. The decree on the stone dates from 196 BC; the Greek text was first translated in 1803; Champollion announced decipherment in 1822. Sources disagree on the day in July.",
+        "precision": "month (July); year used",
+        "calendar": "Gregorian",
+        "discovery_vs_event": "Discovery of the object. Not the date of the decree, not the decipherment.",
+        "year_label": "1799"
+      },
+      "free": [
+        {
+          "id": "f1",
+          "text": "By the end of that year, the French campaign in Egypt had already begun (28 June 1798).",
+          "anchor": {
+            "label": "French invasion of Egypt begins",
+            "date": "28 June 1798",
+            "year": 1798,
+            "year_label": "1798",
+            "region": "Africa"
+          },
+          "predicate": {
+            "op": "gte",
+            "year": 1798
+          },
+          "convention": "end-of-year",
+          "source_ids": [
+            "wp-french_campaign_in_egypt_and_syria"
+          ],
+          "corroboration_ids": [],
+          "kind": "bound"
+        },
+        {
+          "id": "f2",
+          "text": "By the end of that year, the French campaign in Egypt had not yet ended (2 September 1801).",
+          "anchor": {
+            "label": "End of the French campaign in Egypt",
+            "date": "2 September 1801",
+            "year": 1801,
+            "year_label": "1801",
+            "region": "Africa"
+          },
+          "predicate": {
+            "op": "lte",
+            "year": 1800
+          },
+          "convention": "end-of-year",
+          "source_ids": [
+            "wp-french_campaign_in_egypt_and_syria"
+          ],
+          "corroboration_ids": [],
+          "kind": "bound"
+        },
+        {
+          "id": "f3",
+          "text": "It was found one calendar year after the Battle of the Nile (1 to 3 August 1798).",
+          "anchor": {
+            "label": "Battle of the Nile",
+            "date": "1-3 August 1798",
+            "year": 1798,
+            "year_label": "1798",
+            "region": "Africa"
+          },
+          "predicate": {
+            "op": "equals",
+            "year": 1799,
+            "rule": "anchor_year_plus_n",
+            "anchor_year": 1798,
+            "n": 1
+          },
+          "convention": "calendar-year-arithmetic",
+          "source_ids": [
+            "wp-battle_of_the_nile"
+          ],
+          "corroboration_ids": [],
+          "kind": "relation"
+        }
+      ],
+      "paid": [
+        {
+          "id": "p1",
+          "text": "By the end of that year, Napoleon had already left Egypt (23 August 1799).",
+          "anchor": {
+            "label": "Napoleon leaves Egypt",
+            "date": "23 August 1799",
+            "year": 1799,
+            "year_label": "1799",
+            "region": "Africa"
+          },
+          "predicate": {
+            "op": "gte",
+            "year": 1799
+          },
+          "convention": "end-of-year",
+          "source_ids": [
+            "wp-french_campaign_in_egypt_and_syria"
+          ],
+          "corroboration_ids": [],
+          "tier": "nudge",
+          "cost": 1,
+          "category": "Politics"
+        },
+        {
+          "id": "p2",
+          "text": "By the end of that year, the Battle of Marengo had not yet been fought (14 June 1800).",
+          "anchor": {
+            "label": "Battle of Marengo",
+            "date": "14 June 1800",
+            "year": 1800,
+            "year_label": "1800",
+            "region": "Europe"
+          },
+          "predicate": {
+            "op": "lte",
+            "year": 1799
+          },
+          "convention": "end-of-year",
+          "source_ids": [
+            "wp-battle_of_marengo"
+          ],
+          "corroboration_ids": [],
+          "tier": "deep",
+          "cost": 2,
+          "category": "War"
+        }
+      ],
+      "context_free": [
+        {
+          "text": "The stone carries one decree in three scripts: Egyptian hieroglyphs, Demotic and Ancient Greek.",
+          "sources": [
+            "wp-rosetta_stone"
+          ]
+        }
+      ],
+      "reveal": [
+        {
+          "form": "Layered object",
+          "title": "Found, made, read",
+          "text": "Three dates, three different questions. The decree was made in 196 BC. The stone was found in July 1799. Its text was first read in translation in 1803, and the Egyptian scripts were transliterated in 1822.",
+          "sources": [
+            "wp-rosetta_stone"
+          ]
+        },
+        {
+          "form": "Note on dates",
+          "title": "Why the day is missing",
+          "text": "Accounts give 15 July, 19 July and, in one encyclopedia, August 1799. We only say 1799.",
+          "sources": [
+            "q-britannica-rosetta"
+          ]
+        }
+      ],
+      "editorial": {
+        "c0": [
+          1798,
+          1799,
+          1800
+        ],
+        "c0_labels": [
+          "1798",
+          "1799",
+          "1800"
+        ],
+        "uniqueness_proof": {
+          "1798": "1798 is +0 calendar years from Battle of the Nile (1798); the clue needs +1.",
+          "1800": "1800 is +2 calendar years from Battle of the Nile (1798); the clue needs +1."
+        },
+        "paid_effects": [
+          {
+            "id": "p1",
+            "tier": "nudge",
+            "cost": 1,
+            "keeps": [
+              1799,
+              1800
+            ],
+            "cuts": [
+              1798
+            ],
+            "remaining": 2,
+            "resolves": false,
+            "prints_target": true
+          },
+          {
+            "id": "p2",
+            "tier": "deep",
+            "cost": 2,
+            "keeps": [
+              1798,
+              1799
+            ],
+            "cuts": [
+              1800
+            ],
+            "remaining": 2,
+            "resolves": false,
+            "prints_target": false
+          }
+        ],
+        "fragment_levels": {
+          "free f1": "V1",
+          "free f2": "V1",
+          "free f3": "V1",
+          "paid p1": "V1",
+          "paid p2": "V1"
+        },
+        "blockers": [
+          "free f1 (French invasion of Egypt begins) is V1",
+          "free f2 (End of the French campaign in Egypt) is V1",
+          "free f3 (Battle of the Nile) is V1",
+          "paid p1 (Napoleon leaves Egypt) is V1",
+          "paid p2 (Battle of Marengo) is V1"
+        ],
+        "target_fact_level": "V1",
+        "publishable": false,
+        "arithmetic_solvable_from_free": true,
+        "facts": [
+          {
+            "claim": "The stone was found in July 1799 by Pierre-François Bouchard during France's invasion of Egypt.",
+            "value": "July 1799",
+            "precision": "month",
+            "level": "V1",
+            "opened": [
+              "wp-rosetta_stone"
+            ],
+            "corroborated_by": [
+              "q-britannica-rosetta"
+            ],
+            "note": "Search results give 15 July, 19 July and, in Britannica, August 1799. The year is stable; the day is not. Only the year is used.",
+            "calendar": "Gregorian"
+          },
+          {
+            "claim": "The decree on the stone was issued in 196 BC under Ptolemy V Epiphanes.",
+            "value": "196 BC",
+            "precision": "year",
+            "level": "V1",
+            "opened": [
+              "wp-rosetta_stone"
+            ],
+            "corroborated_by": [],
+            "note": "",
+            "calendar": "Gregorian"
+          },
+          {
+            "claim": "The first complete translation of the Greek text was published in 1803.",
+            "value": "1803",
+            "precision": "year",
+            "level": "V1",
+            "opened": [
+              "wp-rosetta_stone"
+            ],
+            "corroborated_by": [],
+            "note": "",
+            "calendar": "Gregorian"
+          },
+          {
+            "claim": "Champollion announced the transliteration of the Egyptian scripts in Paris in 1822.",
+            "value": "1822",
+            "precision": "year",
+            "level": "V1",
+            "opened": [
+              "wp-rosetta_stone"
+            ],
+            "corroborated_by": [],
+            "note": "",
+            "calendar": "Gregorian"
+          },
+          {
+            "claim": "The French campaign ran from 28 June 1798 to 2 September 1801; Napoleon commanded until 23 August 1799.",
+            "value": "1798 to 1801",
+            "precision": "day",
+            "level": "V1",
+            "opened": [
+              "wp-french_campaign_in_egypt_and_syria"
+            ],
+            "corroborated_by": [],
+            "note": "",
+            "calendar": "Gregorian"
+          }
+        ],
+        "hold": [
+          "Second opened source for the 1799 year (Britannica and the British Museum are blocked)."
+        ],
+        "sample_player": [
+          "The French invaded in 1798, so the stone was found in 1798 or later. They surrendered in 1801, so it was found by 1800. The candidates are 1798, 1799 and 1800.",
+          "The Battle of the Nile was in August 1798. One calendar year after is 1799.",
+          "Lock 1799."
+        ],
+        "miss_explanation": "1798, 1799 and 1800 fit the bounds. Only 1799 is one calendar year after the Battle of the Nile (August 1798)."
+      }
+    },
+    {
+      "id": "case-06",
+      "order": 6,
+      "title": "The last case that was not a laboratory's",
+      "lens": "Medicine and public health",
+      "region": [
+        "Africa",
+        "Asia"
+      ],
+      "era": "modern",
+      "difficulty": "medium",
+      "question": "In which year was the last naturally occurring case of smallpox diagnosed?",
+      "corridor": [
+        1965,
+        1990
+      ],
+      "target": {
+        "year": 1977,
+        "event": "Diagnosis of Ali Maow Maalin in Merca, Somalia (October 1977), the last known natural case",
+        "definition": "The year of the last known naturally occurring case (the milder variola minor). Not the last case of any kind (a laboratory-acquired case in Birmingham in 1978) and not the year eradication was declared (1980).",
+        "precision": "month (October); year used",
+        "calendar": "Gregorian",
+        "discovery_vs_event": "Event: the last natural case. Three other dates answer different questions: 1975 (last variola major case), 1978 (last case of any kind), 1980 (eradication declared).",
+        "year_label": "1977"
+      },
+      "free": [
+        {
+          "id": "f1",
+          "text": "By the end of that year, the last known case of the deadlier form of smallpox, variola major, had been reported (Bangladesh, 16 October 1975).",
+          "anchor": {
+            "label": "Last variola major case reported",
+            "date": "16 October 1975",
+            "year": 1975,
+            "year_label": "1975",
+            "region": "Asia"
+          },
+          "predicate": {
+            "op": "gte",
+            "year": 1975
+          },
+          "convention": "end-of-year",
+          "source_ids": [
+            "wp-rahima_banu"
+          ],
+          "corroboration_ids": [
+            "who-smallpox"
+          ],
+          "kind": "bound"
+        },
+        {
+          "id": "f2",
+          "text": "By the end of that year, the laboratory-acquired smallpox outbreak in Birmingham, England, had not yet happened (1978).",
+          "anchor": {
+            "label": "Birmingham laboratory outbreak",
+            "date": "1978",
+            "year": 1978,
+            "year_label": "1978",
+            "region": "Europe"
+          },
+          "predicate": {
+            "op": "lte",
+            "year": 1977
+          },
+          "convention": "end-of-year",
+          "source_ids": [
+            "wp-janet_parker"
+          ],
+          "corroboration_ids": [],
+          "kind": "bound"
+        },
+        {
+          "id": "f3",
+          "text": "It happened two calendar years after the last variola major case of October 1975.",
+          "anchor": {
+            "label": "Last variola major case",
+            "date": "16 October 1975",
+            "year": 1975,
+            "year_label": "1975",
+            "region": "Asia"
+          },
+          "predicate": {
+            "op": "equals",
+            "year": 1977,
+            "rule": "anchor_year_plus_n",
+            "anchor_year": 1975,
+            "n": 2
+          },
+          "convention": "calendar-year-arithmetic",
+          "source_ids": [
+            "wp-rahima_banu"
+          ],
+          "corroboration_ids": [
+            "who-smallpox"
+          ],
+          "kind": "relation"
+        }
+      ],
+      "paid": [
+        {
+          "id": "p1",
+          "text": "By the end of that year, the Viking 1 lander had already touched down on Mars (20 July 1976).",
+          "anchor": {
+            "label": "Viking 1 lands on Mars",
+            "date": "20 July 1976",
+            "year": 1976,
+            "year_label": "1976",
+            "region": "North America"
+          },
+          "predicate": {
+            "op": "gte",
+            "year": 1976
+          },
+          "convention": "end-of-year",
+          "source_ids": [
+            "wp-viking_1"
+          ],
+          "corroboration_ids": [],
+          "tier": "nudge",
+          "cost": 1,
+          "category": "Space"
+        },
+        {
+          "id": "p2",
+          "text": "By the end of that year, the film Star Wars had already been released (25 May 1977).",
+          "anchor": {
+            "label": "Star Wars released",
+            "date": "25 May 1977",
+            "year": 1977,
+            "year_label": "1977",
+            "region": "North America"
+          },
+          "predicate": {
+            "op": "gte",
+            "year": 1977
+          },
+          "convention": "end-of-year",
+          "source_ids": [
+            "wp-star_wars_(film)"
+          ],
+          "corroboration_ids": [],
+          "tier": "deep",
+          "cost": 2,
+          "category": "Film"
+        }
+      ],
+      "context_free": [
+        {
+          "text": "WHO declared smallpox eradicated in 1980.",
+          "sources": [
+            "who-smallpox"
+          ]
+        }
+      ],
+      "reveal": [
+        {
+          "form": "Plain data graphic",
+          "title": "Four dates, four questions",
+          "text": "1975: the last variola major case. 1977: the last natural case, in Somalia. 1978: a laboratory outbreak in England, the last recorded death. 1980: WHO declared smallpox eradicated.",
+          "sources": [
+            "wp-rahima_banu",
+            "wp-ali_maow_maalin",
+            "wp-janet_parker",
+            "who-smallpox"
+          ]
+        },
+        {
+          "form": "Note on terms",
+          "title": "'Last' needs a definition",
+          "text": "The last case of any kind, the last natural case and the declaration of eradication fall in three different years. The case asks for the natural case, and says so.",
+          "sources": [
+            "cdc-smallpox"
+          ]
+        }
+      ],
+      "editorial": {
+        "c0": [
+          1975,
+          1976,
+          1977
+        ],
+        "c0_labels": [
+          "1975",
+          "1976",
+          "1977"
+        ],
+        "uniqueness_proof": {
+          "1975": "1975 is +0 calendar years from Last variola major case (1975); the clue needs +2.",
+          "1976": "1976 is +1 calendar years from Last variola major case (1975); the clue needs +2."
+        },
+        "paid_effects": [
+          {
+            "id": "p1",
+            "tier": "nudge",
+            "cost": 1,
+            "keeps": [
+              1976,
+              1977
+            ],
+            "cuts": [
+              1975
+            ],
+            "remaining": 2,
+            "resolves": false,
+            "prints_target": false
+          },
+          {
+            "id": "p2",
+            "tier": "deep",
+            "cost": 2,
+            "keeps": [
+              1977
+            ],
+            "cuts": [
+              1975,
+              1976
+            ],
+            "remaining": 1,
+            "resolves": true,
+            "prints_target": true
+          }
+        ],
+        "fragment_levels": {
+          "free f1": "V2",
+          "free f2": "V1",
+          "free f3": "V2",
+          "paid p1": "V1",
+          "paid p2": "V1"
+        },
+        "blockers": [
+          "free f2 (Birmingham laboratory outbreak) is V1",
+          "paid p1 (Viking 1 lands on Mars) is V1",
+          "paid p2 (Star Wars released) is V1"
+        ],
+        "target_fact_level": "V2",
+        "publishable": false,
+        "arithmetic_solvable_from_free": true,
+        "facts": [
+          {
+            "claim": "Ali Maow Maalin, in Somalia, was diagnosed in October 1977 and is the last person known to have been infected with naturally occurring smallpox (variola minor).",
+            "value": "October 1977",
+            "precision": "month",
+            "level": "V2",
+            "opened": [
+              "wp-ali_maow_maalin",
+              "who-smallpox",
+              "cdc-smallpox"
+            ],
+            "corroborated_by": [
+              "q-nlm-mmwr-smallpox"
+            ],
+            "note": "WHO: eliminated from Africa in 1977. CDC: no cases since 1977. Sources give the day as 22, 26 or 31 October; all October 1977. Year-level only.",
+            "calendar": "Gregorian"
+          },
+          {
+            "claim": "The last known naturally occurring case of variola major was reported on 16 October 1975 in Bangladesh.",
+            "value": "16 October 1975",
+            "precision": "day",
+            "level": "V1",
+            "opened": [
+              "wp-rahima_banu"
+            ],
+            "corroborated_by": [
+              "who-smallpox"
+            ],
+            "note": "WHO says smallpox was eliminated from Asia in 1975.",
+            "calendar": "Gregorian"
+          },
+          {
+            "claim": "A laboratory-acquired outbreak in the United Kingdom in 1978 killed Janet Parker, the last recorded smallpox death.",
+            "value": "1978",
+            "precision": "year",
+            "level": "V1",
+            "opened": [
+              "wp-janet_parker"
+            ],
+            "corroborated_by": [],
+            "note": "",
+            "calendar": "Gregorian"
+          },
+          {
+            "claim": "WHO declared smallpox eradicated in 1980.",
+            "value": "1980",
+            "precision": "year",
+            "level": "V1",
+            "opened": [
+              "who-smallpox"
+            ],
+            "corroborated_by": [],
+            "note": "Single opened source for this claim.",
+            "calendar": "Gregorian"
+          }
+        ],
+        "hold": [
+          "Rahima Banu's case date has one source (Wikipedia). WHO's 'Asia 1975' supports the year; a second page naming the case is HOLD."
+        ],
+        "sample_player": [
+          "The last variola major case was reported in October 1975, so the last natural case is 1975 or later. The Birmingham outbreak was 1978, so the last natural case was before that: 1975 to 1977.",
+          "The third fragment says two calendar years after 1975, which is 1977.",
+          "Lock 1977."
+        ],
+        "miss_explanation": "1975, 1976 and 1977 fit the bounds. Only 1977 is two calendar years after the October 1975 case."
+      }
+    },
+    {
+      "id": "case-07",
+      "order": 7,
+      "title": "Who was on the road?",
+      "lens": "Surprising coexistence",
+      "region": [
+        "Africa",
+        "Europe",
+        "Asia"
+      ],
+      "era": "medieval",
+      "difficulty": "medium",
+      "question": "In which year did Ibn Battuta set out from Tangier on his first pilgrimage?",
+      "corridor": [
+        1310,
+        1340
+      ],
+      "target": {
+        "year": 1325,
+        "event": "Ibn Battuta leaves Tangier on 2 Rajab 725 AH, which is 14 June 1325",
+        "definition": "The year he set out. The source gives the Islamic date and its Gregorian equivalent (Julian-calendar era, shown as 14 June 1325).",
+        "precision": "day known (14 June); year used",
+        "calendar": "Hijri 725 AH to Julian/Gregorian 1325",
+        "discovery_vs_event": "Event: departure on the first pilgrimage, not the end of his travels (1354).",
+        "year_label": "1325"
+      },
+      "free": [
+        {
+          "id": "f1",
+          "text": "By the end of that year, Marco Polo had already died (8 January 1324).",
+          "anchor": {
+            "label": "Marco Polo dies",
+            "date": "8 January 1324",
+            "year": 1324,
+            "year_label": "1324",
+            "region": "Europe"
+          },
+          "predicate": {
+            "op": "gte",
+            "year": 1324
+          },
+          "convention": "end-of-year",
+          "source_ids": [
+            "wp-marco_polo"
+          ],
+          "corroboration_ids": [],
+          "kind": "bound"
+        },
+        {
+          "id": "f2",
+          "text": "By the end of that year, Edward II of England had not yet been deposed (January 1327).",
+          "anchor": {
+            "label": "Edward II deposed",
+            "date": "January 1327",
+            "year": 1327,
+            "year_label": "1327",
+            "region": "Europe"
+          },
+          "predicate": {
+            "op": "lte",
+            "year": 1326
+          },
+          "convention": "end-of-year",
+          "source_ids": [
+            "wp-edward_ii_of_england"
+          ],
+          "corroboration_ids": [],
+          "kind": "bound"
+        },
+        {
+          "id": "f3",
+          "text": "He set out one calendar year after Mansa Musa of Mali made his pilgrimage through Cairo (1324).",
+          "anchor": {
+            "label": "Mansa Musa's pilgrimage",
+            "date": "1324",
+            "year": 1324,
+            "year_label": "1324",
+            "region": "Africa"
+          },
+          "predicate": {
+            "op": "equals",
+            "year": 1325,
+            "rule": "anchor_year_plus_n",
+            "anchor_year": 1324,
+            "n": 1
+          },
+          "convention": "calendar-year-arithmetic",
+          "source_ids": [
+            "wp-mansa_musa"
+          ],
+          "corroboration_ids": [],
+          "kind": "relation"
+        }
+      ],
+      "paid": [
+        {
+          "id": "p1",
+          "text": "By the end of that year, Queen Isabella had not yet invaded England (1326).",
+          "anchor": {
+            "label": "Isabella invades England",
+            "date": "1326",
+            "year": 1326,
+            "year_label": "1326",
+            "region": "Europe"
+          },
+          "predicate": {
+            "op": "lte",
+            "year": 1325
+          },
+          "convention": "end-of-year",
+          "source_ids": [
+            "wp-edward_ii_of_england"
+          ],
+          "corroboration_ids": [],
+          "tier": "nudge",
+          "cost": 1,
+          "category": "Politics"
+        }
+      ],
+      "context_free": [
+        {
+          "text": "He was about 21 years old when he set out.",
+          "sources": [
+            "wp-ibn_battuta"
+          ]
+        }
+      ],
+      "reveal": [
+        {
+          "form": "Synchronised bands",
+          "title": "Four regions, three years",
+          "text": "Marco Polo died in Venice in January 1324. Mansa Musa travelled to Mecca through Cairo in 1324. Ibn Battuta left Tangier in June 1325. In England, Edward II was deposed in January 1327. They overlap in time and did not cause one another.",
+          "sources": [
+            "wp-marco_polo",
+            "wp-mansa_musa",
+            "wp-ibn_battuta",
+            "wp-edward_ii_of_england"
+          ]
+        },
+        {
+          "form": "Note on dates",
+          "title": "A traditional date",
+          "text": "Tenochtitlan is traditionally said to have been founded in 1325. That date is uncertain, so it is shown as tradition, not as a fact.",
+          "sources": [
+            "wp-tenochtitlan"
+          ]
+        },
+        {
+          "form": "Note on calendars",
+          "title": "Two calendars",
+          "text": "Ibn Battuta's own date is 2 Rajab 725 in the Islamic calendar. The Gregorian equivalent shown is 14 June 1325.",
+          "sources": [
+            "wp-ibn_battuta"
+          ]
+        }
+      ],
+      "editorial": {
+        "c0": [
+          1324,
+          1325,
+          1326
+        ],
+        "c0_labels": [
+          "1324",
+          "1325",
+          "1326"
+        ],
+        "uniqueness_proof": {
+          "1324": "1324 is +0 calendar years from Mansa Musa's pilgrimage (1324); the clue needs +1.",
+          "1326": "1326 is +2 calendar years from Mansa Musa's pilgrimage (1324); the clue needs +1."
+        },
+        "paid_effects": [
+          {
+            "id": "p1",
+            "tier": "nudge",
+            "cost": 1,
+            "keeps": [
+              1324,
+              1325
+            ],
+            "cuts": [
+              1326
+            ],
+            "remaining": 2,
+            "resolves": false,
+            "prints_target": false
+          }
+        ],
+        "fragment_levels": {
+          "free f1": "V1",
+          "free f2": "V1",
+          "free f3": "V1",
+          "paid p1": "V1"
+        },
+        "blockers": [
+          "free f1 (Marco Polo dies) is V1",
+          "free f2 (Edward II deposed) is V1",
+          "free f3 (Mansa Musa's pilgrimage) is V1",
+          "paid p1 (Isabella invades England) is V1"
+        ],
+        "target_fact_level": "V1",
+        "publishable": false,
+        "arithmetic_solvable_from_free": true,
+        "facts": [
+          {
+            "claim": "On 2 Rajab 725 AH (14 June 1325) Ibn Battuta set off from Tangier at about age 21.",
+            "value": "14 June 1325",
+            "precision": "day",
+            "level": "V1",
+            "opened": [
+              "wp-ibn_battuta"
+            ],
+            "corroborated_by": [
+              "q-aramco-battuta"
+            ],
+            "note": "Aramco World (seen in a search summary) agrees and says he set out the year after Polo died.",
+            "calendar": "Hijri 725 AH / Julian-Gregorian 1325"
+          },
+          {
+            "claim": "Marco Polo died on 8 January 1324.",
+            "value": "8 January 1324",
+            "precision": "day",
+            "level": "V1",
+            "opened": [
+              "wp-marco_polo"
+            ],
+            "corroborated_by": [
+              "q-aramco-battuta"
+            ],
+            "note": "",
+            "calendar": "Gregorian"
+          },
+          {
+            "claim": "Mansa Musa went on hajj in 1324 and spent time in Cairo.",
+            "value": "1324",
+            "precision": "year",
+            "level": "V1",
+            "opened": [
+              "wp-mansa_musa"
+            ],
+            "corroborated_by": [],
+            "note": "Single source. HOLD for a second opened page; do not publish the 1324 boundary until then.",
+            "calendar": "Gregorian"
+          },
+          {
+            "claim": "Edward II's reign ended on 21 January 1327 when he was deposed; Isabella invaded in 1326.",
+            "value": "1326 to 1327",
+            "precision": "year",
+            "level": "V1",
+            "opened": [
+              "wp-edward_ii_of_england"
+            ],
+            "corroborated_by": [],
+            "note": "",
+            "calendar": "Gregorian"
+          },
+          {
+            "claim": "Tenochtitlan's foundation is dated 1325 by tradition; the infobox says 'unclear date, declared 13 March 1325'.",
+            "value": "1325 (traditional)",
+            "precision": "year",
+            "level": "V0",
+            "opened": [
+              "wp-tenochtitlan"
+            ],
+            "corroborated_by": [],
+            "note": "Contested. May appear in the reveal as a traditional date, never as a boundary.",
+            "calendar": "Gregorian"
+          }
+        ],
+        "hold": [
+          "Mansa Musa 1324: second opened source required before this boundary can ship (blocked pages)."
+        ],
+        "sample_player": [
+          "Marco Polo died in January 1324, so the departure was 1324 or later. Edward II was deposed in January 1327, so it was before the end of 1326: 1324 to 1326.",
+          "The third fragment says one calendar year after Mansa Musa's pilgrimage, which was in 1324. So 1325.",
+          "Lock 1325."
+        ],
+        "miss_explanation": "1324 to 1326 fit the bounds. Only 1325 is one calendar year after Mansa Musa's 1324 pilgrimage."
+      }
+    },
+    {
+      "id": "case-08",
+      "order": 8,
+      "title": "Sounds for the people",
+      "lens": "A moment outside the usual chronology",
+      "region": [
+        "Asia"
+      ],
+      "era": "medieval",
+      "difficulty": "hard",
+      "question": "In which year was the Hunminjeongeum, the document that introduced the Korean alphabet, published?",
+      "corridor": [
+        1430,
+        1460
+      ],
+      "target": {
+        "year": 1446,
+        "event": "Publication of the Hunminjeongeum, about the ninth lunar month of 1446 (around October)",
+        "definition": "The year of publication. The alphabet was devised earlier: it was introduced to the court in the 12th lunar month of 1443, which spans 30 December 1443 to 28 January 1444 in the Gregorian calendar, so the creation year is ambiguous and is not used.",
+        "precision": "month (ninth lunar month); year used",
+        "calendar": "Joseon lunisolar calendar, converted to Gregorian",
+        "discovery_vs_event": "Publication, not invention. Invention falls across a Gregorian year boundary (1443 or 1444).",
+        "year_label": "1446"
+      },
+      "free": [
+        {
+          "id": "f1",
+          "text": "By the end of that year, the rain gauge had already been invented at Sejong's court (August 1441 by the lunar calendar).",
+          "anchor": {
+            "label": "Rain gauge invented",
+            "date": "1441",
+            "year": 1441,
+            "year_label": "1441",
+            "region": "Asia"
+          },
+          "predicate": {
+            "op": "gte",
+            "year": 1441
+          },
+          "convention": "end-of-year",
+          "source_ids": [
+            "wp-cheugugi"
+          ],
+          "corroboration_ids": [],
+          "kind": "bound"
+        },
+        {
+          "id": "f2",
+          "text": "By the end of that year, Yongbi eocheonga, the first book written in the new alphabet, had not yet been published (1447).",
+          "anchor": {
+            "label": "Yongbi eocheonga published",
+            "date": "1447",
+            "year": 1447,
+            "year_label": "1447",
+            "region": "Asia"
+          },
+          "predicate": {
+            "op": "lte",
+            "year": 1446
+          },
+          "convention": "end-of-year",
+          "source_ids": [
+            "wp-yongbi_eocheonga"
+          ],
+          "corroboration_ids": [],
+          "kind": "bound"
+        },
+        {
+          "id": "f3",
+          "text": "It was published four calendar years after the rain gauge was standardised (1442).",
+          "anchor": {
+            "label": "Rain gauge standardised",
+            "date": "1442",
+            "year": 1442,
+            "year_label": "1442",
+            "region": "Asia"
+          },
+          "predicate": {
+            "op": "equals",
+            "year": 1446,
+            "rule": "anchor_year_plus_n",
+            "anchor_year": 1442,
+            "n": 4
+          },
+          "convention": "calendar-year-arithmetic",
+          "source_ids": [
+            "wp-cheugugi"
+          ],
+          "corroboration_ids": [],
+          "kind": "relation"
+        }
+      ],
+      "paid": [
+        {
+          "id": "p1",
+          "text": "By the end of that year, the Battle of Varna had already been fought (10 November 1444).",
+          "anchor": {
+            "label": "Battle of Varna",
+            "date": "10 November 1444",
+            "year": 1444,
+            "year_label": "1444",
+            "region": "Europe"
+          },
+          "predicate": {
+            "op": "gte",
+            "year": 1444
+          },
+          "convention": "end-of-year",
+          "source_ids": [
+            "wp-battle_of_varna"
+          ],
+          "corroboration_ids": [],
+          "tier": "nudge",
+          "cost": 1,
+          "category": "World events"
+        }
+      ],
+      "context_free": [
+        {
+          "text": "The name means 'The Correct Sounds for the Instruction of the People'.",
+          "sources": [
+            "wp-hunminjeongeum"
+          ]
+        }
+      ],
+      "reveal": [
+        {
+          "form": "Source excerpt",
+          "title": "Two ways to date a script",
+          "text": "The alphabet was devised and shown to the court in the 12th lunar month of 1443. It was published in the ninth lunar month of 1446. The first is split across two Gregorian years; the second is not. The case asks for the publication.",
+          "sources": [
+            "wp-hunminjeongeum"
+          ]
+        },
+        {
+          "form": "Note on calendars",
+          "title": "Lunar months and Gregorian years",
+          "text": "Joseon dated events by the lunar calendar. The same lunar month can fall in two Gregorian years, which is why 1443 or 1444 would both be defensible for the alphabet's creation.",
+          "sources": [
+            "wp-hunminjeongeum"
+          ]
+        }
+      ],
+      "editorial": {
+        "c0": [
+          1441,
+          1442,
+          1443,
+          1444,
+          1445,
+          1446
+        ],
+        "c0_labels": [
+          "1441",
+          "1442",
+          "1443",
+          "1444",
+          "1445",
+          "1446"
+        ],
+        "uniqueness_proof": {
+          "1441": "1441 is -1 calendar years from Rain gauge standardised (1442); the clue needs +4.",
+          "1442": "1442 is +0 calendar years from Rain gauge standardised (1442); the clue needs +4.",
+          "1443": "1443 is +1 calendar years from Rain gauge standardised (1442); the clue needs +4.",
+          "1444": "1444 is +2 calendar years from Rain gauge standardised (1442); the clue needs +4.",
+          "1445": "1445 is +3 calendar years from Rain gauge standardised (1442); the clue needs +4."
+        },
+        "paid_effects": [
+          {
+            "id": "p1",
+            "tier": "nudge",
+            "cost": 1,
+            "keeps": [
+              1444,
+              1445,
+              1446
+            ],
+            "cuts": [
+              1441,
+              1442,
+              1443
+            ],
+            "remaining": 3,
+            "resolves": false,
+            "prints_target": false
+          }
+        ],
+        "fragment_levels": {
+          "free f1": "V1",
+          "free f2": "V1",
+          "free f3": "V1",
+          "paid p1": "V1"
+        },
+        "blockers": [
+          "free f1 (Rain gauge invented) is V1",
+          "free f2 (Yongbi eocheonga published) is V1",
+          "free f3 (Rain gauge standardised) is V1",
+          "paid p1 (Battle of Varna) is V1"
+        ],
+        "target_fact_level": "V1",
+        "publishable": false,
+        "arithmetic_solvable_from_free": true,
+        "facts": [
+          {
+            "claim": "The base Hunminjeongeum was first published around October 1446 (Gregorian), in the 9th month of 1446 in the Korean calendar.",
+            "value": "about October 1446",
+            "precision": "month",
+            "level": "V1",
+            "opened": [
+              "wp-hunminjeongeum"
+            ],
+            "corroborated_by": [
+              "q-unesco-hunmin"
+            ],
+            "note": "UNESCO's nomination, seen in a search summary, says 9 October 1446. Wikipedia says the exact day is not known and that 9 October is an assumption. Year-level only.",
+            "calendar": "Korean lunisolar to Gregorian"
+          },
+          {
+            "claim": "The alphabet was introduced to the court in the 12th month of 1443 (30 December 1443 to 28 January 1444).",
+            "value": "12th month 1443",
+            "precision": "month",
+            "level": "V1",
+            "opened": [
+              "wp-hunminjeongeum"
+            ],
+            "corroborated_by": [],
+            "note": "Crosses a Gregorian year boundary. Not used as a boundary.",
+            "calendar": "Gregorian"
+          },
+          {
+            "claim": "The rain gauge was invented in August 1441 (lunar) and standardised from 1442.",
+            "value": "1441, 1442",
+            "precision": "year",
+            "level": "V1",
+            "opened": [
+              "wp-cheugugi"
+            ],
+            "corroborated_by": [],
+            "note": "",
+            "calendar": "Gregorian"
+          },
+          {
+            "claim": "Yongbi eocheonga, the first work written in Hangul, was published in 1447.",
+            "value": "1447",
+            "precision": "year",
+            "level": "V1",
+            "opened": [
+              "wp-yongbi_eocheonga"
+            ],
+            "corroborated_by": [],
+            "note": "",
+            "calendar": "Gregorian"
+          },
+          {
+            "claim": "The Battle of Varna was fought on 10 November 1444.",
+            "value": "10 November 1444",
+            "precision": "day",
+            "level": "V1",
+            "opened": [
+              "wp-battle_of_varna"
+            ],
+            "corroborated_by": [],
+            "note": "",
+            "calendar": "Gregorian"
+          }
+        ],
+        "hold": [
+          "Second opened source for the publication year (UNESCO nomination not opened). Clue ladder has one clue."
+        ],
+        "sample_player": [
+          "The rain gauge was invented in 1441, so the publication was in 1441 or later. The first book in the alphabet was published in 1447, so the publication was by 1446: 1441 to 1446.",
+          "The third fragment says four calendar years after 1442, which is 1446.",
+          "Lock 1446."
+        ],
+        "miss_explanation": "1441 to 1446 fit the bounds. Only 1446 is four calendar years after the 1442 rain-gauge standard."
+      }
+    },
+    {
+      "id": "case-09",
+      "order": 9,
+      "title": "The first count of a whole empire",
+      "lens": "Numbers and records",
+      "region": [
+        "Asia"
+      ],
+      "era": "ancient",
+      "difficulty": "hard",
+      "question": "In which year was the first nationwide census of Han China taken?",
+      "corridor": [
+        -19,
+        20
+      ],
+      "target": {
+        "year": 2,
+        "event": "The registration of households and persons recorded for the year 2 CE (Yuanshi 2)",
+        "definition": "The year of the first nationwide census in Chinese history that left records. Exact totals are not used: sources disagree.",
+        "precision": "year",
+        "calendar": "Han lunisolar era year Yuanshi 2, equal to 2 CE",
+        "discovery_vs_event": "The count was recorded under era year Yuanshi 2.",
+        "year_label": "2 CE"
+      },
+      "free": [
+        {
+          "id": "f1",
+          "text": "By the end of that year, Emperor Ping had already taken the throne (17 October, 1 BCE).",
+          "anchor": {
+            "label": "Emperor Ping takes the throne",
+            "date": "17 October 1 BCE",
+            "year": 0,
+            "year_label": "1 BCE",
+            "region": "Asia"
+          },
+          "predicate": {
+            "op": "gte",
+            "year": 0
+          },
+          "convention": "end-of-year",
+          "source_ids": [
+            "wp-emperor_ping_of_han"
+          ],
+          "corroboration_ids": [],
+          "kind": "bound"
+        },
+        {
+          "id": "f2",
+          "text": "By the end of that year, Emperor Ping had not yet died (3 February, 6 CE).",
+          "anchor": {
+            "label": "Emperor Ping dies",
+            "date": "3 February 6 CE",
+            "year": 6,
+            "year_label": "6 CE",
+            "region": "Asia"
+          },
+          "predicate": {
+            "op": "lte",
+            "year": 5
+          },
+          "convention": "end-of-year",
+          "source_ids": [
+            "wp-emperor_ping_of_han"
+          ],
+          "corroboration_ids": [],
+          "kind": "bound"
+        },
+        {
+          "id": "f3",
+          "text": "It was recorded in the second year of the Yuanshi era, an era that began in 1 CE.",
+          "anchor": {
+            "label": "Yuanshi era begins",
+            "date": "1 CE",
+            "year": 1,
+            "year_label": "1 CE",
+            "region": "Asia"
+          },
+          "predicate": {
+            "op": "equals",
+            "year": 2,
+            "rule": "era_year",
+            "era_start": 1,
+            "n": 2
+          },
+          "convention": "calendar-year-arithmetic",
+          "source_ids": [
+            "wp-emperor_ping_of_han"
+          ],
+          "corroboration_ids": [],
+          "kind": "relation"
+        }
+      ],
+      "paid": [
+        {
+          "id": "p1",
+          "text": "By the end of that year, the Yuanshi era name had already been proclaimed (1 CE).",
+          "anchor": {
+            "label": "Yuanshi era begins",
+            "date": "1 CE",
+            "year": 1,
+            "year_label": "1 CE",
+            "region": "Asia"
+          },
+          "predicate": {
+            "op": "gte",
+            "year": 1
+          },
+          "convention": "end-of-year",
+          "source_ids": [
+            "wp-emperor_ping_of_han"
+          ],
+          "corroboration_ids": [],
+          "tier": "nudge",
+          "cost": 1,
+          "category": "Government"
+        }
+      ],
+      "context_free": [
+        {
+          "text": "There is no year 0 in BCE and CE dating: 1 BCE is followed directly by 1 CE.",
+          "sources": []
+        }
+      ],
+      "reveal": [
+        {
+          "form": "Inspectable chart",
+          "title": "A count with its disagreement showing",
+          "text": "The 2 CE registration is the first nationwide census in Chinese history. Accounts give about 57.7 million people in one source and about 59.6 million in another. The chart shows both and says the figures are registrations, not a modern headcount.",
+          "sources": [
+            "wp-han_dynasty"
+          ]
+        },
+        {
+          "form": "Note on dating",
+          "title": "BCE and CE",
+          "text": "Year numbers jump from 1 BCE to 1 CE with no year 0, so the corridor 20 BCE to 20 CE has 40 years, not 41.",
+          "sources": []
+        }
+      ],
+      "editorial": {
+        "c0": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "c0_labels": [
+          "1 BCE",
+          "1 CE",
+          "2 CE",
+          "3 CE",
+          "4 CE",
+          "5 CE"
+        ],
+        "uniqueness_proof": {
+          "0": "1 BCE is era year 0 (the era began in 1 CE); the clue needs era year 2.",
+          "1": "1 CE is era year 1 (the era began in 1 CE); the clue needs era year 2.",
+          "3": "3 CE is era year 3 (the era began in 1 CE); the clue needs era year 2.",
+          "4": "4 CE is era year 4 (the era began in 1 CE); the clue needs era year 2.",
+          "5": "5 CE is era year 5 (the era began in 1 CE); the clue needs era year 2."
+        },
+        "paid_effects": [
+          {
+            "id": "p1",
+            "tier": "nudge",
+            "cost": 1,
+            "keeps": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "cuts": [
+              0
+            ],
+            "remaining": 5,
+            "resolves": false,
+            "prints_target": false
+          }
+        ],
+        "fragment_levels": {
+          "free f1": "V1",
+          "free f2": "V1",
+          "free f3": "V1",
+          "paid p1": "V1"
+        },
+        "blockers": [
+          "free f1 (Emperor Ping takes the throne) is V1",
+          "free f2 (Emperor Ping dies) is V1",
+          "free f3 (Yuanshi era begins) is V1",
+          "paid p1 (Yuanshi era begins) is V1"
+        ],
+        "target_fact_level": "V1",
+        "publishable": false,
+        "arithmetic_solvable_from_free": true,
+        "facts": [
+          {
+            "claim": "The first nationwide census in Chinese history was taken in 2 AD.",
+            "value": "2 CE",
+            "precision": "year",
+            "level": "V1",
+            "opened": [
+              "wp-han_dynasty"
+            ],
+            "corroborated_by": [
+              "q-historyofinfo-han"
+            ],
+            "note": "Seen in a search summary of historyofinformation.com and a reference to Bielenstein's 1947 study.",
+            "calendar": "Gregorian"
+          },
+          {
+            "claim": "Wikipedia gives 57,671,400 people and 12,366,470 households. Other sources give about 59.6 million people and 12,233,062 households.",
+            "value": "57.7 to 59.6 million",
+            "precision": "estimated",
+            "level": "V0",
+            "opened": [
+              "wp-han_dynasty"
+            ],
+            "corroborated_by": [
+              "q-historyofinfo-han"
+            ],
+            "note": "Sources disagree. HOLD: needs the primary text (Book of Han ch. 28) via a source the editor can open. Shown as a range with a stated disagreement.",
+            "calendar": "Gregorian"
+          },
+          {
+            "claim": "Emperor Ping reigned from 17 October 1 BC to 3 February 6 AD; era name Yuanshi 1 to 5 AD.",
+            "value": "1 BCE to 6 CE",
+            "precision": "day",
+            "level": "V1",
+            "opened": [
+              "wp-emperor_ping_of_han"
+            ],
+            "corroborated_by": [],
+            "note": "",
+            "calendar": "Gregorian"
+          }
+        ],
+        "hold": [
+          "Exact totals: HOLD (sources disagree, primary text not opened). Only the year is used.",
+          "Second opened source for the 2 CE census year."
+        ],
+        "sample_player": [
+          "Emperor Ping took the throne in 1 BCE and died in 6 CE, so the census was between 1 BCE and 5 CE. That is six years: 1 BCE, then 1, 2, 3, 4 and 5 CE. There is no year zero.",
+          "The third fragment says the second year of the Yuanshi era, which began in 1 CE. The first year is 1 CE, so the second is 2 CE.",
+          "Lock 2 CE."
+        ],
+        "miss_explanation": "1 BCE and 1 to 5 CE fit the bounds. Only 2 CE is the second year of an era whose first year was 1 CE."
+      }
+    },
+    {
+      "id": "case-10",
+      "order": 10,
+      "title": "Greetings to the universe",
+      "lens": "The convergence",
+      "region": [
+        "North America",
+        "Global"
+      ],
+      "era": "modern",
+      "difficulty": "finale",
+      "question": "In which year were the two Voyager spacecraft launched?",
+      "corridor": [
+        1970,
+        1985
+      ],
+      "target": {
+        "year": 1977,
+        "event": "Voyager 2 launches on 20 August 1977 and Voyager 1 on 5 September 1977",
+        "definition": "The year both spacecraft launched. Voyager 2 launched first, on 20 August; Voyager 1 followed on 5 September.",
+        "precision": "day known; year used",
+        "calendar": "Gregorian",
+        "discovery_vs_event": "Event: launches. Not the Jupiter flybys (1979) and not leaving the heliosphere.",
+        "year_label": "1977"
+      },
+      "free": [
+        {
+          "id": "f1",
+          "text": "By the end of that year, the Viking 1 lander had already touched down on Mars (20 July 1976).",
+          "anchor": {
+            "label": "Viking 1 lands on Mars",
+            "date": "20 July 1976",
+            "year": 1976,
+            "year_label": "1976",
+            "region": "North America"
+          },
+          "predicate": {
+            "op": "gte",
+            "year": 1976
+          },
+          "convention": "end-of-year",
+          "source_ids": [
+            "wp-viking_1"
+          ],
+          "corroboration_ids": [],
+          "kind": "bound"
+        },
+        {
+          "id": "f2",
+          "text": "By the end of that year, Voyager 1 had not yet made its closest approach to Jupiter (5 March 1979).",
+          "anchor": {
+            "label": "Voyager 1 at Jupiter",
+            "date": "5 March 1979",
+            "year": 1979,
+            "year_label": "1979",
+            "region": "North America"
+          },
+          "predicate": {
+            "op": "lte",
+            "year": 1978
+          },
+          "convention": "end-of-year",
+          "source_ids": [
+            "wp-voyager_1"
+          ],
+          "corroboration_ids": [],
+          "kind": "bound"
+        },
+        {
+          "id": "f3",
+          "text": "They launched one calendar year after Concorde began scheduled passenger service (21 January 1976).",
+          "anchor": {
+            "label": "Concorde enters scheduled service",
+            "date": "21 January 1976",
+            "year": 1976,
+            "year_label": "1976",
+            "region": "Europe"
+          },
+          "predicate": {
+            "op": "equals",
+            "year": 1977,
+            "rule": "anchor_year_plus_n",
+            "anchor_year": 1976,
+            "n": 1
+          },
+          "convention": "calendar-year-arithmetic",
+          "source_ids": [
+            "wp-concorde"
+          ],
+          "corroboration_ids": [],
+          "kind": "relation"
+        }
+      ],
+      "paid": [
+        {
+          "id": "p1",
+          "text": "By the end of that year, the last naturally occurring case of smallpox had already been diagnosed (October 1977).",
+          "anchor": {
+            "label": "Last natural smallpox case",
+            "date": "October 1977",
+            "year": 1977,
+            "year_label": "1977",
+            "region": "Africa"
+          },
+          "predicate": {
+            "op": "gte",
+            "year": 1977
+          },
+          "convention": "end-of-year",
+          "source_ids": [
+            "wp-ali_maow_maalin",
+            "who-smallpox"
+          ],
+          "corroboration_ids": [],
+          "tier": "nudge",
+          "cost": 1,
+          "category": "Medicine"
+        },
+        {
+          "id": "p2",
+          "text": "By the end of that year, the 1978 laboratory smallpox outbreak in England had not yet happened.",
+          "anchor": {
+            "label": "Birmingham laboratory outbreak",
+            "date": "1978",
+            "year": 1978,
+            "year_label": "1978",
+            "region": "Europe"
+          },
+          "predicate": {
+            "op": "lte",
+            "year": 1977
+          },
+          "convention": "end-of-year",
+          "source_ids": [
+            "wp-janet_parker"
+          ],
+          "corroboration_ids": [],
+          "tier": "deep",
+          "cost": 2,
+          "category": "Medicine"
+        }
+      ],
+      "context_free": [
+        {
+          "text": "Voyager 2 launched first, on 20 August; Voyager 1 followed on 5 September.",
+          "sources": [
+            "wp-voyager_1",
+            "wp-voyager_2"
+          ]
+        }
+      ],
+      "reveal": [
+        {
+          "form": "The Daily Trail",
+          "title": "Two things happened in 1977",
+          "text": "In 1977 two spacecraft left for the outer solar system, and the last natural case of smallpox was diagnosed in Somalia. Both are documented. Neither caused the other.",
+          "sources": [
+            "wp-voyager_2",
+            "wp-voyager_1",
+            "wp-ali_maow_maalin",
+            "who-smallpox"
+          ]
+        },
+        {
+          "form": "Timeline of your ten marks",
+          "title": "Your ten years on one core",
+          "text": "The ten marks span two thousand years. Two of them, from different cases, fall in 1977. The gaps between neighbouring marks shrink from more than thirteen centuries to a few decades. The pack was selected by editors, so the pattern says as much about what is recorded as about the past.",
+          "sources": []
+        }
+      ],
+      "editorial": {
+        "c0": [
+          1976,
+          1977,
+          1978
+        ],
+        "c0_labels": [
+          "1976",
+          "1977",
+          "1978"
+        ],
+        "uniqueness_proof": {
+          "1976": "1976 is +0 calendar years from Concorde enters scheduled service (1976); the clue needs +1.",
+          "1978": "1978 is +2 calendar years from Concorde enters scheduled service (1976); the clue needs +1."
+        },
+        "paid_effects": [
+          {
+            "id": "p1",
+            "tier": "nudge",
+            "cost": 1,
+            "keeps": [
+              1977,
+              1978
+            ],
+            "cuts": [
+              1976
+            ],
+            "remaining": 2,
+            "resolves": false,
+            "prints_target": true
+          },
+          {
+            "id": "p2",
+            "tier": "deep",
+            "cost": 2,
+            "keeps": [
+              1976,
+              1977
+            ],
+            "cuts": [
+              1978
+            ],
+            "remaining": 2,
+            "resolves": false,
+            "prints_target": false
+          }
+        ],
+        "fragment_levels": {
+          "free f1": "V1",
+          "free f2": "V1",
+          "free f3": "V1",
+          "paid p1": "V2",
+          "paid p2": "V1"
+        },
+        "blockers": [
+          "free f1 (Viking 1 lands on Mars) is V1",
+          "free f2 (Voyager 1 at Jupiter) is V1",
+          "free f3 (Concorde enters scheduled service) is V1",
+          "paid p2 (Birmingham laboratory outbreak) is V1"
+        ],
+        "target_fact_level": "V2",
+        "publishable": false,
+        "arithmetic_solvable_from_free": true,
+        "facts": [
+          {
+            "claim": "Voyager 2 launched on 20 August 1977 and Voyager 1 on 5 September 1977.",
+            "value": "20 August and 5 September 1977",
+            "precision": "day",
+            "level": "V2",
+            "opened": [
+              "wp-voyager_2",
+              "wp-voyager_1",
+              "nasa-voyager"
+            ],
+            "corroborated_by": [],
+            "note": "NASA's mission page opened and states launch 1977; the days come from Wikipedia.",
+            "calendar": "Gregorian"
+          },
+          {
+            "claim": "Voyager 1's closest approach to Jupiter was on 5 March 1979.",
+            "value": "5 March 1979",
+            "precision": "day",
+            "level": "V1",
+            "opened": [
+              "wp-voyager_1"
+            ],
+            "corroborated_by": [],
+            "note": "",
+            "calendar": "Gregorian"
+          },
+          {
+            "claim": "Each spacecraft carries a record with greetings in 55 languages.",
+            "value": "55 languages",
+            "precision": "count",
+            "level": "V0",
+            "opened": [],
+            "corroborated_by": [
+              "q-nasa-golden"
+            ],
+            "note": "NASA page seen in a search summary; page not opened. HOLD: not used anywhere in the pack.",
+            "calendar": "Gregorian"
+          },
+          {
+            "claim": "The last known naturally occurring smallpox case was diagnosed in October 1977.",
+            "value": "October 1977",
+            "precision": "month",
+            "level": "V2",
+            "opened": [
+              "wp-ali_maow_maalin",
+              "who-smallpox",
+              "cdc-smallpox"
+            ],
+            "corroborated_by": [],
+            "note": "",
+            "calendar": "Gregorian"
+          }
+        ],
+        "hold": [
+          "The finale reuses 1977 from case 6; see AUDITS (cross-case leakage)."
+        ],
+        "sample_player": [
+          "The Viking 1 landing was in 1976, so the launches were in 1976 or later. Voyager 1's closest approach to Jupiter was in 1979, so the launches were by the end of 1978: 1976, 1977 or 1978.",
+          "The third fragment says one calendar year after Concorde began service in January 1976. One year after 1976 is 1977.",
+          "Lock 1977."
+        ],
+        "miss_explanation": "1976 to 1978 fit the bounds. Only 1977 is one calendar year after Concorde began scheduled service in January 1976."
+      }
+    }
+  ],
+  "connections": [
+    {
+      "after_case": 4,
+      "kind": "meta-historical",
+      "title": "Same year, different day",
+      "text": "You have placed four marks: 1565, 1893, 1919, 1969. Look at the dates inside two of those cases. Sources disagree about the day of Concorde's first flight (1 or 2 March 1969) and of the Berlin Institute's opening (1 or 6 July 1919), but not about the year. A record can disagree about the day and still agree on the year.",
+      "claim_type": "editorial observation about source disagreement; the day-level disagreements are recorded in each case's facts",
+      "reveals_future_answer": false
+    },
+    {
+      "after_case": 7,
+      "kind": "chronological",
+      "title": "How far apart are your marks?",
+      "text": "Placed in order, your seven marks are 1325, 1565, 1799, 1893, 1919, 1969, 1977. The gaps between neighbours are 240, 234, 94, 26, 50, 8 years. The pack was chosen by editors, so the gaps describe our selection as much as the past.",
+      "claim_type": "arithmetic on solved answers; the interpretation is labelled editorial",
+      "reveals_future_answer": false
+    }
+  ]
+}

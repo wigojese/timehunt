@@ -1,0 +1,24 @@
+{
+  "_about": "Each entry mutates a copy of data/daily-pack-draft.json and must make validatePack refuse the pack with the stated code. 'path' is a dot path; numbers index arrays; value null with op 'delete' removes the key.",
+  "mutations": [
+    {"name": "nine cases", "op": "truncate", "path": "cases", "length": 9, "expect": "CASE_COUNT"},
+    {"name": "wrong convention", "op": "set", "path": "date_convention", "value": "start-of-year", "expect": "CONVENTION"},
+    {"name": "target outside corridor", "op": "set", "path": "cases.0.target.year", "value": 2100, "expect": "TARGET"},
+    {"name": "bad corridor", "op": "set", "path": "cases.0.corridor", "value": [1990, 1960], "expect": "CORRIDOR"},
+    {"name": "target removed by a free bound", "op": "set", "path": "cases.0.free.0.predicate.year", "value": 1975, "expect": "TARGET_NOT_IN_C0"},
+    {"name": "free bounds leave one candidate", "op": "set", "path": "cases.0.free.0.predicate.year", "value": 1969, "expect": "C0_SIZE"},
+    {"name": "paid clue cuts nothing", "op": "set", "path": "cases.0.paid.0.predicate.year", "value": 1900, "expect": "CLUE_CUTS_NOTHING"},
+    {"name": "paid clue removes the target", "op": "set", "path": "cases.0.paid.0.predicate", "value": {"op": "lte", "year": 1967}, "expect": "CLUE_REMOVES_TARGET"},
+    {"name": "invalid predicate", "op": "set", "path": "cases.0.paid.0.predicate", "value": {"op": "between"}, "expect": "PREDICATE"},
+    {"name": "unknown tier", "op": "set", "path": "cases.0.paid.0.tier", "value": "mega", "expect": "TIER"},
+    {"name": "free text prints the target year", "op": "set", "path": "cases.0.free.0.text", "value": "By the end of that year, something happened in 1969.", "expect": "LEAK_FREE"},
+    {"name": "title prints the target year", "op": "set", "path": "cases.0.title", "value": "The 1969 prototype", "expect": "LEAK_TITLE"},
+    {"name": "unknown source id", "op": "set", "path": "cases.0.free.0.source_ids", "value": ["does-not-exist"], "expect": "SOURCE_REF"},
+    {"name": "duplicate case id", "op": "set", "path": "cases.1.id", "value": "case-01", "expect": "CASE_DUP"},
+    {"name": "wrong order", "op": "set", "path": "cases.2.order", "value": 7, "expect": "ORDER"},
+    {"name": "relation selects the wrong year", "op": "set", "path": "cases.0.free.2.predicate.year", "value": 1968, "expect": "RELATION_TARGET"},
+    {"name": "editorial c0 disagrees with the machine", "op": "set", "path": "cases.0.editorial.c0", "value": [1967, 1968], "expect": "C0_MISMATCH"},
+    {"name": "source without a url", "op": "set", "path": "sources.0.url", "value": "not a url", "expect": "SOURCE_URL"},
+    {"name": "clue without text", "op": "set", "path": "cases.0.paid.0.text", "value": "", "expect": "CLUE_TEXT"}
+  ]
+}

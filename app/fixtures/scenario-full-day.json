@@ -1,0 +1,168 @@
+{
+  "_about": "Scripted day under the default C1 rules (no Trace): miss on case 5, Deep clue on case 2, Nudge on case 7, last Insight spent on case 9, case 10 finished with zero Insight. Replaying the log must reproduce expected.stateDigest.",
+  "packDigest": "1e11b70de99152",
+  "rulesOverrides": {},
+  "rulesId": "0bd5f6eff38c63",
+  "log": [
+    {
+      "type": "REVEAL",
+      "caseId": "case-01",
+      "clueId": "p2",
+      "actionId": "scripted-1"
+    },
+    {
+      "type": "LOCK",
+      "caseId": "case-01",
+      "year": 1969,
+      "actionId": "scripted-2"
+    },
+    {
+      "type": "ADVANCE",
+      "caseId": "case-01",
+      "actionId": "scripted-3"
+    },
+    {
+      "type": "REVEAL",
+      "caseId": "case-02",
+      "clueId": "p2",
+      "actionId": "scripted-4"
+    },
+    {
+      "type": "LOCK",
+      "caseId": "case-02",
+      "year": 1893,
+      "actionId": "scripted-5"
+    },
+    {
+      "type": "ADVANCE",
+      "caseId": "case-02",
+      "actionId": "scripted-6"
+    },
+    {
+      "type": "REVEAL",
+      "caseId": "case-03",
+      "clueId": "p1",
+      "actionId": "scripted-7"
+    },
+    {
+      "type": "LOCK",
+      "caseId": "case-03",
+      "year": 1565,
+      "actionId": "scripted-8"
+    },
+    {
+      "type": "ADVANCE",
+      "caseId": "case-03",
+      "actionId": "scripted-9"
+    },
+    {
+      "type": "LOCK",
+      "caseId": "case-04",
+      "year": 1919,
+      "actionId": "scripted-10"
+    },
+    {
+      "type": "ADVANCE",
+      "caseId": "case-04",
+      "actionId": "scripted-11"
+    },
+    {
+      "type": "LOCK",
+      "caseId": "case-05",
+      "year": 1798,
+      "actionId": "scripted-12"
+    },
+    {
+      "type": "ADVANCE",
+      "caseId": "case-05",
+      "actionId": "scripted-13"
+    },
+    {
+      "type": "LOCK",
+      "caseId": "case-06",
+      "year": 1977,
+      "actionId": "scripted-14"
+    },
+    {
+      "type": "ADVANCE",
+      "caseId": "case-06",
+      "actionId": "scripted-15"
+    },
+    {
+      "type": "REVEAL",
+      "caseId": "case-07",
+      "clueId": "p1",
+      "actionId": "scripted-16"
+    },
+    {
+      "type": "LOCK",
+      "caseId": "case-07",
+      "year": 1325,
+      "actionId": "scripted-17"
+    },
+    {
+      "type": "ADVANCE",
+      "caseId": "case-07",
+      "actionId": "scripted-18"
+    },
+    {
+      "type": "REVEAL",
+      "caseId": "case-08",
+      "clueId": "p1",
+      "actionId": "scripted-19"
+    },
+    {
+      "type": "LOCK",
+      "caseId": "case-08",
+      "year": 1446,
+      "actionId": "scripted-20"
+    },
+    {
+      "type": "ADVANCE",
+      "caseId": "case-08",
+      "actionId": "scripted-21"
+    },
+    {
+      "type": "REVEAL",
+      "caseId": "case-09",
+      "clueId": "p1",
+      "actionId": "scripted-22"
+    },
+    {
+      "type": "LOCK",
+      "caseId": "case-09",
+      "year": 2,
+      "actionId": "scripted-23"
+    },
+    {
+      "type": "ADVANCE",
+      "caseId": "case-09",
+      "actionId": "scripted-24"
+    },
+    {
+      "type": "LOCK",
+      "caseId": "case-10",
+      "year": 1977,
+      "actionId": "scripted-26"
+    },
+    {
+      "type": "ADVANCE",
+      "caseId": "case-10",
+      "actionId": "scripted-27"
+    }
+  ],
+  "expected": {
+    "stateDigest": "1f8f8eadf8a66e",
+    "score": {
+      "solved": 9,
+      "clean": 3,
+      "assisted": 6,
+      "missed": 1,
+      "unplayed": 0,
+      "insightLeft": 0,
+      "insightSpent": 8
+    },
+    "insightLeft": 0,
+    "status": "completed"
+  }
+}

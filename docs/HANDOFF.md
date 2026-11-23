@@ -36,3 +36,6 @@ Wait for `APPROVE STAGE 2`. Then Stage 3 only: historical content architecture a
 
 ## After Stage 3
 Stage 3 is complete and awaiting `APPROVE STAGE 3`. Rebuild with `python3 tools/pack/build_pack.py`; lint with `python3 tools/pack/lint_pack.py`. Edit only `tools/pack/pack_data.py`, never the generated files. Do not start Stage 4 without approval. Biggest open item: Q-32 (free evidence solves everything).
+
+## After Stage 4
+Stage 4 is complete and awaiting `APPROVE STAGE 4`. `cd app && npm test` (70 tests) and `node scripts/serve.mjs` to play. Rules live only in `app/src/engine/rules.js`; content only in `tools/pack/pack_data.py` (rebuild with `python3 tools/pack/build_pack.py`, then `node app/scripts/demo-run.mjs` to refresh fixtures). Do not start Stage 5 without approval. Stage 5 needs human players the agent cannot supply (Q-40).

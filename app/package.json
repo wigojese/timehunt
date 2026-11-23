@@ -1,0 +1,13 @@
+{
+  "name": "timehunt-graybox",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Stage 4 gray-box of the Daily Ten. No dependencies. Throw-away UI, portable engine.",
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "serve": "node scripts/serve.mjs",
+    "demo": "node scripts/demo-run.mjs",
+    "record": "node scripts/record-video.mjs"
+  }
+}

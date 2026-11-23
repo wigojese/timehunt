@@ -30,3 +30,8 @@
 ## Stage 3 (2026-11-23)
 - Added `tools/pack/` (pack data, linter, schema, builder) and `docs/pack/` (draft pack JSON, case sheets, bibliography, audits, connections, candidates, review book + screenshots), `docs/STAGE_3_CONTENT.md`.
 - Recorded Stage 2 approval (D-022), D-023 to D-026, F-013 to F-016, Q-32 to Q-37.
+
+## Stage 4 (2026-11-23)
+- Added `app/` (engine, store, UI, tests, fixtures, scripts), `docs/STAGE_4_GRAYBOX.md`, `docs/gray-box/` (test report, e2e report, video, screenshots).
+- `tools/pack/build_pack.py` now also writes `app/data/daily-pack-draft.json`; a test checks it equals `docs/pack/daily-pack-draft.json`.
+- Recorded Stage 3 approval (D-027), D-028 to D-032, F-017 to F-019, Q-38 to Q-41.

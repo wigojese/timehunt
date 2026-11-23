@@ -62,3 +62,11 @@ Urgency: **H** blocks the next stage, **M** needed within two stages, **L** late
 | Q-35 | Cases 6 and 10 share an answer. Keep the finale coincidence, and drop case 10's paid clue that restates case 6? | M | User | 3 |
 | Q-36 | Case 4 uses period vocabulary for a queer-history institution. Who gives the named sensitivity review the agent cannot? | M | User | 3 |
 | Q-37 | Paid ladders are thin (one clue in cases 3, 7, 8, 9). Each needs two or three real clues if Insight is to matter. | H | Author more clues | 3 revision or 4 |
+
+## Added in Stage 4
+| ID | Question | Urg | How to settle | Owner stage |
+|---|---|---|---|---|
+| Q-38 | Does greying out ruled-out years in the selector spoil the deduction? `rules.showRuledOut` exists but the gray-box does not yet toggle it. | M | Compare with and without in think-aloud play | 5 |
+| Q-39 | Is `relationTier` free or deep? Same question as Q-32, now testable with the `?variant=deep` switch. | H | Players, 8 to 12 | 5 |
+| Q-40 | Stage 5 needs real players. Who, how recruited, and where? The agent cannot run human sessions. | H | User | 4 gate |
+| Q-41 | The pack still cannot ship (0 of 10 publishable). Is a gray-box playtest on a draft pack acceptable, with a visible draft banner? | M | User | 4 gate |

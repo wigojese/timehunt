@@ -71,3 +71,22 @@ Status values: **FIXED** (user decision), **PROVISIONAL** (user-named but must b
 | F-014 | Only 2 of 10 answers reach V2 under the available network. 0 of 10 cases pass the full gate. | `AUDITS.md` section 1 |
 | F-015 | Linter caught five leaks in the first draft (target year in free context and in one title). | Lint run |
 | F-016 | Seven of ten relations are "one calendar year after"; a player can learn to guess anchor plus one. | `AUDITS.md` section 3 |
+
+## Added in Stage 4 (2026-11-23)
+
+| ID | Date | Decision | Status | Source / approval | Alternatives | Reversal condition |
+|---|---|---|---|---|---|---|
+| D-027 | 2026-11-23 | Stage 3 approved (`APPROVE STAGE 3`, "approve and continue"). The user did not answer Q-32 to Q-35, so the Stage 3 pack stands as drafted and the open choices become Stage 5 test switches. | **FIXED** | User message | Block on answers (rejected: the user said continue) | User answers Q-32 to Q-35 |
+| D-028 | 2026-11-23 | The gray-box is dependency-free JavaScript modules with `node:test`. It does not choose the product stack. D-008 (no app scaffold before Stage 10) is narrowed: Stage 4 of the master prompt explicitly requires a runnable build, so `app/` exists, with a portable engine and a throw-away UI. | PROPOSED | `STAGE_4_GRAYBOX.md` | React/Expo now (rejected: stack not decided, no verified compatibility check yet) | Stage 10 decision |
+| D-029 | 2026-11-23 | Purchases are transactional: compute next state, one write, adopt only after the write, re-read the store if the write throws. Every command has an idempotent `actionId`. | PROPOSED | `session.js`, tests | Optimistic UI with rollback | Stage 10 persistence choice |
+| D-030 | 2026-11-23 | A saved record that is corrupt, tampered, from another schema, or bound to a different pack or rules is held, never loaded or overwritten. The player may discard it explicitly and it is backed up. | PROPOSED | `session.js`, tests | Silent migration or reset (rejected, 8.5) | Playtest evidence |
+| D-031 | 2026-11-23 | Prices live in `rules.js`, not in pack content. The pack's `cost` field is ignored by the engine. | PROPOSED | `engine.js` | Per-clue prices in content | Stage 5 if clue prices must vary |
+| D-032 | 2026-11-23 | The daily identity in the gray-box is the pack id. No reset clock yet. | PROPOSED | `main.js` | UTC date key | Q-09, Stage 10 |
+
+## Findings added in Stage 4
+
+| ID | Finding | Evidence |
+|---|---|---|
+| F-017 | A random player who reads nothing solves 2.55 of 10 with no clues, 3.98 buying every clue (C1), 4.61 when the relation is sold as a Deep clue, and 3.51 under a per-case cap of 1. | 2,000 seeded runs per row, `STAGE_4_GRAYBOX.md` |
+| F-018 | Five deliberately injected engine bugs were each caught by the suite (1 to 8 failing tests each). | `TEST_REPORT.md` |
+| F-019 | 216,000 random commands in six rule variants broke no invariant. The bank never exceeded its start, never went negative, and `insight + spent` always equalled the start. | `properties.test.js` |

@@ -1,0 +1,177 @@
+{
+  "_about": "Seeded random player, seed 7, relation sold as a Deep clue (Q-32 variant).",
+  "packDigest": "1e11b70de99152",
+  "rulesOverrides": {
+    "relationTier": "deep"
+  },
+  "rulesId": "0424992a7050a0",
+  "seed": 7,
+  "log": [
+    {
+      "type": "REVEAL",
+      "caseId": "case-01",
+      "clueId": "p1",
+      "actionId": "bot7-1"
+    },
+    {
+      "type": "LOCK",
+      "caseId": "case-01",
+      "year": 1969,
+      "actionId": "bot7-2"
+    },
+    {
+      "type": "ADVANCE",
+      "caseId": "case-01",
+      "actionId": "bot7-3"
+    },
+    {
+      "type": "LOCK",
+      "caseId": "case-02",
+      "year": 1891,
+      "actionId": "bot7-4"
+    },
+    {
+      "type": "ADVANCE",
+      "caseId": "case-02",
+      "actionId": "bot7-5"
+    },
+    {
+      "type": "REVEAL",
+      "caseId": "case-03",
+      "clueId": "p1",
+      "actionId": "bot7-6"
+    },
+    {
+      "type": "LOCK",
+      "caseId": "case-03",
+      "year": 1567,
+      "actionId": "bot7-7"
+    },
+    {
+      "type": "ADVANCE",
+      "caseId": "case-03",
+      "actionId": "bot7-8"
+    },
+    {
+      "type": "REVEAL",
+      "caseId": "case-04",
+      "clueId": "p1",
+      "actionId": "bot7-9"
+    },
+    {
+      "type": "LOCK",
+      "caseId": "case-04",
+      "year": 1921,
+      "actionId": "bot7-10"
+    },
+    {
+      "type": "ADVANCE",
+      "caseId": "case-04",
+      "actionId": "bot7-11"
+    },
+    {
+      "type": "REVEAL",
+      "caseId": "case-05",
+      "clueId": "p2",
+      "actionId": "bot7-12"
+    },
+    {
+      "type": "REVEAL",
+      "caseId": "case-05",
+      "clueId": "f3",
+      "actionId": "bot7-13"
+    },
+    {
+      "type": "REVEAL",
+      "caseId": "case-05",
+      "clueId": "p1",
+      "actionId": "bot7-14"
+    },
+    {
+      "type": "LOCK",
+      "caseId": "case-05",
+      "year": 1799,
+      "actionId": "bot7-15"
+    },
+    {
+      "type": "ADVANCE",
+      "caseId": "case-05",
+      "actionId": "bot7-16"
+    },
+    {
+      "type": "LOCK",
+      "caseId": "case-06",
+      "year": 1975,
+      "actionId": "bot7-17"
+    },
+    {
+      "type": "ADVANCE",
+      "caseId": "case-06",
+      "actionId": "bot7-18"
+    },
+    {
+      "type": "REVEAL",
+      "caseId": "case-07",
+      "clueId": "p1",
+      "actionId": "bot7-19"
+    },
+    {
+      "type": "LOCK",
+      "caseId": "case-07",
+      "year": 1325,
+      "actionId": "bot7-21"
+    },
+    {
+      "type": "ADVANCE",
+      "caseId": "case-07",
+      "actionId": "bot7-22"
+    },
+    {
+      "type": "LOCK",
+      "caseId": "case-08",
+      "year": 1444,
+      "actionId": "bot7-24"
+    },
+    {
+      "type": "ADVANCE",
+      "caseId": "case-08",
+      "actionId": "bot7-25"
+    },
+    {
+      "type": "LOCK",
+      "caseId": "case-09",
+      "year": 5,
+      "actionId": "bot7-26"
+    },
+    {
+      "type": "ADVANCE",
+      "caseId": "case-09",
+      "actionId": "bot7-27"
+    },
+    {
+      "type": "LOCK",
+      "caseId": "case-10",
+      "year": 1978,
+      "actionId": "bot7-28"
+    },
+    {
+      "type": "ADVANCE",
+      "caseId": "case-10",
+      "actionId": "bot7-29"
+    }
+  ],
+  "expected": {
+    "stateDigest": "0b22f4fb6c2e61",
+    "score": {
+      "solved": 3,
+      "clean": 0,
+      "assisted": 3,
+      "missed": 7,
+      "unplayed": 0,
+      "insightLeft": 0,
+      "insightSpent": 8
+    },
+    "insightLeft": 0,
+    "status": "completed"
+  }
+}

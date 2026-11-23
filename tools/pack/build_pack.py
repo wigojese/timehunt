@@ -156,6 +156,11 @@ with open(os.path.join(HERE, "pack.schema.json"), "w", encoding="utf-8") as f:
 with open(os.path.join(OUT, "daily-pack-draft.json"), "w", encoding="utf-8") as f:
     json.dump(PACK_JSON, f, indent=2, ensure_ascii=False)
     f.write("\n")
+# the gray-box app reads an identical copy (Stage 4); app/test checks the two stay equal
+os.makedirs(os.path.join(ROOT, "app", "data"), exist_ok=True)
+with open(os.path.join(ROOT, "app", "data", "daily-pack-draft.json"), "w", encoding="utf-8") as f:
+    json.dump(PACK_JSON, f, indent=2, ensure_ascii=False)
+    f.write("\n")
 
 schema_note = "jsonschema not installed; schema not validated"
 try:

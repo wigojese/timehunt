@@ -1,0 +1,175 @@
+{
+  "_about": "Seeded random player, seed 20261123, default rules (no Trace).",
+  "packDigest": "1e11b70de99152",
+  "rulesOverrides": {},
+  "rulesId": "0bd5f6eff38c63",
+  "seed": 20261123,
+  "log": [
+    {
+      "type": "LOCK",
+      "caseId": "case-01",
+      "year": 1969,
+      "actionId": "bot20261123-1"
+    },
+    {
+      "type": "ADVANCE",
+      "caseId": "case-01",
+      "actionId": "bot20261123-2"
+    },
+    {
+      "type": "REVEAL",
+      "caseId": "case-02",
+      "clueId": "p1",
+      "actionId": "bot20261123-3"
+    },
+    {
+      "type": "REVEAL",
+      "caseId": "case-02",
+      "clueId": "p2",
+      "actionId": "bot20261123-4"
+    },
+    {
+      "type": "LOCK",
+      "caseId": "case-02",
+      "year": 1893,
+      "actionId": "bot20261123-5"
+    },
+    {
+      "type": "ADVANCE",
+      "caseId": "case-02",
+      "actionId": "bot20261123-6"
+    },
+    {
+      "type": "REVEAL",
+      "caseId": "case-03",
+      "clueId": "p1",
+      "actionId": "bot20261123-7"
+    },
+    {
+      "type": "LOCK",
+      "caseId": "case-03",
+      "year": 1565,
+      "actionId": "bot20261123-8"
+    },
+    {
+      "type": "ADVANCE",
+      "caseId": "case-03",
+      "actionId": "bot20261123-9"
+    },
+    {
+      "type": "REVEAL",
+      "caseId": "case-04",
+      "clueId": "p1",
+      "actionId": "bot20261123-10"
+    },
+    {
+      "type": "LOCK",
+      "caseId": "case-04",
+      "year": 1920,
+      "actionId": "bot20261123-11"
+    },
+    {
+      "type": "ADVANCE",
+      "caseId": "case-04",
+      "actionId": "bot20261123-12"
+    },
+    {
+      "type": "LOCK",
+      "caseId": "case-05",
+      "year": 1800,
+      "actionId": "bot20261123-13"
+    },
+    {
+      "type": "ADVANCE",
+      "caseId": "case-05",
+      "actionId": "bot20261123-14"
+    },
+    {
+      "type": "LOCK",
+      "caseId": "case-06",
+      "year": 1975,
+      "actionId": "bot20261123-15"
+    },
+    {
+      "type": "ADVANCE",
+      "caseId": "case-06",
+      "actionId": "bot20261123-16"
+    },
+    {
+      "type": "REVEAL",
+      "caseId": "case-07",
+      "clueId": "p1",
+      "actionId": "bot20261123-17"
+    },
+    {
+      "type": "LOCK",
+      "caseId": "case-07",
+      "year": 1324,
+      "actionId": "bot20261123-18"
+    },
+    {
+      "type": "ADVANCE",
+      "caseId": "case-07",
+      "actionId": "bot20261123-19"
+    },
+    {
+      "type": "REVEAL",
+      "caseId": "case-08",
+      "clueId": "p1",
+      "actionId": "bot20261123-20"
+    },
+    {
+      "type": "LOCK",
+      "caseId": "case-08",
+      "year": 1445,
+      "actionId": "bot20261123-21"
+    },
+    {
+      "type": "ADVANCE",
+      "caseId": "case-08",
+      "actionId": "bot20261123-22"
+    },
+    {
+      "type": "REVEAL",
+      "caseId": "case-09",
+      "clueId": "p1",
+      "actionId": "bot20261123-23"
+    },
+    {
+      "type": "LOCK",
+      "caseId": "case-09",
+      "year": 2,
+      "actionId": "bot20261123-24"
+    },
+    {
+      "type": "ADVANCE",
+      "caseId": "case-09",
+      "actionId": "bot20261123-25"
+    },
+    {
+      "type": "LOCK",
+      "caseId": "case-10",
+      "year": 1977,
+      "actionId": "bot20261123-27"
+    },
+    {
+      "type": "ADVANCE",
+      "caseId": "case-10",
+      "actionId": "bot20261123-28"
+    }
+  ],
+  "expected": {
+    "stateDigest": "1bea3aae63cd5b",
+    "score": {
+      "solved": 5,
+      "clean": 2,
+      "assisted": 3,
+      "missed": 5,
+      "unplayed": 0,
+      "insightLeft": 0,
+      "insightSpent": 8
+    },
+    "insightLeft": 0,
+    "status": "completed"
+  }
+}

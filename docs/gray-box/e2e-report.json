@@ -1,0 +1,136 @@
+{
+  "checks": [
+    {
+      "name": "draft banner is shown",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "starts at case 1 with 8 Insight",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "case 1: Deep clue costs 2",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "case 1 solved",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "case 2: Deep clue paid, 4 left",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "case 3 open",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "crash before write: user told nothing was charged",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "crash before write: Insight unchanged",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "after reload: still case 3, Insight 4, clue not revealed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "retry works and charges once",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "case 4 solved with no Insight",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "case 5 missed and answer shown",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "reload on a resolved case keeps the miss",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "a miss did not end the day: case 6 opens",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "crash after write: purchase kept once",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "after reload: charged exactly once",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "case 8 Nudge",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "case 9 spends the last Insight",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "case 10: clue buttons are disabled at zero Insight",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "ends with 9 of 10 solved and 0 Insight left",
+      "pass": true,
+      "detail": "9 of 10 solved. 0 Insight left."
+    },
+    {
+      "name": "reload after finishing: still finished, no refill",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "share text has no answers",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "no page errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "invalid pack: refused with a clear message and no game started",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "invalid pack: nothing saved",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "trace variant shows Trace; default does not",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "passed": 26,
+  "total": 26
+}
