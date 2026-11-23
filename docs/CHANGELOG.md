@@ -53,3 +53,8 @@
 - Retired `app/scripts/record-video.mjs`; updated `study-smoke.mjs` to the new DOM.
 - Added `docs/ui/` (flow sheets, screens, accessibility trees, e2e report) and `docs/STAGE_7_UI.md`.
 - Recorded D-043 to D-050, F-030 to F-034, Q-49 to Q-52.
+
+## Stage 8 (2026-11-23)
+- Added `app/motion/` (camera, transition, path-scroll maths, gestures, camera view, prototype, reveal data, perf recorder), `app/test/camera.test.js` (15 tests; 86 in all), `app/scripts/e2e-motion.mjs` (60 assertions, axe, reduced motion, large text, performance), `app/scripts/record-motion.mjs` (video and storyboard).
+- Added `docs/motion/` (storyboard, video, perf summary, screenshots, e2e report) and `docs/STAGE_8_MOTION.md`. `docs/motion/frames/` is regenerated and ignored.
+- Recorded D-051 to D-057, F-035 to F-038, Q-53 to Q-56.

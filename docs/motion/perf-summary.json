@@ -1,0 +1,161 @@
+{
+  "note": "Headless Chromium on a cloud VM with emulated touch and emulated CPU throttling. NOT a phone. Run the page with ?perf=1 on a real device and send the downloaded JSON.",
+  "runs": [
+    {
+      "cpuThrottle": "1x",
+      "label": "pinch+drag+branch",
+      "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.8103.78 Safari/537.36",
+      "dpr": 2,
+      "viewport": [
+        390,
+        844
+      ],
+      "durationMs": 8737,
+      "frames": 524,
+      "frameMs": {
+        "p50": 16.7,
+        "p95": 16.7,
+        "p99": 16.8,
+        "max": 16.8
+      },
+      "renderMs": {
+        "n": 187,
+        "p50": 0.2,
+        "p95": 0.3,
+        "max": 4.5
+      },
+      "over16_7": 0,
+      "over33": 0,
+      "over50": 0,
+      "inputToFrameMs": {
+        "n": 400,
+        "p50": 31.5,
+        "p95": 32.2,
+        "max": 33
+      },
+      "cpu": {
+        "taskSec": 0.568,
+        "scriptSec": 0.092,
+        "layoutSec": 0.058,
+        "recalcStyleSec": 0.061,
+        "layoutCount": 190,
+        "recalcStyleCount": 238
+      }
+    },
+    {
+      "cpuThrottle": "4x",
+      "label": "pinch+drag+branch",
+      "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.8103.78 Safari/537.36",
+      "dpr": 2,
+      "viewport": [
+        390,
+        844
+      ],
+      "durationMs": 8830,
+      "frames": 530,
+      "frameMs": {
+        "p50": 16.7,
+        "p95": 16.8,
+        "p99": 16.8,
+        "max": 16.8
+      },
+      "renderMs": {
+        "n": 187,
+        "p50": 0.9,
+        "p95": 1.9,
+        "max": 3.3
+      },
+      "over16_7": 0,
+      "over33": 0,
+      "over50": 0,
+      "inputToFrameMs": {
+        "n": 400,
+        "p50": 30.6,
+        "p95": 31.7,
+        "max": 32.1
+      },
+      "cpu": {
+        "taskSec": 2.296,
+        "scriptSec": 0.358,
+        "layoutSec": 0.248,
+        "recalcStyleSec": 0.285,
+        "layoutCount": 190,
+        "recalcStyleCount": 239
+      }
+    },
+    {
+      "cpuThrottle": "6x",
+      "label": "pinch+drag+branch",
+      "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.8103.78 Safari/537.36",
+      "dpr": 2,
+      "viewport": [
+        390,
+        844
+      ],
+      "durationMs": 8891,
+      "frames": 530,
+      "frameMs": {
+        "p50": 16.7,
+        "p95": 16.8,
+        "p99": 16.8,
+        "max": 33.4
+      },
+      "renderMs": {
+        "n": 187,
+        "p50": 1.5,
+        "p95": 3,
+        "max": 5.8
+      },
+      "over16_7": 3,
+      "over33": 2,
+      "over50": 0,
+      "inputToFrameMs": {
+        "n": 400,
+        "p50": 29.7,
+        "p95": 31.7,
+        "max": 44.1
+      },
+      "cpu": {
+        "taskSec": 3.495,
+        "scriptSec": 0.534,
+        "layoutSec": 0.412,
+        "recalcStyleSec": 0.433,
+        "layoutCount": 190,
+        "recalcStyleCount": 237
+      }
+    },
+    {
+      "cpuThrottle": "4x",
+      "label": "path scroll",
+      "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.8103.78 Safari/537.36",
+      "dpr": 2,
+      "viewport": [
+        390,
+        844
+      ],
+      "durationMs": 1308,
+      "frames": 79,
+      "frameMs": {
+        "p50": 16.7,
+        "p95": 16.8,
+        "p99": 16.8,
+        "max": 16.8
+      },
+      "renderMs": {
+        "n": 0,
+        "p50": null,
+        "p95": null,
+        "max": null
+      },
+      "over16_7": 0,
+      "over33": 0,
+      "over50": 0,
+      "inputToFrameMs": {
+        "n": 0,
+        "p50": null,
+        "p95": null,
+        "max": null
+      }
+    }
+  ]
+}

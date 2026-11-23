@@ -50,3 +50,6 @@ app/
   fixtures/                      documented JSON fixtures (see fixtures/README.md)
   scripts/                       serve, demo-run, record-video
 ```
+
+## Motion prototype (Stage 8)
+`node scripts/serve.mjs`, then open `/motion/`. Add `?perf=1` for the frame recorder (use it on a real phone). `node scripts/e2e-motion.mjs` runs the 60-assertion emulated-touch audit; `node scripts/record-motion.mjs` rebuilds the video and storyboard. See `docs/STAGE_8_MOTION.md`.

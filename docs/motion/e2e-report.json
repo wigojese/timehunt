@@ -1,0 +1,328 @@
+{
+  "generated": "2026-11-23",
+  "checks": [
+    {
+      "name": "trail loads without errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "wheel scroll moves the path forward (natural scroll, nothing captured)",
+      "pass": true,
+      "detail": "0->1.5074532346063911"
+    },
+    {
+      "name": "no scroll trap: the page scrolls past the path to its own end",
+      "pass": true,
+      "detail": "{\"y\":4551,\"max\":4551,\"f\":1}"
+    },
+    {
+      "name": "the content after the path is reachable and visible",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "a one-finger swipe on the path surface scrolls the page (touch-action pan-y)",
+      "pass": true,
+      "detail": "scrollY 595"
+    },
+    {
+      "name": "Next case button moves the path one mark at a time (non-scroll path)",
+      "pass": true,
+      "detail": "1,2"
+    },
+    {
+      "name": "Previous case button moves back",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "case loads without errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "pinch out zooms in",
+      "pass": true,
+      "detail": "12.9->37.3"
+    },
+    {
+      "name": "focal pinning: the year under the fingers does not move (no unexpected year jump)",
+      "pass": true,
+      "detail": "1798.274806547619 -> 1798.2748068873082"
+    },
+    {
+      "name": "semantic zoom: more detail after zooming in",
+      "pass": true,
+      "detail": "fives -> years"
+    },
+    {
+      "name": "pinch in zooms out and the focal year still holds",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "camera motion never changes the marker year",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "one-finger drag on the ruler scrolls the page and leaves the camera alone",
+      "pass": true,
+      "detail": "scrollY 0->261"
+    },
+    {
+      "name": "zoom buttons work (non-gesture path)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Fit button fits the possible years in view",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "keyboard + and - zoom the ruler",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "keyboard arrows move the marker between possible years",
+      "pass": true,
+      "detail": "1799,1800"
+    },
+    {
+      "name": "dragging the marker handle moves the marker and does not scroll the page",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "precision entry sets the marker",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "precision entry refuses a year not in play",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "ctrl+wheel (trackpad pinch) zooms, plain wheel does not",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "evidence branch opens to progress 1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "branch: the ruler controls are inert while the branch is open; focus is in the branch",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "return: the camera is exactly as it was (centre, scale, marker)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "browser Back closed the branch and stayed on the case",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "focus returned to the Evidence button",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "interrupted opening reverses from where it was: never jumps to 0 or 1",
+      "pass": true,
+      "detail": "peak 0.32, max step 0.04"
+    },
+    {
+      "name": "after the interruption the branch ends closed and the camera is intact",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Back then Forward reopens the branch",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Escape closes the branch",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Skip is hidden until a lock opening is running",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Lock without a year asks for one",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "lock opening is mid-way after 300 ms (an animation, not a cut)",
+      "pass": true,
+      "detail": "p=0.34"
+    },
+    {
+      "name": "Skip finishes the opening at once",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "the opened stratum shows the answer year",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "the locked marker is the year the player chose",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "verdict links to the reveal",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "reveal opens with a timeline, a step and the dates in text",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Next step walks the five steps and the camera zooms to each",
+      "pass": true,
+      "detail": "centuries,fives,decades,centuries,centuries"
+    },
+    {
+      "name": "reveal timeline: no two visible date labels overlap (the others collapse to dots, and the dates are also in the text list)",
+      "pass": true,
+      "detail": "{\"shown\":2,\"overlaps\":0}"
+    },
+    {
+      "name": "natural wheel scroll also advances the steps",
+      "pass": true,
+      "detail": "4 -> 3"
+    },
+    {
+      "name": "step progress is announced in text",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Back from the reveal returns to the locked case with the verdict",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "scroll restoration: Forward returns to the same scroll position",
+      "pass": true,
+      "detail": "2400 -> 2400"
+    },
+    {
+      "name": "reload offers Resume at the saved step",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Resume jumps to the saved step",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Skip to the end reaches the last step",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "reduced motion: zoom, branch and lock arrive at their end state at once",
+      "pass": true,
+      "detail": "{\"zoomSettleMs\":52,\"branchAt30ms\":1,\"branchEnd\":1,\"lockAt40ms\":1,\"lockEnd\":1,\"verdictShown\":true,\"answerYear\":\"1799\"}"
+    },
+    {
+      "name": "full motion: the same transitions take visible time",
+      "pass": true,
+      "detail": "{\"zoomSettleMs\":392,\"branchAt30ms\":0.1,\"branchEnd\":1,\"lockAt40ms\":0.05,\"lockEnd\":1,\"verdictShown\":true,\"answerYear\":\"1799\"}"
+    },
+    {
+      "name": "reduced motion loses no information: verdict and answer year still shown",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "text 130%: no horizontal scroll; ruler still usable",
+      "pass": true,
+      "detail": "{\"sw\":390,\"vw\":390,\"camH\":435}"
+    },
+    {
+      "name": "text 130%: pinch still works",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "text 130%: precision entry works",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "text 200%: no horizontal scroll; ruler still tall enough to use",
+      "pass": true,
+      "detail": "{\"sw\":390,\"vw\":390,\"camH\":472}"
+    },
+    {
+      "name": "text 200%: pinch still works",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "text 200%: precision entry works",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "text 200%: the Lock button is reachable and large",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "performance @4x CPU: 95th percentile frame time under 33 ms during pinch, drag and branch",
+      "pass": true,
+      "detail": "{\"p50\":16.7,\"p95\":16.8,\"p99\":16.8,\"max\":16.8}"
+    },
+    {
+      "name": "performance @4x CPU: input-to-frame 95th percentile under 50 ms",
+      "pass": true,
+      "detail": "{\"n\":400,\"p50\":30.6,\"p95\":31.7,\"max\":32.1}"
+    }
+  ],
+  "passed": 60,
+  "total": 60,
+  "axe": [],
+  "reducedMotion": {
+    "full": {
+      "zoomSettleMs": 392,
+      "branchAt30ms": 0.1,
+      "branchEnd": 1,
+      "lockAt40ms": 0.05,
+      "lockEnd": 1,
+      "verdictShown": true,
+      "answerYear": "1799"
+    },
+    "reduced": {
+      "zoomSettleMs": 52,
+      "branchAt30ms": 1,
+      "branchEnd": 1,
+      "lockAt40ms": 1,
+      "lockEnd": 1,
+      "verdictShown": true,
+      "answerYear": "1799"
+    }
+  }
+}

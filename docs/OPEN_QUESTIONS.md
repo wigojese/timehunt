@@ -93,3 +93,11 @@ Urgency: **H** blocks the next stage, **M** needed within two stages, **L** late
 | Q-50 | Real devices: VoiceOver, TalkBack, 568 px height, one-hand observation. Who runs them? | H | User | 11 or earlier |
 | Q-51 | Which second language is first, and who translates? Georgian needs a tested font (Q-16). | M | User | 7 follow-up |
 | Q-52 | Should Practice hide case lenses to avoid spoiling topics? | L | Design | 8 |
+
+## Added in Stage 8
+| ID | Question | Urg | How to settle | Owner stage |
+|---|---|---|---|---|
+| Q-53 | Who can run `?perf=1` and the gestures on a real phone, and which phone is the specified device? | H | User | 8 gate |
+| Q-54 | `touch-action: pan-y` removes browser pinch-zoom and double-tap zoom on the ruler. Accept, with the text-size setting and buttons as the alternative? | H | User and accessibility review | 8 gate |
+| Q-55 | Is the marker handle safe from Android and iOS edge gestures at a 20 px inset? | M | Real devices | 8 follow-up |
+| Q-56 | Should the Stage 7 UI adopt the camera for large candidate sets only, or for every case? | M | Design | 9 or 10 |

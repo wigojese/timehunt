@@ -36,3 +36,6 @@ See `STAGE_6_ART_DIRECTION.md` section 6 for the rated table and nine named weak
 
 ## Stage 7 critique
 See `STAGE_7_UI.md` section 8. Short version: clear and calm, 8 out of 10 on next action and reach; 5 on visual character and 3 on delight; confirm friction and the three-view case are unproven; nothing has been run on a real device or with assistive technology.
+
+## Stage 8 critique
+See `STAGE_8_MOTION.md` section 5. Camera and controller are solid and tested; the look is utilitarian; the reveal is a skeleton; nothing has run on a phone or been used by a person.

@@ -153,3 +153,24 @@ Status values: **FIXED** (user decision), **PROVISIONAL** (user-named but must b
 | F-032 | At 200% text, fixed-size pegs and a single-row HUD overflowed to 477 px. | e2e overflow check |
 | F-033 | 78 end-to-end assertions pass; axe finds 1 issue on 33 screens (a list row obscured by the sticky bar at scroll top). | `docs/ui/e2e-report.json` |
 | F-034 | All 30 primary buttons sit in the bottom 45% of the viewport. This is a geometric proxy for one-hand reach, not a hand study. | `e2e-report.json` |
+
+## Added in Stage 8 (2026-11-23)
+
+| ID | Date | Decision | Status | Source / approval | Alternatives | Reversal condition |
+|---|---|---|---|---|---|---|
+| D-051 | 2026-11-23 | Stage 7 approved (`APPROVE STAGE 7`). | **FIXED** | User message | n/a | n/a |
+| D-052 | 2026-11-23 | The motion prototype is isolated in `app/motion/` and does not use the engine or the Stage 7 UI. Camera, transition and path maths are pure modules with unit tests. | PROPOSED | `STAGE_8_MOTION.md` | Build into the main UI first | Stage 10 architecture |
+| D-053 | 2026-11-23 | The camera surface uses `touch-action: pan-y`: one finger scrolls the page, two fingers pinch the camera, the marker handle alone uses `touch-action: none`, a plain wheel is never intercepted. Every gesture has a button or key. | PROPOSED | e2e | Full-surface gesture capture (rejected: scroll trap) | Real-device evidence |
+| D-054 | 2026-11-23 | Transitions are reversible controllers whose progress is continuous; interruptions continue from the current picture. | PROPOSED | `transition.js`, tests | Fire-and-forget CSS transitions | n/a |
+| D-055 | 2026-11-23 | Path scroll reads natural scroll and never captures it; the controls to move along the path sit inside the sticky camera. | PROPOSED | e2e | Scroll-jacking | n/a |
+| D-056 | 2026-11-23 | Timeline cameras show no ruled-out hatch; hatch keeps its one meaning. Pin labels collapse to dots under 40 px spacing; the dates are always also listed as text. | PROPOSED | Storyboard | Overprinted labels | n/a |
+| D-057 | 2026-11-23 | The Stage 8 performance claim is limited to emulation until a real device run exists. `?perf=1` provides the recorder. | PROPOSED | `perf.js` | Claim performance from emulation | A device run |
+
+## Findings added in Stage 8
+
+| ID | Finding | Evidence |
+|---|---|---|
+| F-035 | Focal pinning holds: maximum focal-year shift 2e-13 years across 12,000 random pinch steps; under 0.08 years in a touch pinch. | `camera.test.js`, `e2e-motion.mjs` |
+| F-036 | Render work is 0.3 ms p95 per frame at full speed and 3.0 ms at 6x CPU slowdown, with 190 layouts in an 8.8 s pinch, drag and branch run. Headless frame times are quantised at the display rate and say little about a phone. | `perf-summary.json` |
+| F-037 | Ten collision and gesture bugs found and fixed while building; seven open risks listed, none tested on a device. | `STAGE_8_MOTION.md` section 4 |
+| F-038 | Reduced motion reaches the end state in about 50 ms or less against 340 to 900 ms, with the same verdict and answer. | `e2e-report.json` |

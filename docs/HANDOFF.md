@@ -48,3 +48,6 @@ Stage 6 is complete and awaits `APPROVE STAGE 6`. Boards rebuild with `cd docs/a
 
 ## After Stage 7
 Stage 7 is complete and awaits `APPROVE STAGE 7`. Play it: `cd app && node scripts/serve.mjs`. Audit it: `npm install` once, then `node scripts/e2e-ui.mjs` and `node scripts/make-flows.mjs` (rewrites `docs/ui/`). Strings live in `app/src/ui/strings.js`; try `?pseudo=1`. Do not start Stage 8 without approval.
+
+## After Stage 8
+Stage 8 is complete as an emulated prototype and awaits `APPROVE STAGE 8`. Open `http://127.0.0.1:5173/motion/` after `node scripts/serve.mjs`. Audit: `node scripts/e2e-motion.mjs`; media: `node scripts/record-motion.mjs`. **No real phone has run it.** Add `?perf=1` on a phone to record. Do not start Stage 9 without approval.
