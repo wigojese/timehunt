@@ -3,9 +3,11 @@ import { createServer } from 'node:http';
 import { readFile } from 'node:fs/promises';
 import { extname, join, normalize } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { networkInterfaces } from 'node:os';
 
 const root = join(fileURLToPath(new URL('.', import.meta.url)), '..');
-const port = Number(process.argv[2] || process.env.PORT || 5173);
+const lan = process.argv.includes('--lan');
+const port = Number(process.argv.find(a => /^\d+$/.test(a)) || process.env.PORT || 5173);
 const types = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.json': 'application/json; charset=utf-8' };
 export function start(p = port) {
   const srv = createServer(async (req, res) => {
@@ -15,6 +17,13 @@ export function start(p = port) {
     try { const data = await readFile(file); res.writeHead(200, { 'content-type': types[extname(file)] || 'application/octet-stream', 'cache-control': 'no-store' }); res.end(data); }
     catch { res.writeHead(404); res.end('not found'); }
   });
-  return new Promise(r => srv.listen(p, '127.0.0.1', () => r(srv)));
+  return new Promise(r => srv.listen(p, lan ? '0.0.0.0' : '127.0.0.1', () => r(srv)));
 }
-if (import.meta.url === `file://${process.argv[1]}`) start().then(() => console.log(`TIMEHUNT gray-box on http://127.0.0.1:${port}/  (add ?debug=1 for test tools)`));
+if (import.meta.url === `file://${process.argv[1]}`) start().then(() => {
+  console.log(`Timehunt on http://127.0.0.1:${port}/   (motion prototype: /motion/, add ?perf=1 for the recorder; game: add ?debug=1 for test tools)`);
+  if (lan) {
+    const ips = Object.values(networkInterfaces()).flat().filter(i => i && i.family === 'IPv4' && !i.internal).map(i => i.address);
+    console.log('On your phone (same Wi-Fi), open one of:');
+    for (const ip of ips) console.log(`  http://${ip}:${port}/motion/   and   http://${ip}:${port}/`);
+  }
+});
