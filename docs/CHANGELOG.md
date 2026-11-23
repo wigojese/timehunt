@@ -72,3 +72,8 @@
 - Added `tools/verify/dep-matrix.mjs` and `xss-probe.mjs`. Playwright path is now configurable (`PLAYWRIGHT_MODULE`).
 - Fixed: Node server returned 404 for `/motion/` and `/reveal/`; prototype pages could render `javascript:` links from a pack. Tests added (103 total).
 - Logged D-067 to D-076, F-048 to F-054, Q-61 to Q-66. Stage 9 marked approved.
+
+## Temporal Atlas redesign (2026-11-24)
+- New visual layer `app/atlas.css`, art kit `app/src/ui/art.js`, self-hosted fonts `app/fonts/`, pose sheet `app/atlas/poses.html`.
+- Screens restyled: welcome, how it works, home, dossier, hunt, evidence, result. Settings gains a guide toggle.
+- Screenshots and contact sheet in `docs/atlas/`. D-077 to D-080, Q-67 to Q-69.

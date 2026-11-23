@@ -1,0 +1,21 @@
+// Builds docs/atlas/pose-sheet.png and docs/atlas/contact-sheet.png from the screenshots. Run shots-atlas.mjs first.
+import { createRequire } from 'node:module';
+import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { dirname, join } from 'node:path';
+import { start } from './serve.mjs';
+const require = createRequire(import.meta.url);
+const { chromium } = require(process.env.PLAYWRIGHT_MODULE || '/opt/node22/lib/node_modules/playwright');
+const OUT = join(dirname(fileURLToPath(import.meta.url)), '..', '..', 'docs', 'atlas');
+const srv = await start(5193);
+const b = await chromium.launch();
+let page = await b.newPage({ viewport: { width: 760, height: 900 }, deviceScaleFactor: 2 });
+await page.goto('http://127.0.0.1:5193/atlas/poses.html'); await page.waitForTimeout(500);
+await page.screenshot({ path: join(OUT, 'pose-sheet.png'), fullPage: true });
+const shots = [['1-welcome', 'Welcome'], ['3-day', 'Home: the day'], ['4b-hunt', 'Hunt'], ['5-evidence', 'Evidence'], ['7-year-chosen', 'Year chosen'], ['8-result', 'Solved']];
+const img = n => 'data:image/png;base64,' + readFileSync(join(OUT, n + '.png')).toString('base64');
+page = await b.newPage({ viewport: { width: 1500, height: 560 }, deviceScaleFactor: 1 });
+await page.setContent(`<body style="margin:0;background:#C9B78F;font:600 22px system-ui;padding:24px"><div style="display:flex;gap:20px">${shots.map(([n, l]) => `<div style="flex:1;text-align:center"><div style="margin-bottom:8px">${l}</div><img src="${img(n)}" style="width:100%;border:3px solid #252B28;border-radius:18px;display:block"></div>`).join('')}</div></body>`);
+await page.waitForTimeout(500);
+await page.screenshot({ path: join(OUT, 'contact-sheet.png'), fullPage: true });
+await b.close(); srv.close(); console.log('sheets written');

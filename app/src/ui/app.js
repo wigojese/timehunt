@@ -7,6 +7,7 @@ import { rng } from '../engine/rng.js';
 import { Session } from '../store/session.js';
 import { browserStorage, FaultyStorage } from '../store/storage.js';
 import { t, setPseudo } from './strings.js';
+import { squirrel, hourglass, hero, landscape, sunburst, pin, icons, foliage } from './art.js';
 
 const $ = s => document.querySelector(s);
 const main = $('#main'), nav = $('#nav'), dlg = $('#dlg');
@@ -24,7 +25,7 @@ if (variants.includes('norefund')) overrides.refundRedundant = false;
 
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 let content, rules, daily, practice, storage, faulty, persistent = true;
-let settings = { textScale: 100, reduceMotion: false, confirmSpend: true, onboarded: false };
+let settings = { textScale: 100, reduceMotion: false, confirmSpend: true, onboarded: false, guide: true };
 const ui = { route: 'trail', view: 'dossier', mode: 'daily', selected: {}, onbStep: 1, msg: '', focus: false, revealFor: null, returnTo: 'trail', heldStatus: null };
 let counter = 0;
 const t0 = Date.now();
@@ -51,6 +52,7 @@ function saveSettings() { try { storage.setItem('timehunt:settings', JSON.string
 function applySettings() {
   document.documentElement.style.fontSize = settings.textScale + '%';
   document.documentElement.dataset.motion = settings.reduceMotion ? 'reduce' : 'auto';
+  document.documentElement.dataset.guide = settings.guide === false ? 'off' : 'on';
 }
 function archive() { try { return JSON.parse(storage.getItem('timehunt:archive') || '[]'); } catch (e) { return []; } }
 function pushArchive(v) {
@@ -91,10 +93,13 @@ function strip(v) {
   const summary = t('stripSummary', { solved: n('solved_clean') + n('solved_assisted'), missed: n('missed'), todo: v.cases.length - n('solved_clean') - n('solved_assisted') - n('missed'), now: v.cursor + 1 });
   return `<div role="img" aria-label="${summary}"><ol class="strip" aria-hidden="true">${v.cases.map((c, i) => `<li ${i === v.cursor && v.status === 'active' ? 'class="now"' : ''}><span class="seg ${stKey(c.status)}"></span></li>`).join('')}</ol></div>`;
 }
+const guide = (pose, cls = '', flip = false) => `<div class="guide ${cls}" aria-hidden="true">${squirrel({ pose, flip })}</div>`;
+const wordmark = () => `<p class="wordmark"><span class="hg" aria-hidden="true">${hourglass()}</span><span class="wm">${t('appName')}</span><span class="tag">${t('tagline')}</span></p>`;
+const banner = (label, pose = 'idle') => `<div class="banner" aria-hidden="true">${landscape()}<span class="ribbon">${label}</span>${guide(pose)}</div>`;
 const bar = (html, two = false) => `<div class="bar ${two ? 'two' : ''}">${html}</div>`;
 const btn = (action, label, cls = '', extra = '') => `<button type="button" class="btn ${cls}" data-action="${action}" ${extra}>${label}</button>`;
 function mainNav(active) {
-  nav.innerHTML = [['trail', 'navToday'], ['practice', 'navPractice'], ['archive', 'navArchive'], ['settings', 'navSettings']].map(([r, k]) => `<button type="button" data-action="go" data-route="${r}" ${active === r ? 'aria-current="page"' : ''}>${t(k)}</button>`).join('');
+  nav.innerHTML = [['trail', 'navToday'], ['practice', 'navPractice'], ['archive', 'navArchive'], ['settings', 'navSettings']].map(([r, k]) => `<button type="button" data-action="go" data-route="${r}" ${active === r ? 'aria-current="page"' : ''}>${icons[{ trail: 'today', practice: 'practice', archive: 'archive', settings: 'settings' }[r]]}<span>${t(k)}</span></button>`).join('');
   document.body.classList.add('has-nav');
 }
 function noNav() { nav.innerHTML = ''; document.body.classList.remove('has-nav'); }
@@ -123,8 +128,12 @@ function ask({ title, body, yes, no }) {
 function renderOnboarding() {
   const n = ui.onbStep, k = ['onb1', 'onb2', 'onb3'][n - 1];
   noNav();
-  return `<p class="note" style="margin-top:1rem">${t('stepOf', { n })}</p><h1 id="h" tabindex="-1">${t(k + 't')}</h1><p class="q" style="font-size:1.125rem;font-family:var(--sans)">${t(k)}</p><div class="spacer"></div>
-  ${bar(`${n < 3 ? btn('onb-next', t('next'), 'primary') : btn('onb-done', t('done'), 'primary')}${n < 3 ? btn('onb-done', t('skip')) : ''}`)}`;
+  const nextBtns = bar(`${n < 3 ? btn('onb-next', t('next'), 'primary') : btn('onb-done', t('done'), 'primary')}${n < 3 ? btn('onb-done', t('skip')) : ''}`);
+  if (n === 1) return `${wordmark()}<div class="welcome">${hero()}${guide('map', 'big-guide')}</div>
+    <p class="note" style="text-align:center">${t('stepOf', { n })}</p><h1 id="h" tabindex="-1" style="text-align:center">${t(k + 't')}</h1><div class="bubble">${t(k)}</div><div class="spacer"></div>${nextBtns}`;
+  const picture = n === 2 ? `<span class="pegs">${Array.from({ length: 8 }, () => '<span class="peg"></span>').join('')}</span>${guide('think')}` : `${guide('lantern')}${pin()}`;
+  return `<div class="paper" style="margin-top:1rem"><p class="note" style="margin-top:.5rem">${t('stepOf', { n })}</p><h1 id="h" tabindex="-1">${t(k + 't')}</h1>
+    <div class="howstep"><span class="n" aria-hidden="true">${n}</span><span class="picture" aria-hidden="true">${picture}</span><p>${t(k)}</p></div><div class="spacer"></div>${nextBtns}</div>`;
 }
 
 function renderTrail() {
@@ -134,9 +143,10 @@ function renderTrail() {
   const c = v.cases[v.cursor];
   const started = v.cases.some(x => x.status !== 'not_started' && x.status !== 'active') || (c && c.spent > 0);
   const label = done ? t('seeDay') : started || v.cursor > 0 ? t('resumeCase', { n: v.cursor + 1 }) : t('startCase', { n: 1 });
-  const rows = v.cases.map((x, i) => `<li class="row" style="${i === 0 ? 'border-top:0' : ''}"><span><span class="mk ${stKey(x.status)}" aria-hidden="true"></span>&nbsp; ${t('caseOf', { n: i + 1 }).replace(' of 10', '')}</span><span class="note">${stWord(x.status)}</span></li>`).join('');
-  return `${hud(v, t('appName'))}${strip(v)}<h1 id="h" tabindex="-1">${t('trailTitle')}</h1><p>${t('trailLead')}</p>
-  <ul class="sheet" style="list-style:none">${rows}</ul>
+  const rows = v.cases.map((x, i) => `<li class="${i === v.cursor && !done ? 'cur' : ''}">${pin(i === v.cursor && !done ? '#E1A52C' : '#A94A28')}<span class="card"><span><span class="mk ${stKey(x.status)}" aria-hidden="true"></span>${t('caseOf', { n: i + 1 }).replace(' of 10', '')}</span><span class="note">${stWord(x.status)}</span></span></li>`).join('');
+  return `${wordmark()}<div class="homehero">${hero()}${guide('map', 'big-guide')}</div>${hud(v, t('trailTitle'))}${strip(v)}
+  <h1 id="h" tabindex="-1" class="sr">${t('trailTitle')}</h1><p>${t('trailLead')}</p>
+  <ol class="path">${rows}</ol>
   <p class="note" style="margin-top:.75rem">${t('conv')}</p>
   <div class="spacer"></div>${studyBar()}
   ${bar(btn('trail-go', label, 'primary') + btn('howto', t('howItWorks')))}`;
@@ -203,7 +213,7 @@ function renderResult(v, c) {
   const srcs = [...c.free.flatMap(f => f.sourceIds), ...c.clues.flatMap(x => x.sourceIds || []), ...(c.relation ? c.relation.sourceIds : []), ...r.reveal.flatMap(x => x.sourceIds)];
   const nextLabel = practiceMode ? t('navPractice') : last ? t('seeDay') : t('nextCase');
   return `${caseHead(v, c)}<div class="result ${hit ? 'hit' : 'miss'}" role="status"><p><span class="mk ${hit ? (c.status === 'solved_clean' ? 'clean' : 'assisted') : 'missed'}" aria-hidden="true"></span>&nbsp; ${cap(hit ? t('stSolved') : t('stMissed'))}. ${t('youLocked', { year: yearLabel(c.lock.year) })}</p>
-  <h1 id="h" tabindex="-1" class="big" style="font-size:3.5rem">${yearLabel(r.answer)}</h1><p>${esc(r.event)}.</p></div>
+  <span class="yearwrap">${hit ? sunburst() : ''}<h1 id="h" tabindex="-1" class="big">${yearLabel(r.answer)}</h1></span><p>${esc(r.event)}.</p>${guide(hit ? 'lantern' : 'think')}</div>
   ${hit ? '' : `<p style="margin-top:.75rem">${esc(r.missExplanation)}</p><p class="note">${t('missNote')}</p>`}
   <p class="note" style="margin-top:.75rem">${esc(r.definition)} ${esc(r.discoveryVsEvent)}</p>
   ${proof ? `<details><summary>${t('whyNot')}</summary><ul style="padding-left:1.25rem">${proof}</ul></details>` : ''}
@@ -250,7 +260,7 @@ function renderSettings() {
   const sizes = [[100, 'size100'], [130, 'size130'], [160, 'size160'], [200, 'size200']];
   return `<h1 id="h" tabindex="-1">${t('settingsTitle')}</h1>
   <fieldset class="sheet"><legend class="sr">${t('textSize')}</legend><div class="ctl" style="display:block"><strong>${t('textSize')}</strong></div>${sizes.map(([p, k]) => `<label class="ctl"><span>${t(k)}</span><input type="radio" name="ts" value="${p}" ${settings.textScale === p ? 'checked' : ''}></label>`).join('')}</fieldset>
-  <div class="sheet"><label class="ctl"><span>${t('reduceMotion')}</span><input type="checkbox" id="rm" ${settings.reduceMotion ? 'checked' : ''}></label><label class="ctl"><span>${t('confirmSpend')}</span><input type="checkbox" id="cs" ${settings.confirmSpend ? 'checked' : ''}></label>
+  <div class="sheet"><label class="ctl"><span>${t('reduceMotion')}</span><input type="checkbox" id="rm" ${settings.reduceMotion ? 'checked' : ''}></label><label class="ctl"><span>${t('showGuide')}</span><input type="checkbox" id="gd" ${settings.guide === false ? '' : 'checked'}></label><label class="ctl"><span>${t('confirmSpend')}</span><input type="checkbox" id="cs" ${settings.confirmSpend ? 'checked' : ''}></label>
   <div class="ctl"><span>${t('language')}</span><span>${t('langEn')}</span></div></div><p class="note">${t('langNote')}</p>
   <div style="margin-top:1rem">${btn('howto', t('howItWorks'))}</div><div style="margin-top:.75rem">${btn('clear', t('clearData'))}</div>${studyBar()}`;
 }
@@ -292,6 +302,14 @@ function render(opts = {}) {
       }
     }
   } catch (e) { html = renderError('Something went wrong', [{ code: 'RENDER', path: ui.route, msg: String(e.message) }]); console.error(e); }
+  const onPlay = ui.route === 'play' && !html.startsWith('<h1') && !html.includes('class="banner"');
+  if (onPlay) {
+    const v = view(), c = v.cases && v.cases[v.cursor];
+    const lab = v.mode === 'practice' ? 'Practice' : t('caseOf', { n: c.order });
+    const pose = routeKey === 'evidence' ? 'map' : 'idle';
+    html = routeKey === 'result' ? `<div class="paper" style="margin-top:.75rem">${html}</div>` : `${banner(lab, pose)}<div class="paper">${html}</div>`;
+  }
+  $('#app').dataset.theme = onPlay ? 'map' : 'paper';
   main.innerHTML = html;
   logEvent('view', { route: ui.route, sub: routeKey, cursor: sess() && sess().state ? sess().state.cursor : null, insight: sess() && sess().state ? sess().state.insight : null });
   if (opts.focus !== false && ui.focus) { const h = $('#h'); if (h) h.focus(); ui.focus = false; }
@@ -382,6 +400,7 @@ document.addEventListener('change', e => {
   if (el.name === 'yr') { const c = view().cases[view().cursor]; ui.selected[c.id] = Number(el.value); logEvent('select_year', { caseId: c.id, year: Number(el.value) }); main.querySelectorAll('.layer .st').forEach(s => { const lab = s.closest('.layer'); const inp = lab.querySelector('input'); if (!inp.disabled) s.textContent = inp.checked ? t('selected') : t('pressSelect'); }); const lock = main.querySelector('[data-action=lock]'); if (lock) lock.textContent = t('lockBtn', { year: yearLabel(Number(el.value)) }); $('#msg') && ($('#msg').textContent = ''); }
   if (el.name === 'ts') { settings.textScale = Number(el.value); saveSettings(); }
   if (el.id === 'rm') { settings.reduceMotion = el.checked; saveSettings(); }
+  if (el.id === 'gd') { settings.guide = el.checked; saveSettings(); }
   if (el.id === 'cs') { settings.confirmSpend = el.checked; saveSettings(); }
 });
 function startPractice(caseId) {

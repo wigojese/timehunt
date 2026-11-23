@@ -120,3 +120,11 @@ Urgency: **H** blocks the next stage, **M** needed within two stages, **L** late
 | Q-64 | Will a non-programmer edit puzzles? If yes, a CMS or form editor is worth scoping; if no, the structured repository stays. | M | User | 13 |
 | Q-65 | How much progress loss is tolerable if a browser evicts site data (a day, a streak, the archive)? This decides whether an export code and a persistent-storage prompt are required before launch. | H | User | 11 |
 | Q-66 | Is answer secrecy ever a requirement (a competitive or leaderboard mode)? If yes, a server-reveal mode must be designed; if no, the accepted trade-off in D-074 stands. | M | User | 12 |
+
+## Added: Temporal Atlas redesign (2026-11-24)
+
+| ID | Question | Priority | Owner | Needed by |
+|---|---|---|---|---|
+| Q-67 | Is the code-drawn squirrel and scenery close enough to proceed, or should real illustrated assets be commissioned or generated first? | H | User | 11 |
+| Q-68 | Apply the Atlas look to the Motion and World Reveal prototypes next? | M | User | 11 |
+| Q-69 | Georgian font choice for the new type system. | M | User | 12 |

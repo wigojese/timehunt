@@ -10,7 +10,7 @@
         390,
         844
       ],
-      "durationMs": 8737,
+      "durationMs": 8748,
       "frames": 524,
       "frameMs": {
         "p50": 16.7,
@@ -20,24 +20,24 @@
       },
       "renderMs": {
         "n": 187,
-        "p50": 0.2,
+        "p50": 0.1,
         "p95": 0.3,
-        "max": 4.5
+        "max": 0.5
       },
       "over16_7": 0,
       "over33": 0,
       "over50": 0,
       "inputToFrameMs": {
         "n": 400,
-        "p50": 31.5,
-        "p95": 32.2,
-        "max": 33
+        "p50": 32.2,
+        "p95": 32.5,
+        "max": 32.6
       },
       "cpu": {
-        "taskSec": 0.568,
-        "scriptSec": 0.092,
-        "layoutSec": 0.058,
-        "recalcStyleSec": 0.061,
+        "taskSec": 0.383,
+        "scriptSec": 0.057,
+        "layoutSec": 0.042,
+        "recalcStyleSec": 0.047,
         "layoutCount": 190,
         "recalcStyleCount": 238
       }
@@ -51,8 +51,8 @@
         390,
         844
       ],
-      "durationMs": 8830,
-      "frames": 530,
+      "durationMs": 8767,
+      "frames": 525,
       "frameMs": {
         "p50": 16.7,
         "p95": 16.8,
@@ -61,24 +61,24 @@
       },
       "renderMs": {
         "n": 187,
-        "p50": 0.9,
-        "p95": 1.9,
-        "max": 3.3
+        "p50": 0.7,
+        "p95": 1.3,
+        "max": 2.8
       },
       "over16_7": 0,
       "over33": 0,
       "over50": 0,
       "inputToFrameMs": {
         "n": 400,
-        "p50": 30.6,
-        "p95": 31.7,
-        "max": 32.1
+        "p50": 31.8,
+        "p95": 32.5,
+        "max": 32.7
       },
       "cpu": {
-        "taskSec": 2.296,
-        "scriptSec": 0.358,
-        "layoutSec": 0.248,
-        "recalcStyleSec": 0.285,
+        "taskSec": 1.407,
+        "scriptSec": 0.208,
+        "layoutSec": 0.185,
+        "recalcStyleSec": 0.178,
         "layoutCount": 190,
         "recalcStyleCount": 239
       }
@@ -92,36 +92,36 @@
         390,
         844
       ],
-      "durationMs": 8891,
-      "frames": 530,
+      "durationMs": 8815,
+      "frames": 529,
       "frameMs": {
         "p50": 16.7,
-        "p95": 16.8,
+        "p95": 16.7,
         "p99": 16.8,
-        "max": 33.4
+        "max": 16.8
       },
       "renderMs": {
         "n": 187,
-        "p50": 1.5,
-        "p95": 3,
-        "max": 5.8
+        "p50": 1.2,
+        "p95": 2.2,
+        "max": 3.9
       },
-      "over16_7": 3,
-      "over33": 2,
+      "over16_7": 0,
+      "over33": 0,
       "over50": 0,
       "inputToFrameMs": {
         "n": 400,
-        "p50": 29.7,
-        "p95": 31.7,
-        "max": 44.1
+        "p50": 31.5,
+        "p95": 32.6,
+        "max": 32.7
       },
       "cpu": {
-        "taskSec": 3.495,
-        "scriptSec": 0.534,
-        "layoutSec": 0.412,
-        "recalcStyleSec": 0.433,
+        "taskSec": 2.133,
+        "scriptSec": 0.307,
+        "layoutSec": 0.273,
+        "recalcStyleSec": 0.283,
         "layoutCount": 190,
-        "recalcStyleCount": 237
+        "recalcStyleCount": 239
       }
     },
     {
@@ -133,8 +133,8 @@
         390,
         844
       ],
-      "durationMs": 1308,
-      "frames": 79,
+      "durationMs": 1301,
+      "frames": 78,
       "frameMs": {
         "p50": 16.7,
         "p95": 16.8,

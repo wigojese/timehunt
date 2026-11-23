@@ -2,7 +2,8 @@
   - /url: "#main"
 - complementary "Notices": Draft pack, not publishable. Sample content for testing.
 - main:
-  - text: Timehunt Insight 8 of 8
+  - paragraph: Timehunt A historical deduction game
+  - text: The Daily Ten Insight 8 of 8
   - 'img "The day so far: 0 solved, 0 missed, 10 still to come. Now on case 1."'
   - heading "The Daily Ten" [level=1]
   - paragraph: Ten cases. One hidden year in each. Eight Insight for the whole day.

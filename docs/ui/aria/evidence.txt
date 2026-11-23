@@ -30,6 +30,6 @@
   - button "Arm crash after next save"
   - paragraph:
     - text: State digest
-    - code: 001a231a792a42
+    - code: 1e2c05e5e090f2
   - button "Back to the years"
 - status: Choose a year first.

@@ -16,6 +16,8 @@
     - radio "Largest"
   - text: Reduce motion
   - checkbox "Reduce motion"
+  - text: Show the squirrel guide
+  - checkbox "Show the squirrel guide" [checked]
   - text: Ask before spending Insight
   - checkbox "Ask before spending Insight" [checked]
   - text: Language English

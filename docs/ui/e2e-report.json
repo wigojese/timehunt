@@ -384,7 +384,7 @@
     {
       "name": "no rendered text under 14 px on trail, dossier, hunt, evidence or result",
       "pass": true,
-      "detail": "15px at trail: Draft pack, not publishable. S"
+      "detail": "14px at trail: A historical deduction game"
     },
     {
       "name": "year numerals are tabular",
@@ -396,25 +396,15 @@
   "total": 78,
   "axe": {
     "screens": 33,
-    "violations": [
-      {
-        "screen": "practice",
-        "id": "target-size",
-        "impact": "serious",
-        "help": "All touch targets must be 24px large, or leave sufficient space",
-        "nodes": 1,
-        "target": "button[data-case=\"case-08\"]",
-        "why": "Fix any of the following: Target has insufficient size because it is partially obscured (smallest space is 114px by 22.9px, should be at least 24px by 24px) Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 22.8px i"
-      }
-    ]
+    "violations": []
   },
   "reach": [
     {
       "screen": "onboarding-1",
       "text": "Next",
-      "top": 726,
-      "bottom": 774,
-      "h": 48,
+      "top": 723,
+      "bottom": 772,
+      "h": 50,
       "w": 350,
       "vh": 844,
       "inLower45": true
@@ -422,9 +412,9 @@
     {
       "screen": "trail-start",
       "text": "Start case 1",
-      "top": 674,
-      "bottom": 722,
-      "h": 48,
+      "top": 659,
+      "bottom": 708,
+      "h": 50,
       "w": 350,
       "vh": 844,
       "inLower45": true
@@ -432,20 +422,20 @@
     {
       "screen": "dossier",
       "text": "Choose a year",
-      "top": 784,
+      "top": 782,
       "bottom": 832,
-      "h": 48,
-      "w": 350,
+      "h": 50,
+      "w": 330,
       "vh": 844,
       "inLower45": true
     },
     {
       "screen": "hunt",
       "text": "Lock",
-      "top": 784,
+      "top": 782,
       "bottom": 832,
-      "h": 48,
-      "w": 170,
+      "h": 50,
+      "w": 160,
       "vh": 844,
       "inLower45": true
     },
@@ -453,18 +443,18 @@
       "screen": "lock-confirm",
       "text": "Lock 1969",
       "top": 767,
-      "bottom": 815,
-      "h": 48,
-      "w": 170,
+      "bottom": 817,
+      "h": 50,
+      "w": 160,
       "vh": 844,
       "inLower45": true
     },
     {
       "screen": "lock-confirm",
       "text": "Lock 1969",
-      "top": 773,
+      "top": 771,
       "bottom": 821,
-      "h": 48,
+      "h": 50,
       "w": 167,
       "vh": 844,
       "inLower45": true
@@ -472,39 +462,39 @@
     {
       "screen": "evidence",
       "text": "Back to the years",
-      "top": 784,
+      "top": 782,
       "bottom": 832,
-      "h": 48,
-      "w": 350,
+      "h": 50,
+      "w": 330,
       "vh": 844,
       "inLower45": true
     },
     {
       "screen": "result-solved",
       "text": "Next case",
-      "top": 773,
+      "top": 772,
       "bottom": 832,
-      "h": 59,
-      "w": 170,
+      "h": 60,
+      "w": 160,
       "vh": 844,
       "inLower45": true
     },
     {
       "screen": "result-missed",
       "text": "Next case",
-      "top": 773,
+      "top": 772,
       "bottom": 832,
-      "h": 59,
-      "w": 170,
+      "h": 60,
+      "w": 160,
       "vh": 844,
       "inLower45": true
     },
     {
       "screen": "world-entry",
       "text": "Back",
-      "top": 784,
+      "top": 782,
       "bottom": 832,
-      "h": 48,
+      "h": 50,
       "w": 350,
       "vh": 844,
       "inLower45": true
@@ -512,29 +502,29 @@
     {
       "screen": "zero-insight",
       "text": "Back to the years",
-      "top": 784,
+      "top": 782,
       "bottom": 832,
-      "h": 48,
-      "w": 350,
+      "h": 50,
+      "w": 330,
       "vh": 844,
       "inLower45": true
     },
     {
       "screen": "finish",
       "text": "World Reveal (prototype)",
-      "top": 721,
-      "bottom": 780,
-      "h": 59,
-      "w": 170,
+      "top": 679,
+      "bottom": 768,
+      "h": 89,
+      "w": 160,
       "vh": 844,
       "inLower45": true
     },
     {
       "screen": "world-all",
       "text": "Back",
-      "top": 784,
+      "top": 782,
       "bottom": 832,
-      "h": 48,
+      "h": 50,
       "w": 350,
       "vh": 844,
       "inLower45": true
@@ -542,19 +532,19 @@
     {
       "screen": "offline",
       "text": "Lock 1969",
-      "top": 784,
+      "top": 782,
       "bottom": 832,
-      "h": 48,
-      "w": 170,
+      "h": 50,
+      "w": 160,
       "vh": 844,
       "inLower45": true
     },
     {
       "screen": "held",
       "text": "Start a new expedition",
-      "top": 784,
+      "top": 782,
       "bottom": 832,
-      "h": 48,
+      "h": 50,
       "w": 350,
       "vh": 844,
       "inLower45": true
@@ -562,9 +552,9 @@
     {
       "screen": "practice",
       "text": "Pick one for me",
-      "top": 732,
-      "bottom": 780,
-      "h": 48,
+      "top": 718,
+      "bottom": 768,
+      "h": 50,
       "w": 350,
       "vh": 844,
       "inLower45": true
@@ -572,109 +562,109 @@
     {
       "screen": "hunt-w320",
       "text": "Lock 1969",
-      "top": 700,
+      "top": 698,
       "bottom": 748,
-      "h": 48,
-      "w": 280,
+      "h": 50,
+      "w": 260,
       "vh": 760,
       "inLower45": true
     },
     {
       "screen": "hunt-w360",
       "text": "Lock 1969",
-      "top": 700,
+      "top": 698,
       "bottom": 748,
-      "h": 48,
-      "w": 155,
+      "h": 50,
+      "w": 145,
       "vh": 760,
       "inLower45": true
     },
     {
       "screen": "hunt-w390",
       "text": "Lock 1969",
-      "top": 700,
+      "top": 698,
       "bottom": 748,
-      "h": 48,
-      "w": 170,
+      "h": 50,
+      "w": 160,
       "vh": 760,
       "inLower45": true
     },
     {
       "screen": "hunt-w430",
       "text": "Lock 1969",
-      "top": 700,
+      "top": 698,
       "bottom": 748,
-      "h": 48,
-      "w": 190,
+      "h": 50,
+      "w": 180,
       "vh": 760,
       "inLower45": true
     },
     {
       "screen": "hunt-w768",
       "text": "Lock 1969",
-      "top": 840,
+      "top": 838,
       "bottom": 888,
-      "h": 48,
-      "w": 235,
+      "h": 50,
+      "w": 225,
       "vh": 900,
       "inLower45": true
     },
     {
       "screen": "hunt-w1024",
       "text": "Lock 1969",
-      "top": 840,
+      "top": 838,
       "bottom": 888,
-      "h": 48,
-      "w": 235,
+      "h": 50,
+      "w": 225,
       "vh": 900,
       "inLower45": true
     },
     {
       "screen": "hunt-t100",
       "text": "Lock 1969",
-      "top": 784,
+      "top": 782,
       "bottom": 832,
-      "h": 48,
-      "w": 170,
+      "h": 50,
+      "w": 160,
       "vh": 844,
       "inLower45": true
     },
     {
       "screen": "hunt-t130",
       "text": "Lock 1969",
-      "top": 766,
+      "top": 764,
       "bottom": 828,
-      "h": 62,
-      "w": 338,
+      "h": 64,
+      "w": 313,
       "vh": 844,
       "inLower45": true
     },
     {
       "screen": "hunt-t160",
       "text": "Lock 1969",
-      "top": 748,
+      "top": 745,
       "bottom": 825,
-      "h": 77,
-      "w": 326,
+      "h": 79,
+      "w": 294,
       "vh": 844,
       "inLower45": true
     },
     {
       "screen": "hunt-t200",
       "text": "Lock 1969",
-      "top": 724,
+      "top": 689,
       "bottom": 820,
-      "h": 96,
-      "w": 310,
+      "h": 132,
+      "w": 270,
       "vh": 844,
       "inLower45": true
     },
     {
       "screen": "pseudo-trail",
       "text": "[Stàrt çàšé 1 ~~~~~~]",
-      "top": 570,
-      "bottom": 618,
-      "h": 48,
+      "top": 555,
+      "bottom": 604,
+      "h": 50,
       "w": 320,
       "vh": 740,
       "inLower45": true
@@ -682,30 +672,30 @@
     {
       "screen": "pseudo-hunt",
       "text": "[Lôçk  ~~]",
-      "top": 669,
+      "top": 668,
       "bottom": 728,
-      "h": 59,
-      "w": 155,
+      "h": 60,
+      "w": 145,
       "vh": 740,
       "inLower45": true
     },
     {
       "screen": "pseudo-evidence",
       "text": "[Bàçk tô thé ýéàrš ~~~~~~~~]",
-      "top": 680,
+      "top": 662,
       "bottom": 728,
-      "h": 48,
-      "w": 320,
+      "h": 66,
+      "w": 300,
       "vh": 740,
       "inLower45": true
     },
     {
       "screen": "trace-variant",
       "text": "Back to the years",
-      "top": 784,
+      "top": 782,
       "bottom": 832,
-      "h": 48,
-      "w": 350,
+      "h": 50,
+      "w": 330,
       "vh": 844,
       "inLower45": true
     }

@@ -237,3 +237,12 @@ Status values: **FIXED** (user decision), **PROVISIONAL** (user-named but must b
 | F-052 | typescript-eslint 8.74.0 (published the day of this audit) declares TypeScript below 6.1.0, while TypeScript 7.0.2 is latest. | `DEPENDENCY_MATRIX.md` |
 | F-053 | The Expo/React Native candidate tree needed `--legacy-peer-deps` to resolve, and the Vite + PWA tree shows 4 moderate build-time advisories (workbox-build, glob, minimatch). Neither is a blocker. | `DEPENDENCY_MATRIX.md` audit section |
 | F-054 | Pack build is byte-identical across runs and equals the committed file. | Stage 10 run, SHA-256 `1c90cd36…939d0a` |
+
+## Added: Temporal Atlas redesign (2026-11-24)
+
+| ID | Date | Decision | Status | Source / approval | Alternatives | Reversal condition |
+|---|---|---|---|---|---|---|
+| D-077 | 2026-11-24 | The game UI adopts the user's Temporal Atlas direction (squirrel guide, map-green and paper, Fraunces/Archivo/Source Sans 3). This revises the Stage 6 STRATA look for the game screens only. | PROPOSED, built as a prototype at the user's request | User message with four boards and the art guide | Keep STRATA | User rejects the result |
+| D-078 | 2026-11-24 | Rust is darkened to `#A94A28` so cream text passes contrast. | PROPOSED | `ATLAS_REDESIGN.md` | Guide's `#BD5833` with ink text | n/a |
+| D-079 | 2026-11-24 | Illustrations are code-drawn SVG stand-ins; production art is to be commissioned or produced under the guide's asset list. | PROPOSED | `art.js` | Raster art now | Art budget decision |
+| D-080 | 2026-11-24 | Fonts are self-hosted (OFL) instead of loaded from Google. | PROPOSED | `app/fonts/` | Google Fonts | n/a |

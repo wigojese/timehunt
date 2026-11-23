@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Squirrel guide, pose sheet</title>
+<link rel="stylesheet" href="../atlas.css">
+<style>body{padding:1rem}main{max-width:44rem;margin:auto}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(9rem,1fr));gap:1rem}.cell{background:var(--cream);border:.125rem solid var(--ink);border-radius:var(--r);padding:.75rem;text-align:center;font:600 .9rem var(--sans)}.cell svg{width:100%;height:auto}</style></head>
+<body><main><h1>Squirrel guide: pose sheet</h1><p class="note">Drawn in code as a stand-in. The same body, tail, scarf and satchel in every pose. Commissioned art should replace it, using this as the brief.</p>
+<div class="grid" id="g"></div>
+<h2>Components</h2><div class="grid" id="c"></div></main>
+<script type="module">
+import { squirrel, hourglass, coin, pin, icons, sunburst } from '../src/ui/art.js';
+const cell = (svg, name) => `<div class="cell">${svg}<div>${name}</div></div>`;
+document.getElementById('g').innerHTML = [['idle', 0], ['map', 0], ['lantern', 0], ['think', 0], ['idle', 1]].map(([p, f]) => cell(squirrel({ pose: p, flip: !!f }), p + (f ? ' (mirrored)' : ''))).join('');
+document.getElementById('c').innerHTML = [[hourglass(), 'hourglass'], [coin, 'insight coin'], [pin(), 'pin'], [icons.today, 'today'], [icons.practice, 'practice'], [icons.archive, 'archive'], [icons.settings, 'settings'], [sunburst(), 'sunburst']].map(([s, n]) => cell(s, n)).join('');
+</script></body></html>

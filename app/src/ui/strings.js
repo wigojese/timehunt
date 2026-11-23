@@ -2,6 +2,7 @@
 // to test long and translated copy. There is no real second language yet (Georgian needs a font and a human translator).
 const EN = {
   appName: 'Timehunt',
+  tagline: 'A historical deduction game',
   loading: "Loading today's cases",
   draftBanner: 'Draft pack, not publishable. Sample content for testing.',
   offline: 'You are offline. You can keep playing. Sources open when you are back online.',
@@ -45,7 +46,7 @@ const EN = {
   practiceRandom: 'Pick one for me', practiceSeed: 'Seed', practiceCase: 'Practice case {n}',
   archiveTitle: 'Archive', archiveEmpty: 'No finished days yet. Finish a day and it appears here, on this device.', archiveRow: '{solved} of {total} solved, {left} Insight left',
   settingsTitle: 'Settings', textSize: 'Text size', size100: 'Standard', size130: 'Large', size160: 'Larger', size200: 'Largest',
-  reduceMotion: 'Reduce motion', confirmSpend: 'Ask before spending Insight', clearData: 'Delete saved games and settings', clearConfirmT: 'Delete everything saved?',
+  reduceMotion: 'Reduce motion', showGuide: 'Show the squirrel guide', confirmSpend: 'Ask before spending Insight', clearData: 'Delete saved games and settings', clearConfirmT: 'Delete everything saved?',
   clearConfirm: 'This removes your day, practice games, archive and settings from this device. It cannot be undone.', clearYes: 'Delete', language: 'Language', langEn: 'English',
   langNote: 'Other languages are not available yet.',
   heldTitle: 'Saved game on hold', heldBody: 'Your saved record has not been touched. If you start again, the old record is kept under a backup key.',
