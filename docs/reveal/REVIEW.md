@@ -5,7 +5,7 @@ You asked for the AI to check the reveal content, and for a more surprising conn
 ## 1. Fact check
 Every factual claim in the stories and the finale (47) is listed in `tools/verify/claims.json` with its page and the wording that must appear. The checker re-opens each page in a browser and tests for that wording. Result: **47 of 47 found on their pages** (`docs/reveal/claim-check.json`).
 
-What that proves: the stated fact is on the cited page. What it does not prove: that the page is right, that a second independent source agrees, or that my paraphrase carries the nuance. By publisher, 41 of the 47 rest on Wikipedia alone, 5 on WHO or CDC, and the rest on two of those. The first run had one failure, and it was my pattern, not the fact: the page writes "December 30, 1443 to January 28, 1444" in US style. Single-source claims stay V1. Mansa Musa's 1324 pilgrimage is still one source and still marked HOLD.
+What that proves: the stated fact is on the cited page. What it does not prove: that the page is right, that a second independent source agrees, or that my paraphrase carries the nuance. By publisher, 43 of the 47 claims are checked against Wikipedia and 4 against WHO or CDC. The first run had one failure, and it was my pattern, not the fact: the page writes "December 30, 1443 to January 28, 1444" in US style. Single-source claims stay V1. Mansa Musa's 1324 pilgrimage is still one source and still marked HOLD.
 
 ## 2. Sensitivity review (checklist applied to each story)
 | Story | What could go wrong | What I did | Residual |
