@@ -94,7 +94,7 @@ function strip(v) {
   return `<div role="img" aria-label="${summary}"><ol class="strip" aria-hidden="true">${v.cases.map((c, i) => `<li ${i === v.cursor && v.status === 'active' ? 'class="now"' : ''}><span class="seg ${stKey(c.status)}"></span></li>`).join('')}</ol></div>`;
 }
 // The guide is the user's illustrated squirrel (assets/characters). One pose for now; art.js squirrel() remains as the fallback for other poses until more are supplied.
-const guide = (pose, cls = '', flip = false) => `<div class="guide ${cls}" aria-hidden="true"><img src="assets/characters/guide-lantern-map.webp" width="720" height="900" alt="" decoding="async"></div>`;
+const guide = (pose, cls = '', flip = false) => `<div class="guide ${cls}" aria-hidden="true"><img src="assets/characters/guide-lantern-map.webp?v=2" width="720" height="900" alt="" decoding="async"></div>`;
 const wordmark = () => `<p class="wordmark"><span class="hg" aria-hidden="true">${hourglass()}</span><span class="wm">${t('appName')}</span><span class="tag">${t('tagline')}</span></p>`;
 const banner = (label, pose = 'idle') => `<div class="banner" aria-hidden="true">${landscape()}<span class="ribbon">${label}</span>${guide(pose)}</div>`;
 const bar = (html, two = false) => `<div class="bar ${two ? 'two' : ''}">${html}</div>`;

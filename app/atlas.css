@@ -152,12 +152,12 @@ dialog{border:.1875rem solid var(--ink);border-radius:var(--r) var(--r) 0 0;back
 .wordmark .tag{max-width:100%}
 
 /* illustrated guide (raster). The art has a paper-cream background, so it is multiplied onto paper surfaces instead of cut out. */
-.guide img{display:block;width:100%;height:auto;mix-blend-mode:multiply}
+.guide img{display:block;width:100%;height:auto;filter:drop-shadow(.1rem .2rem .15rem rgba(37,43,40,.28))}
 .guide.big-guide{width:8.5rem;left:-.4rem;bottom:-.2rem}
 .homehero .guide.big-guide{width:8rem}
 .welcome .guide.big-guide{width:9.5rem}
 .banner .guide{right:.6rem;bottom:.5rem;width:4.6rem;height:4.6rem;border-radius:50%;overflow:hidden;border:.1875rem solid var(--ink);background:#F9F0DF;box-shadow:.15rem .15rem 0 rgba(37,43,40,.35)}
-.banner .guide img{width:150%;margin:-8% 0 0 -22%;mix-blend-mode:normal}
+.banner .guide img{width:150%;margin:-8% 0 0 -22%;filter:none}
 .result .guide{width:6rem;margin:.1rem -.4rem -1.2rem auto}
 .howstep .picture .guide{width:9rem}
 
