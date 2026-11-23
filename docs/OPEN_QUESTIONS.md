@@ -128,3 +128,4 @@ Urgency: **H** blocks the next stage, **M** needed within two stages, **L** late
 | Q-67 | Is the code-drawn squirrel and scenery close enough to proceed, or should real illustrated assets be commissioned or generated first? | H | User | 11 |
 | Q-68 | Apply the Atlas look to the Motion and World Reveal prototypes next? | M | User | 11 |
 | Q-69 | Georgian font choice for the new type system. | M | User | 12 |
+| Q-70 | Who owns the squirrel and under what licence (tool, terms, commercial use)? Same for every later asset. | H | User | Before any release |

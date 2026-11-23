@@ -93,7 +93,8 @@ function strip(v) {
   const summary = t('stripSummary', { solved: n('solved_clean') + n('solved_assisted'), missed: n('missed'), todo: v.cases.length - n('solved_clean') - n('solved_assisted') - n('missed'), now: v.cursor + 1 });
   return `<div role="img" aria-label="${summary}"><ol class="strip" aria-hidden="true">${v.cases.map((c, i) => `<li ${i === v.cursor && v.status === 'active' ? 'class="now"' : ''}><span class="seg ${stKey(c.status)}"></span></li>`).join('')}</ol></div>`;
 }
-const guide = (pose, cls = '', flip = false) => `<div class="guide ${cls}" aria-hidden="true">${squirrel({ pose, flip })}</div>`;
+// The guide is the user's illustrated squirrel (assets/characters). One pose for now; art.js squirrel() remains as the fallback for other poses until more are supplied.
+const guide = (pose, cls = '', flip = false) => `<div class="guide ${cls}" aria-hidden="true"><img src="assets/characters/guide-lantern-map.webp" width="720" height="900" alt="" decoding="async"></div>`;
 const wordmark = () => `<p class="wordmark"><span class="hg" aria-hidden="true">${hourglass()}</span><span class="wm">${t('appName')}</span><span class="tag">${t('tagline')}</span></p>`;
 const banner = (label, pose = 'idle') => `<div class="banner" aria-hidden="true">${landscape()}<span class="ribbon">${label}</span>${guide(pose)}</div>`;
 const bar = (html, two = false) => `<div class="bar ${two ? 'two' : ''}">${html}</div>`;
@@ -129,7 +130,7 @@ function renderOnboarding() {
   const n = ui.onbStep, k = ['onb1', 'onb2', 'onb3'][n - 1];
   noNav();
   const nextBtns = bar(`${n < 3 ? btn('onb-next', t('next'), 'primary') : btn('onb-done', t('done'), 'primary')}${n < 3 ? btn('onb-done', t('skip')) : ''}`);
-  if (n === 1) return `${wordmark()}<div class="welcome">${hero()}${guide('map', 'big-guide')}</div>
+  if (n === 1) return `${wordmark()}<div class="welcome poster">${guide('lantern', 'poster-guide')}</div>
     <p class="note" style="text-align:center">${t('stepOf', { n })}</p><h1 id="h" tabindex="-1" style="text-align:center">${t(k + 't')}</h1><div class="bubble">${t(k)}</div><div class="spacer"></div>${nextBtns}`;
   const picture = n === 2 ? `<span class="pegs">${Array.from({ length: 8 }, () => '<span class="peg"></span>').join('')}</span>${guide('think')}` : `${guide('lantern')}${pin()}`;
   return `<div class="paper" style="margin-top:1rem"><p class="note" style="margin-top:.5rem">${t('stepOf', { n })}</p><h1 id="h" tabindex="-1">${t(k + 't')}</h1>
@@ -144,7 +145,7 @@ function renderTrail() {
   const started = v.cases.some(x => x.status !== 'not_started' && x.status !== 'active') || (c && c.spent > 0);
   const label = done ? t('seeDay') : started || v.cursor > 0 ? t('resumeCase', { n: v.cursor + 1 }) : t('startCase', { n: 1 });
   const rows = v.cases.map((x, i) => `<li class="${i === v.cursor && !done ? 'cur' : ''}">${pin(i === v.cursor && !done ? '#E1A52C' : '#A94A28')}<span class="card"><span><span class="mk ${stKey(x.status)}" aria-hidden="true"></span>${t('caseOf', { n: i + 1 }).replace(' of 10', '')}</span><span class="note">${stWord(x.status)}</span></span></li>`).join('');
-  return `${wordmark()}<div class="homehero">${hero()}${guide('map', 'big-guide')}</div>${hud(v, t('trailTitle'))}${strip(v)}
+  return `${wordmark()}<div class="homehero poster">${guide('lantern', 'poster-guide')}</div>${hud(v, t('trailTitle'))}${strip(v)}
   <h1 id="h" tabindex="-1" class="sr">${t('trailTitle')}</h1><p>${t('trailLead')}</p>
   <ol class="path">${rows}</ol>
   <p class="note" style="margin-top:.75rem">${t('conv')}</p>
