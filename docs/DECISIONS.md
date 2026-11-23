@@ -90,3 +90,22 @@ Status values: **FIXED** (user decision), **PROVISIONAL** (user-named but must b
 | F-017 | A random player who reads nothing solves 2.55 of 10 with no clues, 3.98 buying every clue (C1), 4.61 when the relation is sold as a Deep clue, and 3.51 under a per-case cap of 1. | 2,000 seeded runs per row, `STAGE_4_GRAYBOX.md` |
 | F-018 | Five deliberately injected engine bugs were each caught by the suite (1 to 8 failing tests each). | `TEST_REPORT.md` |
 | F-019 | 216,000 random commands in six rule variants broke no invariant. The bank never exceeded its start, never went negative, and `insight + spent` always equalled the start. | `properties.test.js` |
+
+## Added in Stage 5 (2026-11-23)
+
+| ID | Date | Decision | Status | Source / approval | Alternatives | Reversal condition |
+|---|---|---|---|---|---|---|
+| D-033 | 2026-11-23 | Authoring rule L9: within a case, no paid clue may remove a strict subset of what another paid clue removes. Implemented as a lint warning (`NESTED_CLUES`). Reason: with refund-on-redundant, nested clues make purchase order matter (cases 1, 2, 6). | PROPOSED | `SIMULATION_FINDINGS.md` section 2 | Remove refund; flat prices | Player evidence |
+| D-034 | 2026-11-23 | Stage 4 approved (`APPROVE STAGE 4`). Stage 5 is delivered as a protocol plus simulations because the agent cannot recruit players. Human results are NOT TESTED. | **FIXED** | User message | Invent results (rejected) | n/a |
+| D-035 | 2026-11-23 | Provisional rules decision: keep one Lock, drop Trace from the Daily (Practice or advanced only), keep Nudge 1 / Deep 2 and refund on redundant, relation visible or Deep clue undecided. Pre-written thresholds H1 to H9 decide what changes. | PROPOSED | `BACKLOG.md`, `PROTOCOL.md` | Keep Trace | H7 |
+| D-036 | 2026-11-23 | Study mode records timings and choices locally with a participant code only. No network, no names. | PROPOSED | `main.js` | Analytics service (rejected: privacy, not needed) | Stage 10 telemetry decision |
+
+## Findings added in Stage 5
+
+| ID | Finding | Evidence |
+|---|---|---|
+| F-020 | A parser bot that reads only the free text solves 9.20 of 10 with no Insight on the draft pack. Best non-reader with Insight: 4.87. Chance: 2.57. | `strategy-lab.mjs` |
+| F-021 | Selling the relation as a Deep clue raises the value of Insight (non-reader optimum 5.87 vs chance 2.57) and drops the parser bot to chance. | `strategy-lab.mjs` |
+| F-022 | Deep-first purchase saves 1 Insight in cases 1, 2 and 6 (nested clues). | `strategy-lab.mjs`, lint L9 |
+| F-023 | "Anchor plus one" solves 7 of 10. The answer is never the first of the free-bound candidates and is last in 3 of 10. | `strategy-lab.mjs` |
+| F-024 | If ruled-out years were hidden, refused Locks would reveal them. A refusal is information. | Reasoning on `engine.js` |

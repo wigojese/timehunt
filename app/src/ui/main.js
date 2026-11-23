@@ -10,12 +10,30 @@ const $ = s => document.querySelector(s);
 const main = $('#main');
 const params = new URLSearchParams(location.search);
 const debug = params.has('debug');
+// Study mode (Stage 5): ?study=P03&cond=A|B records a local, timestamped event log. Nothing leaves the browser.
+const studyId = (params.get('study') || '').replace(/[^A-Za-z0-9_-]/g, '').slice(0, 24);
+const studyCond = params.get('cond') === 'B' ? 'B' : 'A';
+const t0 = Date.now();
+const studyKey = `timehunt:study:${studyId}`;
+function logEvent(e, data = {}) {
+  if (!studyId) return;
+  try {
+    const cur = JSON.parse(localStorage.getItem(studyKey) || '{"participant":"' + studyId + '","cond":"' + studyCond + '","events":[]}');
+    cur.events.push({ t: Date.now() - t0 + (cur.offset || 0), wall: Date.now(), e, ...data });
+    localStorage.setItem(studyKey, JSON.stringify(cur));
+  } catch (err) { /* study log is best effort and never blocks play */ }
+}
+function downloadStudyLog() {
+  const blob = new Blob([localStorage.getItem(studyKey) || '{}'], { type: 'application/json' });
+  const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = `timehunt-study-${studyId}.json`; a.click();
+}
 const variants = (params.get('variant') || '').split(',').filter(Boolean);
 const overrides = {};
 if (variants.includes('trace')) overrides.trace = { enabled: true, cost: 2 };
 if (variants.includes('cap1')) overrides.perCaseCap = 1;
 if (variants.includes('deep')) overrides.relationTier = 'deep';
 if (variants.includes('norefund')) overrides.refundRedundant = false;
+if (studyId && studyCond === 'B') overrides.relationTier = 'deep'; // condition B: the relation is sold as a Deep clue
 
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 let session, content, rules, uiState = { selected: {}, msg: '', focusHeading: true };
@@ -47,7 +65,7 @@ async function boot() {
   let storage = bs.storage;
   if (debug) { faulty = new FaultyStorage(storage); storage = faulty; }
   const practice = params.get('mode') === 'practice';
-  let opts = {};
+  let opts = studyId ? { dailyId: `${content.packId}:${studyId}` } : {};
   if (practice) {
     const seed = Number(params.get('seed') || 1);
     const pick = rng(seed).pick(content.cases).id;
@@ -55,6 +73,7 @@ async function boot() {
   }
   session = new Session({ content, rules, storage, ...opts });
   const status = session.load();
+  if (studyId) logEvent('session_start', { resumed: status === 'resumed', rules: rules.id });
   const notes = ['DRAFT PACK: not publishable (' + v.warnings.map(w => w.code).join(', ') + '). Gray-box build.'];
   if (!bs.persistent) notes.push('Progress cannot be saved in this browser mode.');
   if (practice) notes.push('Practice mode: separate from the daily, 2 Insight.');
@@ -77,6 +96,7 @@ function renderConflict(status) {
 
 function dispatch(cmd, okMsg) {
   const r = session.dispatch({ ...cmd, actionId: `ui-${++actionCounter}-${Date.now().toString(36)}` });
+  logEvent(cmd.type.toLowerCase(), { caseId: cmd.caseId, clue: cmd.clueId, year: cmd.year, ok: r.ok, code: r.error ? r.error.code : null, ev: r.events && r.events[0] ? r.events[0].type : null, correct: r.events && r.events[0] ? r.events[0].correct : undefined, insight: session.state ? session.state.insight : null });
   if (!r.ok) say(r.error.message);
   else say(okMsg ? okMsg(r) : '');
   return r;
@@ -96,6 +116,7 @@ function progress(v) {
 
 function render() {
   const v = publicView(session.state, content, rules);
+  logEvent('view', { cursor: v.cursor, status: v.status, insight: v.insight });
   const head = `<div class="bank"><h1>TIMEHUNT, ${v.mode === 'practice' ? 'Practice' : 'The Daily Ten'}</h1>
     <span aria-live="polite">Insight <strong id="ins">${v.insight}</strong> of ${v.insightInitial}</span></div>${progress(v)}`;
   if (v.status === 'completed') return renderEnd(v, head);
@@ -123,12 +144,12 @@ function render() {
     ${resolved ? resultHtml(c, v) : `<h3>Lock a year</h3><p class="note">One Lock per case. If you are wrong you see the answer and the day goes on.</p>
       <div class="row"><label for="yr">Year</label><select id="yr">${opts}</select><button id="lock" class="primary">Lock this year</button></div>`}
     <p class="msg" role="alert">${esc(uiState.msg)}</p>
-    ${debug ? debugHtml() : ''}`;
+    ${debug ? debugHtml() : ''}${studyHtml()}`;
   main.querySelectorAll('button[data-clue]').forEach(b => b.onclick = () => {
     const r = dispatch({ type: 'REVEAL', caseId: c.id, clueId: b.dataset.clue }, r => { const e = r.events[0]; return e && e.type === 'CLUE_REVEALED' ? (e.charged ? `Revealed. ${e.charged} Insight spent.` : 'Revealed. It told you nothing new, so it cost nothing.') : ''; });
     render();
   });
-  const yr = $('#yr'); if (yr) yr.onchange = () => { uiState.selected[c.id] = Number(yr.value); };
+  const yr = $('#yr'); if (yr) yr.onchange = () => { uiState.selected[c.id] = Number(yr.value); logEvent('select_year', { caseId: c.id, year: Number(yr.value) }); };
   const lock = $('#lock'); if (lock) lock.onclick = () => {
     dispatch({ type: 'LOCK', caseId: c.id, year: Number($('#yr').value) }, r => r.events[0] && r.events[0].correct ? 'Correct.' : 'Not that year. The answer is shown below.');
     render();
@@ -161,7 +182,7 @@ function renderEnd(v, head) {
     <table><thead><tr><th>#</th><th>Case</th><th>Answer</th><th>Result</th><th>Insight used</th></tr></thead><tbody>${rows}</tbody></table>
     <h3>Share (no answers)</h3><pre id="share">${esc(shareText(session.state, content))}</pre>
     <p class="note">Insight does not refill. The Daily Trail screen is not built in this stage.</p>
-    ${debug ? debugHtml() : ''}`;
+    ${debug ? debugHtml() : ''}${studyHtml()}`;
   bindDebug();
   $('#h').focus();
 }
@@ -172,7 +193,11 @@ function debugHtml() {
     <div class="row"><button id="crash-before">Arm crash before next save</button><button id="crash-after">Arm crash after next save</button><button id="reload">Reload page</button></div>
     <p class="note">Log length ${s.log.length}. State digest <code id="dg">${stateDigest(s)}</code>. Rules <code>${esc(rules.id)}</code>. Variants: ${esc(variants.join(',') || 'none (C1 default)')}.</p></div>`;
 }
+function studyHtml() {
+  return studyId ? `<div class="debug"><strong>Study ${esc(studyId)}, condition ${studyCond}</strong><div class="row"><button id="dl">Download study log</button></div><p class="note">The log stays in this browser until you download it. It holds timings and choices only.</p></div>` : '';
+}
 function bindDebug() {
+  const dl = $('#dl'); if (dl) dl.onclick = () => { logEvent('download'); downloadStudyLog(); };
   if (!debug) return;
   const b = $('#crash-before'), a = $('#crash-after'), r = $('#reload');
   if (b) b.onclick = () => { faulty.arm('before'); say('Next save will crash before writing.'); render(); };

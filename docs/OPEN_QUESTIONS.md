@@ -70,3 +70,10 @@ Urgency: **H** blocks the next stage, **M** needed within two stages, **L** late
 | Q-39 | Is `relationTier` free or deep? Same question as Q-32, now testable with the `?variant=deep` switch. | H | Players, 8 to 12 | 5 |
 | Q-40 | Stage 5 needs real players. Who, how recruited, and where? The agent cannot run human sessions. | H | User | 4 gate |
 | Q-41 | The pack still cannot ship (0 of 10 publishable). Is a gray-box playtest on a draft pack acceptable, with a visible draft banner? | M | User | 4 gate |
+
+## Added in Stage 5
+| ID | Question | Urg | How to settle | Owner stage |
+|---|---|---|---|---|
+| Q-42 | Incentive for participants, and budget | M | User | 5 follow-up |
+| Q-43 | May the thresholds H1 to H9 in `PROTOCOL.md` stand, or do you want to change any before the first session? They are locked after that. | H | User | 5 gate |
+| Q-44 | If ruled-out years are hidden, should a ruled-out Lock count as a miss? | M | User, then test | 5 follow-up |

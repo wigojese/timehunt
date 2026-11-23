@@ -75,5 +75,5 @@ All bound clues begin "By the end of that year" (D-009). Relation clues say "cal
 
 ## 5. Schema and lint
 
-Schema: validated against tools/pack/pack.schema.json (jsonschema). Lint: 0 errors, 0 warnings. Run `python3 tools/pack/lint_pack.py`.
+Schema: validated against tools/pack/pack.schema.json (jsonschema). Lint: 0 errors, 3 warnings. Run `python3 tools/pack/lint_pack.py`.
 

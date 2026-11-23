@@ -134,6 +134,14 @@ def analyse():
             r["paid"].append({"id": p["id"], "tier": p["tier"], "cost": p["cost"], "keeps": sorted(keep),
                               "cuts": cut, "remaining": len(keep), "resolves": len(keep) == 1,
                               "prints_target": prints_year(p["text"], t)})
+        # L9 (proposed in Stage 5, D-033): no paid clue may remove a strict subset of what another paid clue removes.
+        # With refund-on-redundant such a pair makes the order of purchase matter (buy the bigger clue first and the smaller one is free).
+        for i, p1 in enumerate(c["paid"]):
+            for p2 in c["paid"][i + 1:]:
+                a1, a2 = set(c0 - effect(p1, c0)), set(c0 - effect(p2, c0))
+                if a1 < a2 or a2 < a1:
+                    small, big = (p1, p2) if a1 < a2 else (p2, p1)
+                    warnings.append("%s: NESTED_CLUES %s (cost %d) removes a subset of what %s (cost %d) removes" % (cid, small["id"], small["cost"], big["id"], big["cost"]))
         # L6 leakage in player-facing text before purchase
         fields = [("question", c["question"]), ("title", c["title"])]
         for f in c["free"]:

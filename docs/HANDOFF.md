@@ -39,3 +39,6 @@ Stage 3 is complete and awaiting `APPROVE STAGE 3`. Rebuild with `python3 tools/
 
 ## After Stage 4
 Stage 4 is complete and awaiting `APPROVE STAGE 4`. `cd app && npm test` (70 tests) and `node scripts/serve.mjs` to play. Rules live only in `app/src/engine/rules.js`; content only in `tools/pack/pack_data.py` (rebuild with `python3 tools/pack/build_pack.py`, then `node app/scripts/demo-run.mjs` to refresh fixtures). Do not start Stage 5 without approval. Stage 5 needs human players the agent cannot supply (Q-40).
+
+## After Stage 5
+Stage 5 is complete as a plan and simulation stage and awaits `APPROVE STAGE 5`. No human sessions have been run. To run them: follow `docs/playtest/PROTOCOL.md`; give participants `?study=Pnn&cond=A|B`; download each log; run `node app/scripts/summarise-study.mjs`. Only then fill `docs/playtest/RESULTS.md`. Do not start Stage 6 without approval.

@@ -35,3 +35,9 @@
 - Added `app/` (engine, store, UI, tests, fixtures, scripts), `docs/STAGE_4_GRAYBOX.md`, `docs/gray-box/` (test report, e2e report, video, screenshots).
 - `tools/pack/build_pack.py` now also writes `app/data/daily-pack-draft.json`; a test checks it equals `docs/pack/daily-pack-draft.json`.
 - Recorded Stage 3 approval (D-027), D-028 to D-032, F-017 to F-019, Q-38 to Q-41.
+
+## Stage 5 (2026-11-23)
+- Added `docs/playtest/` (protocol, consent, task sheets, observation template, results sheet, simulation findings, backlog, revised rules) and `docs/STAGE_5_USABILITY.md`.
+- Gray-box: study mode (`?study=`), `scripts/strategy-lab.mjs`, `scripts/summarise-study.mjs`, `scripts/study-smoke.mjs`, one new test (71 total).
+- `tools/pack/lint_pack.py`: rule L9 NESTED_CLUES (warning). Removed committed `__pycache__` files and added `.gitignore`.
+- Recorded D-033 to D-036, F-020 to F-024, Q-42 to Q-44.

@@ -1,0 +1,930 @@
+{
+  "_label": "SIMULATION AND STATIC ANALYSIS ONLY. No human played. Not evidence about player experience.",
+  "pack": "daily-draft-001",
+  "variants": {
+    "C1 default (relation visible)": {
+      "optimum": {
+        "chance": 2.5666666666666664,
+        "optimum": 4.866666666666667,
+        "plan": [
+          {
+            "case": 1,
+            "spend": 2,
+            "order": [
+              "p2"
+            ],
+            "left": 1
+          },
+          {
+            "case": 2,
+            "spend": 0,
+            "order": [],
+            "left": 6
+          },
+          {
+            "case": 3,
+            "spend": 0,
+            "order": [],
+            "left": 5
+          },
+          {
+            "case": 4,
+            "spend": 3,
+            "order": [
+              "p1",
+              "p2"
+            ],
+            "left": 1
+          },
+          {
+            "case": 5,
+            "spend": 0,
+            "order": [],
+            "left": 3
+          },
+          {
+            "case": 6,
+            "spend": 2,
+            "order": [
+              "p2"
+            ],
+            "left": 1
+          },
+          {
+            "case": 7,
+            "spend": 0,
+            "order": [],
+            "left": 3
+          },
+          {
+            "case": 8,
+            "spend": 0,
+            "order": [],
+            "left": 6
+          },
+          {
+            "case": 9,
+            "spend": 0,
+            "order": [],
+            "left": 6
+          },
+          {
+            "case": 10,
+            "spend": 1,
+            "order": [
+              "p1"
+            ],
+            "left": 2
+          }
+        ]
+      },
+      "textBots": {
+        "parser": 9.2,
+        "plusOne": 7.2,
+        "first": 0,
+        "last": 3,
+        "median": 4,
+        "parserDetail": [
+          {
+            "case": 1,
+            "guess": 1969,
+            "p": 1
+          },
+          {
+            "case": 2,
+            "guess": 1893,
+            "p": 1
+          },
+          {
+            "case": 3,
+            "guess": null,
+            "p": 0.2
+          },
+          {
+            "case": 4,
+            "guess": 1919,
+            "p": 1
+          },
+          {
+            "case": 5,
+            "guess": 1799,
+            "p": 1
+          },
+          {
+            "case": 6,
+            "guess": 1977,
+            "p": 1
+          },
+          {
+            "case": 7,
+            "guess": 1325,
+            "p": 1
+          },
+          {
+            "case": 8,
+            "guess": 1446,
+            "p": 1
+          },
+          {
+            "case": 9,
+            "guess": 2,
+            "p": 1
+          },
+          {
+            "case": 10,
+            "guess": 1977,
+            "p": 1
+          }
+        ],
+        "plusOneDetail": [
+          {
+            "case": 1,
+            "guess": 1969,
+            "p": 1
+          },
+          {
+            "case": 2,
+            "guess": 1893,
+            "p": 1
+          },
+          {
+            "case": 3,
+            "guess": null,
+            "p": 0.2
+          },
+          {
+            "case": 4,
+            "guess": 1919,
+            "p": 1
+          },
+          {
+            "case": 5,
+            "guess": 1799,
+            "p": 1
+          },
+          {
+            "case": 6,
+            "guess": 1976,
+            "p": 0
+          },
+          {
+            "case": 7,
+            "guess": 1325,
+            "p": 1
+          },
+          {
+            "case": 8,
+            "guess": 1443,
+            "p": 0
+          },
+          {
+            "case": 9,
+            "guess": 2,
+            "p": 1
+          },
+          {
+            "case": 10,
+            "guess": 1977,
+            "p": 1
+          }
+        ]
+      }
+    },
+    "relation sold as Deep clue": {
+      "optimum": {
+        "chance": 2.5666666666666664,
+        "optimum": 5.866666666666667,
+        "plan": [
+          {
+            "case": 1,
+            "spend": 0,
+            "order": [],
+            "left": 3
+          },
+          {
+            "case": 2,
+            "spend": 2,
+            "order": [
+              "f3"
+            ],
+            "left": 1
+          },
+          {
+            "case": 3,
+            "spend": 0,
+            "order": [],
+            "left": 5
+          },
+          {
+            "case": 4,
+            "spend": 2,
+            "order": [
+              "f3"
+            ],
+            "left": 1
+          },
+          {
+            "case": 5,
+            "spend": 0,
+            "order": [],
+            "left": 3
+          },
+          {
+            "case": 6,
+            "spend": 0,
+            "order": [],
+            "left": 3
+          },
+          {
+            "case": 7,
+            "spend": 0,
+            "order": [],
+            "left": 3
+          },
+          {
+            "case": 8,
+            "spend": 2,
+            "order": [
+              "f3"
+            ],
+            "left": 1
+          },
+          {
+            "case": 9,
+            "spend": 2,
+            "order": [
+              "f3"
+            ],
+            "left": 1
+          },
+          {
+            "case": 10,
+            "spend": 0,
+            "order": [],
+            "left": 3
+          }
+        ]
+      },
+      "textBots": {
+        "parser": 2.5666666666666664,
+        "plusOne": 2.5666666666666664,
+        "first": 0,
+        "last": 3,
+        "median": 4,
+        "parserDetail": [
+          {
+            "case": 1,
+            "guess": null,
+            "p": 0.3333333333333333
+          },
+          {
+            "case": 2,
+            "guess": null,
+            "p": 0.16666666666666666
+          },
+          {
+            "case": 3,
+            "guess": null,
+            "p": 0.2
+          },
+          {
+            "case": 4,
+            "guess": null,
+            "p": 0.2
+          },
+          {
+            "case": 5,
+            "guess": null,
+            "p": 0.3333333333333333
+          },
+          {
+            "case": 6,
+            "guess": null,
+            "p": 0.3333333333333333
+          },
+          {
+            "case": 7,
+            "guess": null,
+            "p": 0.3333333333333333
+          },
+          {
+            "case": 8,
+            "guess": null,
+            "p": 0.16666666666666666
+          },
+          {
+            "case": 9,
+            "guess": null,
+            "p": 0.16666666666666666
+          },
+          {
+            "case": 10,
+            "guess": null,
+            "p": 0.3333333333333333
+          }
+        ],
+        "plusOneDetail": [
+          {
+            "case": 1,
+            "guess": null,
+            "p": 0.3333333333333333
+          },
+          {
+            "case": 2,
+            "guess": null,
+            "p": 0.16666666666666666
+          },
+          {
+            "case": 3,
+            "guess": null,
+            "p": 0.2
+          },
+          {
+            "case": 4,
+            "guess": null,
+            "p": 0.2
+          },
+          {
+            "case": 5,
+            "guess": null,
+            "p": 0.3333333333333333
+          },
+          {
+            "case": 6,
+            "guess": null,
+            "p": 0.3333333333333333
+          },
+          {
+            "case": 7,
+            "guess": null,
+            "p": 0.3333333333333333
+          },
+          {
+            "case": 8,
+            "guess": null,
+            "p": 0.16666666666666666
+          },
+          {
+            "case": 9,
+            "guess": null,
+            "p": 0.16666666666666666
+          },
+          {
+            "case": 10,
+            "guess": null,
+            "p": 0.3333333333333333
+          }
+        ]
+      }
+    },
+    "per-case cap 1": {
+      "optimum": {
+        "chance": 2.5666666666666664,
+        "optimum": 3.7,
+        "plan": [
+          {
+            "case": 1,
+            "spend": 1,
+            "order": [
+              "p1"
+            ],
+            "left": 2
+          },
+          {
+            "case": 2,
+            "spend": 1,
+            "order": [
+              "p1"
+            ],
+            "left": 4
+          },
+          {
+            "case": 3,
+            "spend": 0,
+            "order": [],
+            "left": 5
+          },
+          {
+            "case": 4,
+            "spend": 1,
+            "order": [
+              "p1"
+            ],
+            "left": 4
+          },
+          {
+            "case": 5,
+            "spend": 1,
+            "order": [
+              "p1"
+            ],
+            "left": 2
+          },
+          {
+            "case": 6,
+            "spend": 1,
+            "order": [
+              "p1"
+            ],
+            "left": 2
+          },
+          {
+            "case": 7,
+            "spend": 1,
+            "order": [
+              "p1"
+            ],
+            "left": 2
+          },
+          {
+            "case": 8,
+            "spend": 1,
+            "order": [
+              "p1"
+            ],
+            "left": 3
+          },
+          {
+            "case": 9,
+            "spend": 0,
+            "order": [],
+            "left": 6
+          },
+          {
+            "case": 10,
+            "spend": 1,
+            "order": [
+              "p1"
+            ],
+            "left": 2
+          }
+        ]
+      },
+      "textBots": {
+        "parser": 9.2,
+        "plusOne": 7.2,
+        "first": 0,
+        "last": 3,
+        "median": 4,
+        "parserDetail": [
+          {
+            "case": 1,
+            "guess": 1969,
+            "p": 1
+          },
+          {
+            "case": 2,
+            "guess": 1893,
+            "p": 1
+          },
+          {
+            "case": 3,
+            "guess": null,
+            "p": 0.2
+          },
+          {
+            "case": 4,
+            "guess": 1919,
+            "p": 1
+          },
+          {
+            "case": 5,
+            "guess": 1799,
+            "p": 1
+          },
+          {
+            "case": 6,
+            "guess": 1977,
+            "p": 1
+          },
+          {
+            "case": 7,
+            "guess": 1325,
+            "p": 1
+          },
+          {
+            "case": 8,
+            "guess": 1446,
+            "p": 1
+          },
+          {
+            "case": 9,
+            "guess": 2,
+            "p": 1
+          },
+          {
+            "case": 10,
+            "guess": 1977,
+            "p": 1
+          }
+        ],
+        "plusOneDetail": [
+          {
+            "case": 1,
+            "guess": 1969,
+            "p": 1
+          },
+          {
+            "case": 2,
+            "guess": 1893,
+            "p": 1
+          },
+          {
+            "case": 3,
+            "guess": null,
+            "p": 0.2
+          },
+          {
+            "case": 4,
+            "guess": 1919,
+            "p": 1
+          },
+          {
+            "case": 5,
+            "guess": 1799,
+            "p": 1
+          },
+          {
+            "case": 6,
+            "guess": 1976,
+            "p": 0
+          },
+          {
+            "case": 7,
+            "guess": 1325,
+            "p": 1
+          },
+          {
+            "case": 8,
+            "guess": 1443,
+            "p": 0
+          },
+          {
+            "case": 9,
+            "guess": 2,
+            "p": 1
+          },
+          {
+            "case": 10,
+            "guess": 1977,
+            "p": 1
+          }
+        ]
+      }
+    },
+    "no refund": {
+      "optimum": {
+        "chance": 2.5666666666666664,
+        "optimum": 4.866666666666667,
+        "plan": [
+          {
+            "case": 1,
+            "spend": 2,
+            "order": [
+              "p2"
+            ],
+            "left": 1
+          },
+          {
+            "case": 2,
+            "spend": 0,
+            "order": [],
+            "left": 6
+          },
+          {
+            "case": 3,
+            "spend": 0,
+            "order": [],
+            "left": 5
+          },
+          {
+            "case": 4,
+            "spend": 3,
+            "order": [
+              "p1",
+              "p2"
+            ],
+            "left": 1
+          },
+          {
+            "case": 5,
+            "spend": 0,
+            "order": [],
+            "left": 3
+          },
+          {
+            "case": 6,
+            "spend": 2,
+            "order": [
+              "p2"
+            ],
+            "left": 1
+          },
+          {
+            "case": 7,
+            "spend": 0,
+            "order": [],
+            "left": 3
+          },
+          {
+            "case": 8,
+            "spend": 0,
+            "order": [],
+            "left": 6
+          },
+          {
+            "case": 9,
+            "spend": 0,
+            "order": [],
+            "left": 6
+          },
+          {
+            "case": 10,
+            "spend": 1,
+            "order": [
+              "p1"
+            ],
+            "left": 2
+          }
+        ]
+      },
+      "textBots": {
+        "parser": 9.2,
+        "plusOne": 7.2,
+        "first": 0,
+        "last": 3,
+        "median": 4,
+        "parserDetail": [
+          {
+            "case": 1,
+            "guess": 1969,
+            "p": 1
+          },
+          {
+            "case": 2,
+            "guess": 1893,
+            "p": 1
+          },
+          {
+            "case": 3,
+            "guess": null,
+            "p": 0.2
+          },
+          {
+            "case": 4,
+            "guess": 1919,
+            "p": 1
+          },
+          {
+            "case": 5,
+            "guess": 1799,
+            "p": 1
+          },
+          {
+            "case": 6,
+            "guess": 1977,
+            "p": 1
+          },
+          {
+            "case": 7,
+            "guess": 1325,
+            "p": 1
+          },
+          {
+            "case": 8,
+            "guess": 1446,
+            "p": 1
+          },
+          {
+            "case": 9,
+            "guess": 2,
+            "p": 1
+          },
+          {
+            "case": 10,
+            "guess": 1977,
+            "p": 1
+          }
+        ],
+        "plusOneDetail": [
+          {
+            "case": 1,
+            "guess": 1969,
+            "p": 1
+          },
+          {
+            "case": 2,
+            "guess": 1893,
+            "p": 1
+          },
+          {
+            "case": 3,
+            "guess": null,
+            "p": 0.2
+          },
+          {
+            "case": 4,
+            "guess": 1919,
+            "p": 1
+          },
+          {
+            "case": 5,
+            "guess": 1799,
+            "p": 1
+          },
+          {
+            "case": 6,
+            "guess": 1976,
+            "p": 0
+          },
+          {
+            "case": 7,
+            "guess": 1325,
+            "p": 1
+          },
+          {
+            "case": 8,
+            "guess": 1443,
+            "p": 0
+          },
+          {
+            "case": 9,
+            "guess": 2,
+            "p": 1
+          },
+          {
+            "case": 10,
+            "guess": 1977,
+            "p": 1
+          }
+        ]
+      }
+    }
+  },
+  "ordering": [
+    {
+      "case": 1,
+      "nudgeFirst": {
+        "cost": 3,
+        "left": 1
+      },
+      "deepFirst": {
+        "cost": 2,
+        "left": 1
+      }
+    },
+    {
+      "case": 2,
+      "nudgeFirst": {
+        "cost": 3,
+        "left": 2
+      },
+      "deepFirst": {
+        "cost": 2,
+        "left": 2
+      }
+    },
+    {
+      "case": 4,
+      "nudgeFirst": {
+        "cost": 3,
+        "left": 1
+      },
+      "deepFirst": {
+        "cost": 3,
+        "left": 1
+      }
+    },
+    {
+      "case": 5,
+      "nudgeFirst": {
+        "cost": 3,
+        "left": 1
+      },
+      "deepFirst": {
+        "cost": 3,
+        "left": 1
+      }
+    },
+    {
+      "case": 6,
+      "nudgeFirst": {
+        "cost": 3,
+        "left": 1
+      },
+      "deepFirst": {
+        "cost": 2,
+        "left": 1
+      }
+    },
+    {
+      "case": 10,
+      "nudgeFirst": {
+        "cost": 3,
+        "left": 1
+      },
+      "deepFirst": {
+        "cost": 3,
+        "left": 1
+      }
+    }
+  ],
+  "targetPosition": [
+    {
+      "case": 1,
+      "candidates": 3,
+      "position": 3
+    },
+    {
+      "case": 2,
+      "candidates": 6,
+      "position": 5
+    },
+    {
+      "case": 3,
+      "candidates": 5,
+      "position": 2
+    },
+    {
+      "case": 4,
+      "candidates": 5,
+      "position": 2
+    },
+    {
+      "case": 5,
+      "candidates": 3,
+      "position": 2
+    },
+    {
+      "case": 6,
+      "candidates": 3,
+      "position": 3
+    },
+    {
+      "case": 7,
+      "candidates": 3,
+      "position": 2
+    },
+    {
+      "case": 8,
+      "candidates": 6,
+      "position": 6
+    },
+    {
+      "case": 9,
+      "candidates": 6,
+      "position": 3
+    },
+    {
+      "case": 10,
+      "candidates": 3,
+      "position": 2
+    }
+  ],
+  "readingLoad": {
+    "perCase": [
+      {
+        "case": 1,
+        "words": 78
+      },
+      {
+        "case": 2,
+        "words": 74
+      },
+      {
+        "case": 3,
+        "words": 72
+      },
+      {
+        "case": 4,
+        "words": 80
+      },
+      {
+        "case": 5,
+        "words": 74
+      },
+      {
+        "case": 6,
+        "words": 75
+      },
+      {
+        "case": 7,
+        "words": 72
+      },
+      {
+        "case": 8,
+        "words": 83
+      },
+      {
+        "case": 9,
+        "words": 81
+      },
+      {
+        "case": 10,
+        "words": 75
+      }
+    ],
+    "totalWords": 764,
+    "minutesAt200wpmReadingOnly": 3.8
+  }
+}

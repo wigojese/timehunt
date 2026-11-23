@@ -1,0 +1,27 @@
+// Checks that study mode records a usable log and keeps participants' saves apart. Usage: node scripts/study-smoke.mjs
+import { createRequire } from 'node:module';
+import { start } from './serve.mjs';
+const require = createRequire(import.meta.url);
+const { chromium } = require('/opt/node22/lib/node_modules/playwright');
+const srv = await start(5198);
+const b = await chromium.launch();
+const ctx = await b.newContext({ viewport: { width: 390, height: 844 }, acceptDownloads: true });
+const p = await ctx.newPage();
+const errs = []; p.on('pageerror', e => errs.push(String(e)));
+const res = [];
+const ok = (n, c) => { res.push([n, !!c]); if (!c) throw new Error('FAILED ' + n); };
+await p.goto('http://127.0.0.1:5198/?study=P01&cond=B'); await p.waitForTimeout(700);
+ok('condition B hides the relation and offers a Key link clue', (await p.locator('button[data-clue]', { hasText: 'Key link' }).count()) === 1);
+await p.click('button[data-clue]:has-text("Key link")'); await p.waitForTimeout(300);
+await p.selectOption('#yr', '1969'); await p.click('#lock'); await p.waitForTimeout(300);
+const [dl] = await Promise.all([p.waitForEvent('download'), p.click('#dl')]);
+const path = await dl.path();
+const log = JSON.parse(require('node:fs').readFileSync(path, 'utf8'));
+ok('log has participant and condition', log.participant === 'P01' && log.cond === 'B');
+ok('log has timestamped view, reveal and lock events', ['view', 'reveal', 'lock'].every(k => log.events.some(e => e.e === k)) && log.events.every(e => typeof e.t === 'number'));
+ok('log holds no free text or answers', !JSON.stringify(log).includes('Concorde'));
+await p.goto('http://127.0.0.1:5198/?study=P02&cond=A'); await p.waitForTimeout(700);
+ok('another participant starts fresh with 8 Insight in condition A', (await p.textContent('#ins')) === '8' && (await p.locator('button[data-clue]', { hasText: 'Key link' }).count()) === 0);
+ok('no page errors', errs.length === 0);
+await b.close(); srv.close();
+console.log(`study smoke: ${res.filter(r => r[1]).length}/${res.length} passed`);
