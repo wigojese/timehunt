@@ -52,3 +52,13 @@ Urgency: **H** blocks the next stage, **M** needed within two stages, **L** late
 | Q-29 | Do real clue sets behave like the assumed windows? Re-run the solver on real packs. | H | Rerun `run_experiments.py` with real residual sizes and menus | 3 |
 | Q-30 | Is the "uniqueness proof" authorable at ten cases a day, and by whom? | H | Stage 3 pilot | 3 |
 | Q-31 | Whether a confidence declaration (L3) adds anything. Scoring-only, untestable by simulation. | L | Players | 5 |
+
+## Added in Stage 3
+| ID | Question | Urg | How to settle | Owner stage |
+|---|---|---|---|---|
+| Q-32 | Free evidence solves every case by arithmetic, so Insight is idle. Keep (cases are derivations, Insight is for hard days), hide the relation behind a paid tier, or weaken it to a range relation? | H | User decision, then re-run the Stage 2 solver on real ladders | 3 gate, 4 |
+| Q-33 | Who opens the blocked sources (Britannica, museums, UNESCO, USHMM) to lift eight targets to V2? Or widen the network allowlist? | H | User | 3 gate |
+| Q-34 | Everyday-life case is missing. Replace case 1 or case 10 with one? | M | User | 3 |
+| Q-35 | Cases 6 and 10 share an answer. Keep the finale coincidence, and drop case 10's paid clue that restates case 6? | M | User | 3 |
+| Q-36 | Case 4 uses period vocabulary for a queer-history institution. Who gives the named sensitivity review the agent cannot? | M | User | 3 |
+| Q-37 | Paid ladders are thin (one clue in cases 3, 7, 8, 9). Each needs two or three real clues if Insight is to matter. | H | Author more clues | 3 revision or 4 |

@@ -1,0 +1,319 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Draft pack 001, editor's review book</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Sofia+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bone:#F2ECE0;--panel:#FBF7EF;--ink:#241F1B;--muted:#675F55;--line:#BDB3A1;--oxide:#B4412D;--moss:#526A57;--clay:#C98C79;--dust:#A9A194;
+--serif:'Young Serif',Georgia,serif;--sans:'Sofia Sans',system-ui,sans-serif}
+*{box-sizing:border-box}html{color-scheme:light}
+body{margin:0;background:var(--bone);color:var(--ink);font:17px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:var(--oxide);text-underline-offset:3px}a.unopened{color:var(--muted);text-decoration-style:dashed}
+a:focus-visible{outline:3px solid var(--moss);outline-offset:2px}
+main{max-width:920px;margin:0 auto;padding:40px 16px 96px}
+h1{font:400 clamp(30px,5vw,46px)/1.08 var(--serif);margin:0 0 12px;max-width:16em}
+h2{font:400 clamp(24px,3.4vw,32px)/1.15 var(--serif);margin:0}
+h3{font:700 17px/1.3 var(--sans);margin:28px 0 8px}
+.lede{max-width:44em;color:var(--muted);margin:0 0 6px}
+.stamp{display:inline-block;margin:14px 0 0;padding:4px 12px;border:2px solid var(--oxide);color:var(--oxide);font-weight:700;transform:rotate(-1.2deg);background:var(--panel)}
+.core{margin:36px 0 12px;padding:0}
+.core h2{margin-bottom:6px}
+.layer{display:grid;grid-template-columns:5.2em 1fr auto;gap:2px 16px;align-items:baseline;padding:12px 16px 12px 20px;background:var(--panel);border-left:10px solid var(--tone);border-top:1px solid var(--line);border-bottom:1px solid var(--line);color:var(--ink);text-decoration:none}
+.layer:hover{background:#fff}.layer:focus-visible{outline:3px solid var(--moss);outline-offset:-3px}
+.ly{font:400 22px/1 var(--serif);font-variant-numeric:tabular-nums}.lt{font-weight:700}.lc{grid-column:2;color:var(--muted);font-size:15px}
+.lv2{grid-row:1;grid-column:3;font-size:14px;font-weight:700;padding:1px 8px;border:1.5px solid var(--dust);color:var(--muted)}
+.lv2.v2{border-color:var(--moss);color:var(--moss)}
+.gap{padding:6px 0 6px 40px;color:var(--muted);font-size:14.5px;border-left:2px dotted var(--dust);margin-left:4px}
+.corehint{color:var(--muted);font-size:15px;max-width:44em}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;margin:28px 0 0;border-top:2px solid var(--ink)}
+.fact{padding:14px 16px 14px 0}.fact b{display:block;font:400 28px/1.1 var(--serif)}.fact span{color:var(--muted);font-size:15px}
+.case{margin-top:72px;padding-top:8px;border-top:2px solid var(--ink)}
+.chead{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;margin:18px 0 8px;padding-left:16px;border-left:10px solid var(--tone)}
+.cnum{font:400 56px/1 var(--serif);color:var(--tone)}
+.lens{margin:2px 0 0;color:var(--muted);font-size:15.5px}
+.q{font:400 21px/1.35 var(--serif);max-width:32em;margin:18px 0 8px}
+.ans{margin:0 0 4px;max-width:46em}.prec{color:var(--muted);font-size:15px;display:block}
+.def{color:var(--muted);max-width:46em;margin:0;font-size:16px}
+.strip{display:grid;gap:0;background:var(--panel);border:1px solid var(--line);padding:6px 14px}
+.srow{display:grid;grid-template-columns:minmax(150px,1.1fr) 3fr;gap:12px;align-items:center;padding:8px 0;border-top:1px dotted var(--line)}
+.srow:first-child{border-top:0}.slab{font-size:15px;color:var(--muted)}
+.scells{display:flex;flex-wrap:wrap;gap:6px}
+.yc{font:700 15px/1 var(--sans);font-variant-numeric:tabular-nums;padding:7px 10px;border:1.5px solid var(--dust)}
+.yc.live{background:#E6DFCF;border-color:var(--muted)}
+.yc.target{background:var(--oxide);border-color:var(--oxide);color:#fff}
+.yc.cut{color:#8d8577;border-style:dashed;text-decoration:line-through;background:transparent}
+.note{color:var(--muted);font-size:15px;margin:8px 0 0;max-width:46em}
+.frag{list-style:none;padding:0;margin:0}.frag li{padding:10px 0;border-top:1px solid var(--line);max-width:48em}
+.frag li:first-child{border-top:0}
+.meta{color:var(--muted);font-size:14.5px;margin-top:3px}
+.lv{font-weight:700;font-size:13.5px;padding:0 6px;border:1.5px solid var(--dust)}.lv.v2{border-color:var(--moss);color:var(--moss)}.lv.v0{border-color:var(--oxide);color:var(--oxide)}
+.walk{padding-left:1.3em;max-width:46em}.walk li{margin:6px 0}
+.miss{max-width:46em}
+.hold{margin-top:22px;padding:4px 18px 12px;background:#F6E4DC;border-left:6px solid var(--oxide);max-width:48em}.hold h3{margin-top:14px}
+.audit{margin-top:72px;border-top:2px solid var(--ink);padding-top:12px}
+.audit table{border-collapse:collapse;width:100%;font-size:15.5px;background:var(--panel)}
+.audit th,.audit td{text-align:left;padding:8px 10px;border:1px solid var(--line);vertical-align:top}
+.audit th{background:#E6DFCF}
+.audit ul{max-width:48em}
+@media (max-width:620px){.layer{grid-template-columns:4.4em 1fr;padding-right:12px}.lv2{grid-column:2;grid-row:auto;justify-self:start}.srow{grid-template-columns:1fr}.cnum{font-size:44px}body{font-size:16.5px}}
+@media (prefers-reduced-motion:no-preference){.stamp{animation:settle .6s ease-out both}@keyframes settle{from{opacity:0;transform:rotate(-6deg) scale(1.08)}to{opacity:1;transform:rotate(-1.2deg)}}}
+</style></head><body><main>
+<h1>The world was doing other things</h1>
+<p class="lede">Draft pack 001 for the Daily Ten, with every answer shown. This is the editor's book: it contains spoilers, the sources behind each clue, and the checks that decide whether a case may ship.</p>
+<span class="stamp">Draft, not publishable</span>
+<section class="core" aria-labelledby="coreh"><h2 id="coreh">The day as a core sample</h2>
+<p class="corehint">Layers sit in answer order, oldest at the top. The colour bar is the case's region; the box on the right is how well its answer is verified. The gaps are the arithmetic the Daily Trail will show.</p>
+<a class="layer" href="#case-09" style="--tone:#A8693F"><span class="ly">2 CE</span><span class="lt">The first count of a whole empire</span><span class="lc">Case 9. Numbers and records</span><span class="lv2 v1">V1</span></a><div class="gap">1,323 years</div><a class="layer" href="#case-07" style="--tone:#B4412D"><span class="ly">1325</span><span class="lt">Who was on the road?</span><span class="lc">Case 7. Surprising coexistence</span><span class="lv2 v1">V1</span></a><div class="gap">121 years</div><a class="layer" href="#case-08" style="--tone:#A8693F"><span class="ly">1446</span><span class="lt">Sounds for the people</span><span class="lc">Case 8. A moment outside the usual chronology</span><span class="lv2 v1">V1</span></a><div class="gap">119 years</div><a class="layer" href="#case-03" style="--tone:#A8693F"><span class="ly">1565</span><span class="lt">The way back across the Pacific</span><span class="lc">Case 3. Food and trade routes</span><span class="lv2 v1">V1</span></a><div class="gap">234 years</div><a class="layer" href="#case-05" style="--tone:#B4412D"><span class="ly">1799</span><span class="lt">A slab found by soldiers</span><span class="lc">Case 5. Archaeology: found, made, decoded</span><span class="lv2 v1">V1</span></a><div class="gap">94 years</div><a class="layer" href="#case-02" style="--tone:#4F7F7A"><span class="ly">1893</span><span class="lt">The first nation where women voted</span><span class="lc">Case 2. A political turning point</span><span class="lv2 v1">V1</span></a><div class="gap">26 years</div><a class="layer" href="#case-04" style="--tone:#6E7F94"><span class="ly">1919</span><span class="lt">A research institute in Berlin</span><span class="lc">Case 4. Queer communities and institutions</span><span class="lv2 v1">V1</span></a><div class="gap">50 years</div><a class="layer" href="#case-01" style="--tone:#6E7F94"><span class="ly">1969</span><span class="lt">A very fast prototype</span><span class="lc">Case 1. A curious invention</span><span class="lv2 v1">V1</span></a><div class="gap">8 years</div><a class="layer" href="#case-06" style="--tone:#B4412D"><span class="ly">1977</span><span class="lt">The last case that was not a laboratory&#x27;s</span><span class="lc">Case 6. Medicine and public health</span><span class="lv2 v2">V2</span></a><div class="gap">same year</div><a class="layer" href="#case-10" style="--tone:#8C7A56"><span class="ly">1977</span><span class="lt">Greetings to the universe</span><span class="lc">Case 10. The convergence</span><span class="lv2 v2">V2</span></a></section>
+<div class="facts"><div class="fact"><b>2 of 10</b><span>answers confirmed by two independent opened sources</span></div>
+<div class="fact"><b>0 of 10</b><span>cases that pass the full publication gate today</span></div>
+<div class="fact"><b>3, 6, 5, 5, 3, 3, 3, 6, 6, 3</b><span>candidate years left by the free bounds, per case</span></div>
+<div class="fact"><b>1</b><span>year left once the free relation is read: free evidence alone solves every case</span></div></div>
+<article class="case" id="case-01">
+<header class="chead" style="--tone:#6E7F94"><div class="cnum">1</div><div><h2>A very fast prototype</h2><p class="lens">A curious invention. Europe. modern.</p></div></header>
+<p class="q">In which year did the first Concorde prototype make its first flight?</p>
+<p class="ans"><b>Answer 1969.</b> First flight of Concorde prototype 001 from Toulouse <span class="prec">Precision: day known (2 March); year used. Calendar: Gregorian.</span></p>
+<p class="def">The year of the first flight of prototype 001, not of supersonic flight (1 October 1969) and not of passenger service (1976). <i>Event: first flight. Not the first supersonic flight, not certification, not scheduled service.</i></p>
+<h3>How the clues cut the candidates</h3>
+<div class="strip" role="group" aria-label="How each clue narrows the candidate years"><div class="srow"><div class="slab">Free bounds leave</div><div class="scells"><span class="yc live">1967</span><span class="yc live">1968</span><span class="yc target">1969</span></div></div><div class="srow"><div class="slab">Free relation keeps</div><div class="scells"><span class="yc cut">1967</span><span class="yc cut">1968</span><span class="yc target">1969</span></div></div><div class="srow"><div class="slab">Nudge, 1 Insight, Aviation</div><div class="scells"><span class="yc cut">1967</span><span class="yc live">1968</span><span class="yc target">1969</span></div></div><div class="srow"><div class="slab">Deep, 2 Insight, Aviation</div><div class="scells"><span class="yc cut">1967</span><span class="yc cut">1968</span><span class="yc target">1969</span></div></div></div>
+<p class="note">Candidates are the years that survive the two free bounds. Struck years are removed by that row. The free relation is what makes the answer unique.</p>
+<h3>Free evidence</h3><ul class="frag">
+<li>By the end of that year, the Boeing 737 had already made its first flight (9 April 1967).<div class="meta">Boeing 737 first flight on 9 April 1967, bound. <span class="lv v1">V1</span>. <a href="https://en.wikipedia.org/wiki/Boeing_737">Wikipedia: Boeing 737</a></div></li>
+<li>By the end of that year, the Boeing 747 had not yet carried passengers (first passenger service 22 January 1970).<div class="meta">Boeing 747 enters passenger service on 22 January 1970, bound. <span class="lv v1">V1</span>. <a href="https://en.wikipedia.org/wiki/Boeing_747">Wikipedia: Boeing 747</a></div></li>
+<li>It flew one calendar year after Apollo 8 first took people into lunar orbit (21 to 27 December 1968).<div class="meta">Apollo 8 lunar orbit mission on 21-27 December 1968, relation. <span class="lv v1">V1</span>. <a href="https://en.wikipedia.org/wiki/Apollo_8">Wikipedia: Apollo 8</a></div></li>
+</ul>
+<h3>Paid clues</h3><ul class="frag">
+<li>By the end of that year, the Boeing 737 had already entered airline service (10 February 1968).<div class="meta">Nudge, 1 Insight, Aviation. Cuts 1967. <span class="lv v1">V1</span>. <a href="https://en.wikipedia.org/wiki/Boeing_737">Wikipedia: Boeing 737</a></div></li>
+<li>By the end of that year, the Boeing 747 had already made its first flight (9 February 1969).<div class="meta">Deep, 2 Insight, Aviation. Cuts 1967, 1968. <span class="lv v1">V1</span>. <a href="https://en.wikipedia.org/wiki/Boeing_747">Wikipedia: Boeing 747</a></div></li>
+</ul>
+<h3>A novice solves it, zero Insight</h3><ol class="walk"><li>The two dated anchors give a corridor of 1967 to 1969. The 737 had flown by 1967, and the 747 was not yet carrying passengers by the end of the year in question (that happened in January 1970).</li><li>The third fragment says one calendar year after Apollo 8, which was in December 1968. One year after 1968 is 1969.</li><li>1967 and 1968 fail the third fragment. Lock 1969.</li></ol>
+<p class="miss"><b>If they miss:</b> 1967 and 1968 fit the two bounds, but only 1969 is one calendar year after Apollo 8 (December 1968). The date known to historians is 2 March 1969.</p>
+<h3>Reveal</h3><ul class="frag"><li><b>Prototype 001, F-WTSS.</b> Concorde 001 first flew from Toulouse on 2 March 1969 with André Turcat at the controls. It first went supersonic on 1 October 1969.<div class="meta">Object drawing</div></li><li><b>Two bets, one month apart.</b> The Boeing 747 first flew on 9 February 1969, three weeks before Concorde 001 (2 March 1969).<div class="meta">Timeline</div></li></ul>
+<div class="hold"><h3>Before this can ship</h3><ul>
+<li>5 of 5 clue fragments are below V2.</li>
+</ul></div>
+</article>
+<article class="case" id="case-02">
+<header class="chead" style="--tone:#4F7F7A"><div class="cnum">2</div><div><h2>The first nation where women voted</h2><p class="lens">A political turning point. Oceania. modern.</p></div></header>
+<p class="q">In which year did New Zealand pass the law giving women the right to vote in parliamentary elections?</p>
+<p class="ans"><b>Answer 1893.</b> Royal assent to the Electoral Act 1893 (19 September 1893) <span class="prec">Precision: day known (19 September); year used. Calendar: Gregorian.</span></p>
+<p class="def">The year the Act received royal assent. Women first voted in the general election of 28 November 1893, the same year. Women could vote before they could stand for Parliament; this case is about the vote. <i>Event: assent to the Act. Not the first vote, and not women standing for Parliament.</i></p>
+<h3>How the clues cut the candidates</h3>
+<div class="strip" role="group" aria-label="How each clue narrows the candidate years"><div class="srow"><div class="slab">Free bounds leave</div><div class="scells"><span class="yc live">1889</span><span class="yc live">1890</span><span class="yc live">1891</span><span class="yc live">1892</span><span class="yc target">1893</span><span class="yc live">1894</span></div></div><div class="srow"><div class="slab">Free relation keeps</div><div class="scells"><span class="yc cut">1889</span><span class="yc cut">1890</span><span class="yc cut">1891</span><span class="yc cut">1892</span><span class="yc target">1893</span><span class="yc cut">1894</span></div></div><div class="srow"><div class="slab">Nudge, 1 Insight, Politics</div><div class="scells"><span class="yc cut">1889</span><span class="yc cut">1890</span><span class="yc live">1891</span><span class="yc live">1892</span><span class="yc target">1893</span><span class="yc live">1894</span></div></div><div class="srow"><div class="slab">Deep, 2 Insight, World events</div><div class="scells"><span class="yc cut">1889</span><span class="yc cut">1890</span><span class="yc cut">1891</span><span class="yc cut">1892</span><span class="yc target">1893</span><span class="yc live">1894</span></div></div></div>
+<p class="note">Candidates are the years that survive the two free bounds. Struck years are removed by that row. The free relation is what makes the answer unique.</p>
+<h3>Free evidence</h3><ul class="frag">
+<li>By the end of that year, the Eiffel Tower had been completed in Paris (31 March 1889).<div class="meta">Eiffel Tower completed on 31 March 1889, bound. <span class="lv v1">V1</span>. <a href="https://en.wikipedia.org/wiki/Eiffel_Tower">Wikipedia: Eiffel Tower</a></div></li>
+<li>By the end of that year, the Lumière brothers had not yet held their first paid public film screening (28 December 1895).<div class="meta">Lumière first paid screening on 28 December 1895, bound. <span class="lv v1">V1</span>. <a href="https://en.wikipedia.org/wiki/Lumi%C3%A8re_brothers">Wikipedia: Lumière brothers</a></div></li>
+<li>It happened one calendar year after the second of three suffrage petitions was delivered to Parliament (1892).<div class="meta">Second suffrage petition delivered to Parliament on 1892, relation. <span class="lv v1">V1</span>. <a href="https://en.wikipedia.org/wiki/Women%27s_suffrage_in_New_Zealand">Wikipedia: Women&#x27;s suffrage in New Zealand</a></div></li>
+</ul>
+<h3>Paid clues</h3><ul class="frag">
+<li>By the end of that year, the first suffrage petition had already been delivered to Parliament (1891).<div class="meta">Nudge, 1 Insight, Politics. Cuts 1889, 1890. <span class="lv v1">V1</span>. <a href="https://en.wikipedia.org/wiki/Women%27s_suffrage_in_New_Zealand">Wikipedia: Women&#x27;s suffrage in New Zealand</a></div></li>
+<li>By the end of that year, the World&#x27;s Columbian Exposition had opened in Chicago (1 May 1893).<div class="meta">Deep, 2 Insight, World events. Cuts 1889, 1890, 1891, 1892. <span class="lv v1">V1</span>. <a href="https://en.wikipedia.org/wiki/World%27s_Columbian_Exposition">Wikipedia: World&#x27;s Columbian Exposition</a></div></li>
+</ul>
+<h3>A novice solves it, zero Insight</h3><ol class="walk"><li>The Eiffel Tower is 1889 and the first Lumière screening is 1895. The Act must be after 1889 and before 1895, so 1889 to 1894.</li><li>The petition of almost 20,000 signatures was in 1892. The third fragment says one calendar year after that, so 1893.</li><li>Lock 1893.</li></ol>
+<p class="miss"><b>If they miss:</b> 1889 to 1894 all fit the two bounds. Only 1893 is one calendar year after the 1892 petition.</p>
+<h3>Reveal</h3><ul class="frag"><li><b>Three petitions, one law.</b> Petitions were delivered to Parliament in 1891, 1892 and 1893, each larger than the one before (counts HOLD). The Act received royal assent on 19 September 1893.<div class="meta">Timeline</div></li><li><b>Vote, not candidacy.</b> The 1893 Act gave women the vote. Women&#x27;s right to stand for Parliament came later. The date of the law and the date of the first vote are different facts: 19 September and 28 November 1893.<div class="meta">Note on terms</div></li></ul>
+<div class="hold"><h3>Before this can ship</h3><ul>
+<li>Hold for research: Māori women&#x27;s inclusion: second opened source needed (NZHistory blocked).</li>
+<li>5 of 5 clue fragments are below V2.</li>
+</ul></div>
+</article>
+<article class="case" id="case-03">
+<header class="chead" style="--tone:#A8693F"><div class="cnum">3</div><div><h2>The way back across the Pacific</h2><p class="lens">Food and trade routes. Asia, Americas. early modern.</p></div></header>
+<p class="q">In which year did a Spanish ship first complete the return voyage across the Pacific from the Philippines to Mexico?</p>
+<p class="ans"><b>Answer 1565.</b> Urdaneta&#x27;s ship reaches Acapulco on 8 October 1565 <span class="prec">Precision: day known (8 October); year used. Calendar: Gregorian.</span></p>
+<p class="def">The year of arrival at Acapulco of the first successful eastbound crossing (the tornaviaje). Not the year of the outward voyage and not the year Manila became the colony&#x27;s capital. <i>Event: the arrival that proved the return route. The route was then used until 1815.</i></p>
+<h3>How the clues cut the candidates</h3>
+<div class="strip" role="group" aria-label="How each clue narrows the candidate years"><div class="srow"><div class="slab">Free bounds leave</div><div class="scells"><span class="yc live">1564</span><span class="yc target">1565</span><span class="yc live">1566</span><span class="yc live">1567</span><span class="yc live">1568</span></div></div><div class="srow"><div class="slab">Free relation keeps</div><div class="scells"><span class="yc cut">1564</span><span class="yc target">1565</span><span class="yc cut">1566</span><span class="yc cut">1567</span><span class="yc cut">1568</span></div></div><div class="srow"><div class="slab">Nudge, 1 Insight, Exploration</div><div class="scells"><span class="yc cut">1564</span><span class="yc target">1565</span><span class="yc live">1566</span><span class="yc live">1567</span><span class="yc live">1568</span></div></div></div>
+<p class="note">Candidates are the years that survive the two free bounds. Struck years are removed by that row. The free relation is what makes the answer unique.</p>
+<h3>Free evidence</h3><ul class="frag">
+<li>By the end of that year, a Spanish fleet under Legazpi had already sailed from La Navidad in Mexico (21 November 1564).<div class="meta">Legazpi&#x27;s fleet sails from La Navidad on 21 November 1564, bound. <span class="lv v1">V1</span>. <a href="https://en.wikipedia.org/wiki/Andr%C3%A9s_de_Urdaneta">Wikipedia: Andrés de Urdaneta</a></div></li>
+<li>By the end of that year, Mercator had not yet published his world map (1569).<div class="meta">Mercator&#x27;s world map on 1569, bound. <span class="lv v1">V1</span>. <a href="https://en.wikipedia.org/wiki/Mercator_1569_world_map">Wikipedia: Mercator 1569 world map</a></div></li>
+<li>The return voyage reached Mexico one calendar year after the fleet sailed from La Navidad.<div class="meta">Fleet sails from La Navidad on 21 November 1564, relation. <span class="lv v1">V1</span>. <a href="https://en.wikipedia.org/wiki/Andr%C3%A9s_de_Urdaneta">Wikipedia: Andrés de Urdaneta</a></div></li>
+</ul>
+<h3>Paid clues</h3><ul class="frag">
+<li>By the end of that year, the Spanish fleet had already reached the Philippines (Samar, 13 February 1565).<div class="meta">Nudge, 1 Insight, Exploration. Cuts 1564. <span class="lv v1">V1</span>. <a href="https://en.wikipedia.org/wiki/Andr%C3%A9s_de_Urdaneta">Wikipedia: Andrés de Urdaneta</a></div></li>
+</ul>
+<h3>A novice solves it, zero Insight</h3><ol class="walk"><li>The fleet sailed in November 1564, so the target is 1564 or later. Mercator&#x27;s map is 1569, so the target is before that: 1564 to 1568.</li><li>The third fragment says one calendar year after the fleet sailed, which is 1565.</li><li>Lock 1565.</li></ol>
+<p class="miss"><b>If they miss:</b> 1564 to 1568 fit the bounds. Only 1565 is one calendar year after the fleet sailed in November 1564.</p>
+<h3>Reveal</h3><ul class="frag"><li><b>Why the way back was the hard part.</b> Reaching the Philippines from Mexico was the easier direction. The hard part was finding a way back. Urdaneta left Cebu on 1 June 1565 and reached Acapulco on 8 October.<div class="meta">Route map (schematic)</div></li><li><b>A route that lasted.</b> The Manila galleon route operated from 1565 to 1815.<div class="meta">Trade rhythm</div></li></ul>
+<div class="hold"><h3>Before this can ship</h3><ul>
+<li>Hold for research: Clue ladder is thin: one paid clue that cuts one year. Find a verified event dated 1566 or 1567.</li>
+<li>4 of 4 clue fragments are below V2.</li>
+</ul></div>
+</article>
+<article class="case" id="case-04">
+<header class="chead" style="--tone:#6E7F94"><div class="cnum">4</div><div><h2>A research institute in Berlin</h2><p class="lens">Queer communities and institutions. Europe. modern.</p></div></header>
+<p class="q">In which year did the Institute for Sexual Science open in Berlin?</p>
+<p class="ans"><b>Answer 1919.</b> The Institut für Sexualwissenschaft opens in Berlin (6 July 1919) <span class="prec">Precision: day (6 July per Wikipedia); year used. Calendar: Gregorian.</span></p>
+<p class="def">The year the Institute opened. Some sources mention an inauguration speech on 1 July; the year is the same. <i>Event: opening of the Institute. Not its destruction in 1933.</i></p>
+<h3>How the clues cut the candidates</h3>
+<div class="strip" role="group" aria-label="How each clue narrows the candidate years"><div class="srow"><div class="slab">Free bounds leave</div><div class="scells"><span class="yc live">1918</span><span class="yc target">1919</span><span class="yc live">1920</span><span class="yc live">1921</span><span class="yc live">1922</span></div></div><div class="srow"><div class="slab">Free relation keeps</div><div class="scells"><span class="yc cut">1918</span><span class="yc target">1919</span><span class="yc cut">1920</span><span class="yc cut">1921</span><span class="yc cut">1922</span></div></div><div class="srow"><div class="slab">Nudge, 1 Insight, Film and culture</div><div class="scells"><span class="yc cut">1918</span><span class="yc target">1919</span><span class="yc live">1920</span><span class="yc live">1921</span><span class="yc live">1922</span></div></div><div class="srow"><div class="slab">Deep, 2 Insight, Biography</div><div class="scells"><span class="yc live">1918</span><span class="yc target">1919</span><span class="yc cut">1920</span><span class="yc cut">1921</span><span class="yc cut">1922</span></div></div></div>
+<p class="note">Candidates are the years that survive the two free bounds. Struck years are removed by that row. The free relation is what makes the answer unique.</p>
+<h3>Free evidence</h3><ul class="frag">
+<li>By the end of that year, the armistice that ended fighting in the First World War had been signed (11 November 1918).<div class="meta">Armistice of 11 November 1918 on 11 November 1918, bound. <span class="lv v1">V1</span>. <a href="https://en.wikipedia.org/wiki/Armistice_of_11_November_1918">Wikipedia: Armistice of 11 November 1918</a></div></li>
+<li>By the end of that year, the Beer Hall Putsch in Munich had not yet taken place (8 to 9 November 1923).<div class="meta">Beer Hall Putsch on 8-9 November 1923, bound. <span class="lv v1">V1</span>. <a href="https://en.wikipedia.org/wiki/Beer_Hall_Putsch">Wikipedia: Beer Hall Putsch</a></div></li>
+<li>It opened one calendar year after the armistice of November 1918.<div class="meta">Armistice on 11 November 1918, relation. <span class="lv v1">V1</span>. <a href="https://en.wikipedia.org/wiki/Armistice_of_11_November_1918">Wikipedia: Armistice of 11 November 1918</a></div></li>
+</ul>
+<h3>Paid clues</h3><ul class="frag">
+<li>By the end of that year, Hirschfeld&#x27;s film &#x27;Anders als die Andern&#x27; had premiered (May 1919).<div class="meta">Nudge, 1 Insight, Film and culture. Cuts 1918. <span class="lv v1">V1</span>. <a href="https://en.wikipedia.org/wiki/Magnus_Hirschfeld">Wikipedia: Magnus Hirschfeld</a></div></li>
+<li>By the end of that year, Hirschfeld had not yet been beaten by völkisch activists (1920).<div class="meta">Deep, 2 Insight, Biography. Cuts 1920, 1921, 1922. <span class="lv v1">V1</span>. <a href="https://en.wikipedia.org/wiki/Magnus_Hirschfeld">Wikipedia: Magnus Hirschfeld</a></div></li>
+</ul>
+<h3>A novice solves it, zero Insight</h3><ol class="walk"><li>The armistice is 1918 and the putsch is 1923, so the Institute opened from 1918 to 1922.</li><li>The third fragment says one calendar year after the armistice. One year after 1918 is 1919.</li><li>Lock 1919.</li></ol>
+<p class="miss"><b>If they miss:</b> 1918 to 1922 fit the bounds. Only 1919 is one calendar year after the November 1918 armistice.</p>
+<h3>Reveal</h3><ul class="frag"><li><b>Founders and date.</b> Founded by Magnus Hirschfeld with Arthur Kronfeld and Friedrich Wertheim, the Institute opened on 6 July 1919.<div class="meta">Source excerpts</div></li><li><b>Words of the period.</b> The Institute used the vocabulary of its time. Those terms are not current self-descriptions. The reveal quotes the sources&#x27; wording, marks it as period language, and makes no claim about any individual&#x27;s identity.<div class="meta">Note on language</div></li><li><b>May 1933.</b> In May 1933 the Institute was looted and its books were burned.<div class="meta">What survived</div></li></ul>
+<div class="hold"><h3>Before this can ship</h3><ul>
+<li>Hold for research: Second opened source for the 6 July 1919 date (USHMM could not be opened). Identity-language note needs a named sensitivity review before release; the agent cannot supply one.</li>
+<li>5 of 5 clue fragments are below V2.</li>
+</ul></div>
+</article>
+<article class="case" id="case-05">
+<header class="chead" style="--tone:#B4412D"><div class="cnum">5</div><div><h2>A slab found by soldiers</h2><p class="lens">Archaeology: found, made, decoded. Africa, Europe. early modern.</p></div></header>
+<p class="q">In which year was the Rosetta Stone found?</p>
+<p class="ans"><b>Answer 1799.</b> French soldiers find the stone at Rashid (Rosetta) during the French invasion <span class="prec">Precision: month (July); year used. Calendar: Gregorian.</span></p>
+<p class="def">The year of discovery. The decree on the stone dates from 196 BC; the Greek text was first translated in 1803; Champollion announced decipherment in 1822. Sources disagree on the day in July. <i>Discovery of the object. Not the date of the decree, not the decipherment.</i></p>
+<h3>How the clues cut the candidates</h3>
+<div class="strip" role="group" aria-label="How each clue narrows the candidate years"><div class="srow"><div class="slab">Free bounds leave</div><div class="scells"><span class="yc live">1798</span><span class="yc target">1799</span><span class="yc live">1800</span></div></div><div class="srow"><div class="slab">Free relation keeps</div><div class="scells"><span class="yc cut">1798</span><span class="yc target">1799</span><span class="yc cut">1800</span></div></div><div class="srow"><div class="slab">Nudge, 1 Insight, Politics</div><div class="scells"><span class="yc cut">1798</span><span class="yc target">1799</span><span class="yc live">1800</span></div></div><div class="srow"><div class="slab">Deep, 2 Insight, War</div><div class="scells"><span class="yc live">1798</span><span class="yc target">1799</span><span class="yc cut">1800</span></div></div></div>
+<p class="note">Candidates are the years that survive the two free bounds. Struck years are removed by that row. The free relation is what makes the answer unique.</p>
+<h3>Free evidence</h3><ul class="frag">
+<li>By the end of that year, the French campaign in Egypt had already begun (28 June 1798).<div class="meta">French invasion of Egypt begins on 28 June 1798, bound. <span class="lv v1">V1</span>. <a href="https://en.wikipedia.org/wiki/French_campaign_in_Egypt_and_Syria">Wikipedia: French invasion of Egypt and Syria</a></div></li>
+<li>By the end of that year, the French campaign in Egypt had not yet ended (2 September 1801).<div class="meta">End of the French campaign in Egypt on 2 September 1801, bound. <span class="lv v1">V1</span>. <a href="https://en.wikipedia.org/wiki/French_campaign_in_Egypt_and_Syria">Wikipedia: French invasion of Egypt and Syria</a></div></li>
+<li>It was found one calendar year after the Battle of the Nile (1 to 3 August 1798).<div class="meta">Battle of the Nile on 1-3 August 1798, relation. <span class="lv v1">V1</span>. <a href="https://en.wikipedia.org/wiki/Battle_of_the_Nile">Wikipedia: Battle of the Nile</a></div></li>
+</ul>
+<h3>Paid clues</h3><ul class="frag">
+<li>By the end of that year, Napoleon had already left Egypt (23 August 1799).<div class="meta">Nudge, 1 Insight, Politics. Cuts 1798. <span class="lv v1">V1</span>. <a href="https://en.wikipedia.org/wiki/French_campaign_in_Egypt_and_Syria">Wikipedia: French invasion of Egypt and Syria</a></div></li>
+<li>By the end of that year, the Battle of Marengo had not yet been fought (14 June 1800).<div class="meta">Deep, 2 Insight, War. Cuts 1800. <span class="lv v1">V1</span>. <a href="https://en.wikipedia.org/wiki/Battle_of_Marengo">Wikipedia: Battle of Marengo</a></div></li>
+</ul>
+<h3>A novice solves it, zero Insight</h3><ol class="walk"><li>The French invaded in 1798, so the stone was found in 1798 or later. They surrendered in 1801, so it was found by 1800. The candidates are 1798, 1799 and 1800.</li><li>The Battle of the Nile was in August 1798. One calendar year after is 1799.</li><li>Lock 1799.</li></ol>
+<p class="miss"><b>If they miss:</b> 1798, 1799 and 1800 fit the bounds. Only 1799 is one calendar year after the Battle of the Nile (August 1798).</p>
+<h3>Reveal</h3><ul class="frag"><li><b>Found, made, read.</b> Three dates, three different questions. The decree was made in 196 BC. The stone was found in July 1799. Its text was first read in translation in 1803, and the Egyptian scripts were transliterated in 1822.<div class="meta">Layered object</div></li><li><b>Why the day is missing.</b> Accounts give 15 July, 19 July and, in one encyclopedia, August 1799. We only say 1799.<div class="meta">Note on dates</div></li></ul>
+<div class="hold"><h3>Before this can ship</h3><ul>
+<li>Hold for research: Second opened source for the 1799 year (Britannica and the British Museum are blocked).</li>
+<li>5 of 5 clue fragments are below V2.</li>
+</ul></div>
+</article>
+<article class="case" id="case-06">
+<header class="chead" style="--tone:#B4412D"><div class="cnum">6</div><div><h2>The last case that was not a laboratory&#x27;s</h2><p class="lens">Medicine and public health. Africa, Asia. modern.</p></div></header>
+<p class="q">In which year was the last naturally occurring case of smallpox diagnosed?</p>
+<p class="ans"><b>Answer 1977.</b> Diagnosis of Ali Maow Maalin in Merca, Somalia (October 1977), the last known natural case <span class="prec">Precision: month (October); year used. Calendar: Gregorian.</span></p>
+<p class="def">The year of the last known naturally occurring case (the milder variola minor). Not the last case of any kind (a laboratory-acquired case in Birmingham in 1978) and not the year eradication was declared (1980). <i>Event: the last natural case. Three other dates answer different questions: 1975 (last variola major case), 1978 (last case of any kind), 1980 (eradication declared).</i></p>
+<h3>How the clues cut the candidates</h3>
+<div class="strip" role="group" aria-label="How each clue narrows the candidate years"><div class="srow"><div class="slab">Free bounds leave</div><div class="scells"><span class="yc live">1975</span><span class="yc live">1976</span><span class="yc target">1977</span></div></div><div class="srow"><div class="slab">Free relation keeps</div><div class="scells"><span class="yc cut">1975</span><span class="yc cut">1976</span><span class="yc target">1977</span></div></div><div class="srow"><div class="slab">Nudge, 1 Insight, Space</div><div class="scells"><span class="yc cut">1975</span><span class="yc live">1976</span><span class="yc target">1977</span></div></div><div class="srow"><div class="slab">Deep, 2 Insight, Film</div><div class="scells"><span class="yc cut">1975</span><span class="yc cut">1976</span><span class="yc target">1977</span></div></div></div>
+<p class="note">Candidates are the years that survive the two free bounds. Struck years are removed by that row. The free relation is what makes the answer unique.</p>
+<h3>Free evidence</h3><ul class="frag">
+<li>By the end of that year, the last known case of the deadlier form of smallpox, variola major, had been reported (Bangladesh, 16 October 1975).<div class="meta">Last variola major case reported on 16 October 1975, bound. <span class="lv v2">V2</span>. <a href="https://en.wikipedia.org/wiki/Rahima_Banu">Wikipedia: Rahima Banu</a>, <a href="https://www.who.int/news-room/spotlight/history-of-vaccination/history-of-smallpox-vaccination">World Health Organization: History of smallpox vaccination</a></div></li>
+<li>By the end of that year, the laboratory-acquired smallpox outbreak in Birmingham, England, had not yet happened (1978).<div class="meta">Birmingham laboratory outbreak on 1978, bound. <span class="lv v1">V1</span>. <a href="https://en.wikipedia.org/wiki/Janet_Parker">Wikipedia: Janet Parker and the 1978 smallpox outbreak in the United Kingdom</a></div></li>
+<li>It happened two calendar years after the last variola major case of October 1975.<div class="meta">Last variola major case on 16 October 1975, relation. <span class="lv v2">V2</span>. <a href="https://en.wikipedia.org/wiki/Rahima_Banu">Wikipedia: Rahima Banu</a>, <a href="https://www.who.int/news-room/spotlight/history-of-vaccination/history-of-smallpox-vaccination">World Health Organization: History of smallpox vaccination</a></div></li>
+</ul>
+<h3>Paid clues</h3><ul class="frag">
+<li>By the end of that year, the Viking 1 lander had already touched down on Mars (20 July 1976).<div class="meta">Nudge, 1 Insight, Space. Cuts 1975. <span class="lv v1">V1</span>. <a href="https://en.wikipedia.org/wiki/Viking_1">Wikipedia: Viking 1</a></div></li>
+<li>By the end of that year, the film Star Wars had already been released (25 May 1977).<div class="meta">Deep, 2 Insight, Film. Cuts 1975, 1976. <span class="lv v1">V1</span>. <a href="https://en.wikipedia.org/wiki/Star_Wars_(film)">Wikipedia: Star Wars (film)</a></div></li>
+</ul>
+<h3>A novice solves it, zero Insight</h3><ol class="walk"><li>The last variola major case was reported in October 1975, so the last natural case is 1975 or later. The Birmingham outbreak was 1978, so the last natural case was before that: 1975 to 1977.</li><li>The third fragment says two calendar years after 1975, which is 1977.</li><li>Lock 1977.</li></ol>
+<p class="miss"><b>If they miss:</b> 1975, 1976 and 1977 fit the bounds. Only 1977 is two calendar years after the October 1975 case.</p>
+<h3>Reveal</h3><ul class="frag"><li><b>Four dates, four questions.</b> 1975: the last variola major case. 1977: the last natural case, in Somalia. 1978: a laboratory outbreak in England, the last recorded death. 1980: WHO declared smallpox eradicated.<div class="meta">Plain data graphic</div></li><li><b>&#x27;Last&#x27; needs a definition.</b> The last case of any kind, the last natural case and the declaration of eradication fall in three different years. The case asks for the natural case, and says so.<div class="meta">Note on terms</div></li></ul>
+<div class="hold"><h3>Before this can ship</h3><ul>
+<li>Hold for research: Rahima Banu&#x27;s case date has one source (Wikipedia). WHO&#x27;s &#x27;Asia 1975&#x27; supports the year; a second page naming the case is HOLD.</li>
+<li>3 of 5 clue fragments are below V2.</li>
+</ul></div>
+</article>
+<article class="case" id="case-07">
+<header class="chead" style="--tone:#B4412D"><div class="cnum">7</div><div><h2>Who was on the road?</h2><p class="lens">Surprising coexistence. Africa, Europe, Asia. medieval.</p></div></header>
+<p class="q">In which year did Ibn Battuta set out from Tangier on his first pilgrimage?</p>
+<p class="ans"><b>Answer 1325.</b> Ibn Battuta leaves Tangier on 2 Rajab 725 AH, which is 14 June 1325 <span class="prec">Precision: day known (14 June); year used. Calendar: Hijri 725 AH to Julian/Gregorian 1325.</span></p>
+<p class="def">The year he set out. The source gives the Islamic date and its Gregorian equivalent (Julian-calendar era, shown as 14 June 1325). <i>Event: departure on the first pilgrimage, not the end of his travels (1354).</i></p>
+<h3>How the clues cut the candidates</h3>
+<div class="strip" role="group" aria-label="How each clue narrows the candidate years"><div class="srow"><div class="slab">Free bounds leave</div><div class="scells"><span class="yc live">1324</span><span class="yc target">1325</span><span class="yc live">1326</span></div></div><div class="srow"><div class="slab">Free relation keeps</div><div class="scells"><span class="yc cut">1324</span><span class="yc target">1325</span><span class="yc cut">1326</span></div></div><div class="srow"><div class="slab">Nudge, 1 Insight, Politics</div><div class="scells"><span class="yc live">1324</span><span class="yc target">1325</span><span class="yc cut">1326</span></div></div></div>
+<p class="note">Candidates are the years that survive the two free bounds. Struck years are removed by that row. The free relation is what makes the answer unique.</p>
+<h3>Free evidence</h3><ul class="frag">
+<li>By the end of that year, Marco Polo had already died (8 January 1324).<div class="meta">Marco Polo dies on 8 January 1324, bound. <span class="lv v1">V1</span>. <a href="https://en.wikipedia.org/wiki/Marco_Polo">Wikipedia: Marco Polo</a></div></li>
+<li>By the end of that year, Edward II of England had not yet been deposed (January 1327).<div class="meta">Edward II deposed on January 1327, bound. <span class="lv v1">V1</span>. <a href="https://en.wikipedia.org/wiki/Edward_II_of_England">Wikipedia: Edward II of England</a></div></li>
+<li>He set out one calendar year after Mansa Musa of Mali made his pilgrimage through Cairo (1324).<div class="meta">Mansa Musa&#x27;s pilgrimage on 1324, relation. <span class="lv v1">V1</span>. <a href="https://en.wikipedia.org/wiki/Mansa_Musa">Wikipedia: Mansa Musa</a></div></li>
+</ul>
+<h3>Paid clues</h3><ul class="frag">
+<li>By the end of that year, Queen Isabella had not yet invaded England (1326).<div class="meta">Nudge, 1 Insight, Politics. Cuts 1326. <span class="lv v1">V1</span>. <a href="https://en.wikipedia.org/wiki/Edward_II_of_England">Wikipedia: Edward II of England</a></div></li>
+</ul>
+<h3>A novice solves it, zero Insight</h3><ol class="walk"><li>Marco Polo died in January 1324, so the departure was 1324 or later. Edward II was deposed in January 1327, so it was before the end of 1326: 1324 to 1326.</li><li>The third fragment says one calendar year after Mansa Musa&#x27;s pilgrimage, which was in 1324. So 1325.</li><li>Lock 1325.</li></ol>
+<p class="miss"><b>If they miss:</b> 1324 to 1326 fit the bounds. Only 1325 is one calendar year after Mansa Musa&#x27;s 1324 pilgrimage.</p>
+<h3>Reveal</h3><ul class="frag"><li><b>Four regions, three years.</b> Marco Polo died in Venice in January 1324. Mansa Musa travelled to Mecca through Cairo in 1324. Ibn Battuta left Tangier in June 1325. In England, Edward II was deposed in January 1327. They overlap in time and did not cause one another.<div class="meta">Synchronised bands</div></li><li><b>A traditional date.</b> Tenochtitlan is traditionally said to have been founded in 1325. That date is uncertain, so it is shown as tradition, not as a fact.<div class="meta">Note on dates</div></li><li><b>Two calendars.</b> Ibn Battuta&#x27;s own date is 2 Rajab 725 in the Islamic calendar. The Gregorian equivalent shown is 14 June 1325.<div class="meta">Note on calendars</div></li></ul>
+<div class="hold"><h3>Before this can ship</h3><ul>
+<li>Hold for research: Mansa Musa 1324: second opened source required before this boundary can ship (blocked pages).</li>
+<li>4 of 4 clue fragments are below V2.</li>
+</ul></div>
+</article>
+<article class="case" id="case-08">
+<header class="chead" style="--tone:#A8693F"><div class="cnum">8</div><div><h2>Sounds for the people</h2><p class="lens">A moment outside the usual chronology. Asia. medieval.</p></div></header>
+<p class="q">In which year was the Hunminjeongeum, the document that introduced the Korean alphabet, published?</p>
+<p class="ans"><b>Answer 1446.</b> Publication of the Hunminjeongeum, about the ninth lunar month of 1446 (around October) <span class="prec">Precision: month (ninth lunar month); year used. Calendar: Joseon lunisolar calendar, converted to Gregorian.</span></p>
+<p class="def">The year of publication. The alphabet was devised earlier: it was introduced to the court in the 12th lunar month of 1443, which spans 30 December 1443 to 28 January 1444 in the Gregorian calendar, so the creation year is ambiguous and is not used. <i>Publication, not invention. Invention falls across a Gregorian year boundary (1443 or 1444).</i></p>
+<h3>How the clues cut the candidates</h3>
+<div class="strip" role="group" aria-label="How each clue narrows the candidate years"><div class="srow"><div class="slab">Free bounds leave</div><div class="scells"><span class="yc live">1441</span><span class="yc live">1442</span><span class="yc live">1443</span><span class="yc live">1444</span><span class="yc live">1445</span><span class="yc target">1446</span></div></div><div class="srow"><div class="slab">Free relation keeps</div><div class="scells"><span class="yc cut">1441</span><span class="yc cut">1442</span><span class="yc cut">1443</span><span class="yc cut">1444</span><span class="yc cut">1445</span><span class="yc target">1446</span></div></div><div class="srow"><div class="slab">Nudge, 1 Insight, World events</div><div class="scells"><span class="yc cut">1441</span><span class="yc cut">1442</span><span class="yc cut">1443</span><span class="yc live">1444</span><span class="yc live">1445</span><span class="yc target">1446</span></div></div></div>
+<p class="note">Candidates are the years that survive the two free bounds. Struck years are removed by that row. The free relation is what makes the answer unique.</p>
+<h3>Free evidence</h3><ul class="frag">
+<li>By the end of that year, the rain gauge had already been invented at Sejong&#x27;s court (August 1441 by the lunar calendar).<div class="meta">Rain gauge invented on 1441, bound. <span class="lv v1">V1</span>. <a href="https://en.wikipedia.org/wiki/Cheugugi">Wikipedia: Ch&#x27;ŭgugi (rain gauge)</a></div></li>
+<li>By the end of that year, Yongbi eocheonga, the first book written in the new alphabet, had not yet been published (1447).<div class="meta">Yongbi eocheonga published on 1447, bound. <span class="lv v1">V1</span>. <a href="https://en.wikipedia.org/wiki/Yongbi_eocheonga">Wikipedia: Yongbiŏch&#x27;ŏn&#x27;ga</a></div></li>
+<li>It was published four calendar years after the rain gauge was standardised (1442).<div class="meta">Rain gauge standardised on 1442, relation. <span class="lv v1">V1</span>. <a href="https://en.wikipedia.org/wiki/Cheugugi">Wikipedia: Ch&#x27;ŭgugi (rain gauge)</a></div></li>
+</ul>
+<h3>Paid clues</h3><ul class="frag">
+<li>By the end of that year, the Battle of Varna had already been fought (10 November 1444).<div class="meta">Nudge, 1 Insight, World events. Cuts 1441, 1442, 1443. <span class="lv v1">V1</span>. <a href="https://en.wikipedia.org/wiki/Battle_of_Varna">Wikipedia: Battle of Varna</a></div></li>
+</ul>
+<h3>A novice solves it, zero Insight</h3><ol class="walk"><li>The rain gauge was invented in 1441, so the publication was in 1441 or later. The first book in the alphabet was published in 1447, so the publication was by 1446: 1441 to 1446.</li><li>The third fragment says four calendar years after 1442, which is 1446.</li><li>Lock 1446.</li></ol>
+<p class="miss"><b>If they miss:</b> 1441 to 1446 fit the bounds. Only 1446 is four calendar years after the 1442 rain-gauge standard.</p>
+<h3>Reveal</h3><ul class="frag"><li><b>Two ways to date a script.</b> The alphabet was devised and shown to the court in the 12th lunar month of 1443. It was published in the ninth lunar month of 1446. The first is split across two Gregorian years; the second is not. The case asks for the publication.<div class="meta">Source excerpt</div></li><li><b>Lunar months and Gregorian years.</b> Joseon dated events by the lunar calendar. The same lunar month can fall in two Gregorian years, which is why 1443 or 1444 would both be defensible for the alphabet&#x27;s creation.<div class="meta">Note on calendars</div></li></ul>
+<div class="hold"><h3>Before this can ship</h3><ul>
+<li>Hold for research: Second opened source for the publication year (UNESCO nomination not opened). Clue ladder has one clue.</li>
+<li>4 of 4 clue fragments are below V2.</li>
+</ul></div>
+</article>
+<article class="case" id="case-09">
+<header class="chead" style="--tone:#A8693F"><div class="cnum">9</div><div><h2>The first count of a whole empire</h2><p class="lens">Numbers and records. Asia. ancient.</p></div></header>
+<p class="q">In which year was the first nationwide census of Han China taken?</p>
+<p class="ans"><b>Answer 2 CE.</b> The registration of households and persons recorded for the year 2 CE (Yuanshi 2) <span class="prec">Precision: year. Calendar: Han lunisolar era year Yuanshi 2, equal to 2 CE.</span></p>
+<p class="def">The year of the first nationwide census in Chinese history that left records. Exact totals are not used: sources disagree. <i>The count was recorded under era year Yuanshi 2.</i></p>
+<h3>How the clues cut the candidates</h3>
+<div class="strip" role="group" aria-label="How each clue narrows the candidate years"><div class="srow"><div class="slab">Free bounds leave</div><div class="scells"><span class="yc live">1 BCE</span><span class="yc live">1 CE</span><span class="yc target">2 CE</span><span class="yc live">3 CE</span><span class="yc live">4 CE</span><span class="yc live">5 CE</span></div></div><div class="srow"><div class="slab">Free relation keeps</div><div class="scells"><span class="yc cut">1 BCE</span><span class="yc cut">1 CE</span><span class="yc target">2 CE</span><span class="yc cut">3 CE</span><span class="yc cut">4 CE</span><span class="yc cut">5 CE</span></div></div><div class="srow"><div class="slab">Nudge, 1 Insight, Government</div><div class="scells"><span class="yc cut">1 BCE</span><span class="yc live">1 CE</span><span class="yc target">2 CE</span><span class="yc live">3 CE</span><span class="yc live">4 CE</span><span class="yc live">5 CE</span></div></div></div>
+<p class="note">Candidates are the years that survive the two free bounds. Struck years are removed by that row. The free relation is what makes the answer unique.</p>
+<h3>Free evidence</h3><ul class="frag">
+<li>By the end of that year, Emperor Ping had already taken the throne (17 October, 1 BCE).<div class="meta">Emperor Ping takes the throne on 17 October 1 BCE, bound. <span class="lv v1">V1</span>. <a href="https://en.wikipedia.org/wiki/Emperor_Ping_of_Han">Wikipedia: Emperor Ping of Han</a></div></li>
+<li>By the end of that year, Emperor Ping had not yet died (3 February, 6 CE).<div class="meta">Emperor Ping dies on 3 February 6 CE, bound. <span class="lv v1">V1</span>. <a href="https://en.wikipedia.org/wiki/Emperor_Ping_of_Han">Wikipedia: Emperor Ping of Han</a></div></li>
+<li>It was recorded in the second year of the Yuanshi era, an era that began in 1 CE.<div class="meta">Yuanshi era begins on 1 CE, relation. <span class="lv v1">V1</span>. <a href="https://en.wikipedia.org/wiki/Emperor_Ping_of_Han">Wikipedia: Emperor Ping of Han</a></div></li>
+</ul>
+<h3>Paid clues</h3><ul class="frag">
+<li>By the end of that year, the Yuanshi era name had already been proclaimed (1 CE).<div class="meta">Nudge, 1 Insight, Government. Cuts 1 BCE. <span class="lv v1">V1</span>. <a href="https://en.wikipedia.org/wiki/Emperor_Ping_of_Han">Wikipedia: Emperor Ping of Han</a></div></li>
+</ul>
+<h3>A novice solves it, zero Insight</h3><ol class="walk"><li>Emperor Ping took the throne in 1 BCE and died in 6 CE, so the census was between 1 BCE and 5 CE. That is six years: 1 BCE, then 1, 2, 3, 4 and 5 CE. There is no year zero.</li><li>The third fragment says the second year of the Yuanshi era, which began in 1 CE. The first year is 1 CE, so the second is 2 CE.</li><li>Lock 2 CE.</li></ol>
+<p class="miss"><b>If they miss:</b> 1 BCE and 1 to 5 CE fit the bounds. Only 2 CE is the second year of an era whose first year was 1 CE.</p>
+<h3>Reveal</h3><ul class="frag"><li><b>A count with its disagreement showing.</b> The 2 CE registration is the first nationwide census in Chinese history. Accounts give about 57.7 million people in one source and about 59.6 million in another. The chart shows both and says the figures are registrations, not a modern headcount.<div class="meta">Inspectable chart</div></li><li><b>BCE and CE.</b> Year numbers jump from 1 BCE to 1 CE with no year 0, so the corridor 20 BCE to 20 CE has 40 years, not 41.<div class="meta">Note on dating</div></li></ul>
+<div class="hold"><h3>Before this can ship</h3><ul>
+<li>Hold for research: Exact totals: HOLD (sources disagree, primary text not opened). Only the year is used.</li>
+<li>Hold for research: Second opened source for the 2 CE census year.</li>
+<li>4 of 4 clue fragments are below V2.</li>
+</ul></div>
+</article>
+<article class="case" id="case-10">
+<header class="chead" style="--tone:#8C7A56"><div class="cnum">10</div><div><h2>Greetings to the universe</h2><p class="lens">The convergence. North America, Global. modern.</p></div></header>
+<p class="q">In which year were the two Voyager spacecraft launched?</p>
+<p class="ans"><b>Answer 1977.</b> Voyager 2 launches on 20 August 1977 and Voyager 1 on 5 September 1977 <span class="prec">Precision: day known; year used. Calendar: Gregorian.</span></p>
+<p class="def">The year both spacecraft launched. Voyager 2 launched first, on 20 August; Voyager 1 followed on 5 September. <i>Event: launches. Not the Jupiter flybys (1979) and not leaving the heliosphere.</i></p>
+<h3>How the clues cut the candidates</h3>
+<div class="strip" role="group" aria-label="How each clue narrows the candidate years"><div class="srow"><div class="slab">Free bounds leave</div><div class="scells"><span class="yc live">1976</span><span class="yc target">1977</span><span class="yc live">1978</span></div></div><div class="srow"><div class="slab">Free relation keeps</div><div class="scells"><span class="yc cut">1976</span><span class="yc target">1977</span><span class="yc cut">1978</span></div></div><div class="srow"><div class="slab">Nudge, 1 Insight, Medicine</div><div class="scells"><span class="yc cut">1976</span><span class="yc target">1977</span><span class="yc live">1978</span></div></div><div class="srow"><div class="slab">Deep, 2 Insight, Medicine</div><div class="scells"><span class="yc live">1976</span><span class="yc target">1977</span><span class="yc cut">1978</span></div></div></div>
+<p class="note">Candidates are the years that survive the two free bounds. Struck years are removed by that row. The free relation is what makes the answer unique.</p>
+<h3>Free evidence</h3><ul class="frag">
+<li>By the end of that year, the Viking 1 lander had already touched down on Mars (20 July 1976).<div class="meta">Viking 1 lands on Mars on 20 July 1976, bound. <span class="lv v1">V1</span>. <a href="https://en.wikipedia.org/wiki/Viking_1">Wikipedia: Viking 1</a></div></li>
+<li>By the end of that year, Voyager 1 had not yet made its closest approach to Jupiter (5 March 1979).<div class="meta">Voyager 1 at Jupiter on 5 March 1979, bound. <span class="lv v1">V1</span>. <a href="https://en.wikipedia.org/wiki/Voyager_1">Wikipedia: Voyager 1</a></div></li>
+<li>They launched one calendar year after Concorde began scheduled passenger service (21 January 1976).<div class="meta">Concorde enters scheduled service on 21 January 1976, relation. <span class="lv v1">V1</span>. <a href="https://en.wikipedia.org/wiki/Concorde">Wikipedia: Concorde</a></div></li>
+</ul>
+<h3>Paid clues</h3><ul class="frag">
+<li>By the end of that year, the last naturally occurring case of smallpox had already been diagnosed (October 1977).<div class="meta">Nudge, 1 Insight, Medicine. Cuts 1976. <span class="lv v2">V2</span>. <a href="https://en.wikipedia.org/wiki/Ali_Maow_Maalin">Wikipedia: Ali Maow Maalin</a>, <a href="https://www.who.int/news-room/spotlight/history-of-vaccination/history-of-smallpox-vaccination">World Health Organization: History of smallpox vaccination</a></div></li>
+<li>By the end of that year, the 1978 laboratory smallpox outbreak in England had not yet happened.<div class="meta">Deep, 2 Insight, Medicine. Cuts 1978. <span class="lv v1">V1</span>. <a href="https://en.wikipedia.org/wiki/Janet_Parker">Wikipedia: Janet Parker and the 1978 smallpox outbreak in the United Kingdom</a></div></li>
+</ul>
+<h3>A novice solves it, zero Insight</h3><ol class="walk"><li>The Viking 1 landing was in 1976, so the launches were in 1976 or later. Voyager 1&#x27;s closest approach to Jupiter was in 1979, so the launches were by the end of 1978: 1976, 1977 or 1978.</li><li>The third fragment says one calendar year after Concorde began service in January 1976. One year after 1976 is 1977.</li><li>Lock 1977.</li></ol>
+<p class="miss"><b>If they miss:</b> 1976 to 1978 fit the bounds. Only 1977 is one calendar year after Concorde began scheduled service in January 1976.</p>
+<h3>Reveal</h3><ul class="frag"><li><b>Two things happened in 1977.</b> In 1977 two spacecraft left for the outer solar system, and the last natural case of smallpox was diagnosed in Somalia. Both are documented. Neither caused the other.<div class="meta">The Daily Trail</div></li><li><b>Your ten years on one core.</b> The ten marks span two thousand years. Two of them, from different cases, fall in 1977. The gaps between neighbouring marks shrink from more than thirteen centuries to a few decades. The pack was selected by editors, so the pattern says as much about what is recorded as about the past.<div class="meta">Timeline of your ten marks</div></li></ul>
+<div class="hold"><h3>Before this can ship</h3><ul>
+<li>Hold for research: The finale reuses 1977 from case 6; see AUDITS (cross-case leakage).</li>
+<li>4 of 5 clue fragments are below V2.</li>
+</ul></div>
+</article>
+<section class="audit" id="audit"><h2>Verification at a glance</h2>
+<p>A case ships only when every clue it shows rests on two opened pages from different publishers and no hold remains. Underlined grey links are pages that could not be opened.</p>
+<table><thead><tr><th>Case</th><th>Answer verified</th><th>Clues at V2</th><th>Publishable</th></tr></thead><tbody><tr><td>1. A very fast prototype</td><td>V1</td><td>0 of 5</td><td>no</td></tr><tr><td>2. The first nation where women voted</td><td>V1</td><td>0 of 5</td><td>no</td></tr><tr><td>3. The way back across the Pacific</td><td>V1</td><td>0 of 4</td><td>no</td></tr><tr><td>4. A research institute in Berlin</td><td>V1</td><td>0 of 5</td><td>no</td></tr><tr><td>5. A slab found by soldiers</td><td>V1</td><td>0 of 5</td><td>no</td></tr><tr><td>6. The last case that was not a laboratory&#x27;s</td><td>V2</td><td>2 of 5</td><td>no</td></tr><tr><td>7. Who was on the road?</td><td>V1</td><td>0 of 4</td><td>no</td></tr><tr><td>8. Sounds for the people</td><td>V1</td><td>0 of 4</td><td>no</td></tr><tr><td>9. The first count of a whole empire</td><td>V1</td><td>0 of 4</td><td>no</td></tr><tr><td>10. Greetings to the universe</td><td>V2</td><td>1 of 5</td><td>no</td></tr></tbody></table>
+<p>The full audits, bibliography and registry of 19 candidate topics are in the repository under <code>docs/pack/</code>.</p></section>
+</main></body></html>

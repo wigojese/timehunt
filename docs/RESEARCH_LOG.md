@@ -36,3 +36,7 @@ Level A means I opened or ran the page. Level B means search-result summary only
 | Information arithmetic (log2 values, 2^G - 1, 3,650 cases a year) | Computed | C |
 
 Blocked by bot protection: neal.fun, FTC dark-patterns page, OECD dark-patterns page.
+
+## Stage 3 research (2026-11-23)
+Opened with a headless browser: Wikipedia pages for all ten targets and their anchors, WHO smallpox history, CDC smallpox page, NASA Voyager mission page. Blocked or failed: Britannica, museum and national-history sites, UNESCO, USHMM; Internet Archive route refused. Search summaries were used as corroboration only, never counted toward V1 or V2. One search result mirror carried embedded instructions asking for a child-friendly summary; it was ignored.
+Conflicts recorded, not resolved: Concorde 1 or 2 March 1969; Berlin Institute 1 or 6 July 1919; Rosetta Stone 15 or 19 July (one source says August) 1799; Maalin 22, 26 or 31 October 1977; Han census totals; Hangul creation straddles 1443/1444 (so publication, 1446, is the target).

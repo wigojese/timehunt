@@ -1,0 +1,67 @@
+# Source bibliography, draft pack 001
+
+Every source the pack touches. **Opened** means the editor loaded the page in a browser engine in this stage and read the cited passage. **Not opened** means the page was blocked or failed, and only a search-result summary of it was seen. A not-opened source is recorded as corroboration of weaker standing and never counts toward V1 or V2 (D-011).
+
+Two Wikipedia pages are one publisher and do not make V2. V2 here means at least two opened pages from different publishers.
+
+
+| ID | Publisher | Title and locator | Opened | Used in cases | URL |
+|---|---|---|---|---|---|
+| `wp-concorde` | Wikimedia Foundation | Concorde (Wikipedia). Infobox 'First flight 2 March 1969', 'Introduction date 21 January 1976'; section on 001 and André Turcat. | yes | 1, 10 | https://en.wikipedia.org/wiki/Concorde |
+| `wp-boeing_737` | Wikimedia Foundation | Boeing 737 (Wikipedia). Infobox: first flight April 9, 1967; introduction February 10, 1968. | yes | 1 | https://en.wikipedia.org/wiki/Boeing_737 |
+| `wp-boeing_747` | Wikimedia Foundation | Boeing 747 (Wikipedia). Infobox: first flight February 9, 1969; introduction January 22, 1970 with Pan Am. | yes | 1 | https://en.wikipedia.org/wiki/Boeing_747 |
+| `wp-apollo_8` | Wikimedia Foundation | Apollo 8 (Wikipedia). Launch December 21, 1968; landing date December 27, 1968. | yes | 1 | https://en.wikipedia.org/wiki/Apollo_8 |
+| `wp-women%27s_suffrage_in_new_zealand` | Wikimedia Foundation | Women's suffrage in New Zealand (Wikipedia). Royal assent 19 September 1893; first vote 28 November 1893; petitions 1891, 1892, 1893. | yes | 2 | https://en.wikipedia.org/wiki/Women%27s_suffrage_in_New_Zealand |
+| `wp-eiffel_tower` | Wikimedia Foundation | Eiffel Tower (Wikipedia). Infobox: completed 31 March 1889. | yes | 2 | https://en.wikipedia.org/wiki/Eiffel_Tower |
+| `wp-lumi%c3%a8re_brothers` | Wikimedia Foundation | Lumière brothers (Wikipedia). First paid public screening 28 December 1895. | yes | 2 | https://en.wikipedia.org/wiki/Lumi%C3%A8re_brothers |
+| `wp-world%27s_columbian_exposition` | Wikimedia Foundation | World's Columbian Exposition (Wikipedia). Opening May 1, 1893; closure October 30, 1893. | yes | 2 | https://en.wikipedia.org/wiki/World%27s_Columbian_Exposition |
+| `wp-andr%c3%a9s_de_urdaneta` | Wikimedia Foundation | Andrés de Urdaneta (Wikipedia). Fleet sailed from La Navidad November 21, 1564; left Cebu 1 June 1565; reached Acapulco on 8 October 1565. | yes | 3 | https://en.wikipedia.org/wiki/Andr%C3%A9s_de_Urdaneta |
+| `wp-miguel_l%c3%b3pez_de_legazpi` | Wikimedia Foundation | Miguel López de Legazpi (Wikipedia). Capital moved to Manila in 1571; died 20 August 1572. | yes | 3 | https://en.wikipedia.org/wiki/Miguel_L%C3%B3pez_de_Legazpi |
+| `wp-manila_galleon` | Wikimedia Foundation | Manila galleon (Wikipedia). Route 'From 1565 to 1815'; inaugurated 1565 after Urdaneta pioneered the tornaviaje. | yes | 3 | https://en.wikipedia.org/wiki/Manila_galleon |
+| `wp-mercator_1569_world_map` | Wikimedia Foundation | Mercator 1569 world map (Wikipedia). Map dated 1569. | yes | 3 | https://en.wikipedia.org/wiki/Mercator_1569_world_map |
+| `wp-armistice_of_11_november_1918` | Wikimedia Foundation | Armistice of 11 November 1918 (Wikipedia). Title and lead. | yes | 4 | https://en.wikipedia.org/wiki/Armistice_of_11_November_1918 |
+| `wp-beer_hall_putsch` | Wikimedia Foundation | Beer Hall Putsch (Wikipedia). Date 8-9 November 1923. | yes | 4 | https://en.wikipedia.org/wiki/Beer_Hall_Putsch |
+| `wp-treaty_of_versailles` | Wikimedia Foundation | Treaty of Versailles (Wikipedia). Signed 28 June 1919. | yes | none | https://en.wikipedia.org/wiki/Treaty_of_Versailles |
+| `wp-magnus_hirschfeld` | Wikimedia Foundation | Magnus Hirschfeld (Wikipedia). Institute opened 6 July 1919; film premiered May 1919; beaten by völkisch activists in 1920; 1933 looting and book burning. | yes | 4 | https://en.wikipedia.org/wiki/Magnus_Hirschfeld |
+| `wp-institut_f%c3%bcr_sexualwissenschaft` | Wikimedia Foundation | Institut für Sexualwissenschaft (Wikipedia). Established July 6, 1919; founders Hirschfeld, Kronfeld, Wertheim; confiscations 6 May 1933. | yes | 4 | https://en.wikipedia.org/wiki/Institut_f%C3%BCr_Sexualwissenschaft |
+| `wp-rosetta_stone` | Wikimedia Foundation | Rosetta Stone (Wikipedia). Decree of 196 BC; found July 1799 by Pierre-François Bouchard; Greek translation 1803; Champollion 1822. | yes | 5 | https://en.wikipedia.org/wiki/Rosetta_Stone |
+| `wp-french_campaign_in_egypt_and_syria` | Wikimedia Foundation | French invasion of Egypt and Syria (Wikipedia). Date 28 June 1798 - 2 September 1801; Napoleon in command till 23 August 1799. | yes | 5 | https://en.wikipedia.org/wiki/French_campaign_in_Egypt_and_Syria |
+| `wp-battle_of_the_nile` | Wikimedia Foundation | Battle of the Nile (Wikipedia). Date 1-3 August 1798. | yes | 5 | https://en.wikipedia.org/wiki/Battle_of_the_Nile |
+| `wp-battle_of_marengo` | Wikimedia Foundation | Battle of Marengo (Wikipedia). Date 14 June 1800. | yes | 5 | https://en.wikipedia.org/wiki/Battle_of_Marengo |
+| `wp-ali_maow_maalin` | Wikimedia Foundation | Ali Maow Maalin (Wikipedia). Last person known infected with naturally occurring Variola minor; diagnosed October 1977. | yes | 6, 10 | https://en.wikipedia.org/wiki/Ali_Maow_Maalin |
+| `wp-rahima_banu` | Wikimedia Foundation | Rahima Banu (Wikipedia). Last known naturally occurring Variola major case, reported 16 October 1975. | yes | 6 | https://en.wikipedia.org/wiki/Rahima_Banu |
+| `wp-janet_parker` | Wikimedia Foundation | Janet Parker and the 1978 smallpox outbreak in the United Kingdom (Wikipedia). Laboratory-acquired outbreak in 1978; last recorded smallpox death. | yes | 6, 10 | https://en.wikipedia.org/wiki/Janet_Parker |
+| `wp-viking_1` | Wikimedia Foundation | Viking 1 (Wikipedia). Lander touched down on Mars July 20, 1976. | yes | 6, 10 | https://en.wikipedia.org/wiki/Viking_1 |
+| `wp-star_wars_(film)` | Wikimedia Foundation | Star Wars (film) (Wikipedia). Release date May 25, 1977. | yes | 6 | https://en.wikipedia.org/wiki/Star_Wars_(film) |
+| `wp-ibn_battuta` | Wikimedia Foundation | Ibn Battuta (Wikipedia). 'On 2 Rajab 725 AH (14 June 1325 AD), Ibn Battuta set off from his home town at the age of 21'. | yes | 7 | https://en.wikipedia.org/wiki/Ibn_Battuta |
+| `wp-marco_polo` | Wikimedia Foundation | Marco Polo (Wikipedia). Died 8 January 1324. | yes | 7 | https://en.wikipedia.org/wiki/Marco_Polo |
+| `wp-mansa_musa` | Wikimedia Foundation | Mansa Musa (Wikipedia). 'Musa went on Hajj to Mecca in 1324'; spent time in Cairo. | yes | 7 | https://en.wikipedia.org/wiki/Mansa_Musa |
+| `wp-edward_ii_of_england` | Wikimedia Foundation | Edward II of England (Wikipedia). Reign ended 21 January 1327; Isabella invaded England in 1326. | yes | 7 | https://en.wikipedia.org/wiki/Edward_II_of_England |
+| `wp-tenochtitlan` | Wikimedia Foundation | Tenochtitlan (Wikipedia). Foundation 1325; infobox 'Unclear date, declared 13 March 1325'. | yes | 7 | https://en.wikipedia.org/wiki/Tenochtitlan |
+| `wp-hunminjeongeum` | Wikimedia Foundation | Hunminjeongeum (Wikipedia). Published around October 1446 (9th lunar month); alphabet introduced 12th month of 1443 (30 Dec 1443 - 28 Jan 1444). | yes | 8 | https://en.wikipedia.org/wiki/Hunminjeongeum |
+| `wp-cheugugi` | Wikimedia Foundation | Ch'ŭgugi (rain gauge) (Wikipedia). Invented August 1441 (lunar); standardised 1442. | yes | 8 | https://en.wikipedia.org/wiki/Cheugugi |
+| `wp-yongbi_eocheonga` | Wikimedia Foundation | Yongbiŏch'ŏn'ga (Wikipedia). 'The book was published in 1447'; first work written in Hangul. | yes | 8 | https://en.wikipedia.org/wiki/Yongbi_eocheonga |
+| `wp-sejong_the_great` | Wikimedia Foundation | Sejong the Great (Wikipedia). Reigned 1418 to his death on April 8, 1450. | yes | none | https://en.wikipedia.org/wiki/Sejong_the_Great |
+| `wp-battle_of_varna` | Wikimedia Foundation | Battle of Varna (Wikipedia). Date November 10, 1444. | yes | 8 | https://en.wikipedia.org/wiki/Battle_of_Varna |
+| `wp-han_dynasty` | Wikimedia Foundation | Han dynasty (Wikipedia). 'The first nationwide census in Chinese history was taken in 2 AD ... 57,671,400 individuals across 12,366,470 households.' | yes | 9 | https://en.wikipedia.org/wiki/Han_dynasty |
+| `wp-emperor_ping_of_han` | Wikimedia Foundation | Emperor Ping of Han (Wikipedia). Reign 17 October 1 BC to 3 February 6 AD; era Yuanshi 1-5 AD. | yes | 9 | https://en.wikipedia.org/wiki/Emperor_Ping_of_Han |
+| `wp-voyager_1` | Wikimedia Foundation | Voyager 1 (Wikipedia). Launch September 5, 1977; Jupiter closest approach March 5, 1979. | yes | 10 | https://en.wikipedia.org/wiki/Voyager_1 |
+| `wp-voyager_2` | Wikimedia Foundation | Voyager 2 (Wikipedia). Launch August 20, 1977. | yes | 10 | https://en.wikipedia.org/wiki/Voyager_2 |
+| `who-smallpox` | World Health Organization | History of smallpox vaccination. 'smallpox was eliminated from South America in 1971, Asia in 1975 and Africa in 1977 ... In 1980, WHO declared smallpox officially eradicated'. | yes | 6, 10 | https://www.who.int/news-room/spotlight/history-of-vaccination/history-of-smallpox-vaccination |
+| `cdc-smallpox` | US Centers for Disease Control and Prevention | About smallpox. 'Smallpox has been eradicated, with no cases occurring since 1977.' | yes | 6, 10 | https://www.cdc.gov/smallpox/about/index.html |
+| `nasa-voyager` | NASA Science | Voyager. Mission page: 'LAUNCH 1977'. | yes | 10 | https://science.nasa.gov/mission/voyager/ |
+| `q-airbus-concorde` | Airbus | The day Concorde flew into the history books. Quoted in search summary: takeoff 2 March 1969. | **no** | 1 | https://www.airbus.com/en/newsroom/stories/2019-03-the-day-concorde-flew-into-the-history-books |
+| `q-museeairespace` | Musée de l'Air et de l'Espace | BAC-Sud Aviation Concorde prototype 001 F-WTSS. Blocked (403). Search summary only. | **no** | 1 | https://museeairespace.fr/en/collections/bac-sud-aviation-concorde-prototype-001-f-wtss |
+| `q-nzhistory` | NZHistory (Ministry for Culture and Heritage) | Women's suffrage: how New Zealand voted first. Blocked (403). Search summary: assent 19 Sept 1893, vote 28 Nov 1893, 'first self-governing country'. | **no** | 2 | https://nzhistory.govt.nz/politics/womens-suffrage |
+| `q-ushmm` | US Holocaust Memorial Museum, Holocaust Encyclopedia | Magnus Hirschfeld. Connection failed. Search summary: May 1933 looting; does not give the 1919 opening date. | **no** | 4 | https://encyclopedia.ushmm.org/content/en/article/magnus-hirschfeld-2 |
+| `q-britannica-rosetta` | Encyclopaedia Britannica | Rosetta Stone. Blocked. Search summary gives August 1799, an outlier against July in other sources. | **no** | 5 | https://www.britannica.com/print/article/509988 |
+| `q-unesco-hunmin` | UNESCO Memory of the World | Hunminjeongum Manuscript (nomination). Not opened. Search summary: published in the ninth lunar month of 1446 (9 October 1446). | **no** | 8 | https://en.unesco.org/silkroad/silk-road-themes/documentary-heritage/hunminjeongum-manuscript |
+| `q-aramco-battuta` | Aramco World | The longest hajj: the journeys of Ibn Battuta. Search summary: set out in 1325, the year after Polo died; Thursday 14 June 1325 (2 Rajab 725 AH). | **no** | 7 | https://www.aramcoworld.com/en/articles/2000/the-longest-hajj-the-journeys-of-ibn-battuta-intro |
+| `q-historyofinfo-han` | historyofinformation.com | The first census of which records are preserved (China, Han dynasty). Search summary: first census with preserved records, 2 AD. Figures vary across sources. | **no** | 9 | https://historyofinformation.com/detail.php?id=148 |
+| `q-nlm-mmwr-smallpox` | NLM and CDC | Last natural smallpox case: NLM and CDC MMWR accounts. Search summary: dates for the Somali case vary (22, 26, 31 October 1977), all in October 1977. | **no** | 6 | https://www.cdc.gov/Mmwr/preview/mmwrhtml/00049694.htm |
+| `q-nasa-golden` | NASA Science | Greetings to the universe in 55 different languages. Search summary: greetings in 55 languages. | **no** | 10 | https://science.nasa.gov/mission/voyager/golden-record-contents/greetings/ |
+
+## Reachability
+
+Opened reliably: Wikipedia, WHO, CDC, NASA science pages (limited). Blocked or failed: Encyclopaedia Britannica, museum and national-history sites, UNESCO, the US Holocaust Memorial Museum, Library of Congress, and several news sites. A request to read archived copies through the Internet Archive was refused by the environment. Consequence: for eight of ten targets the second independent opened source is missing, and the pack stays DRAFT until a human opens those pages or the network allowlist is widened (see the checkpoint report).
+

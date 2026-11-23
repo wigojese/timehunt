@@ -52,3 +52,22 @@ Status values: **FIXED** (user decision), **PROVISIONAL** (user-named but must b
 | F-010 | Optimal spending is front-loaded. Cases 6 to 9 get no Insight on the Mixed pack. A per-case cap of 1 spreads it at about 0.3 solved cases. | Experiments 9 and 14 |
 | F-011 | The gain per Insight falls from 0.50 (n = 2) to 0.13 (n = 14). | Experiment 10 |
 | F-012 | The leftover-Insight bonus is inert up to 20 points per Insight. | Experiment 13 |
+
+## Added in Stage 3 (2026-11-23)
+
+| ID | Date | Decision | Status | Source / approval | Alternatives | Reversal condition |
+|---|---|---|---|---|---|---|
+| D-022 | 2026-11-23 | Stage 2 approved. User answered yes to: C1 as Daily default (one Lock, no Trace in the Daily, Nudge 1 / Deep 2, refund on redundant, 8 shared Insight); scoring as solved cases with Insight left shown; Stage 3 content rules in `RULES_CANDIDATES.md` section 9 including a uniqueness proof per case. D-016, D-018 and D-019 are now accepted for authoring; D-017 stays a test switch. | **FIXED** | `APPROVE STAGE 2` | n/a | User changes it |
+| D-023 | 2026-11-23 | A case template of two free bounds, one free relation and one or two paid bounds. Relation clues give the uniqueness proof. | PROPOSED | `STAGE_3_CONTENT.md` | Hide the relation from players (see Q-32) | User answer to Q-32 |
+| D-024 | 2026-11-23 | Verification gate is computed: V2 needs two opened pages from **different publishers**. Two Wikipedia pages are one publisher. Not-opened sources never count. | PROPOSED | `lint_pack.py` | Count Wikipedia twice (rejected) | User changes it |
+| D-025 | 2026-11-23 | Year-level targets only where sources disagree on the day. Day disagreements are recorded in the case facts. | PROPOSED | Stage 3 research | Pick one day (rejected) | A primary source settles a day |
+| D-026 | 2026-11-23 | Astronomical year numbering inside data (1 BCE = 0), labels never show year zero. | PROPOSED | Case 9 | Signed years with a gap | Engine design in Stage 10 |
+
+## Findings added in Stage 3
+
+| ID | Finding | Evidence |
+|---|---|---|
+| F-013 | All ten drafted cases are solvable by arithmetic from free evidence; paid Insight has no role. Effective residual after the free dossier is 1, not 3 to 6. | `AUDITS.md` section 3 |
+| F-014 | Only 2 of 10 answers reach V2 under the available network. 0 of 10 cases pass the full gate. | `AUDITS.md` section 1 |
+| F-015 | Linter caught five leaks in the first draft (target year in free context and in one title). | Lint run |
+| F-016 | Seven of ten relations are "one calendar year after"; a player can learn to guess anchor plus one. | `AUDITS.md` section 3 |

@@ -26,3 +26,7 @@
 ## Before Stage 0 (design exploration, not stage-approved)
 - Route A/B/C visual sketches (`visual-prototypes/`), STRATA 1.0 and 1.5 boards (`visual-prototypes/strata*/`).
 - Convergence gray-box and simulation (`prototype-convergence/`).
+
+## Stage 3 (2026-11-23)
+- Added `tools/pack/` (pack data, linter, schema, builder) and `docs/pack/` (draft pack JSON, case sheets, bibliography, audits, connections, candidates, review book + screenshots), `docs/STAGE_3_CONTENT.md`.
+- Recorded Stage 2 approval (D-022), D-023 to D-026, F-013 to F-016, Q-32 to Q-37.

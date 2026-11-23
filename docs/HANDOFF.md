@@ -33,3 +33,6 @@ There is no application. The repo holds the operative spec, the preserved source
 
 ## Next step
 Wait for `APPROVE STAGE 2`. Then Stage 3 only: historical content architecture and the first ten-case dossier, using the content rules in `RULES_CANDIDATES.md` section 9.
+
+## After Stage 3
+Stage 3 is complete and awaiting `APPROVE STAGE 3`. Rebuild with `python3 tools/pack/build_pack.py`; lint with `python3 tools/pack/lint_pack.py`. Edit only `tools/pack/pack_data.py`, never the generated files. Do not start Stage 4 without approval. Biggest open item: Q-32 (free evidence solves everything).

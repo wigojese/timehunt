@@ -27,3 +27,6 @@ Earlier critiques are in `source-documents/`.
 1. Chance-only play (M7). The most important question, whether Insight allocation is interesting, is exactly what the model cannot answer.
 2. Clue menus and windows are assumed. The numbers will move with real content.
 3. I recommend removing Trace on model evidence alone. It is the user's named verb and the model may be missing a reason players want it.
+
+## Stage 3 review book
+Plan: bone and oxide tokens from STRATA, Young Serif and Sofia Sans, left-aligned single column. One memorable element: the day as a core sample (layers by answer year, region colour bar, verification box, gap arithmetic) and a per-case strip showing which clue cuts which year. Rejected defaults: tracked caps eyebrows, identical cards, gradient hero numbers. Checked at 1100px and 390px, no horizontal scroll. Known weakness: the region colour is a weak encoding (several cases span regions).
