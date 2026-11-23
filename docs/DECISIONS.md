@@ -109,3 +109,24 @@ Status values: **FIXED** (user decision), **PROVISIONAL** (user-named but must b
 | F-022 | Deep-first purchase saves 1 Insight in cases 1, 2 and 6 (nested clues). | `strategy-lab.mjs`, lint L9 |
 | F-023 | "Anchor plus one" solves 7 of 10. The answer is never the first of the free-bound candidates and is last in 3 of 10. | `strategy-lab.mjs` |
 | F-024 | If ruled-out years were hidden, refused Locks would reveal them. A refusal is information. | Reasoning on `engine.js` |
+
+## Added in Stage 6 (2026-11-23)
+
+| ID | Date | Decision | Status | Source / approval | Alternatives | Reversal condition |
+|---|---|---|---|---|---|---|
+| D-037 | 2026-11-23 | Stage 5 approved (`APPROVE STAGE 5`). | **FIXED** | User message | n/a | n/a |
+| D-038 | 2026-11-23 | STRATA 2.0 base direction is **Option I, Instrument**: years as pressable layers, ruled-out years as labelled hatch bands, peg row for the bank, ten-segment day strip. Borrow Option III's numbered serif evidence notes and gap labels. | PROPOSED | `STAGE_6_ART_DIRECTION.md` | Option II (Specimen), Option III (Editorial) | Viewer feedback; candidate sets above 6 years |
+| D-039 | 2026-11-23 | Status is carried by shape plus a word, never colour alone: filled solved, half-filled solved with help, slashed missed, dotted to come. | PROPOSED | Boards | Colour-coded status | Accessibility review |
+| D-040 | 2026-11-23 | One filled button per screen (the oxide primary). Clue-purchase buttons are outlined. | PROPOSED | Grayscale render | Dark filled clue buttons | Player confusion |
+| D-041 | 2026-11-23 | Contrast is checked on the rendered boards, text against its nearest solid background, by `docs/art/strata2/build.mjs`, with the limits stated. | PROPOSED | `contrast-report.json` | Token-only check (rejected: it passed an unreadable render) | A fuller audit tool |
+| D-042 | 2026-11-23 | App icon: four-layer core with one slipped layer and an oxide marker; a heavier three-layer cut at 32 px and below. | PROPOSED | Brand board | Single glyph | Device masks and store review |
+
+## Findings added in Stage 6
+
+| ID | Finding | Evidence |
+|---|---|---|
+| F-025 | A contrast check run on a different page from the board passed everything while the board's text was unreadable (light text inherited onto light phones). The check now runs on the boards. | Build history |
+| F-026 | 0 contrast failures on 407 rendered text runs across three options; lowest 5.62:1. No text under 14 px. | `contrast-report.json` |
+| F-027 | In grayscale the dark clue buttons outweighed the oxide primary. Outlining them fixed it. | `strata2-o1-gray.png` |
+| F-028 | Option II prints both anchor years as large numerals, which makes the deduction more visible and, given F-020, risks making the game easier. | `strata2-o2.png` |
+| F-029 | Case 6's `target.event` still named "Merca", a detail removed as unverified in Stage 3. Fixed in the pack. | `pack_data.py` |

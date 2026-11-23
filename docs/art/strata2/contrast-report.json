@@ -1,0 +1,109 @@
+{
+  "generated": "2026-11-23",
+  "options": {
+    "o1": {
+      "textRuns": 126,
+      "minRatio": 5.62,
+      "failures": [],
+      "textUnder14px": []
+    },
+    "o2": {
+      "textRuns": 166,
+      "minRatio": 5.62,
+      "failures": [],
+      "textUnder14px": []
+    },
+    "o3": {
+      "textRuns": 115,
+      "minRatio": 5.62,
+      "failures": [],
+      "textUnder14px": []
+    }
+  },
+  "tokenPairs": [
+    {
+      "pair": "ink on bone",
+      "ratio": 13.87,
+      "need": 4.5,
+      "pass": true
+    },
+    {
+      "pair": "ink on paper",
+      "ratio": 15.27,
+      "need": 4.5,
+      "pass": true
+    },
+    {
+      "pair": "muted on bone",
+      "ratio": 6.33,
+      "need": 4.5,
+      "pass": true
+    },
+    {
+      "pair": "muted on paper",
+      "ratio": 6.96,
+      "need": 4.5,
+      "pass": true
+    },
+    {
+      "pair": "white on oxide (primary button)",
+      "ratio": 5.62,
+      "need": 4.5,
+      "pass": true
+    },
+    {
+      "pair": "oxide on bone (marker, flag edge)",
+      "ratio": 4.78,
+      "need": 3,
+      "pass": true
+    },
+    {
+      "pair": "oxide on paper",
+      "ratio": 5.26,
+      "need": 3,
+      "pass": true
+    },
+    {
+      "pair": "moss on bone",
+      "ratio": 5.59,
+      "need": 4.5,
+      "pass": true
+    },
+    {
+      "pair": "bone on ink (dark button, selected chip)",
+      "ratio": 13.87,
+      "need": 4.5,
+      "pass": true
+    },
+    {
+      "pair": "bone-on-soot on soot",
+      "ratio": 13.99,
+      "need": 4.5,
+      "pass": true
+    },
+    {
+      "pair": "muted-on-soot on soot",
+      "ratio": 7.65,
+      "need": 4.5,
+      "pass": true
+    },
+    {
+      "pair": "brass on soot (rule)",
+      "ratio": 8.08,
+      "need": 3,
+      "pass": true
+    },
+    {
+      "pair": "rule on bone (non-text border)",
+      "ratio": 3.21,
+      "need": 3,
+      "pass": true
+    },
+    {
+      "pair": "ink on faint (hatch band text)",
+      "ratio": 10.66,
+      "need": 4.5,
+      "pass": true
+    }
+  ]
+}

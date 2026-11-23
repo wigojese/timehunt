@@ -1,0 +1,142 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Option II. Specimen</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Sofia+Sans:wght@400;600;700&family=Sofia+Sans+Extra+Condensed:wght@600;700&display=block" rel="stylesheet"><style>/* STRATA 2.0 tokens. Every text/background pair used on the boards is measured by contrast.mjs on the rendered layouts. */
+:root{
+  --bone:#F2ECE0; --paper:#FBF7EF; --ink:#241F1B; --muted:#5C544A; --rule:#8C8274; --faint:#D9D0BE;
+  --oxide:#B4412D; --oxide-ink:#FFFFFF; --moss:#4A6350; --clay:#C98C79; --soot:#1B1A18; --brass:#D2AC4F; --bone-on-soot:#EDE6D6; --muted-on-soot:#B4AB9A;
+  --serif:'Young Serif',Georgia,serif; --sans:'Sofia Sans',system-ui,sans-serif; --cond:'Sofia Sans Extra Condensed','Sofia Sans',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);color:var(--ink);background:#14130F;-webkit-font-smoothing:antialiased}
+.phone{width:390px;height:844px;border-radius:44px;overflow:hidden;position:relative;background:var(--bone);color:var(--ink);box-shadow:0 0 0 8px #0A0A09,0 0 0 9px #3a362f}
+.phone.dark{background:var(--soot);color:var(--bone-on-soot);--ink:#EDE6D6;--paper:#2A2825;--muted:#B4AB9A;--rule:#6E675C;--faint:#3A3732}
+.safe{height:48px}
+.cap{width:390px;font-size:15px;line-height:1.4;color:#D8D0BF;margin-top:14px}.cap b{color:#F5EFE2}
+.btn{display:flex;align-items:center;justify-content:center;min-height:52px;padding:0 18px;font:700 17px/1 var(--sans);border:2px solid var(--ink);background:var(--paper);color:var(--ink)}
+.btn.primary{background:var(--oxide);border-color:var(--oxide);color:var(--oxide-ink)}
+.btn.dark{background:var(--ink);color:var(--bone);border-color:var(--ink)}
+/* shared texture grammar: hatch = ruled out by your own guess or a free bound; stipple = ruled out by a bought clue */
+.hatch{background:repeating-linear-gradient(135deg,transparent 0 6px,rgba(36,31,27,.28) 6px 7px),var(--faint)}
+.stipple{background:radial-gradient(rgba(74,99,80,.65) 1.1px,transparent 1.3px) 0 0/7px 7px,#E3DDCB}
+/* status marks carry meaning by SHAPE, never colour alone */
+.mk{display:inline-block;width:18px;height:18px;border:2px solid currentColor;position:relative;vertical-align:-3px}
+.mk.clean{background:currentColor}
+.mk.assisted{background:linear-gradient(90deg,currentColor 50%,transparent 50%)}
+.mk.missed{background:linear-gradient(to top right,transparent 46%,currentColor 46% 54%,transparent 54%)}
+.mk.todo{border-style:dotted}
+.mk.next{outline:2px solid var(--oxide);outline-offset:2px}
+.tag{font:700 14px/1 var(--sans);border:1.5px solid currentColor;padding:3px 7px}
+
+.board{width:1800px;padding:44px 48px 40px;background:#14130F;color:#F2ECE0}
+.head{display:grid;grid-template-columns:520px 1fr;gap:48px;align-items:end;margin-bottom:30px}
+.head h1{font:400 50px/.98 'Young Serif',serif}.head .sub{font:600 16px/1 'Sofia Sans';color:#B4AB9A;margin-bottom:12px}
+.head p{font-size:17.5px;line-height:1.45;max-width:72ch;color:#D8D0BF}
+.grid{display:grid;grid-template-columns:repeat(4,390px);gap:34px 40px}
+.cap b{display:block;font:400 19px/1.2 'Young Serif';margin-bottom:4px}
+
+.o1 .top{display:flex;justify-content:space-between;align-items:center;padding:0 20px;height:40px;font:600 15px/1 var(--sans)}
+.o1 .pegs{display:flex;gap:4px;align-items:center}.o1 .peg{width:12px;height:20px;border:2px solid var(--ink);background:var(--ink)}.o1 .peg.off{background:transparent;border-style:dashed}
+.o1 .strip{display:flex;gap:3px;padding:0 20px;margin-top:8px}.o1 .seg{flex:1;height:14px;border:2px solid var(--ink)}
+.o1 .seg.clean{background:var(--ink)}.o1 .seg.assisted{background:linear-gradient(90deg,var(--ink) 50%,transparent 50%)}.o1 .seg.missed{background:linear-gradient(to top right,transparent 44%,var(--ink) 44% 56%,transparent 56%)}.o1 .seg.todo{border-style:dotted}.o1 .seg.now{outline:3px solid var(--oxide);outline-offset:1px}
+.o1 h1{font:400 34px/1.02 var(--serif);padding:0 20px}
+.o1 .q{font:400 20px/1.3 var(--serif);padding:0 20px}
+.o1 .body{padding:0 20px;font-size:17px;line-height:1.45}
+.o1 .core{margin:14px 20px 0;border:2px solid var(--ink);background:var(--paper)}
+.o1 .band{display:flex;align-items:center;justify-content:space-between;padding:0 14px;min-height:52px;border-bottom:2px solid var(--ink)}
+.o1 .band:last-child{border-bottom:0}
+.o1 .band .y{font:700 40px/1 var(--cond);font-variant-numeric:tabular-nums;letter-spacing:.5px}
+.o1 .band.cut{min-height:46px;font:600 15px/1.25 var(--sans);color:var(--ink)}
+.o1 .band.sel{background:var(--paper);box-shadow:inset 10px 0 0 var(--oxide)}
+.o1 .band.sel .y{padding-left:12px}
+.o1 .flag{font:700 15px/1 var(--sans);background:var(--oxide);color:#fff;padding:7px 9px}
+.o1 .acts{position:absolute;left:20px;right:20px;bottom:26px;display:grid;grid-template-columns:1fr 1.5fr;gap:10px}
+.o1 .note{font-size:15px;line-height:1.4;color:var(--muted)}
+.o1 .row{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-top:2px solid var(--ink)}
+.o1 .row:first-child{border-top:0}
+.o1 .sheet{margin:10px 20px 0;border:2px solid var(--ink);background:var(--paper)}.o1 .sheet .row{padding:12px 14px}
+.o1 .dk h1,.o1 .dk .y{color:var(--bone-on-soot)}
+.o1 .dk .brassrule{height:3px;background:var(--brass);margin:0 20px}
+.o1 .big{font:400 88px/0.95 var(--serif);padding:0 20px;letter-spacing:-1px}
+.o1 .tl{display:grid;grid-template-columns:76px 1fr auto;gap:6px 12px;align-items:center;padding:11px 14px;border-bottom:2px solid var(--ink);font-size:16px}
+.o1 .tl:last-child{border-bottom:0}
+.o1 .rb{display:block;height:6px;background:var(--ink);margin-top:4px}.o1 .tl .y{font:700 28px/1 var(--cond)}
+
+.o2 .top{display:flex;justify-content:space-between;align-items:center;padding:0 18px;height:40px;font:600 15px/1 var(--sans)}
+.o2 .tabs{display:grid;grid-template-columns:repeat(10,1fr);gap:3px;padding:0 18px;margin-top:6px}
+.o2 .tab{height:26px;border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;font:700 14px/1 var(--sans);background:var(--paper)}
+.o2 .tab.clean{background:var(--ink);color:var(--bone)}.o2 .tab.assisted{background:linear-gradient(90deg,var(--ink) 50%,var(--paper) 50%);color:var(--oxide-ink);mix-blend-mode:normal}
+.o2 .tab.assisted span{background:var(--paper);color:var(--ink);padding:0 3px}.o2 .tab.missed{background:var(--paper);text-decoration:line-through}.o2 .tab.todo{border-style:dotted}.o2 .tab.now{outline:3px solid var(--oxide);outline-offset:1px}
+.o2 h1{font:400 30px/1.05 var(--serif);padding:0 18px}.o2 .q{font:400 19px/1.3 var(--serif);padding:0 18px}
+.o2 .tray{margin:14px 18px 0;border:2px solid var(--ink);background:var(--paper);padding:14px;position:relative}
+.o2 .tray:before,.o2 .tray:after{content:"";position:absolute;width:14px;height:14px;border:2px solid var(--oxide)}
+.o2 .tray:before{left:-2px;top:-2px;border-right:0;border-bottom:0}.o2 .tray:after{right:-2px;bottom:-2px;border-left:0;border-top:0}
+.o2 .spec{display:grid;grid-template-columns:78px 1fr;gap:10px;align-items:center;padding:8px 0;border-bottom:1.5px dashed var(--rule)}
+.o2 .spec:last-child{border-bottom:0}.o2 .spec .y{font:700 34px/1 var(--cond);font-variant-numeric:tabular-nums}.o2 .spec .t{font-size:15.5px;line-height:1.3}
+.o2 .slot{display:flex;align-items:center;justify-content:center;height:62px;margin:8px 0;border:2px dashed var(--oxide);font:400 17px/1.2 var(--serif);color:var(--ink);text-align:center}
+.o2 .chips{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:6px;margin:14px 18px 0}
+.o2 .chip{min-height:56px;border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;font:700 22px/1 var(--cond);background:var(--paper);font-variant-numeric:tabular-nums}
+.o2 .chip.sel{background:var(--ink);color:var(--bone);box-shadow:0 5px 0 var(--oxide)}
+.o2 .acts{position:absolute;left:18px;right:18px;bottom:26px;display:grid;grid-template-columns:1fr 1.5fr;gap:10px}
+.o2 .note{font-size:15px;line-height:1.4;color:var(--muted)}
+.o2 .env{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border:2px solid var(--ink);margin-top:8px;background:var(--bone)}
+.o2 .drawer{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;padding:0 18px}
+.o2 .cell{aspect-ratio:3/4;border:2px solid var(--ink);display:flex;flex-direction:column;justify-content:space-between;padding:6px;background:var(--paper);font:700 14px/1 var(--sans)}
+.o2 .cell .y{font:700 19px/1 var(--cond);font-variant-numeric:tabular-nums}.o2 .cell.todo{border-style:dotted;background:transparent}.o2 .cell.next{outline:3px solid var(--oxide);outline-offset:1px}
+.o2 .cell.clean{background:var(--ink);color:var(--bone)}.o2 .cell.missed{background:var(--paper);background-image:linear-gradient(to top right,transparent 49%,var(--ink) 49% 51%,transparent 51%)}
+.o2 .cell.assisted{background:var(--paper);box-shadow:inset 9px 0 0 var(--ink);padding-left:15px}
+.o2 .big{font:400 84px/.95 var(--serif);text-align:center;padding:16px 0;background:#2A2825;color:var(--bone-on-soot)}
+.o2 .brassrule{height:3px;background:var(--brass)}
+
+.o3{font-family:var(--sans)}
+.o3 .top{display:flex;justify-content:space-between;align-items:baseline;padding:0 22px;height:40px;font:600 15px/1 var(--sans)}
+.o3 .rule{height:2px;background:var(--ink);margin:0 22px}
+.o3 h1{font:400 38px/1.04 var(--serif);padding:0 22px}
+.o3 .q{font:400 23px/1.28 var(--serif);padding:0 22px}
+.o3 .kick{font:600 16px/1 var(--sans);color:var(--muted);padding:0 22px}
+.o3 .notes{padding:0 22px;counter-reset:n}.o3 .notes p{font:400 17.5px/1.5 var(--serif);margin:12px 0 0 28px;position:relative}
+.o3 .notes p:before{counter-increment:n;content:counter(n);position:absolute;left:-28px;top:2px;font:700 15px/1.4 var(--sans);color:var(--oxide);width:22px}
+.o3 .years{display:flex;justify-content:space-between;margin:16px 22px 0;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+.o3 .yr{flex:1;text-align:center;padding:16px 0 14px;font:400 22px/1 var(--serif);font-variant-numeric:tabular-nums;border-left:1.5px solid var(--rule)}
+.o3 .yr:first-child{border-left:0}.o3 .yr.sel{background:var(--ink);color:var(--bone)}
+.o3 .acts{position:absolute;left:22px;right:22px;bottom:26px;display:grid;grid-template-columns:1fr 1.5fr;gap:10px}
+.o3 .note{font-size:15px;line-height:1.4;color:var(--muted);padding:0 22px}
+.o3 .idx{margin:12px 22px 0}.o3 .li{display:flex;align-items:baseline;gap:8px;padding:10px 0;border-bottom:1.5px solid var(--rule);font-size:17px}
+.o3 .li .l{flex:1}.o3 .li .d{flex:0 0 28px;border-bottom:2px dotted var(--rule);align-self:end;height:12px;flex:1}.o3 .li .a{font:400 22px/1 var(--serif);font-variant-numeric:tabular-nums}
+.o3 .big{font:400 96px/.95 var(--serif);padding:18px 22px;background:#2A2825;color:var(--bone-on-soot)}
+.o3 .brassrule{height:3px;background:var(--brass)}
+.o3 .clue{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-top:1.5px solid var(--rule)}
+.o3 .bar{height:12px;background:var(--ink)}
+</style></head><body><div class="board"><div class="head"><div><div class="sub">STRATA 2.0, composition option</div><h1>Option II. Specimen</h1><div class="sub" style="margin-top:10px">The case is a tray</div></div><p>Two pinned specimens bracket an empty slot and you decide what fills it. Years are a row of five chips. The day is a drawer of ten slots that fills with the years you found. All eight screens use real text from the Stage 3 draft pack. The sample day (results, Insight left) is the Stage 4 scripted day and is illustrative, not a real result.</p></div><div class="grid"><div class="cell"><div class="phone "><div class="o2"><div class="safe"></div><div class="top"><span>Mon 23 Nov</span><span>Insight 8 of 8</span></div>
+    <div style="padding:20px 18px 0"><span class="tag">Draft pack, sample day</span></div><h1 style="padding-top:12px;font-size:34px">The Daily Ten</h1>
+    <p style="padding:10px 18px 18px;font-size:17px;line-height:1.45">Ten trays. Fill the empty slot in each with the year it belongs to.</p>
+    <div class="drawer"><div class="cell next"><span>1</span><span class="y" style="font-size:15px">Next</span></div><div class="cell todo"><span>2</span><span class="y" style="font-size:15px"></span></div><div class="cell todo"><span>3</span><span class="y" style="font-size:15px"></span></div><div class="cell todo"><span>4</span><span class="y" style="font-size:15px"></span></div><div class="cell todo"><span>5</span><span class="y" style="font-size:15px"></span></div><div class="cell todo"><span>6</span><span class="y" style="font-size:15px"></span></div><div class="cell todo"><span>7</span><span class="y" style="font-size:15px"></span></div><div class="cell todo"><span>8</span><span class="y" style="font-size:15px"></span></div><div class="cell todo"><span>9</span><span class="y" style="font-size:15px"></span></div><div class="cell todo"><span>10</span><span class="y" style="font-size:15px"></span></div></div>
+    <p class="note" style="padding:14px 18px 0">Each slot opens when you reach it. Eight Insight, shared, never refilled.</p>
+    <div class="acts" style="grid-template-columns:1fr"><div class="btn primary">Open tray 1</div></div></div></div><div class="cap"><b>1. Home and Daily Trail</b></div></div><div class="cell"><div class="phone "><div class="o2"><div class="safe"></div><div class="top"><span>Case 4 of 10</span><span>Insight 8 of 8</span></div><div class="tabs"><span class="tab assisted "><span>1</span></span><span class="tab assisted "><span>2</span></span><span class="tab assisted "><span>3</span></span><span class="tab todo now"><span>4</span></span><span class="tab todo "><span>5</span></span><span class="tab todo "><span>6</span></span><span class="tab todo "><span>7</span></span><span class="tab todo "><span>8</span></span><span class="tab todo "><span>9</span></span><span class="tab todo "><span>10</span></span></div>
+    <p class="note" style="padding:20px 18px 4px">Queer communities and institutions</p><h1>A research institute in Berlin</h1><p class="q" style="margin-top:14px">In which year did the Institute for Sexual Science open in Berlin?</p>
+    <div class="tray" style="margin-top:18px"><div class="slot" style="height:80px">3 specimens in the tray.<br>One slot is empty.</div></div>
+    <p class="note" style="padding:12px 18px 0">Reading is free. Every clue is true on 31 December of the hidden year.</p>
+    <div class="acts" style="grid-template-columns:1fr"><div class="btn primary">Open the tray</div></div></div></div><div class="cap"><b>2. Case start</b></div></div><div class="cell"><div class="phone "><div class="o2"><div class="safe"></div><div class="top"><span>Case 4 of 10</span><span>Insight 6 of 8</span></div><div class="tabs"><span class="tab assisted "><span>1</span></span><span class="tab assisted "><span>2</span></span><span class="tab assisted "><span>3</span></span><span class="tab todo now"><span>4</span></span><span class="tab todo "><span>5</span></span><span class="tab todo "><span>6</span></span><span class="tab todo "><span>7</span></span><span class="tab todo "><span>8</span></span><span class="tab todo "><span>9</span></span><span class="tab todo "><span>10</span></span></div>
+    <p class="q" style="padding-top:14px">In which year did the Institute for Sexual Science open in Berlin?</p><div class="tray"><div class="spec"><span class="y">1923</span><span class="t"><b>Beer Hall Putsch</b><br><span class="note">The year is before this one</span></span></div><div class="slot">1920</div><div class="spec"><span class="y">1918</span><span class="t"><b>Armistice of 11 November 1918</b><br><span class="note">The year is this one or later</span></span></div></div><div class="chips"><span class="chip ">1922</span><span class="chip ">1921</span><span class="chip sel">1920</span><span class="chip ">1919</span><span class="chip ">1918</span></div>
+    <p class="note" style="padding:10px 18px 0">5 possible years. The third clue is in Evidence.</p>
+    <div class="acts"><div class="btn">Evidence</div><div class="btn primary">Lock 1920</div></div></div></div><div class="cap"><b>3. Active hunt</b></div></div><div class="cell"><div class="phone "><div class="o2"><div class="safe"></div><div class="top"><span>Case 4 of 10</span><span>Insight 6 of 8</span></div><div class="tabs"><span class="tab assisted "><span>1</span></span><span class="tab assisted "><span>2</span></span><span class="tab assisted "><span>3</span></span><span class="tab todo now"><span>4</span></span><span class="tab todo "><span>5</span></span><span class="tab todo "><span>6</span></span><span class="tab todo "><span>7</span></span><span class="tab todo "><span>8</span></span><span class="tab todo "><span>9</span></span><span class="tab todo "><span>10</span></span></div>
+    <h1 style="font-size:26px;padding-top:16px">Evidence</h1>
+    <div class="tray"><div class="spec" style="grid-template-columns:1fr"><span class="t">By the end of that year, the armistice that ended fighting in the First World War had been signed (11 November 1918).<br><span class="note">Armistice of 11 November 1918, 11 November 1918</span></span></div><div class="spec" style="grid-template-columns:1fr"><span class="t">By the end of that year, the Beer Hall Putsch in Munich had not yet taken place (8 to 9 November 1923).<br><span class="note">Beer Hall Putsch, 8-9 November 1923</span></span></div><div class="spec" style="grid-template-columns:1fr"><span class="t">It opened one calendar year after the armistice of November 1918.<br><span class="note">Armistice, 11 November 1918</span></span></div></div>
+    <p style="font:700 17px/1 var(--sans);padding:16px 18px 0">Sealed clues</p>
+    <div style="padding:0 18px"><div class="env"><span><b>Film and culture</b><br><span class="note">Nudge</span></span><span class="btn" style="min-height:46px">Open, 1 Insight</span></div><div class="env"><span><b>Biography</b><br><span class="note">Deep clue</span></span><span class="btn" style="min-height:46px">Open, 2 Insight</span></div></div>
+    <div class="acts" style="grid-template-columns:1fr"><div class="btn">Back to the tray</div></div></div></div><div class="cap"><b>4. Evidence</b></div></div><div class="cell"><div class="phone "><div class="o2"><div class="safe"></div><div class="top"><span>Case 5 of 10</span><span>Insight 4 of 8</span></div><div class="tabs"><span class="tab assisted "><span>1</span></span><span class="tab assisted "><span>2</span></span><span class="tab assisted "><span>3</span></span><span class="tab clean "><span>4</span></span><span class="tab missed now"><span>5</span></span><span class="tab todo "><span>6</span></span><span class="tab todo "><span>7</span></span><span class="tab todo "><span>8</span></span><span class="tab todo "><span>9</span></span><span class="tab todo "><span>10</span></span></div>
+    <p class="note" style="padding:20px 18px 4px"><span class="mk missed"></span>&nbsp; Missed. You locked 1798.</p>
+    <div class="tray"><div class="slot" style="border-style:solid;font:400 44px/1 var(--serif);height:84px">1799</div></div>
+    <p style="padding:14px 18px 0;font-size:16.5px;line-height:1.4">1798, 1799 and 1800 fit the bounds. Only 1799 is one calendar year after the Battle of the Nile (August 1798).</p>
+    <p class="note" style="padding:10px 18px 0">Found, made, read. Three dates, three different questions. The decree was made in 196 BC. The stone was found in July 1799. Its text was first read in translation in 1803, and the Egyptian scripts were transliterated in 1822.</p>
+    <div class="acts" style="grid-template-columns:1fr"><div class="btn primary">Next tray</div></div></div></div><div class="cap"><b>5. Missing a case</b></div></div><div class="cell"><div class="phone dark"><div class="o2" style="background:var(--soot);height:844px;color:var(--bone-on-soot)"><div class="safe"></div><div class="top"><span>Case 6 of 10</span><span>Insight 4 of 8</span></div>
+    <div style="height:130px"></div><div class="brassrule"></div><div class="big">1977</div><div class="brassrule"></div>
+    <p style="padding:22px 18px 0;font:400 22px/1.25 var(--serif)">Solved. Diagnosis of Ali Maow Maalin in Somalia.</p>
+    <p style="padding:12px 18px 0;font-size:16.5px;line-height:1.45;color:var(--muted-on-soot)">The last case of any kind, the last natural case and the declaration of eradication fall in three different years. The case asks for the natural case, and says so.</p>
+    <div class="acts" style="grid-template-columns:1fr"><div class="btn primary">Next tray</div></div></div></div><div class="cap"><b>6. Lock success</b></div></div><div class="cell"><div class="phone "><div class="o2"><div class="safe"></div><div class="top"><span>Six trays filled</span><span>Insight 3 of 8</span></div>
+    <h1 style="font-size:28px;padding-top:18px">Your drawer so far</h1>
+    <div class="drawer" style="margin-top:14px"><div class="cell assisted"><span>1</span><span class="y">1969</span></div><div class="cell assisted"><span>2</span><span class="y">1893</span></div><div class="cell assisted"><span>3</span><span class="y">1565</span></div><div class="cell clean"><span>4</span><span class="y">1919</span></div><div class="cell missed"><span>5</span><span class="y">1799</span></div><div class="cell clean"><span>6</span><span class="y">1977</span></div><div class="cell next"><span>7</span><span></span></div><div class="cell todo"><span>8</span><span></span></div><div class="cell todo"><span>9</span><span></span></div><div class="cell todo"><span>10</span><span></span></div></div>
+    <p class="note" style="padding:14px 18px 0"><span class="mk clean"></span> solved &nbsp; <span class="mk assisted"></span> with help &nbsp; <span class="mk missed"></span> missed</p>
+    <p style="padding:10px 18px 0;font-size:16.5px;line-height:1.45">Four trays left. The drawer shows only the years you have already found.</p>
+    <div class="acts" style="grid-template-columns:1fr"><div class="btn primary">Open tray 7</div></div></div></div><div class="cap"><b>7. Progress after six cases</b></div></div><div class="cell"><div class="phone "><div class="o2"><div class="safe"></div><div class="top"><span>The Daily Ten, complete</span><span>Insight 0 of 8</span></div>
+    <h1 style="font-size:28px;padding-top:16px">9 of 10 solved</h1><p class="note" style="padding:4px 18px 10px">Sample day, not a real result. Oldest on the left.</p>
+    <div class="drawer"><div class="cell assisted" style="aspect-ratio:3/4.4"><span>9</span><span class="y">2 CE</span></div><div class="cell assisted" style="aspect-ratio:3/4.4"><span>7</span><span class="y">1325</span></div><div class="cell assisted" style="aspect-ratio:3/4.4"><span>8</span><span class="y">1446</span></div><div class="cell assisted" style="aspect-ratio:3/4.4"><span>3</span><span class="y">1565</span></div><div class="cell missed" style="aspect-ratio:3/4.4"><span>5</span><span class="y">1799</span></div><div class="cell assisted" style="aspect-ratio:3/4.4"><span>2</span><span class="y">1893</span></div><div class="cell clean" style="aspect-ratio:3/4.4"><span>4</span><span class="y">1919</span></div><div class="cell assisted" style="aspect-ratio:3/4.4"><span>1</span><span class="y">1969</span></div><div class="cell clean" style="aspect-ratio:3/4.4"><span>6</span><span class="y">1977</span></div><div class="cell clean" style="aspect-ratio:3/4.4"><span>10</span><span class="y">1977</span></div></div>
+    <p class="note" style="padding:14px 18px 0">Two trays hold 1977. Nothing connects them. They share a year.</p>
+    <div class="acts" style="grid-template-columns:1fr 1fr"><div class="btn">Share</div><div class="btn primary">Explore the shelf</div></div></div></div><div class="cap"><b>8. Final ten-case atlas</b></div></div></div></div></body></html>

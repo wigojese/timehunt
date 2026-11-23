@@ -1,6 +1,6 @@
 {
   "_about": "Seeded random player, seed 20261123, default rules (no Trace).",
-  "packDigest": "1e11b70de99152",
+  "packDigest": "14d7a80f4029fa",
   "rulesOverrides": {},
   "rulesId": "0bd5f6eff38c63",
   "seed": 20261123,
@@ -159,7 +159,7 @@
     }
   ],
   "expected": {
-    "stateDigest": "1bea3aae63cd5b",
+    "stateDigest": "171b178d4bcb7d",
     "score": {
       "solved": 5,
       "clean": 2,

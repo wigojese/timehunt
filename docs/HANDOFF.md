@@ -42,3 +42,6 @@ Stage 4 is complete and awaiting `APPROVE STAGE 4`. `cd app && npm test` (70 tes
 
 ## After Stage 5
 Stage 5 is complete as a plan and simulation stage and awaits `APPROVE STAGE 5`. No human sessions have been run. To run them: follow `docs/playtest/PROTOCOL.md`; give participants `?study=Pnn&cond=A|B`; download each log; run `node app/scripts/summarise-study.mjs`. Only then fill `docs/playtest/RESULTS.md`. Do not start Stage 6 without approval.
+
+## After Stage 6
+Stage 6 is complete and awaits `APPROVE STAGE 6`. Boards rebuild with `cd docs/art/strata2 && node build.mjs`. Recommended direction: Option I (Instrument) plus Option III's evidence notes (D-038, unapproved). No STRATA styling exists in `app/`; Stage 7 builds the real screens. Do not start Stage 7 without approval.

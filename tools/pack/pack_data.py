@@ -354,7 +354,7 @@ CASES.append(dict(
     lens="Medicine and public health", region=["Africa", "Asia"], era="modern", reveal_form="Careful, plain data graphic of where and when smallpox ended",
     difficulty="medium", corridor=[1965, 1990],
     question="In which year was the last naturally occurring case of smallpox diagnosed?",
-    target=dict(year=1977, event="Diagnosis of Ali Maow Maalin in Merca, Somalia (October 1977), the last known natural case",
+    target=dict(year=1977, event="Diagnosis of Ali Maow Maalin in Somalia (October 1977), the last known natural case",
                 definition="The year of the last known naturally occurring case (the milder variola minor). Not the last case of any kind (a laboratory-acquired case in Birmingham in 1978) and not the year eradication was declared (1980).",
                 precision="month (October); year used", calendar="Gregorian",
                 discovery_vs_event="Event: the last natural case. Three other dates answer different questions: 1975 (last variola major case), 1978 (last case of any kind), 1980 (eradication declared)."),

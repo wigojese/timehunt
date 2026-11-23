@@ -30,3 +30,6 @@ Earlier critiques are in `source-documents/`.
 
 ## Stage 3 review book
 Plan: bone and oxide tokens from STRATA, Young Serif and Sofia Sans, left-aligned single column. One memorable element: the day as a core sample (layers by answer year, region colour bar, verification box, gap arithmetic) and a per-case strip showing which clue cuts which year. Rejected defaults: tracked caps eyebrows, identical cards, gradient hero numbers. Checked at 1100px and 390px, no horizontal scroll. Known weakness: the region colour is a weak encoding (several cases span regions).
+
+## Stage 6 critique
+See `STAGE_6_ART_DIRECTION.md` section 6 for the rated table and nine named weaknesses. Short version: Option I scores 7.5 of 10 by my own reading; the atlas is weak in all three; nothing has been seen by anyone else or run on a device.

@@ -353,7 +353,7 @@ Dating convention on every clue: *true on 31 December of the target year* (D-009
 
 **Question.** In which year was the last naturally occurring case of smallpox diagnosed?
 
-**Answer: 1977.** Diagnosis of Ali Maow Maalin in Merca, Somalia (October 1977), the last known natural case
+**Answer: 1977.** Diagnosis of Ali Maow Maalin in Somalia (October 1977), the last known natural case
 
 - Definition: The year of the last known naturally occurring case (the milder variola minor). Not the last case of any kind (a laboratory-acquired case in Birmingham in 1978) and not the year eradication was declared (1980).
 - Precision: month (October); year used. Calendar: Gregorian.

@@ -77,3 +77,11 @@ Urgency: **H** blocks the next stage, **M** needed within two stages, **L** late
 | Q-42 | Incentive for participants, and budget | M | User | 5 follow-up |
 | Q-43 | May the thresholds H1 to H9 in `PROTOCOL.md` stand, or do you want to change any before the first session? They are locked after that. | H | User | 5 gate |
 | Q-44 | If ruled-out years are hidden, should a ruled-out Lock count as a miss? | M | User, then test | 5 follow-up |
+
+## Added in Stage 6
+| ID | Question | Urg | How to settle | Owner stage |
+|---|---|---|---|---|
+| Q-45 | Do you agree with Option I as the base, with Option III's evidence notes? Or do you prefer II or III? | H | User | 6 gate |
+| Q-46 | The atlas is the weakest screen in all three options. Should Stage 8 or 9 own a real spatial atlas, and what should it show? | M | User | 8 or 9 |
+| Q-47 | Does Option I's stacked rows replace the zoomable ruler for good? It breaks if a case ever has more than about 8 candidates. | M | Stage 7 design and pack rules | 7 |
+| Q-48 | Real cleared images for reveals. Until they exist, reveals use drawings made from case data. Who sources and clears images? | M | User | 9 |

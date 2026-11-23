@@ -1,0 +1,26 @@
+/* STRATA 2.0 tokens. Every text/background pair used on the boards is measured by contrast.mjs on the rendered layouts. */
+:root{
+  --bone:#F2ECE0; --paper:#FBF7EF; --ink:#241F1B; --muted:#5C544A; --rule:#8C8274; --faint:#D9D0BE;
+  --oxide:#B4412D; --oxide-ink:#FFFFFF; --moss:#4A6350; --clay:#C98C79; --soot:#1B1A18; --brass:#D2AC4F; --bone-on-soot:#EDE6D6; --muted-on-soot:#B4AB9A;
+  --serif:'Young Serif',Georgia,serif; --sans:'Sofia Sans',system-ui,sans-serif; --cond:'Sofia Sans Extra Condensed','Sofia Sans',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);color:var(--ink);background:#14130F;-webkit-font-smoothing:antialiased}
+.phone{width:390px;height:844px;border-radius:44px;overflow:hidden;position:relative;background:var(--bone);color:var(--ink);box-shadow:0 0 0 8px #0A0A09,0 0 0 9px #3a362f}
+.phone.dark{background:var(--soot);color:var(--bone-on-soot);--ink:#EDE6D6;--paper:#2A2825;--muted:#B4AB9A;--rule:#6E675C;--faint:#3A3732}
+.safe{height:48px}
+.cap{width:390px;font-size:15px;line-height:1.4;color:#D8D0BF;margin-top:14px}.cap b{color:#F5EFE2}
+.btn{display:flex;align-items:center;justify-content:center;min-height:52px;padding:0 18px;font:700 17px/1 var(--sans);border:2px solid var(--ink);background:var(--paper);color:var(--ink)}
+.btn.primary{background:var(--oxide);border-color:var(--oxide);color:var(--oxide-ink)}
+.btn.dark{background:var(--ink);color:var(--bone);border-color:var(--ink)}
+/* shared texture grammar: hatch = ruled out by your own guess or a free bound; stipple = ruled out by a bought clue */
+.hatch{background:repeating-linear-gradient(135deg,transparent 0 6px,rgba(36,31,27,.28) 6px 7px),var(--faint)}
+.stipple{background:radial-gradient(rgba(74,99,80,.65) 1.1px,transparent 1.3px) 0 0/7px 7px,#E3DDCB}
+/* status marks carry meaning by SHAPE, never colour alone */
+.mk{display:inline-block;width:18px;height:18px;border:2px solid currentColor;position:relative;vertical-align:-3px}
+.mk.clean{background:currentColor}
+.mk.assisted{background:linear-gradient(90deg,currentColor 50%,transparent 50%)}
+.mk.missed{background:linear-gradient(to top right,transparent 46%,currentColor 46% 54%,transparent 54%)}
+.mk.todo{border-style:dotted}
+.mk.next{outline:2px solid var(--oxide);outline-offset:2px}
+.tag{font:700 14px/1 var(--sans);border:1.5px solid currentColor;padding:3px 7px}

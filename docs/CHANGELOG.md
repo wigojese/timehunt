@@ -41,3 +41,8 @@
 - Gray-box: study mode (`?study=`), `scripts/strategy-lab.mjs`, `scripts/summarise-study.mjs`, `scripts/study-smoke.mjs`, one new test (71 total).
 - `tools/pack/lint_pack.py`: rule L9 NESTED_CLUES (warning). Removed committed `__pycache__` files and added `.gitignore`.
 - Recorded D-033 to D-036, F-020 to F-024, Q-42 to Q-44.
+
+## Stage 6 (2026-11-23)
+- Added `docs/art/strata2/` (three composition boards, grayscale twins, brand system board, contrast report, generator sources) and `docs/STAGE_6_ART_DIRECTION.md`.
+- Pack fix: case 6 `target.event` no longer says "Merca"; regenerated `docs/pack/`, `app/data/` and `app/fixtures/` (71 tests pass).
+- Recorded D-037 to D-042, F-025 to F-029, Q-45 to Q-48.
