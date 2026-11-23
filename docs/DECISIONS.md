@@ -14,7 +14,7 @@ Status values: **FIXED** (user decision), **PROVISIONAL** (user-named but must b
 | D-008 | 2026-11-22 | Repo hygiene: keep existing prototypes under `docs/` as read-only references. No app scaffold before the Stage 10 architecture decision. One canonical rules module only, created when rules are approved. | PROPOSED | Stage 0 audit | Scaffold now (rejected: contradicts section 8.1 and the stage gates) | Stage 10 decision |
 | D-009 | 2026-11-22 | Default dating convention: "by 31 December of the target year", stated on every clue. Any other convention is explicit per clue. | **FIXED** | User approved at the Stage 0 gate, 2026-11-22 | 1 January convention (used in my STRATA 1.5 satellite clue, now inconsistent) | User changes it |
 | D-010 | 2026-11-22 | Earlier source documents are preserved in `docs/source-documents/` so context loss does not lose the reasoning | PROPOSED, approved with Stage 0 | Stage 0 audit | Leave only in chat uploads (fragile) | User prefers them out of the repo |
-| D-011 | 2026-11-22 | The agent acts as the project's historical editor and verifies every factual claim. Every claim carries a **verification level**: V0 unverified, V1 a source page was opened and the date or figure matched, V2 two independent sources agree, V3 reviewed by a named human. **The agent can set V0 to V2 only. V3 needs a person.** Nothing marked V0 or "to confirm" ships. | FIXED as the working method; the release threshold is OPEN (Q-20) | User instruction at the Stage 0 gate, 2026-11-22. The V-levels are my proposal. | A human editor only (user declined to supply one). Agent verification presented as human sign-off (rejected: dishonest). | User supplies a human editor |
+| D-011 | 2026-11-22 | The agent acts as the project's historical editor and verifies every factual claim. Every claim carries a **verification level**: V0 unverified, V1 a source page was opened and the date or figure matched, V2 two independent sources agree, V3 reviewed by a named human. **The agent can set V0 to V2 only. V3 needs a person.** Nothing marked V0 or "to confirm" ships. **Release threshold: V2 is sufficient (D-014).** | FIXED as the working method User instruction at the Stage 0 gate, 2026-11-22. The V-levels are my proposal. | A human editor only (user declined to supply one). Agent verification presented as human sign-off (rejected: dishonest). | User supplies a human editor |
 | D-012 | 2026-11-22 | The missing reference ZIP is not required. Work continues with the boards already in `visual-prototypes/`. | FIXED | User answer at the Stage 0 gate | Wait for the ZIP | User sends it |
 | D-013 | 2026-11-22 | Stage 1 finding shapes Stage 2: about 95% of the information to solve ten cases must come from free dossiers, because 8 Insight spent on Trace buys at most about 4 of about 76.5 bits. Stage 2 must set how much uncertainty each case leaves, not only prices. | PROPOSED | `STAGE_1_RESEARCH.md` section 4 | Treat Insight as the main economy | Stage 2 results |
 
@@ -27,3 +27,28 @@ Status values: **FIXED** (user decision), **PROVISIONAL** (user-named but must b
 | F-003 | A wrong Lock removes that year, so it communicates one bit. | Code and UI check. |
 | F-004 | None of the three fonts in the STRATA type system contains Georgian glyphs. Young Serif has no Cyrillic either. | Glyph coverage measured from the font files. |
 | F-005 | The repo contains no motion or gesture code except one pointer handler in `convergence.html`. | Strict code search. |
+
+## Added in Stage 2 (2026-11-23)
+
+| ID | Date | Decision | Status | Source / approval | Alternatives | Reversal condition |
+|---|---|---|---|---|---|---|
+| D-014 | 2026-11-23 | Agent-verified claims at level V2 (two independent sources agree) are sufficient to publish. A human review (V3) is welcome but not required. | **FIXED** | User answer at the Stage 1 gate | Require V3 before release | User changes it |
+| D-015 | 2026-11-23 | Stage 1 approved. The dossier carries about 95% of the information (D-013) is accepted. Stage 2 evaluates batched confirmation. | **FIXED** | `APPROVE STAGE 1` | n/a | n/a |
+| D-016 | 2026-11-23 | **Recommended variant C1:** one Lock per case, no Trace in the Daily, Nudge 1 / Deep 2, refund on redundant, 8 shared Insight, scored as solved cases with Insight left shown. Trace stays available in Practice or advanced mode. | PROPOSED | `RULES_CANDIDATES.md` section 10 | A3 (Trace at 3), B (two Locks), A (Trace at 2) | Stage 4 or 5 results |
+| D-017 | 2026-11-23 | Per-case Insight cap of 1 is a switch to test, not a default. | PROPOSED | Experiment 14 | No cap | Stage 4 or 5 results |
+| D-018 | 2026-11-23 | Scoring: solved cases. Drop the clean-solve bonus. Leftover bonus at most 5 per Insight or none. Spoiler-free share card. | PROPOSED | Experiments 5 and 13 | S1 as written in the master prompt | Playtests |
+| D-019 | 2026-11-23 | Content rules: uniqueness proof per case, derivable at zero Insight, no coin-flip pairs, 3 to 6 machine-visible candidates as an authoring target, no clue that cuts nothing from the dossier's candidates, no pre-purchase strength or overlap labels. | PROPOSED | `RULES_CANDIDATES.md` section 9 | n/a | Stage 3 authoring evidence |
+| D-020 | 2026-11-23 | Batched confirmation (Return of the Obra Dinn) is not adopted as a rules fix. Re-test as emotional pacing in Stage 5. | PROPOSED | Experiment 8 | Adopt it | Stage 5 |
+| D-021 | 2026-11-23 | `experiments/economy/` is the single reference for the rules maths and supersedes `docs/prototype-convergence/economy-simulation.py`. | PROPOSED | Stage 2 | Keep both (rejected: two sources of truth) | n/a |
+
+## Findings added in Stage 2
+
+| ID | Finding | Evidence |
+|---|---|---|
+| F-006 | The earlier "63 to 70%" Trace-only claim reproduces at 71.0% (exact) once the simulator's free 20-year card is included, and is 35.5% without it. | Experiment 7 |
+| F-007 | Trace at price 2 adds nothing over no Trace. At price 1 it dominates. At 3 or more it is never used. | Experiments 1 and 3 |
+| F-008 | Two Locks add about 3.5 solved cases, mostly by guessing. Halving second-Lock credit does not remove this. | Experiments 1 and 8 |
+| F-009 | Allocation across the day adds only 0.10 to 0.37 solved cases over naive spending in the chance-only model. | Experiment 2 |
+| F-010 | Optimal spending is front-loaded. Cases 6 to 9 get no Insight on the Mixed pack. A per-case cap of 1 spreads it at about 0.3 solved cases. | Experiments 9 and 14 |
+| F-011 | The gain per Insight falls from 0.50 (n = 2) to 0.13 (n = 14). | Experiment 10 |
+| F-012 | The leftover-Insight bonus is inert up to 20 points per Insight. | Experiment 13 |

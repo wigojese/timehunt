@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-11-23: Stage 2
+- Added `RULES_CANDIDATES.md` (rulebook, formal rules, state machines, variants, content rules, recommendation) and `ECONOMY_EXPERIMENT.md`.
+- Added `experiments/economy/`: reference model, exact solver, 23 tests, 14 experiments, figures.
+- Added `economy/` outputs: `results.md`, `results.json`, `economy-results.png`, `state-machine.png`.
+- Recorded the Stage 1 approval and answers (D-014, D-015) and new proposals D-016 to D-021, findings F-006 to F-012, questions Q-26 to Q-31.
+- Reproduced and explained the earlier 63 to 70% claim.
+- No product code written.
+
 ## 2026-11-22: Stage 1
 - Added `STAGE_1_RESEARCH.md`: competitor matrix, differentiation statement, why free earlier/later failed, the bit-budget finding, three player types and two accessibility contexts, wrong-answer analysis, six falsifiable hypotheses, top ten retention risks.
 - Recorded the Stage 0 approval and the user's answers (D-009 fixed, D-011 editor method, D-012, D-013).

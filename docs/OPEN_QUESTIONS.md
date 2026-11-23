@@ -19,7 +19,7 @@ Urgency: **H** blocks the next stage, **M** needed within two stages, **L** late
 | ID | Question | Urg | Owner stage |
 |---|---|---|---|
 | Q-10 | ~~Who is the historical editor?~~ **Answered:** the agent verifies (D-011), a human may add V3 review later. Remaining: the exact process, which Stage 3 defines. | M | 3 |
-| Q-20 | Is "agent-verified to V2" enough to publish, or must a human reach V3 before release? Master prompt section 4.8 expects editor sign-off. The agent cannot supply a human's accountability. | H | 3, 13 |
+| Q-20 | ~~Is agent-verified V2 enough to publish?~~ **Answered yes** by the user (D-014). | closed | n/a |
 | Q-11 | Which sources can actually be read by this environment? Library of Congress, MoMA and Historic England block automated reads (Cloudflare). Claims from them need a human to confirm. | M | 3 |
 | Q-12 | Rights for archival images and documents: who clears them? No archival facsimile may be faked. | M | 3, 9 |
 | Q-13 | Concorde, Stonewall, Apollo, microprocessor and population claims in the prototype are unverified by me. The microprocessor card is marked "to confirm". | H | 3 |
@@ -38,7 +38,17 @@ Urgency: **H** blocks the next stage, **M** needed within two stages, **L** late
 | ID | Question | Urg | How to settle | Owner stage |
 |---|---|---|---|---|
 | Q-21 | How much uncertainty should each free dossier leave, and should it vary by case? Arithmetic says the dossier supplies about 95% of the information (D-013). | H | Author real cases, measure candidates left for novices | 2, 3 |
-| Q-22 | Should Lock confirmation be batched, as Return of the Obra Dinn confirms fates in sets of three, instead of per case? It would defeat brute force but delay feedback. | M | Evaluate as an extra variant in Stage 2 | 2 |
+| Q-22 | ~~Should Lock confirmation be batched?~~ **Evaluated:** no mechanical benefit (D-020). Only emotional pacing remains. | low | Stage 5 | 5 |
 | Q-23 | Does TIMEHUNT need any streak or progress counter? Competitors use streaks. Ethical risk is streak loss pressure. | M | Test return without a streak | 5 |
 | Q-24 | Target session length. The 6 to 12 minute figure in the revision document is an assumption. | M | Measure with a gray-box | 4, 5 |
 | Q-25 | Competitor facts still unread: Chronophoto and TimeGuessr scoring, an official Wordle page, neal.fun, FTC and OECD pages (bot-blocked). | L | A human check, or a different route | 1 follow-up |
+
+## Added in Stage 2
+| ID | Question | Urg | How to settle | Owner stage |
+|---|---|---|---|---|
+| Q-26 | Is C1 (one Lock, no Trace) the Daily default, and does the user want Trace kept in the Daily at price 3? | H | User approval | 2 gate |
+| Q-27 | Does Insight allocation become a real decision once players have reasoning skill and confidence? The model has no skill. | H | Think-aloud with 8 to 12 players | 5 |
+| Q-28 | Per-case Insight cap of 1: adopt, or accept front-loading? | M | Gray-box with the cap as a switch | 4, 5 |
+| Q-29 | Do real clue sets behave like the assumed windows? Re-run the solver on real packs. | H | Rerun `run_experiments.py` with real residual sizes and menus | 3 |
+| Q-30 | Is the "uniqueness proof" authorable at ten cases a day, and by whom? | H | Stage 3 pilot | 3 |
+| Q-31 | Whether a confidence declaration (L3) adds anything. Scoring-only, untestable by simulation. | L | Players | 5 |
