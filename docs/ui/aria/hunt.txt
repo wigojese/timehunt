@@ -23,7 +23,7 @@
   - button "Arm crash after next save"
   - paragraph:
     - text: State digest
-    - code: 1cfda9c27f0574
+    - code: 001a231a792a42
   - button "Evidence"
   - button "Lock"
 - status

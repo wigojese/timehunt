@@ -51,3 +51,6 @@ Stage 7 is complete and awaits `APPROVE STAGE 7`. Play it: `cd app && node scrip
 
 ## After Stage 8
 Stage 8 is complete as an emulated prototype and awaits `APPROVE STAGE 8`. Open `http://127.0.0.1:5173/motion/` after `node scripts/serve.mjs`. Audit: `node scripts/e2e-motion.mjs`; media: `node scripts/record-motion.mjs`. **No real phone has run it.** Add `?perf=1` on a phone to record. Do not start Stage 9 without approval.
+
+## After Stage 9
+Stage 9 is complete as a clickable prototype and awaits `APPROVE STAGE 9`. Open `/reveal/` after `node scripts/serve.mjs`. Audit: `node scripts/e2e-reveal.mjs`; docs: `node scripts/make-reveal-docs.mjs`; sheets: `node scripts/make-reveal-sheets.mjs`. Content lives in `app/reveal/src/stories.js`; never edit the generated docs. Do not start Stage 10 without approval.

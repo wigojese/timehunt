@@ -1,0 +1,365 @@
+{
+  "generated": "2026-11-23",
+  "passed": 65,
+  "total": 65,
+  "checks": [
+    {
+      "name": "hub: six stories and a finale, each with a form named",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "hub: page loads without errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "entry transition: the found year fills the screen first (full motion)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "the entry is skippable with Escape, and the story is underneath",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "citations: rosetta beat 1 lists linked sources with opened or not opened",
+      "pass": true,
+      "detail": "2 links"
+    },
+    {
+      "name": "inspect: the three registers are drawn with their line counts",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "inspect: tapping Greek shows 54 lines and the 1803 translation",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "inspect: keyboard Enter selects a register",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "citations: inspect lists linked sources with opened or not opened",
+      "pass": true,
+      "detail": "1 links"
+    },
+    {
+      "name": "time slider: 1803 shows a complete Greek translation, Egyptian not yet read",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "time slider: 1822 shows the Egyptian scripts transliterated",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "time slider is keyboard operable",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "compare: four accounts, none confirmed day",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "compare: filtering to opened pages leaves one account and says no day is given",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "takeaway beat closes the story with the three dates",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Finish returns to the hub with the story marked Finished",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "rosetta: no page errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "chart: in 1975 Asia ends, Africa has not, South America already did",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "chart: in 1980 all three have ended",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "chart slider has a spoken value",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "citations: smallpox chart lists linked sources with opened or not opened",
+      "pass": true,
+      "detail": "1 links"
+    },
+    {
+      "name": "tap a bar part: the two-thirds fact",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "definitions: the natural-case question gives October 1977",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "definitions: the any-kind question gives 1978",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "route: the end of the return leg is 8 October 1565, day 129 of 129",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "route: the start is 1 June 1565",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "route: the outbound leg is 84 days",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "route: outbound ends 13 February 1565",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "route: the ship is drawn on the path",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "citations: route lists linked sources with opened or not opened",
+      "pass": true,
+      "detail": "1 links"
+    },
+    {
+      "name": "span: the 1571 marker says the capital moved to Manila",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "span: 250 years is computed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "calendar: lunar day 1 is 30 December 1443",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "calendar: lunar day 3 is 1 January 1444 and the year has changed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "calendar: lunar day 30 is 28 January 1444",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "lanes: six events across two lanes",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "lanes: filtering to Europe leaves Varna only",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "lanes: tapping an event gives its date, its precision and its sources",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "lanes: a month-only event says only the month is known",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "uncertain events are flagged \"uncertain\" with a note and drawn dashed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "filter: England has two events",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "relation beat states the category honestly (simultaneous, no link claimed)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "1969: the Algiers festival is drawn as a range in its own lane",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "1969: the festival card gives the source wording and says the end date is counted",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "1969: the closing beat names the limit of the pack",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "finale: ten marks, oldest first, with the gaps between them",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "finale: a mark with a story links to it",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "finale: names the pair that shares a year without claiming a link",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "finale: bringing them together opens 1977 as lanes from five events and four themes",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "finale: the relation is labelled Simultaneous, no link claimed",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "finale: the African festival of January 1977 is in the cross-case view",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "finale coverage: computed numbers (5 of 10 modern; 57% Western anchors; Asia 5)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "finale ends with a takeaway about selection",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "progress is on beat 3",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "hub offers Resume at beat 3 after a reload",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Resume returns to beat 3, with no entry transition",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Skip to the end lands on the last beat",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Skip story returns to the hub marked Skipped",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Reset progress clears every status",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "reduced motion: no entry overlay; the story is shown at once",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "reduced motion: route playback is replaced by the slider",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "reduced motion: the 1977 cross-case view opens at once with the same content",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "full motion: the entry overlay is shown (comparison)",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "no horizontal scroll on any of 28 beats at 320 px, 390 px and 390 px with 200% text",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "name": "at least four distinct user actions across evidence types were exercised",
+      "pass": true,
+      "detail": "inspect,stone-year,compare-filter,leg,route-day,lunar-day"
+    }
+  ],
+  "axe": {
+    "screens": 17,
+    "violations": [
+      {
+        "screen": "lanes",
+        "id": "target-size",
+        "impact": "serious",
+        "target": ".on",
+        "why": "Fix any of the following: Target has insufficient size because it is partially obscured (smallest space is 350px by 12.5px, should be at least 24px by 24px) Target has insufficient"
+      }
+    ]
+  },
+  "overflow": [],
+  "screenshots": [
+    "01-hub",
+    "02-entry",
+    "03-inspect",
+    "04-stonetime",
+    "05-compare",
+    "06-smallpox",
+    "07-isep",
+    "08-defs",
+    "09-route",
+    "10-span",
+    "11-calendar",
+    "12-lanes-hangul",
+    "13-lanes-road",
+    "14-relation",
+    "15-bias",
+    "16-finale-marks",
+    "17-finale-1977",
+    "18-finale-coverage"
+  ]
+}

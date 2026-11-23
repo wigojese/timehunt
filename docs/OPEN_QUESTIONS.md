@@ -101,3 +101,11 @@ Urgency: **H** blocks the next stage, **M** needed within two stages, **L** late
 | Q-54 | `touch-action: pan-y` removes browser pinch-zoom and double-tap zoom on the ruler. Accept, with the text-size setting and buttons as the alternative? | H | User and accessibility review | 8 gate |
 | Q-55 | Is the marker handle safe from Android and iOS edge gestures at a 20 px inset? | M | Real devices | 8 follow-up |
 | Q-56 | Should the Stage 7 UI adopt the camera for large candidate sets only, or for every case? | M | Design | 9 or 10 |
+
+## Added in Stage 9
+| ID | Question | Urg | How to settle | Owner stage |
+|---|---|---|---|---|
+| Q-57 | Rights-cleared images, drawings or audio for the stories (the stone, an aircraft, the manuscript, a route map). None used so far. Who searches and clears? | M | User | 9 follow-up |
+| Q-58 | A named reviewer for sensitivity (smallpox deaths, Mali and the Islamic calendar, colonial-era framing in the Manila and Rosetta stories) and for the facts. The agent cannot supply V3. | H | User | 9 gate |
+| Q-59 | Is the 1977 pair strong enough as the day's cross-case discovery, or should the finale look for a more surprising, sourced connection? | M | User | 9 gate |
+| Q-60 | Do you want reveal stories for every case eventually (10 per day), or a few per day? This sets production cost. | H | User | 10 |

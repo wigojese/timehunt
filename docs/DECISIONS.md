@@ -174,3 +174,24 @@ Status values: **FIXED** (user decision), **PROVISIONAL** (user-named but must b
 | F-036 | Render work is 0.3 ms p95 per frame at full speed and 3.0 ms at 6x CPU slowdown, with 190 layouts in an 8.8 s pinch, drag and branch run. Headless frame times are quantised at the display rate and say little about a phone. | `perf-summary.json` |
 | F-037 | Ten collision and gesture bugs found and fixed while building; seven open risks listed, none tested on a device. | `STAGE_8_MOTION.md` section 4 |
 | F-038 | Reduced motion reaches the end state in about 50 ms or less against 340 to 900 ms, with the same verdict and answer. | `e2e-report.json` |
+
+## Added in Stage 9 (2026-11-23)
+
+| ID | Date | Decision | Status | Source / approval | Alternatives | Reversal condition |
+|---|---|---|---|---|---|---|
+| D-058 | 2026-11-23 | Stage 8 approved ("approve and continue"). Q-53 to Q-56 stay open: no real-phone run yet. | **FIXED** | User message | n/a | n/a |
+| D-059 | 2026-11-23 | The reveal prototype is isolated in `app/reveal/`. Stories are data (`stories.js`); every beat and lane event cites pack source ids; tests refuse unknown sources. | PROPOSED | `STAGE_9_REVEAL.md` | Hand-written pages | Stage 10 architecture |
+| D-060 | 2026-11-23 | No third-party media in the prototype. Every graphic is generated from sourced data and labelled a diagram. | PROPOSED | `SOURCES_RIGHTS.md` | Stock or archival images | A rights search (Q-12, Q-48) |
+| D-061 | 2026-11-23 | Relationships between cases are labelled by category. Simultaneous events say "Simultaneous. No link is claimed. What would make it a link: a source that says so." | PROPOSED | Relation cards | Unlabelled juxtaposition | n/a |
+| D-062 | 2026-11-23 | Precision is drawn: a day is a mark, a month or year or range is a band, an uncertain tradition is dashed. | PROPOSED | Lanes | Single dots for all dates | n/a |
+| D-063 | 2026-11-23 | Case 3's question says "Spanish ships", not "a Spanish ship", because Arellano also returned in 1565. | PROPOSED | Wikipedia, Manila galleon | Keep "first ship" | Evidence of who arrived first |
+
+## Findings added in Stage 9
+
+| ID | Finding | Evidence |
+|---|---|---|
+| F-039 | Urdaneta and Alonso de Arellano both made successful return trips in 1565; the case's "a Spanish ship" framing was too strong. | Wikipedia, Manila galleon |
+| F-040 | An unsourced sentence from Stage 3 (outward direction easier) was removed from the reveal; the story keeps only what the opened page supports. | `stories.js` |
+| F-041 | FESTAC 77 (Lagos, 15 January to 12 February 1977, about 16,000 participants, 56 African nations and the diaspora) adds a non-Western event to the 1977 cross-case view. | Wikipedia, FESTAC 77 |
+| F-042 | Two events a lane's width apart collided their numeric labels and axis years; both were fixed by staggering and thinning. | Screenshots |
+| F-043 | A sticky Previous and Next bar again obscures one selectable list item at some scroll positions (axe target size). Same trade-off as Stage 7. | `e2e-report.json` |

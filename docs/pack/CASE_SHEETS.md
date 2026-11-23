@@ -144,7 +144,7 @@ Dating convention on every clue: *true on 31 December of the target year* (D-009
 
 **Lens:** Food and trade routes. **Regions:** Asia, Americas. **Era:** early modern. **Reveal form:** Trade-route map, drawn with uncertainty. **Difficulty:** medium.
 
-**Question.** In which year did a Spanish ship first complete the return voyage across the Pacific from the Philippines to Mexico?
+**Question.** In which year did Spanish ships first complete the return voyage across the Pacific from the Philippines to Mexico?
 
 **Answer: 1565.** Urdaneta's ship reaches Acapulco on 8 October 1565
 
@@ -200,6 +200,7 @@ Dating convention on every clue: *true on 31 December of the target year* (D-009
 **HOLD FOR RESEARCH**
 
 - Clue ladder is thin: one paid clue that cuts one year. Find a verified event dated 1566 or 1567.
+- Alonso de Arellano also made a successful return in 1565 (Wikipedia, Manila galleon). Who arrived first is not settled here; the year is the same, and the question now says ships, not ship.
 
 **Publication blockers (computed):** free f1 (Legazpi's fleet sails from La Navidad) is V1; free f2 (Mercator's world map) is V1; free f3 (Fleet sails from La Navidad) is V1; paid p1 (Fleet reaches Samar) is V1.
 

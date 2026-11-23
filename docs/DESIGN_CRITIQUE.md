@@ -39,3 +39,6 @@ See `STAGE_7_UI.md` section 8. Short version: clear and calm, 8 out of 10 on nex
 
 ## Stage 8 critique
 See `STAGE_8_MOTION.md` section 5. Camera and controller are solid and tested; the look is utilitarian; the reveal is a skeleton; nothing has run on a phone or been used by a person.
+
+## Stage 9 critique
+See `STAGE_9_REVEAL.md` section 10. The forms work and tell the truth; they do not yet make anyone feel the past. The 1977 connection is real and modest. Bias is reduced, not removed. Nobody has reviewed or played it.

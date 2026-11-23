@@ -39,6 +39,7 @@ If the phone cannot connect, the Windows firewall is the usual cause. When Windo
 |---|---|
 | `/` | The game (Stage 7 UI). Add `?debug=1` for the crash-injection tools, `?pseudo=1` for long translated text, `?variant=deep` for the relation clue sold as a Deep clue |
 | `/motion/` | The camera, path scroll, evidence branch, lock opening and reveal (Stage 8). Add `?perf=1` for the recorder |
+| `/reveal/` | The World Reveal prototype (Stage 9): six stories and a finale, each with its own interactive evidence |
 
 ## 4. What to try on the phone (about 10 minutes)
 Motion prototype, `/motion/?perf=1`:

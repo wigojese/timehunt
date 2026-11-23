@@ -185,7 +185,7 @@
       "kind": "encyclopedia",
       "opened": true,
       "retrieved": "2026-11-23",
-      "note": "Decree of 196 BC; found July 1799 by Pierre-François Bouchard; Greek translation 1803; Champollion 1822."
+      "note": "Decree of 196 BC; found July 1799 by Pierre-François Bouchard; Greek translation 1803; Champollion 1822. Granodiorite, 1,123 x 757 x 284 mm. Hieroglyphic text: last 14 lines remain; Demotic: 32 lines, best preserved; Greek: 54 lines, first 27 complete. Surrendered to the British under the Capitulation of Alexandria, 1801; on public display at the British Museum since 1802."
     },
     {
       "id": "wp-french_campaign_in_egypt_and_syria",
@@ -408,6 +408,36 @@
       "note": "Launch August 20, 1977."
     },
     {
+      "id": "wp-festac_77",
+      "title": "FESTAC 77 (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/FESTAC_77",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "Held in Lagos, Nigeria, 15 January to 12 February 1977; about 16,000 participants from 56 African nations and countries of the African diaspora; earlier editions: Dakar, April 1966, and Algiers, July 1969."
+    },
+    {
+      "id": "wp-pan-africanism",
+      "title": "Pan-Africanism (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/Pan-Africanism",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "'In 1969, Algiers hosted the Pan-African Cultural Festival, on July 21 and it continued for eight days.'"
+    },
+    {
+      "id": "wp-apollo_11",
+      "title": "Apollo 11 (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/Apollo_11",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "Lunar landing 20 July 1969."
+    },
+    {
       "id": "who-smallpox",
       "title": "History of smallpox vaccination",
       "publisher": "World Health Organization",
@@ -415,7 +445,7 @@
       "opened": true,
       "url": "https://www.who.int/news-room/spotlight/history-of-vaccination/history-of-smallpox-vaccination",
       "retrieved": "2026-11-23",
-      "note": "'smallpox was eliminated from South America in 1971, Asia in 1975 and Africa in 1977 ... In 1980, WHO declared smallpox officially eradicated'."
+      "note": "'smallpox was eliminated from South America in 1971, Asia in 1975 and Africa in 1977 ... In 1980, WHO declared smallpox officially eradicated'. Also: some European regions had eliminated it by 1900; over 2 million died every year in affected continents and colonised areas; the Intensified Smallpox Eradication Programme cost about US$300 million, two thirds from endemic countries."
     },
     {
       "id": "cdc-smallpox",
@@ -1134,7 +1164,7 @@
       ],
       "era": "early modern",
       "difficulty": "medium",
-      "question": "In which year did a Spanish ship first complete the return voyage across the Pacific from the Philippines to Mexico?",
+      "question": "In which year did Spanish ships first complete the return voyage across the Pacific from the Philippines to Mexico?",
       "corridor": [
         1555,
         1580
@@ -1369,7 +1399,8 @@
           }
         ],
         "hold": [
-          "Clue ladder is thin: one paid clue that cuts one year. Find a verified event dated 1566 or 1567."
+          "Clue ladder is thin: one paid clue that cuts one year. Find a verified event dated 1566 or 1567.",
+          "Alonso de Arellano also made a successful return in 1565 (Wikipedia, Manila galleon). Who arrived first is not settled here; the year is the same, and the question now says ships, not ship."
         ],
         "sample_player": [
           "The fleet sailed in November 1564, so the target is 1564 or later. Mercator's map is 1569, so the target is before that: 1564 to 1568.",

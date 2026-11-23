@@ -10,12 +10,13 @@
 | 5 | Early usability and balancing | **APPROVED**, 2026-11-23 (plan and simulation; human results NOT TESTED) |
 | 6 | STRATA 2.0 art direction | **APPROVED**, 2026-11-23 |
 | 7 | Responsive information architecture and accessible game UI | **APPROVED**, 2026-11-23 |
-| 8 | Temporal camera, path scroll and transition proof | **COMPLETE in emulation only; no real phone; awaiting `APPROVE STAGE 8`** |
-| 9 to 15 | See `TIMEHUNT_MASTER_PROMPT.md` section 9 | Not started. Not authorised. |
+| 8 | Temporal camera, path scroll and transition proof | **APPROVED**, 2026-11-23 (emulation only; no real-phone evidence yet) |
+| 9 | Editorial World Reveal | **COMPLETE as a prototype; no review or playtest; awaiting `APPROVE STAGE 9`** |
+| 10 to 15 | See `TIMEHUNT_MASTER_PROMPT.md` section 9 | Not started. Not authorised. |
 
-**Current gate:** Stage 8 checkpoint.
-**Proof:** `STAGE_8_MOTION.md`, `docs/motion/` (storyboard, video, perf summary, e2e report), `app/motion/`, `app/` (86 unit tests, 60 motion assertions).
-**Next allowed action:** none until the user replies `APPROVE STAGE 8` or `REVISE STAGE 8: ...`. On approval, Stage 9 only.
+**Current gate:** Stage 9 checkpoint.
+**Proof:** `STAGE_9_REVEAL.md`, `docs/reveal/` (content scripts, rights manifest, sheets, e2e report), `app/reveal/`, `app/` (100 unit tests, 65 reveal assertions).
+**Next allowed action:** none until the user replies `APPROVE STAGE 9` or `REVISE STAGE 9: ...`. On approval, Stage 10 only.
 
 ## Approval log
 - 2026-11-22: `APPROVE STAGE 0`. Continue without the missing ZIP; the agent acts as historical editor; end-of-year dating accepted.
@@ -26,4 +27,5 @@
 - 2026-11-23: `APPROVE STAGE 5`.
 - 2026-11-23: `APPROVE STAGE 6`.
 - 2026-11-23: `APPROVE STAGE 7`.
+- 2026-11-23: `APPROVE STAGE 8` ("approve and continue"). Q-53 to Q-56 left open.
 - Earlier conversational comments in this project are not stage approvals.

@@ -58,3 +58,9 @@
 - Added `app/motion/` (camera, transition, path-scroll maths, gestures, camera view, prototype, reveal data, perf recorder), `app/test/camera.test.js` (15 tests; 86 in all), `app/scripts/e2e-motion.mjs` (60 assertions, axe, reduced motion, large text, performance), `app/scripts/record-motion.mjs` (video and storyboard).
 - Added `docs/motion/` (storyboard, video, perf summary, screenshots, e2e report) and `docs/STAGE_8_MOTION.md`. `docs/motion/frames/` is regenerated and ignored.
 - Recorded D-051 to D-057, F-035 to F-038, Q-53 to Q-56.
+
+## Stage 9 (2026-11-23)
+- Added `app/reveal/` (hub, six stories, finale, twelve evidence forms), `app/test/reveal.test.js` and `stories.test.js` (14 tests; 100 in all), `app/scripts/e2e-reveal.mjs` (65 assertions), `make-reveal-sheets.mjs`, `make-reveal-docs.mjs`.
+- Added `docs/reveal/` (CONTENT_SCRIPTS, SOURCES_RIGHTS, sheets, screens, e2e report) and `docs/STAGE_9_REVEAL.md`.
+- Pack: added sources `wp-festac_77`, `wp-pan-africanism`, `wp-apollo_11`; fuller notes for Rosetta and WHO; case 3's question now says "ships" and records the Arellano hold. Regenerated `docs/pack/`, `app/data/`, `app/fixtures/`.
+- Recorded D-058 to D-063, F-039 to F-043, Q-57 to Q-60.

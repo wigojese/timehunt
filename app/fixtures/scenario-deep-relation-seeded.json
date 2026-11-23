@@ -1,6 +1,6 @@
 {
   "_about": "Seeded random player, seed 7, relation sold as a Deep clue (Q-32 variant).",
-  "packDigest": "14d7a80f4029fa",
+  "packDigest": "069bcb4802d2e6",
   "rulesOverrides": {
     "relationTier": "deep"
   },
@@ -161,7 +161,7 @@
     }
   ],
   "expected": {
-    "stateDigest": "083f23dacc39bd",
+    "stateDigest": "0148c71ca12f2d",
     "score": {
       "solved": 3,
       "clean": 0,
