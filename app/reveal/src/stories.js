@@ -55,6 +55,7 @@ export const STORIES = [
     { id: 'inspect', form: 'inspect', title: 'Look at the stone', text: 'Tap a register to see what it holds. Each band is drawn as tall as its number of lines. This is a diagram, not a photograph, and it is not to scale across the width.', src: ['wp-rosetta_stone'] },
     { id: 'reading', form: 'stonetime', title: 'Reading it took decades', text: 'Move the year. The stone was found in 1799; its Greek text was first fully translated in 1803; the Egyptian scripts were not transliterated until 1822.', src: ['wp-rosetta_stone'] },
     { id: 'day', form: 'compare', title: 'How sure is the day?', text: 'The year is stable. The day is not. Compare what different accounts say, and filter to the ones the editor actually opened.', src: ['wp-rosetta_stone'] },
+    { id: 'whose', form: 'text', title: 'Whose is it?', text: 'The stone has been in the British Museum since 1802. In July 2003 Zahi Hawass, then Secretary-General of Egypt\u2019s Supreme Council of Antiquities, called for it to be returned to Egypt, calling it the \u201cicon of our Egyptian identity\u201d. National museums typically oppose the repatriation of objects like it. This story does not take a side. It records that the question exists.', src: ['wp-rosetta_stone'] },
     { id: 'take', form: 'takeaway', editorial: true, title: 'Three questions, three dates', text: 'When was it made? 196 BCE. When was it found? 1799. When was it read? 1803 for the Greek, 1822 for the Egyptian scripts. A case that asks “when” has to say which.', src: ['wp-rosetta_stone'] },
   ] },
   { id: 'smallpox', caseId: 'case-06', year: 1977, title: 'The last case that was not a laboratory’s', form: 'Scrub a chart', where: 'Africa, Asia, South America', beats: [
@@ -66,7 +67,7 @@ export const STORIES = [
   ] },
   { id: 'galleon', caseId: 'case-03', year: 1565, title: 'The way back across the Pacific', form: 'Follow a route', where: 'Mexico, the Philippines', beats: [
     { id: 'arrive', form: 'text', title: '8 October 1565', text: 'Andrés de Urdaneta’s ship reached Acapulco on 8 October 1565. It had left Cebu on 1 June. Urdaneta and Alonso de Arellano made the first successful round trips that year, taking advantage of the Kuroshio Current.', src: ['wp-andr%c3%a9s_de_urdaneta', 'wp-manila_galleon'] },
-    { id: 'route', form: 'route', title: 'Out, and back', text: 'Choose a leg and move along it. The fleet sailed from La Navidad on 21 November 1564 and reached Samar on 13 February 1565. The way back left Cebu on 1 June 1565 and reached Acapulco on 8 October. The days are counted from those dates. The drawing shows no coastline and no track.', src: ['wp-andr%c3%a9s_de_urdaneta'] },
+    { id: 'route', form: 'route', title: 'Out, and back', text: 'Choose a leg and move along it. The fleet sailed from La Navidad on 21 November 1564 and reached Samar on 13 February 1565. The way back left Cebu on 1 June 1565 and reached Acapulco on 8 October. The days are counted from those dates. The fleet belonged to the expedition Miguel L\u00f3pez de Legazpi commanded to conquer the Philippines in 1564. The drawing shows no coastline and no track.', src: ['wp-andr%c3%a9s_de_urdaneta'] },
     { id: 'span', form: 'span', title: 'A route that lasted', text: 'The Manila galleon route ran from 1565 to 1815. The Spanish colonial capital moved to Manila in 1571. Tap a marker.', src: ['wp-manila_galleon', 'wp-miguel_l%c3%b3pez_de_legazpi'] },
     { id: 'take', form: 'takeaway', editorial: true, title: 'Finding the way back', text: 'Urdaneta was given the task of finding a return route from the Philippines to Mexico. The Manila galleon route was inaugurated in 1565, once that return had worked, and 1565 is the year the case asks for.', src: ['wp-andr%c3%a9s_de_urdaneta', 'wp-manila_galleon'] },
   ] },
@@ -89,3 +90,17 @@ export const STORIES = [
 ];
 export const finaleLanes = LANES_1977;
 export const LANE_SETS = { LANES_1324, LANES_1969, LANES_1977, LANES_1441 };
+
+// Documented and coincidental connections used by the finale. Each says what kind of connection it is.
+export const CONNECTIONS = {
+  place: { kind: 'Same place', claim: 'No link is claimed.', nodes: [
+    { y: 1332, label: 'Mogadishu', text: 'Ibn Battuta arrives in Mogadishu in 1332, on the coast of Somalia, on the journeys that began with the departure of 1325. The source says the city then stood at the zenith of its prosperity.', src: ['wp-ibn_battuta'] },
+    { y: 1977, label: 'Merca', text: 'The last known natural case of smallpox is diagnosed in October 1977 in Merca, a Somali town immediately southwest of the capital, Mogadishu. The man, a hospital cook and health worker, made a full recovery and later took part in the campaign against polio in Somalia.', src: ['wp-ali_maow_maalin', 'who-smallpox'] },
+  ] },
+  name: { kind: 'Named after', claim: 'Documented: the source says the probe was named after the stone.', nodes: [
+    { y: -195, label: 'Decree', text: 'A decree is issued in 196 BCE and later cut into the stone.', src: ['wp-rosetta_stone'] },
+    { y: 1799, label: 'Stone found', text: 'The stone is found in July 1799.', src: ['wp-rosetta_stone'] },
+    { y: 2004, label: 'Probe launched', text: 'The European Space Agency launches the Rosetta probe on 2 March 2004. It is named after the Rosetta Stone. Its lander, Philae, is named after the Philae obelisk, which bears a bilingual Greek and Egyptian hieroglyphic inscription and was used with the stone to decipher hieroglyphs.', src: ['wp-rosetta_(spacecraft)', 'wp-philae_(spacecraft)'] },
+    { y: 2016, label: 'Mission ends', text: 'The probe ends its mission by hard-landing on the comet on 30 September 2016.', src: ['wp-rosetta_(spacecraft)'] },
+  ] },
+};

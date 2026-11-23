@@ -1,7 +1,7 @@
 {
   "generated": "2026-11-23",
-  "passed": 65,
-  "total": 65,
+  "passed": 72,
+  "total": 72,
   "checks": [
     {
       "name": "hub: six stories and a finale, each with a form named",
@@ -72,6 +72,16 @@
       "name": "compare: filtering to opened pages leaves one account and says no day is given",
       "pass": true,
       "detail": ""
+    },
+    {
+      "name": "contested ownership is recorded, not hidden: the 2003 call to return the stone is cited and no side is taken",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "citations: whose is it lists linked sources with opened or not opened",
+      "pass": true,
+      "detail": "1 links"
     },
     {
       "name": "takeaway beat closes the story with the three dates",
@@ -259,6 +269,31 @@
       "detail": ""
     },
     {
+      "name": "finale: a second connection, the same coast 645 years apart, with its category",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "place: Merca 1977 names the town, its recovery and the polio work, with sources",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "place: Mogadishu 1332 is shown at the zenith of its prosperity",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "finale: a third connection of a different kind: a documented naming, over 205 years from finding to launch",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "name: the probe and the lander are explained with sources",
+      "pass": true,
+      "detail": ""
+    },
+    {
       "name": "finale coverage: computed numbers (5 of 10 modern; 57% Western anchors; Asia 5)",
       "pass": true,
       "detail": ""
@@ -319,7 +354,7 @@
       "detail": ""
     },
     {
-      "name": "no horizontal scroll on any of 28 beats at 320 px, 390 px and 390 px with 200% text",
+      "name": "no horizontal scroll on any of 31 beats at 320 px, 390 px and 390 px with 200% text",
       "pass": true,
       "detail": "[]"
     },
@@ -330,7 +365,7 @@
     }
   ],
   "axe": {
-    "screens": 17,
+    "screens": 19,
     "violations": [
       {
         "screen": "lanes",
@@ -360,6 +395,8 @@
     "15-bias",
     "16-finale-marks",
     "17-finale-1977",
+    "17b-finale-place",
+    "17c-finale-name",
     "18-finale-coverage"
   ]
 }

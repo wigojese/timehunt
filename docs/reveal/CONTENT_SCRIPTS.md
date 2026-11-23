@@ -38,7 +38,15 @@ The year is stable. The day is not. Compare what different accounts say, and fil
 
 Sources (V1): [Wikimedia Foundation: Rosetta Stone (Wikipedia)](https://en.wikipedia.org/wiki/Rosetta_Stone)
 
-### Beat 5. Three questions, three dates
+### Beat 5. Whose is it?
+
+*Interaction:* text.
+
+The stone has been in the British Museum since 1802. In July 2003 Zahi Hawass, then Secretary-General of Egypt’s Supreme Council of Antiquities, called for it to be returned to Egypt, calling it the “icon of our Egyptian identity”. National museums typically oppose the repatriation of objects like it. This story does not take a side. It records that the question exists.
+
+Sources (V1): [Wikimedia Foundation: Rosetta Stone (Wikipedia)](https://en.wikipedia.org/wiki/Rosetta_Stone)
+
+### Beat 6. Three questions, three dates
 
 *Interaction:* takeaway (editorial).
 
@@ -106,7 +114,7 @@ Sources (V1): [Wikimedia Foundation: Andrés de Urdaneta (Wikipedia)](https://en
 
 *Interaction:* route.
 
-Choose a leg and move along it. The fleet sailed from La Navidad on 21 November 1564 and reached Samar on 13 February 1565. The way back left Cebu on 1 June 1565 and reached Acapulco on 8 October. The days are counted from those dates. The drawing shows no coastline and no track.
+Choose a leg and move along it. The fleet sailed from La Navidad on 21 November 1564 and reached Samar on 13 February 1565. The way back left Cebu on 1 June 1565 and reached Acapulco on 8 October. The days are counted from those dates. The fleet belonged to the expedition Miguel López de Legazpi commanded to conquer the Philippines in 1564. The drawing shows no coastline and no track.
 
 Sources (V1): [Wikimedia Foundation: Andrés de Urdaneta (Wikipedia)](https://en.wikipedia.org/wiki/Andr%C3%A9s_de_Urdaneta)
 

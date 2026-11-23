@@ -1,0 +1,284 @@
+[
+ {
+  "story": "rosetta",
+  "claim": "Stone size 1,123 x 757 x 284 mm",
+  "url": "https://en.wikipedia.org/wiki/Rosetta_Stone",
+  "re": "1,123 mm × 757 mm × 284 mm"
+ },
+ {
+  "story": "rosetta",
+  "claim": "Decree dated 196 BC; found 1799",
+  "url": "https://en.wikipedia.org/wiki/Rosetta_Stone",
+  "re": "Created 196 BC Discovered 1799"
+ },
+ {
+  "story": "rosetta",
+  "claim": "Greek register has 54 lines, first 27 complete",
+  "url": "https://en.wikipedia.org/wiki/Rosetta_Stone",
+  "re": "Greek text contains 54 lines, of which the first 27 survive in full"
+ },
+ {
+  "story": "rosetta",
+  "claim": "Demotic has 32 lines, best preserved",
+  "url": "https://en.wikipedia.org/wiki/Rosetta_Stone",
+  "re": "demotic text has survived best; it has 32 lines"
+ },
+ {
+  "story": "rosetta",
+  "claim": "Only the last 14 hieroglyphic lines remain",
+  "url": "https://en.wikipedia.org/wiki/Rosetta_Stone",
+  "re": "Only the last 14 lines of the hieroglyphic text remain"
+ },
+ {
+  "story": "rosetta",
+  "claim": "Greek translation published 1803; Champollion 1822",
+  "url": "https://en.wikipedia.org/wiki/Rosetta_Stone",
+  "re": "first complete translation of the Greek text was published in 1803\\. Jean-François Champollion announced the transliteration of the Egyptian scripts in Paris in 1822"
+ },
+ {
+  "story": "rosetta",
+  "claim": "British takeover 1801 and display since 1802",
+  "url": "https://en.wikipedia.org/wiki/Rosetta_Stone",
+  "re": "Capitulation of Alexandria in 1801[\\s\\S]{0,200}Since 1802"
+ },
+ {
+  "story": "smallpox",
+  "claim": "WHO: eliminated South America 1971, Asia 1975, Africa 1977",
+  "url": "https://www.who.int/news-room/spotlight/history-of-vaccination/history-of-smallpox-vaccination",
+  "re": "eliminated from South America in 1971, Asia in 1975 and Africa in 1977"
+ },
+ {
+  "story": "smallpox",
+  "claim": "WHO: programme cost about US$300 million, two thirds from endemic countries",
+  "url": "https://www.who.int/news-room/spotlight/history-of-vaccination/history-of-smallpox-vaccination",
+  "re": "approximately US\\$ ?300 million, two thirds of which came from endemic countries"
+ },
+ {
+  "story": "smallpox",
+  "claim": "WHO: declared eradicated in 1980",
+  "url": "https://www.who.int/news-room/spotlight/history-of-vaccination/history-of-smallpox-vaccination",
+  "re": "1980"
+ },
+ {
+  "story": "smallpox",
+  "claim": "CDC: no cases since 1977",
+  "url": "https://www.cdc.gov/smallpox/about/index.html",
+  "re": "no cases occurring since 1977"
+ },
+ {
+  "story": "smallpox",
+  "claim": "Maalin diagnosed October 1977, from Merca",
+  "url": "https://en.wikipedia.org/wiki/Ali_Maow_Maalin",
+  "re": "The disease was diagnosed in October 1977"
+ },
+ {
+  "story": "finale-place",
+  "claim": "Merca is immediately southwest of the capital, Mogadishu",
+  "url": "https://en.wikipedia.org/wiki/Ali_Maow_Maalin",
+  "re": "Merca \\(Marka\\) is immediately southwest of the capital, Mogad"
+ },
+ {
+  "story": "smallpox",
+  "claim": "Last variola major case reported 16 October 1975",
+  "url": "https://en.wikipedia.org/wiki/Rahima_Banu",
+  "re": "16 October 1975"
+ },
+ {
+  "story": "galleon",
+  "claim": "Route 1565 to 1815; Urdaneta pioneered the tornaviaje; Arellano also returned",
+  "url": "https://en.wikipedia.org/wiki/Manila_galleon",
+  "re": "pioneered the tornaviaje[\\s\\S]{0,160}Alonso de Arellano"
+ },
+ {
+  "story": "galleon",
+  "claim": "Route ran from 1565 to 1815",
+  "url": "https://en.wikipedia.org/wiki/Manila_galleon",
+  "re": "1565 to 1815"
+ },
+ {
+  "story": "galleon",
+  "claim": "Urdaneta arrived Acapulco 8 October 1565",
+  "url": "https://en.wikipedia.org/wiki/Andr%C3%A9s_de_Urdaneta",
+  "re": "8 October 1565"
+ },
+ {
+  "story": "galleon",
+  "claim": "Capital moved to Manila in 1571",
+  "url": "https://en.wikipedia.org/wiki/Miguel_L%C3%B3pez_de_Legazpi",
+  "re": "1571"
+ },
+ {
+  "story": "hangul",
+  "claim": "12th lunar month of 1443 = 30 Dec 1443 to 28 Jan 1444",
+  "url": "https://en.wikipedia.org/wiki/Hunminjeongeum",
+  "re": "12th month of 1443 of the Korean calendar \\(around December 30, 1443 to January 28, 1444"
+ },
+ {
+  "story": "hangul",
+  "claim": "Published about October 1446",
+  "url": "https://en.wikipedia.org/wiki/Hunminjeongeum",
+  "re": "1446"
+ },
+ {
+  "story": "hangul",
+  "claim": "Rain gauge 1441 and 1442",
+  "url": "https://en.wikipedia.org/wiki/Cheugugi",
+  "re": "1441"
+ },
+ {
+  "story": "hangul",
+  "claim": "Yongbi eocheonga published 1447",
+  "url": "https://en.wikipedia.org/wiki/Yongbi_eocheonga",
+  "re": "published in 1447"
+ },
+ {
+  "story": "hangul",
+  "claim": "Battle of Varna 10 November 1444",
+  "url": "https://en.wikipedia.org/wiki/Battle_of_Varna",
+  "re": "November 10, 1444"
+ },
+ {
+  "story": "road",
+  "claim": "Marco Polo died 8 January 1324",
+  "url": "https://en.wikipedia.org/wiki/Marco_Polo",
+  "re": "8 January 1324"
+ },
+ {
+  "story": "road",
+  "claim": "Mansa Musa hajj in 1324 (single source)",
+  "url": "https://en.wikipedia.org/wiki/Mansa_Musa",
+  "re": "Hajj to Mecca in 1324"
+ },
+ {
+  "story": "road",
+  "claim": "Ibn Battuta set off 2 Rajab 725 AH (14 June 1325), age 21",
+  "url": "https://en.wikipedia.org/wiki/Ibn_Battuta",
+  "re": "2 Rajab 725 AH \\(14 June 1325 AD\\)[\\s\\S]{0,60}age of 21"
+ },
+ {
+  "story": "finale-place",
+  "claim": "Ibn Battuta arrived in Mogadishu in 1332",
+  "url": "https://en.wikipedia.org/wiki/Ibn_Battuta",
+  "re": "When Ibn Battuta arrived in 1332, Mogadishu"
+ },
+ {
+  "story": "road",
+  "claim": "Edward II's reign ended 21 January 1327",
+  "url": "https://en.wikipedia.org/wiki/Edward_II_of_England",
+  "re": "21 January 1327"
+ },
+ {
+  "story": "road",
+  "claim": "Tenochtitlan 1325 is a traditional or unclear date",
+  "url": "https://en.wikipedia.org/wiki/Tenochtitlan",
+  "re": "1325"
+ },
+ {
+  "story": "y1969",
+  "claim": "Concorde 001 first flight 2 March 1969",
+  "url": "https://en.wikipedia.org/wiki/Concorde",
+  "re": "2 March 1969"
+ },
+ {
+  "story": "y1969",
+  "claim": "Boeing 747 first flight 9 February 1969",
+  "url": "https://en.wikipedia.org/wiki/Boeing_747",
+  "re": "February 9, 1969"
+ },
+ {
+  "story": "y1969",
+  "claim": "Apollo 11 landing 20 July 1969",
+  "url": "https://en.wikipedia.org/wiki/Apollo_11",
+  "re": "July 20, 1969"
+ },
+ {
+  "story": "y1969",
+  "claim": "Algiers hosted the Pan-African Cultural Festival from July 21 for eight days",
+  "url": "https://en.wikipedia.org/wiki/Pan-Africanism",
+  "re": "Algiers hosted the Pan-African Cultural Festival, on July 21 and it continued for eight days"
+ },
+ {
+  "story": "finale-1977",
+  "claim": "FESTAC 77 ran 15 January to 12 February 1977",
+  "url": "https://en.wikipedia.org/wiki/FESTAC_77",
+  "re": "15 January 1977 to 12 February 1977"
+ },
+ {
+  "story": "finale-1977",
+  "claim": "FESTAC 77: about 16,000 participants, 56 African nations and the diaspora",
+  "url": "https://en.wikipedia.org/wiki/FESTAC_77",
+  "re": "Around 16,000 participants, representing 56 African nations"
+ },
+ {
+  "story": "finale-1977",
+  "claim": "Voyager 2 launched 20 August 1977",
+  "url": "https://en.wikipedia.org/wiki/Voyager_2",
+  "re": "August 20, 1977"
+ },
+ {
+  "story": "finale-1977",
+  "claim": "Voyager 1 launched 5 September 1977",
+  "url": "https://en.wikipedia.org/wiki/Voyager_1",
+  "re": "September 5, 1977"
+ },
+ {
+  "story": "finale-1977",
+  "claim": "Star Wars released 25 May 1977",
+  "url": "https://en.wikipedia.org/wiki/Star_Wars_(film)",
+  "re": "May 25, 1977"
+ },
+ {
+  "story": "finale-name",
+  "claim": "Rosetta probe launched 2 March 2004",
+  "url": "https://en.wikipedia.org/wiki/Rosetta_(spacecraft)",
+  "re": "launched on 2 March 2004"
+ },
+ {
+  "story": "finale-name",
+  "claim": "Probe named after the Rosetta Stone",
+  "url": "https://en.wikipedia.org/wiki/Rosetta_(spacecraft)",
+  "re": "The probe was named after the Rosetta Stone"
+ },
+ {
+  "story": "finale-name",
+  "claim": "Philae lander named after the Philae obelisk, used with the stone to decipher hieroglyphs",
+  "url": "https://en.wikipedia.org/wiki/Philae_(spacecraft)",
+  "re": "named after the Philae obelisk[\\s\\S]{0,160}used along with the Rosetta Stone to decipher Egyptian hieroglyphs"
+ },
+ {
+  "story": "finale-name",
+  "claim": "Rosetta mission ended 30 September 2016",
+  "url": "https://en.wikipedia.org/wiki/Rosetta_(spacecraft)",
+  "re": "On 30 September 2016, the Rosetta spacecraft ended its mission"
+ },
+ {
+  "story": "rosetta",
+  "claim": "Calls for return to Egypt in July 2003 by Zahi Hawass; 'icon of our Egyptian identity'",
+  "url": "https://en.wikipedia.org/wiki/Rosetta_Stone",
+  "re": "Calls for the Rosetta Stone to be returned to Egypt were made in July 2003 by Zahi Hawass, then Secretary-General of Egypt's Supreme Council of Antiquities[\\s\\S]{0,200}icon of our Egyptian identity"
+ },
+ {
+  "story": "rosetta",
+  "claim": "National museums typically oppose repatriation",
+  "url": "https://en.wikipedia.org/wiki/Rosetta_Stone",
+  "re": "National museums typically express strong opposition to the repatriation"
+ },
+ {
+  "story": "galleon",
+  "claim": "Legazpi's expedition was to conquer the Philippines, 1564",
+  "url": "https://en.wikipedia.org/wiki/Manila_galleon",
+  "re": "expedition commanded by Miguel López de Legazpi to conquer the Philippines in 1564"
+ },
+ {
+  "story": "finale-place",
+  "claim": "Mogadishu at the zenith of its prosperity when Ibn Battuta arrived in 1332",
+  "url": "https://en.wikipedia.org/wiki/Ibn_Battuta",
+  "re": "Mogadishu stood at the zenith of its prosperity"
+ },
+ {
+  "story": "finale-place",
+  "claim": "Maalin made a full recovery and later joined the polio eradication campaign",
+  "url": "https://en.wikipedia.org/wiki/Ali_Maow_Maalin",
+  "re": "made a full recovery[\\s\\S]{0,400}poliomyelitis eradication campaign in Somalia"
+ }
+]

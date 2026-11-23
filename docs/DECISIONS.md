@@ -195,3 +195,18 @@ Status values: **FIXED** (user decision), **PROVISIONAL** (user-named but must b
 | F-041 | FESTAC 77 (Lagos, 15 January to 12 February 1977, about 16,000 participants, 56 African nations and the diaspora) adds a non-Western event to the 1977 cross-case view. | Wikipedia, FESTAC 77 |
 | F-042 | Two events a lane's width apart collided their numeric labels and axis years; both were fixed by staggering and thinning. | Screenshots |
 | F-043 | A sticky Previous and Next bar again obscures one selectable list item at some scroll positions (axe target size). Same trade-off as Stage 7. | `e2e-report.json` |
+
+## Added after the Stage 9 gate (2026-11-23)
+
+| ID | Date | Decision | Status | Source / approval | Alternatives | Reversal condition |
+|---|---|---|---|---|---|---|
+| D-064 | 2026-11-23 | Stage 9 approved. Answers to the gate: the AI checks reveal content (labelled agent review, not V3); the finale looks for a more surprising connection; **only a few reveal stories per day** (three or fewer plus the finale). | **FIXED** | User message | A story for every case | User changes it |
+| D-065 | 2026-11-23 | Facts in reveals are re-checked by `tools/verify/check-claims.mjs` (47 claims, 47 found). A claim list entry is required for every new factual claim. | PROPOSED | `REVIEW.md` | Manual re-reading | A better verifier |
+| D-066 | 2026-11-23 | The finale shows three connection categories side by side: Same year, Same place, Named after, each with its label and what would make it a link. | PROPOSED | `stories.js` | Only coincidences | Player evidence |
+
+| ID | Finding | Evidence |
+|---|---|---|
+| F-044 | Somalia appears twice in the day: Ibn Battuta reached Mogadishu in 1332, and the last natural smallpox case was diagnosed in Merca, southwest of Mogadishu, in 1977. | `claim-check.json` |
+| F-045 | The Rosetta probe (launched 2 March 2004) is named after the stone found in 1799; its lander is named after the Philae obelisk. | `claim-check.json` |
+| F-046 | My first pattern for one claim failed because Wikipedia writes dates in US style. The checker now reports misses so patterns can be fixed, not claims hidden. | `check-claims.mjs` |
+| F-047 | Two source ids for the new Wikipedia pages were wrong and the UI silently dropped them. A test now checks every connection node's sources exist. | `stories.test.js` |

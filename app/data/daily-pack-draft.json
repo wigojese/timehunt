@@ -225,7 +225,7 @@
       "kind": "encyclopedia",
       "opened": true,
       "retrieved": "2026-11-23",
-      "note": "Last person known infected with naturally occurring Variola minor; diagnosed October 1977."
+      "note": "Somali hospital cook and health worker from Merca; last person known infected with naturally occurring Variola minor; diagnosed October 1977. Merca is immediately southwest of the capital, Mogadishu."
     },
     {
       "id": "wp-rahima_banu",
@@ -275,7 +275,7 @@
       "kind": "encyclopedia",
       "opened": true,
       "retrieved": "2026-11-23",
-      "note": "'On 2 Rajab 725 AH (14 June 1325 AD), Ibn Battuta set off from his home town at the age of 21'."
+      "note": "'On 2 Rajab 725 AH (14 June 1325 AD), Ibn Battuta set off from his home town at the age of 21'. Itinerary 1325-1332 includes the coast of Somalia: Zeila, then Mogadishu, where he arrived in 1332."
     },
     {
       "id": "wp-marco_polo",
@@ -436,6 +436,26 @@
       "opened": true,
       "retrieved": "2026-11-23",
       "note": "Lunar landing 20 July 1969."
+    },
+    {
+      "id": "wp-rosetta_(spacecraft)",
+      "title": "Rosetta (spacecraft) (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/Rosetta_(spacecraft)",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "ESA probe launched 2 March 2004 from Kourou; named after the Rosetta Stone; its lander Philae was named after the Philae obelisk, which bears a bilingual Greek and Egyptian hieroglyphic inscription and was used with the Rosetta Stone to decipher hieroglyphs; mission ended 30 September 2016."
+    },
+    {
+      "id": "wp-philae_(spacecraft)",
+      "title": "Philae (spacecraft) (Wikipedia)",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://en.wikipedia.org/wiki/Philae_(spacecraft)",
+      "kind": "encyclopedia",
+      "opened": true,
+      "retrieved": "2026-11-23",
+      "note": "'The lander is named after the Philae obelisk, which bears a bilingual inscription and was used along with the Rosetta Stone to decipher Egyptian hieroglyphs.'"
     },
     {
       "id": "who-smallpox",

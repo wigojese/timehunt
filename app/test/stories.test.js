@@ -34,3 +34,11 @@ test('beats that are not editorial make their own claims with sources; editorial
 test('uncertain events are flagged and carry a note', () => {
   for (const set of Object.values(LANE_SETS)) for (const e of set.events) if (e.uncertain) assert.ok(e.note);
 });
+
+import { CONNECTIONS } from '../reveal/src/stories.js';
+test('connections: every node cites existing sources; the stated gaps are arithmetic on the node years', () => {
+  for (const [k, c] of Object.entries(CONNECTIONS)) for (const n of c.nodes) { assert.ok(n.src.length, `${k}/${n.label}`); for (const id of n.src) assert.ok(sources[id], `${k}: ${id}`); }
+  const p = CONNECTIONS.place.nodes; assert.equal(p[1].y - p[0].y, 645);
+  const n = CONNECTIONS.name.nodes; assert.equal(n[2].y - n[1].y, 205); assert.equal(n[2].y - n[0].y, 2199, 'from 196 BCE (-195) to 2004');
+  assert.notEqual(CONNECTIONS.place.kind, CONNECTIONS.name.kind, 'the two connections are different categories');
+});

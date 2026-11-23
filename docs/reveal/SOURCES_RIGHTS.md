@@ -35,7 +35,7 @@ All prose is original wording. Facts are paraphrased from the sources below; no 
 | `wp-miguel_l%c3%b3pez_de_legazpi` | Wikimedia Foundation: Miguel López de Legazpi (Wikipedia) | yes | galleon/span | https://en.wikipedia.org/wiki/Miguel_L%C3%B3pez_de_Legazpi |
 | `wp-pan-africanism` | Wikimedia Foundation: Pan-Africanism (Wikipedia) | yes | y1969/lanes, y1969/bias, LANES_1969 | https://en.wikipedia.org/wiki/Pan-Africanism |
 | `wp-rahima_banu` | Wikimedia Foundation: Rahima Banu (Wikipedia) | yes | smallpox/defs | https://en.wikipedia.org/wiki/Rahima_Banu |
-| `wp-rosetta_stone` | Wikimedia Foundation: Rosetta Stone (Wikipedia) | yes | rosetta/found, rosetta/inspect, rosetta/reading, rosetta/day, rosetta/take | https://en.wikipedia.org/wiki/Rosetta_Stone |
+| `wp-rosetta_stone` | Wikimedia Foundation: Rosetta Stone (Wikipedia) | yes | rosetta/found, rosetta/inspect, rosetta/reading, rosetta/day, rosetta/whose, rosetta/take | https://en.wikipedia.org/wiki/Rosetta_Stone |
 | `wp-star_wars_(film)` | Wikimedia Foundation: Star Wars (film) (Wikipedia) | yes | LANES_1977 | https://en.wikipedia.org/wiki/Star_Wars_(film) |
 | `wp-tenochtitlan` | Wikimedia Foundation: Tenochtitlan (Wikipedia) | yes | road/lanes, LANES_1324 | https://en.wikipedia.org/wiki/Tenochtitlan |
 | `wp-voyager_1` | Wikimedia Foundation: Voyager 1 (Wikipedia) | yes | LANES_1977 | https://en.wikipedia.org/wiki/Voyager_1 |

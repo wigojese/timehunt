@@ -1,6 +1,6 @@
 // Interactive evidence forms. Each form is a function (beat, ctx) -> { html, mount(root) }. All graphics are drawn from the sourced data.
 import * as L from './lib.js';
-import { LANE_SETS } from './stories.js';
+import { LANE_SETS, CONNECTIONS } from './stories.js';
 
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const $ = (r, s) => r.querySelector(s);
@@ -134,4 +134,11 @@ export function relation(beat, ctx) {
   const kind = beat.id === 'bias' ? 'A limit of this pack' : 'Same period';
   return { html: `<div class="relation"><span class="tag">${kind}</span><p style="margin-top:.5rem">${esc(beat.text)}</p><dl class="kv" style="margin-top:.5rem"><dt>Relationship</dt><dd>${beat.id === 'bias' ? 'Selection, not history' : 'Simultaneous. No link is claimed.'}</dd><dt>What would make it a link</dt><dd>A source that says so.</dd></dl></div>`, mount() {} };
 }
-export const FORMS = { inspect, stonetime, compare, smallpox, isep, defs, route, span, calendar, lanes, relation };
+// ---------- 11. connection chain: tap the nodes, read the category ----------
+export function connection(key) {
+  return (beat, ctx) => { const c = CONNECTIONS[key], ys = c.nodes.map(n => n.y), lo = Math.min(...ys), hi = Math.max(...ys), x = L.xScale(lo, hi, 290);
+    const gap = hi - lo;
+    return { html: `<div class="card"><strong>${gap.toLocaleString('en')} years</strong> between the first and last mark${key === 'name' ? ' (196 BCE to 2016)' : ''}. ${key === 'name' ? `From the stone's finding to the probe's launch: ${(2004 - 1799)} years.` : ''}</div><svg class="svgc" viewBox="0 0 340 90" role="img" aria-label="${c.nodes.map(n => `${L.label(n.y)} ${n.label}`).join(', ')}"><line x1="20" x2="310" y1="45" y2="45" stroke="#241F1B" stroke-width="2"/>${c.nodes.map((n, i) => `<rect class="nd" data-i="${i}" x="${20 + x(n.y) - 7}" y="33" width="14" height="24" fill="#FBF7EF" stroke="#241F1B" stroke-width="2"/>`).join('')}</svg><div class="chips" role="group" aria-label="Marks">${c.nodes.map((n, i) => `<button type="button" class="btn" data-i="${i}" aria-pressed="false">${L.label(n.y)}: ${n.label}</button>`).join('')}</div><div class="card" id="d" aria-live="polite"><h2 class="ch">Tap a mark</h2></div><div class="relation"><span class="tag">${c.kind}</span><dl class="kv" style="margin-top:.5rem"><dt>Relationship</dt><dd>${c.kind}. ${c.claim}</dd><dt>What would make it a link</dt><dd>${key === 'name' ? 'Here the link is documented: someone chose the name.' : 'A source that says one led to the other.'}</dd></dl></div>`,
+      mount(r) { r.querySelectorAll('button[data-i]').forEach(b => b.onclick = () => { const n = c.nodes[b.dataset.i]; r.querySelectorAll('button[data-i]').forEach(z => z.setAttribute('aria-pressed', String(z === b))); r.querySelectorAll('.nd').forEach(z => z.setAttribute('fill', z.dataset.i === b.dataset.i ? '#B4412D' : '#FBF7EF')); $(r, '#d').innerHTML = `<h2 class="ch">${L.label(n.y)}: ${n.label}</h2><p>${esc(n.text)}</p>${srcBlock(n.src, ctx.sources)}`; ctx.log('connection-' + key, n.y); }); } }; };
+}
+export const FORMS = { place: connection('place'), name: connection('name'), inspect, stonetime, compare, smallpox, isep, defs, route, span, calendar, lanes, relation };

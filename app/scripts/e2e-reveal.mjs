@@ -56,6 +56,7 @@ console.log('rosetta');
   ok('compare: four accounts, none confirmed day', (await p.locator('#cl li').count()) === 4);
   await p.locator('#only').check(); ok('compare: filtering to opened pages leaves one account and says no day is given', (await p.locator('#cl li').count()) === 1 && (await p.locator('#sum').textContent()).includes('no account shown gives one'));
   await shot(p, '05-compare'); await audit(p, 'compare'); await next(p);
+  ok('contested ownership is recorded, not hidden: the 2003 call to return the stone is cited and no side is taken', (await p.locator('body').textContent()).includes('Zahi Hawass') && (await p.locator('body').textContent()).includes('does not take a side')); await srcCheck(p, 'whose is it'); await next(p);
   ok('takeaway beat closes the story with the three dates', (await p.locator('body').textContent()).includes('196 BCE') && (await p.locator('body').textContent()).includes('1822'));
   await p.locator('#next').click(); await p.waitForTimeout(250); ok('Finish returns to the hub with the story marked Finished', (await p.locator('#h-rosetta').locator('xpath=ancestor::section').textContent()).includes('Finished'));
   ok('rosetta: no page errors', p.errors.length === 0, p.errors.join('|')); await p.ctx.close();
@@ -129,6 +130,13 @@ console.log('finale');
   ok('finale: the relation is labelled Simultaneous, no link claimed', (await p.locator('#lanes77 .relation').textContent()).includes('Simultaneous. No link is claimed.'));
   await p.locator('#lanes77 [data-lane=afr]').click(); ok('finale: the African festival of January 1977 is in the cross-case view', (await p.locator('#lanes77 #list').textContent()).includes('FESTAC 77'));
   await p.locator('#lanes77 [data-lane=all]').click(); await shot(p, '17-finale-1977'); await audit(p, 'finale-1977'); await next(p);
+  ok('finale: a second connection, the same coast 645 years apart, with its category', (await h1(p)) === 'The same coast, 645 years apart' && (await p.locator('.relation').textContent()).includes('Same place') && (await p.locator('.relation').textContent()).includes('No link is claimed'));
+  await p.locator('button[data-i="1"]').click(); ok('place: Merca 1977 names the town, its recovery and the polio work, with sources', (await p.locator('#d').textContent()).includes('southwest of the capital') && (await p.locator('#d').textContent()).includes('polio') && (await p.locator('#d details.src').count()) === 1);
+  await p.locator('button[data-i="0"]').click(); ok('place: Mogadishu 1332 is shown at the zenith of its prosperity', (await p.locator('#d').textContent()).includes('zenith of its prosperity'));
+  await shot(p, '17b-finale-place'); await audit(p, 'finale-place'); await next(p);
+  ok('finale: a third connection of a different kind: a documented naming, over 205 years from finding to launch', (await h1(p)) === 'A name that travelled' && (await p.locator('.relation').textContent()).includes('Named after') && (await p.locator('body').textContent()).includes('205 years') && (await p.locator('.relation').textContent()).includes('someone chose the name'));
+  await p.locator('button[data-i="2"]').click(); ok('name: the probe and the lander are explained with sources', (await p.locator('#d').textContent()).includes('Philae obelisk') && (await p.locator('#d').textContent()).includes('2 March 2004') && (await p.locator('#d details.src').count()) === 1);
+  await shot(p, '17c-finale-name'); await audit(p, 'finale-name'); await next(p);
   const cov = await p.locator('main').textContent(); ok('finale coverage: computed numbers (5 of 10 modern; 57% Western anchors; Asia 5)', cov.includes('5 of 10 answers fall between 1893 and 1977') && /Europe and North America supply 5\d%/.test(cov) && /Asia[\s\S]{0,20}5/.test(cov));
   await shot(p, '18-finale-coverage'); await audit(p, 'finale-coverage'); await next(p); ok('finale ends with a takeaway about selection', (await p.locator('body').textContent()).includes('A selection, not a sample'));
   await p.ctx.close();
@@ -158,8 +166,8 @@ console.log('reduced motion');
 // ================= large text and widths =================
 console.log('layout');
 const hashes = [];
-for (const [id, n] of [['rosetta', 5], ['smallpox', 5], ['galleon', 4], ['hangul', 4], ['road', 3], ['y1969', 3]]) for (let i = 0; i < n; i++) hashes.push(`s.${id}.${i}`);
-for (let i = 0; i < 4; i++) hashes.push(`finale.${i}`);
+for (const [id, n] of [['rosetta', 6], ['smallpox', 5], ['galleon', 4], ['hangul', 4], ['road', 3], ['y1969', 3]]) for (let i = 0; i < n; i++) hashes.push(`s.${id}.${i}`);
+for (let i = 0; i < 6; i++) hashes.push(`finale.${i}`);
 for (const [w, scale] of [[320, 100], [390, 100], [390, 200]]) {
   const p = await open('hub', { w, h: 760, scale });
   for (const h of hashes) { await p.goto(BASE + '#' + h); await p.reload(); await p.waitForFunction(() => window.__ready); await p.waitForTimeout(120); const o = await p.evaluate(() => ({ sw: document.documentElement.scrollWidth, vw: innerWidth })); if (o.sw > o.vw) overflow.push({ w, scale, h, ...o }); }
