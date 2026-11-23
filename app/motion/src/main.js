@@ -11,6 +11,7 @@ import { yearLabel } from '../../src/engine/years.js';
 const $ = s => document.querySelector(s);
 const main = $('#main'), params = new URLSearchParams(location.search);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const href = u => /^https?:\/\//i.test(String(u)) ? esc(u) : "#"; // only http(s) links; a pack must never inject javascript: URLs
 const perf = new Perf(); window.__perf = perf; window.__yAt = y => (cur.view ? yToYear(cur.view.cam, y) : null); window.__yTo = y => (cur.view ? yearToY(cur.view.cam, y) : null);
 const DAY = ['assisted', 'assisted', 'assisted', 'clean', 'missed', 'clean', 'assisted', 'assisted', 'assisted', 'clean']; // illustrative: the Stage 4 scripted day
 let pack, cases, sources;
@@ -48,7 +49,7 @@ function route(pushed) {
   const r = parse(), key = r.name === 'case' || r.name === 'reveal' ? `${r.name}/${r.id}` : r.name;
   if (cur.key === key && r.name === 'case') return syncBranch(r.sub === 'evidence');
   if (cur.cleanup) cur.cleanup();
-  const prev = cur.key; cur = { key, cleanup: null, view: null, branch: null, lock: null };
+  cur = { key, cleanup: null, view: null, branch: null, lock: null };
   window.__camView = null;
   if (r.name === 'case') renderCase(r.id, r.sub === 'evidence'); else if (r.name === 'reveal') renderReveal(r.id); else renderTrail();
   if (!pushed) { const y = scrollMem[key] || 0; const restore = () => scrollTo(0, y); requestAnimationFrame(restore); setTimeout(restore, 150); setTimeout(restore, 450); } else scrollTo(0, 0);
@@ -96,7 +97,7 @@ function renderCase(id, evidenceOpen) {
   <div id="verdict" class="verdict" hidden></div>
   <p class="note">Two fingers pinch the ruler and the year under your fingers stays put. One finger scrolls the page. Drag the red handle to move the marker. Every one of these has a button or key.</p>`;
   bindOptions();
-  const camEl = $('#cam'), stage = $('#stage'), br = new Transition({ duration: 340, reduced: reduced() }), lk = new Transition({ duration: 900, reduced: reduced() });
+  const camEl = $('#cam'), br = new Transition({ duration: 340, reduced: reduced() }), lk = new Transition({ duration: 900, reduced: reduced() });
   const view = new CamView(camEl, { lo: c.corridor[0], hi: c.corridor[1], candidates: cands, marker: st.marker, reduced, perf, name: c.id, onMarker: (y) => { st.marker = y; saveProto(); status(); $('#lock').textContent = `Lock ${yearLabel(y)}`; } });
   cur.view = view; cur.branch = br; cur.lock = lk; window.__camView = view; window.__branch = br; window.__lock = lk;
   const status = () => { $('#level').textContent = `Showing ${view.plan ? view.plan.level : ''}. ${st.marker !== null ? `Marker on ${yearLabel(st.marker)}.` : 'No year chosen.'} ${cands.length} possible years.`; };
@@ -131,12 +132,11 @@ function renderCase(id, evidenceOpen) {
   view.wake(); setTimeout(status, 80);
   cur.cleanup = () => { cancelAnimationFrame(timers.b); cancelAnimationFrame(timers.l); view.destroy(); };
 }
-function fit0(view) { return view.cam; }
 function syncBranch(open) { if (cur.sync) cur.sync(open); }
 
 // ---------- World Reveal pathway ----------
 function renderReveal(id) {
-  const c = cases.find(x => x.id === id), R = REVEALS[id];
+  const R = REVEALS[id];
   if (!R) { main.innerHTML = `${optionsBar()}<h1 id="h" tabindex="-1">No reveal here yet</h1><p><a class="btn" href="#/trail">Back to the path</a></p>`; bindOptions(); return; }
   const key = 'mp:rev:' + id; let saved = 0; try { saved = Number(sessionStorage.getItem(key) || 0); } catch (e) { /* none */ }
   const all = R.events.map(e => e.year);
@@ -146,7 +146,7 @@ function renderReveal(id) {
   <div class="rev-cam"><div id="rcam" role="img" aria-label="A timeline. The dates are listed in the text below."></div><p class="level" id="rlevel" aria-live="polite"></p></div>
   <h2>Dates on this timeline</h2><ol>${R.events.map(e => `<li>${yearLabel(Math.round(e.year))}: ${esc(e.label)}</li>`).join('')}</ol>
   ${R.steps.map((s, i) => `<section class="step" data-i="${i}" id="s${i}" aria-labelledby="st${i}"><p class="note">Step ${i + 1} of ${R.steps.length}</p><h2 id="st${i}">${esc(s.title)}</h2><p>${esc(s.text)}</p></section>`).join('')}
-  <h2>Sources</h2><ul class="src" style="list-style:none">${R.sources.map(sid => { const s = sources[sid]; return s ? `<li><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.publisher)}: ${esc(s.title)}</a> <span class="note">${s.opened ? 'Opened by the editor' : 'Not opened'}</span></li>` : ''; }).join('')}</ul><p class="note">${esc(R.honest)}</p>`;
+  <h2>Sources</h2><ul class="src" style="list-style:none">${R.sources.map(sid => { const s = sources[sid]; return s ? `<li><a href="${href(s.url)}" target="_blank" rel="noopener">${esc(s.publisher)}: ${esc(s.title)}</a> <span class="note">${s.opened ? 'Opened by the editor' : 'Not opened'}</span></li>` : ''; }).join('')}</ul><p class="note">${esc(R.honest)}</p>`;
   bindOptions();
   const lo = Math.min(...all) - 40, hi = Math.max(...all) + 40;
   const view = new CamView($('#rcam'), { lo, hi, pins: R.events.map(e => ({ year: e.year, label: esc(e.label) })), reduced, perf, name: 'reveal' });

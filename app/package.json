@@ -8,9 +8,15 @@
     "test": "node --test test/*.test.js",
     "serve": "node scripts/serve.mjs",
     "demo": "node scripts/demo-run.mjs",
-    "record": "node scripts/record-video.mjs"
+    "record": "node scripts/record-video.mjs",
+    "lint": "eslint src motion reveal scripts test",
+    "typecheck": "tsc -p tsconfig.json && tsc -p tsconfig.contracts.json",
+    "verify": "npm run lint && npm run typecheck && npm test"
   },
   "devDependencies": {
-    "axe-core": "^4.10.2"
+    "@eslint/js": "^10.0.1",
+    "axe-core": "^4.14.1",
+    "eslint": "^10.15.0",
+    "typescript": "^6.0.3"
   }
 }

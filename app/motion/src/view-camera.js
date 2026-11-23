@@ -1,5 +1,5 @@
 // A camera view: the temporal ruler with a candidate corridor, a marker and optional pins. DOM + transforms only.
-import { makeCamera, yearToY, yToYear, zoomAt, panBy, fit, lerpCamera, tickPlan, nearest, visible } from './camera.js';
+import { makeCamera, yearToY, yToYear, zoomAt, panBy, fit, lerpCamera, tickPlan, nearest } from './camera.js';
 import { Transition } from './transition.js';
 import { attachPinch, attachHandleDrag } from './gestures.js';
 import { yearLabel } from '../../src/engine/years.js';

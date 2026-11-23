@@ -109,3 +109,14 @@ Urgency: **H** blocks the next stage, **M** needed within two stages, **L** late
 | Q-58 | A named reviewer for sensitivity (smallpox deaths, Mali and the Islamic calendar, colonial-era framing in the Manila and Rosetta stories) and for the facts. The agent cannot supply V3. | H | User | 9 gate |
 | Q-59 | Is the 1977 pair strong enough as the day's cross-case discovery, or should the finale look for a more surprising, sourced connection? | M | User | 9 gate |
 | Q-60 | Do you want reveal stories for every case eventually (10 per day), or a few per day? This sets production cost. | H | User | 10 |
+
+## Added in Stage 10 (2026-11-23)
+
+| ID | Question | Priority | Owner | Needed by |
+|---|---|---|---|---|
+| Q-61 | Which real phones exist for testing (model, OS, browser), and who can run the motion prototype, `?perf=1` and the reveal on them? This now blocks the PWA decision's weakest assumption (Q-53 to Q-56 are the same need). | H | User | Before Stage 11 ends |
+| Q-62 | Hosting for the static app and the daily pack: any preference or constraint (cost, region, existing domain, GitHub Pages versus another host)? | M | User | 11 |
+| Q-63 | Is store distribution (App Store, Google Play) a goal, or is a web link enough for launch? This is trigger T3 in ADR-001. | H | User | 12 |
+| Q-64 | Will a non-programmer edit puzzles? If yes, a CMS or form editor is worth scoping; if no, the structured repository stays. | M | User | 13 |
+| Q-65 | How much progress loss is tolerable if a browser evicts site data (a day, a streak, the archive)? This decides whether an export code and a persistent-storage prompt are required before launch. | H | User | 11 |
+| Q-66 | Is answer secrecy ever a requirement (a competitive or leaderboard mode)? If yes, a server-reveal mode must be designed; if no, the accepted trade-off in D-074 stands. | M | User | 12 |

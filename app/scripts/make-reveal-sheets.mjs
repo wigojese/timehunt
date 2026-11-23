@@ -4,7 +4,7 @@ import { readdirSync, writeFileSync, rmSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 const require = createRequire(import.meta.url);
-const { chromium } = require('/opt/node22/lib/node_modules/playwright');
+const { chromium } = require(process.env.PLAYWRIGHT_MODULE || '/opt/node22/lib/node_modules/playwright');
 const here = dirname(fileURLToPath(import.meta.url)); const OUT = join(here, '..', '..', 'docs', 'reveal');
 const files = readdirSync(join(OUT, 'screens')); const f = k => files.find(x => x.includes(k));
 const sheet = (name, title, items, cols = 6) => ({ name, html: `<div class="w"><h1>${title}</h1><div class="g" style="grid-template-columns:repeat(${cols},300px)">${items.map(([k, c]) => `<figure><img src="screens/${f(k)}" width="300" alt=""><figcaption>${c}</figcaption></figure>`).join('')}</div></div>` });

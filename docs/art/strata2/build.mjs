@@ -10,7 +10,7 @@ import * as o3 from './option3.mjs';
 import { brand } from './brand.mjs';
 
 const require = createRequire(import.meta.url);
-const { chromium } = require('/opt/node22/lib/node_modules/playwright');
+const { chromium } = require(process.env.PLAYWRIGHT_MODULE || '/opt/node22/lib/node_modules/playwright');
 const here = dirname(fileURLToPath(import.meta.url));
 const tokens = readFileSync(join(here, 'tokens.css'), 'utf8');
 const FONTS = `<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Sofia+Sans:wght@400;600;700&family=Sofia+Sans+Extra+Condensed:wght@600;700&display=block" rel="stylesheet">`;

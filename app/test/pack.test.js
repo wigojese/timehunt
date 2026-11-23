@@ -78,3 +78,13 @@ test('the app copy of the pack equals the editorial pack in docs/pack (no second
   const b = readFileSync(join(here, '..', '..', 'docs', 'pack', 'daily-pack-draft.json'), 'utf8');
   assert.equal(a, b);
 });
+
+test('a source URL that is not http(s) is rejected (no javascript: or data: links can come from a pack)', () => {
+  for (const bad of ['javascript:alert(1)', 'data:text/html,<b>x</b>', 'ftp://example.org/x', '//example.org/x', '']) {
+    const p = raw();
+    p.sources[0].url = bad;
+    const v = validatePack(p, { allowDraft: true });
+    assert.equal(v.ok, false, bad);
+    assert.ok(v.errors.some(e => e.code === 'SOURCE_URL'), bad);
+  }
+});

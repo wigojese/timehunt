@@ -3,6 +3,7 @@ import * as L from './lib.js';
 import { LANE_SETS, CONNECTIONS } from './stories.js';
 
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const href = u => /^https?:\/\//i.test(String(u)) ? esc(u) : "#"; // only http(s) links; a pack must never inject javascript: URLs
 const $ = (r, s) => r.querySelector(s);
 
 export function levelOf(ids, sources) {
@@ -12,7 +13,7 @@ export function levelOf(ids, sources) {
 export function srcBlock(ids, sources, label = 'Sources') {
   const uniq = [...new Set(ids)].filter(i => sources[i]);
   const lv = levelOf(uniq, sources);
-  return `<details class="src"><summary>${label} (${uniq.length}) <span class="lv ${lv === 'V2' ? 'v2' : ''}" title="V1: one opened page. V2: two independent opened pages.">${lv}</span></summary><ul>${uniq.map(i => { const s = sources[i]; return `<li><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.publisher)}: ${esc(s.title)}</a><br><span class="note">${s.opened ? 'Opened by the editor' : 'Not opened'}</span></li>`; }).join('')}</ul></details>`;
+  return `<details class="src"><summary>${label} (${uniq.length}) <span class="lv ${lv === 'V2' ? 'v2' : ''}" title="V1: one opened page. V2: two independent opened pages.">${lv}</span></summary><ul>${uniq.map(i => { const s = sources[i]; return `<li><a href="${href(s.url)}" target="_blank" rel="noopener">${esc(s.publisher)}: ${esc(s.title)}</a><br><span class="note">${s.opened ? 'Opened by the editor' : 'Not opened'}</span></li>`; }).join('')}</ul></details>`;
 }
 
 // ---------- 1. object inspection: the stone ----------
@@ -108,7 +109,7 @@ export function calendar(beat, ctx) {
 }
 // ---------- 9. lanes with filter and tap ----------
 export function lanes(beat, ctx, setKey) {
-  const set = LANE_SETS[beat.lanes || setKey], W = 340, labW = 4, padT = 18, laneH = 60, ev = L.sortEvents(set.events), x = L.xScale(set.lo, set.hi, W - 20);
+  const set = LANE_SETS[beat.lanes || setKey], W = 340, padT = 18, laneH = 60, ev = L.sortEvents(set.events), x = L.xScale(set.lo, set.hi, W - 20);
   return { html: `<div class="chips" role="group" aria-label="Show lanes"><button type="button" class="btn" data-lane="all" aria-pressed="true">All lanes</button>${set.lanes.map(l => `<button type="button" class="btn" data-lane="${l.id}" aria-pressed="false">${l.label}</button>`).join('')}</div><div id="chart"></div><ol class="ev" id="list"></ol><div class="card" id="d" aria-live="polite"><h2 class="ch">Tap an event</h2><p>A single mark is a known day. A band is a month, a year or a range. A dashed band is uncertain.</p></div>`,
     mount(r) { let lane = 'all', sel = null;
       const draw = () => { const shown = set.lanes.filter(l => lane === 'all' || l.id === lane), H = padT + shown.length * laneH + 26;

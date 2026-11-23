@@ -42,3 +42,6 @@ See `STAGE_8_MOTION.md` section 5. Camera and controller are solid and tested; t
 
 ## Stage 9 critique
 See `STAGE_9_REVEAL.md` section 10. The forms work and tell the truth; they do not yet make anyone feel the past. The 1977 connection is real and modest. Bias is reduced, not removed. Nobody has reviewed or played it.
+
+## Stage 10 critique
+See `STAGE_10_ARCHITECTURE.md` sections 4 and 5. The recommendation is the smallest stack that keeps every tested asset, and the engine boundary is now enforced rather than promised. It is weakest where it matters most: nothing has run on a real phone, the React Native route was compared on metadata rather than a prototype, and CI has never executed. Stage 10 also found three small defects (a broken start-up URL, a link-scheme gap, missing secret patterns) that earlier stages had not.

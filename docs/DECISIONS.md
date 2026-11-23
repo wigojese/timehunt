@@ -210,3 +210,30 @@ Status values: **FIXED** (user decision), **PROVISIONAL** (user-named but must b
 | F-045 | The Rosetta probe (launched 2 March 2004) is named after the stone found in 1799; its lander is named after the Philae obelisk. | `claim-check.json` |
 | F-046 | My first pattern for one claim failed because Wikipedia writes dates in US style. The checker now reports misses so patterns can be fixed, not claims hidden. | `check-claims.mjs` |
 | F-047 | Two source ids for the new Wikipedia pages were wrong and the UI silently dropped them. A test now checks every connection node's sources exist. | `stories.test.js` |
+
+## Added in Stage 10 (2026-11-23)
+
+| ID | Date | Decision | Status | Source / approval | Alternatives | Reversal condition |
+|---|---|---|---|---|---|---|
+| D-067 | 2026-11-23 | Stage 9 approved with three answers (D-064). Stage 10 only is authorised. | **FIXED** | User message | n/a | n/a |
+| D-068 | 2026-11-23 | Ship first as a TypeScript PWA built with Vite, static hosting, no server in v1. | PROPOSED | `ADR-001-stack.md` | Expo/React Native; PWA + Capacitor; fully native | Any trigger T1 to T5 in ADR-001, most likely after real-device evidence |
+| D-069 | 2026-11-23 | Engine, content validator and store stay framework-free and independent of rendering. This is enforced by ESLint (imports, platform globals, `Math.random`, `Date`), with negative tests. | PROPOSED | `app/eslint.config.js` | Convention only | n/a |
+| D-070 | 2026-11-23 | No UI framework until a trigger fires (T4). Preact is the first candidate. | PROPOSED | ADR-001 section 5 | Adopt React or Preact now | Two consecutive stages with defects caused by hand-written DOM updates, or shared state over about six screens |
+| D-071 | 2026-11-23 | Pin TypeScript to 6.0.x because typescript-eslint 8.74.0 declares support below 6.1.0; latest is 7.0.2. | PROPOSED | `DEPENDENCY_MATRIX.md` | Run 7.x without TS linting | typescript-eslint widens its range (T6) |
+| D-072 | 2026-11-23 | Defer Capacitor and store distribution. Do not adopt Expo/React Native or native code now. | PROPOSED | ADR-001 | Wrap now for store reach | T2 or T3 in ADR-001 |
+| D-073 | 2026-11-23 | Schema validation in two layers: JSON Schema at authoring time, executable rules at authoring and run time. No run-time schema library. Zod is not added. | PROPOSED | `ARCHITECTURE.md` section 3 | Zod, or Ajv standalone in the client | Packs fetched from a network (Stage 12) |
+| D-074 | 2026-11-23 | Offline-first with the day's pack on the device. Answers are readable by a determined player. Accepted for v1; a server-reveal mode is designed only if a competitive mode is wanted. | PROPOSED | `THREAT_MODEL.md` section 3 | Obfuscation; server reveal; server-verified scores | A leaderboard or competitive mode is requested |
+| D-075 | 2026-11-23 | Dependencies: none at runtime. New runtime dependencies need a written case. Matrix is generated from the registry. No auto-merge of updates. | PROPOSED | `OPERATIONS_POLICIES.md` | Ad hoc | n/a |
+| D-076 | 2026-11-23 | The CMS stays optional. Authoring remains a structured repository until a non-programmer editor is confirmed. | PROPOSED | `ARCHITECTURE.md` section 9 | Adopt a CMS now | Q-64 answered yes |
+
+## Findings added in Stage 10
+
+| ID | Finding | Evidence |
+|---|---|---|
+| F-048 | `docs/TRY_IT.md` was wrong for the Node server: `/motion/` and `/reveal/` returned 404. Fixed; regression test added. | `serve.test.js` |
+| F-049 | The motion and reveal prototypes do not run `validatePack`, so a `javascript:` source URL would have become a link. Both now accept http(s) only; `validatePack` already rejects other schemes, now tested. | `pack.test.js`, `xss-probe.mjs` |
+| F-050 | The repository had no secret patterns in `.gitignore`. Added before writing the secrets policy. | `.gitignore` |
+| F-051 | My first injection probe could pass without ever showing the payload. It now records whether the payload appeared and warns if not. The reveal page does not display pack text, so that run proves nothing for it. | `xss-probe.mjs` |
+| F-052 | typescript-eslint 8.74.0 (published the day of this audit) declares TypeScript below 6.1.0, while TypeScript 7.0.2 is latest. | `DEPENDENCY_MATRIX.md` |
+| F-053 | The Expo/React Native candidate tree needed `--legacy-peer-deps` to resolve, and the Vite + PWA tree shows 4 moderate build-time advisories (workbox-build, glob, minimatch). Neither is a blocker. | `DEPENDENCY_MATRIX.md` audit section |
+| F-054 | Pack build is byte-identical across runs and equals the committed file. | Stage 10 run, SHA-256 `1c90cd36…939d0a` |

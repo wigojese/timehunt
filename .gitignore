@@ -5,3 +5,17 @@ docs/ui/screens/resp-*
 docs/ui/screens/text-*
 docs/ui/screens/pseudo-*
 docs/motion/frames/
+
+# Secrets and signing material must never be committed (docs/architecture/OPERATIONS_POLICIES.md)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+*.jks
+*.mobileprovision
+credentials*.json
+service-account*.json

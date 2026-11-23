@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { start } from './serve.mjs';
 const require = createRequire(import.meta.url);
-const { chromium } = require('/opt/node22/lib/node_modules/playwright');
+const { chromium } = require(process.env.PLAYWRIGHT_MODULE || '/opt/node22/lib/node_modules/playwright');
 const here = dirname(fileURLToPath(import.meta.url));
 const OUT = join(here, '..', '..', 'docs', 'motion'); mkdirSync(join(OUT, 'frames'), { recursive: true }); rmSync(join(OUT, '_v'), { recursive: true, force: true });
 const srv = await start(5195); const BASE = 'http://127.0.0.1:5195/motion/index.html';

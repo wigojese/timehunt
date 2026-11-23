@@ -12,7 +12,7 @@ const types = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; ch
 export function start(p = port) {
   const srv = createServer(async (req, res) => {
     const path = normalize(decodeURIComponent(new URL(req.url, 'http://x').pathname)).replace(/^(\.\.[/\\])+/, '');
-    const file = join(root, path === '/' || path === '\\' ? 'index.html' : path);
+    const file = join(root, /[\\/]$/.test(path) ? join(path, 'index.html') : path);  // a directory URL serves its index.html
     if (!file.startsWith(root) || /[\\/](test|scripts|fixtures)[\\/]/.test(file)) { res.writeHead(404); return res.end('not found'); }
     try { const data = await readFile(file); res.writeHead(200, { 'content-type': types[extname(file)] || 'application/octet-stream', 'cache-control': 'no-store' }); res.end(data); }
     catch { res.writeHead(404); res.end('not found'); }

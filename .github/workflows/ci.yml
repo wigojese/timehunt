@@ -1,0 +1,56 @@
+# CI for Timehunt. Written in Stage 10 and NOT yet run: the repository is private and no runner has executed it.
+# Action versions checked on 2026-11-23: actions/checkout v7.0.1, actions/setup-node v7.1.0 (GitHub releases pages).
+# Policy: before the first release, pin each `uses:` to a full commit SHA and let Dependabot bump it.
+name: ci
+on:
+  push:
+    branches: [main, 'claude/**']
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read          # least privilege: CI reads the repository and writes nothing
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  engine:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults: { run: { working-directory: app } }
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with: { node-version: 22, cache: npm, cache-dependency-path: app/package-lock.json }
+      - run: npm ci --ignore-scripts
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test
+  pack:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v6
+        with: { python-version: '3.13' }
+      - run: pip install -r tools/pack/requirements.txt
+      - run: python3 tools/pack/lint_pack.py
+      - run: python3 tools/pack/build_pack.py
+      - name: Generated files are in sync
+        run: git diff --exit-code docs/pack app/data
+  browser:
+    needs: [engine]
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults: { run: { working-directory: app } }
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with: { node-version: 22, cache: npm, cache-dependency-path: app/package-lock.json }
+      - run: npm ci --ignore-scripts
+      - run: npx playwright@1.65.1 install --with-deps chromium
+      - name: Resolve the Playwright module path used by the scripts
+        run: echo "PLAYWRIGHT_MODULE=$(npm root -g)/playwright" >> "$GITHUB_ENV" && npm i -g playwright@1.65.1
+      - run: node scripts/e2e-ui.mjs
+      - run: node scripts/e2e-reveal.mjs
+      - run: node scripts/e2e-motion.mjs
+      - run: node ../tools/verify/xss-probe.mjs

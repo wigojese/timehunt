@@ -17,7 +17,7 @@ export class Session {
 
   /** Returns 'fresh' | 'resumed' | 'corrupt' | 'content_changed' | 'rules_changed' | 'schema_unknown'. Never throws, never silently discards. */
   load() {
-    let raw = null;
+    let raw;
     try { raw = this.storage.getItem(this.key); } catch (e) { raw = null; }
     if (raw === null) return this.#fresh('fresh');
     let rec;

@@ -57,7 +57,7 @@ function renderStory(entry) {
   const i = Math.min(Math.max(STATE.beat, 0), st.beats.length - 1), b = st.beats[i], last = i === st.beats.length - 1;
   prog[st.id] = { ...(prog[st.id] || {}), beat: i, status: (prog[st.id] && prog[st.id].status === 'done') ? 'done' : 'inprogress' }; saveProg();
   const ctx = { sources, log, reduced };
-  let body = '', mount = () => {};
+  let body, mount = () => {};
   if (b.form === 'text' || b.form === 'takeaway') body = `<p class="q" style="font-size:1.125rem">${esc(b.text || takeawayText(b))}</p>`;
   else if (b.form === 'marks' || b.form === 'pair' || b.form === 'coverage') { const f = FINALE_FORMS[b.form](ctx); body = f.html; mount = f.mount; }
   else { const f = FORMS[b.form](b, ctx, b.lanes); body = f.html; mount = f.mount; }

@@ -54,11 +54,9 @@ test('reload at every point of a full day always yields the same final state as 
   const st = new MemoryStorage();
   let s = mk(st); s.load();
   const straight = mk(new MemoryStorage()); straight.load();
-  let k = 0;
   for (let i = 0; i < 10; i++) {
     const c = content.cases[i];
     for (const sess of [s, straight]) {
-      k = k;
       if (c.clues.length) sess.dispatch({ type: 'REVEAL', caseId: c.id, clueId: c.clues[0].id, actionId: `r${i}` });
     }
     s = mk(st); s.load(); // reload after every purchase

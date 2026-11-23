@@ -1,11 +1,11 @@
 // Timehunt UI, Stage 7. Plain DOM, no framework. The engine and store are unchanged; this file only renders publicView() and dispatches commands.
 import { validatePack } from '../engine/pack.js';
 import { makeRules } from '../engine/rules.js';
-import { publicView, shareText, stateDigest, cluesFor } from '../engine/engine.js';
+import { publicView, shareText, stateDigest } from '../engine/engine.js';
 import { yearLabel } from '../engine/years.js';
 import { rng } from '../engine/rng.js';
 import { Session } from '../store/session.js';
-import { browserStorage, FaultyStorage, MemoryStorage } from '../store/storage.js';
+import { browserStorage, FaultyStorage } from '../store/storage.js';
 import { t, setPseudo } from './strings.js';
 
 const $ = s => document.querySelector(s);
@@ -386,7 +386,7 @@ document.addEventListener('change', e => {
 });
 function startPractice(caseId) {
   practice = new Session({ content, rules, storage, mode: 'practice', caseIds: [caseId], dailyId: `${content.packId}:practice` });
-  const st = practice.load();
+  practice.load();
   if (!practice.state) return go('practice');
   ui.mode = 'practice'; ui.view = 'dossier';
   if (practice.state.status === 'completed') { practice.discardAndStart(); }

@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { start } from './serve.mjs';
 const require = createRequire(import.meta.url);
-const { chromium } = require('/opt/node22/lib/node_modules/playwright');
+const { chromium } = require(process.env.PLAYWRIGHT_MODULE || '/opt/node22/lib/node_modules/playwright');
 const here = dirname(fileURLToPath(import.meta.url));
 const OUT = join(here, '..', '..', 'docs', 'reveal'); mkdirSync(join(OUT, 'screens'), { recursive: true });
 const AXE = join(here, '..', 'node_modules', 'axe-core', 'axe.min.js');

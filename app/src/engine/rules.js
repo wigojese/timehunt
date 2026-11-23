@@ -26,7 +26,7 @@ export function makeRules(overrides = {}) {
   if (r.perCaseCap !== null && (!Number.isInteger(r.perCaseCap) || r.perCaseCap < 0)) throw new RangeError('perCaseCap');
   if (!['free', 'deep'].includes(r.relationTier)) throw new RangeError('relationTier must be free or deep');
   if (!Number.isInteger(r.trace.cost) || r.trace.cost < 1) throw new RangeError('trace.cost');
-  r.version = RULES_VERSION;
-  r.id = digest({ ...r, id: undefined });
-  return Object.freeze(r);
+  /** @type {typeof r & {version: string, id: string}} */
+  const out = { ...r, version: RULES_VERSION, id: digest({ ...r, version: RULES_VERSION, id: undefined }) };
+  return Object.freeze(out);
 }

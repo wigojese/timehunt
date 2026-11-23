@@ -1,6 +1,6 @@
 # Handoff
 
-**As of:** 2026-11-23, end of Stage 2. **Branch:** `claude/peaceful-fermat-j8inv8`. **Remote:** `origin` (github.com/wigojese/timehunt).
+**As of:** 2026-11-23, end of Stage 10 (see the "After Stage N" sections below for the latest state; the paragraph under this line is historical). **Branch:** `claude/peaceful-fermat-j8inv8`. **Remote:** `origin` (github.com/wigojese/timehunt).
 
 ## State in one paragraph
 There is no application. The repo holds the operative spec, the preserved source documents, design boards, one single-case gray-box and one simulation script. Stages 0 and 1 are approved. Stage 2 (economy and rules) is done and awaits approval. Do not start Stage 3 without `APPROVE STAGE 2`.
@@ -54,3 +54,6 @@ Stage 8 is complete as an emulated prototype and awaits `APPROVE STAGE 8`. Open 
 
 ## After Stage 9
 Stage 9 is complete as a clickable prototype and awaits `APPROVE STAGE 9`. Open `/reveal/` after `node scripts/serve.mjs`. Audit: `node scripts/e2e-reveal.mjs`; docs: `node scripts/make-reveal-docs.mjs`; sheets: `node scripts/make-reveal-sheets.mjs`. Content lives in `app/reveal/src/stories.js`; never edit the generated docs. Do not start Stage 10 without approval.
+
+## After Stage 10
+Stage 10 is complete as a decision package and awaits `APPROVE STAGE 10`. Read `STAGE_10_ARCHITECTURE.md`, then `architecture/ADR-001-stack.md`. Gate locally with `cd app && npm ci --ignore-scripts && npm run verify`. Regenerate the matrix with `node tools/verify/dep-matrix.mjs`. Run `node tools/verify/xss-probe.mjs` after any change that renders pack text. The engine boundary is enforced by lint; do not weaken `app/eslint.config.js` to make a change pass. TypeScript stays at 6.0.x until typescript-eslint supports 7. CI has never run: the first pull request is the first test of it. Still open: no real-device data for any stage (Q-53 to Q-56, Q-61), no human reviewer (Q-58), hosting, store and storage-loss decisions (Q-62, Q-63, Q-65).

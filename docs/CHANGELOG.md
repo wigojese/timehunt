@@ -64,3 +64,11 @@
 - Added `docs/reveal/` (CONTENT_SCRIPTS, SOURCES_RIGHTS, sheets, screens, e2e report) and `docs/STAGE_9_REVEAL.md`.
 - Pack: added sources `wp-festac_77`, `wp-pan-africanism`, `wp-apollo_11`; fuller notes for Rosetta and WHO; case 3's question now says "ships" and records the Arellano hold. Regenerated `docs/pack/`, `app/data/`, `app/fixtures/`.
 - Recorded D-058 to D-063, F-039 to F-043, Q-57 to Q-60.
+
+## Stage 10 (2026-11-23)
+- Added `STAGE_10_ARCHITECTURE.md` and `architecture/`: ADR-001, dependency matrix (generated from the registry), architecture, threat model, migration plan, operations policies, strict-compiling `contracts.ts`.
+- Added ESLint (flat config) with engine boundary rules, TypeScript `checkJs` (0 errors) and `npm run verify`. TypeScript pinned to 6.0.3.
+- Added `.github/` CI, weekly claim check and Dependabot (written, not run); `tools/pack/requirements.txt`; secret patterns in `.gitignore`.
+- Added `tools/verify/dep-matrix.mjs` and `xss-probe.mjs`. Playwright path is now configurable (`PLAYWRIGHT_MODULE`).
+- Fixed: Node server returned 404 for `/motion/` and `/reveal/`; prototype pages could render `javascript:` links from a pack. Tests added (103 total).
+- Logged D-067 to D-076, F-048 to F-054, Q-61 to Q-66. Stage 9 marked approved.

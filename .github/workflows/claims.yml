@@ -1,0 +1,18 @@
+# Weekly re-check that every cited page still says what the reveal stories say it does. Manual runs allowed.
+name: claim-check
+on:
+  schedule: [{ cron: '17 5 * * 1' }]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  claims:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with: { node-version: 22 }
+      - run: npm i -g playwright@1.65.1 && npx playwright@1.65.1 install --with-deps chromium
+      - run: echo "PLAYWRIGHT_MODULE=$(npm root -g)/playwright" >> "$GITHUB_ENV"
+      - run: node tools/verify/check-claims.mjs
