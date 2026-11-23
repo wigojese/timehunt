@@ -246,3 +246,4 @@ Status values: **FIXED** (user decision), **PROVISIONAL** (user-named but must b
 | D-078 | 2026-11-24 | Rust is darkened to `#A94A28` so cream text passes contrast. | PROPOSED | `ATLAS_REDESIGN.md` | Guide's `#BD5833` with ink text | n/a |
 | D-079 | 2026-11-24 | Illustrations are code-drawn SVG stand-ins; production art is to be commissioned or produced under the guide's asset list. | PROPOSED | `art.js` | Raster art now | Art budget decision |
 | D-080 | 2026-11-24 | Fonts are self-hosted (OFL) instead of loaded from Google. | PROPOSED | `app/fonts/` | Google Fonts | n/a |
+| D-081 | 2026-11-24 | Stage 10 approved. Stage 11 authorised. User direction: real illustrated assets before further UI work; apply the Atlas look to Motion and Reveal; richer backgrounds, textures and photography-like depth; the code-drawn squirrel is rejected as too weak. | **FIXED** | User message | n/a | n/a |
