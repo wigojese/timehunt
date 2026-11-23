@@ -2,7 +2,7 @@
 import { createServer } from 'node:http';
 import { readFile } from 'node:fs/promises';
 import { extname, join, normalize } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import { networkInterfaces } from 'node:os';
 
 const root = join(fileURLToPath(new URL('.', import.meta.url)), '..');
@@ -13,13 +13,13 @@ export function start(p = port) {
   const srv = createServer(async (req, res) => {
     const path = normalize(decodeURIComponent(new URL(req.url, 'http://x').pathname)).replace(/^(\.\.[/\\])+/, '');
     const file = join(root, path === '/' || path === '\\' ? 'index.html' : path);
-    if (!file.startsWith(root) || /\/(test|scripts|fixtures)\//.test(file)) { res.writeHead(404); return res.end('not found'); }
+    if (!file.startsWith(root) || /[\\/](test|scripts|fixtures)[\\/]/.test(file)) { res.writeHead(404); return res.end('not found'); }
     try { const data = await readFile(file); res.writeHead(200, { 'content-type': types[extname(file)] || 'application/octet-stream', 'cache-control': 'no-store' }); res.end(data); }
     catch { res.writeHead(404); res.end('not found'); }
   });
   return new Promise(r => srv.listen(p, lan ? '0.0.0.0' : '127.0.0.1', () => r(srv)));
 }
-if (import.meta.url === `file://${process.argv[1]}`) start().then(() => {
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) start().then(() => {
   console.log(`Timehunt on http://127.0.0.1:${port}/   (motion prototype: /motion/, add ?perf=1 for the recorder; game: add ?debug=1 for test tools)`);
   if (lan) {
     const ips = Object.values(networkInterfaces()).flat().filter(i => i && i.family === 'IPv4' && !i.internal).map(i => i.address);
