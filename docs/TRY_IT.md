@@ -3,25 +3,36 @@
 Everything is static files. You need a laptop or desktop with Node 22 (or Python 3) and a phone on the same Wi-Fi. Nothing is installed on the phone.
 
 ## 1. Get the code
+Run these one at a time (this works in Windows PowerShell, macOS and Linux; older PowerShell does not accept `&&`):
 ```bash
 git clone https://github.com/wigojese/timehunt.git
+```
+```bash
 cd timehunt
+```
+```bash
 git checkout claude/peaceful-fermat-j8inv8
+```
+```bash
 cd app
 ```
 
 ## 2. Start the server
-With Node 22:
+You need Node 22 (nodejs.org, the LTS installer is fine) or Python 3. Check with `node -v` or `python --version`.
+
+With Node:
 ```bash
 node scripts/serve.mjs --lan
 ```
-It prints the addresses to open on your phone. Without Node, from the same `app` folder:
-```bash
-python3 -m http.server 5173 --bind 0.0.0.0
-```
-and use `http://<your computer's Wi-Fi address>:5173/`.
+It prints the addresses to open on your phone.
 
-If the phone cannot connect, your computer's firewall is the usual cause. Allow incoming connections for Node or Python on private networks.
+With Python, from the same `app` folder:
+```bash
+python -m http.server 5173 --bind 0.0.0.0
+```
+Then find your computer's Wi-Fi address (`ipconfig` on Windows, look for "IPv4 Address") and open `http://<that address>:5173/motion/` on the phone.
+
+If the phone cannot connect, the Windows firewall is the usual cause. When Windows asks whether to allow Node or Python, allow it on **Private** networks.
 
 ## 3. What to open
 | Address | What it is |
