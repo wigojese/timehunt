@@ -1,0 +1,28 @@
+- link "Skip to content":
+  - /url: "#main"
+- complementary "Notices": Draft pack, not publishable. Sample content for testing.
+- main:
+  - text: Timehunt Insight 8 of 8
+  - 'img "The day so far: 0 solved, 0 missed, 10 still to come. Now on case 1."'
+  - heading "The Daily Ten" [level=1]
+  - paragraph: Ten cases. One hidden year in each. Eight Insight for the whole day.
+  - list:
+    - listitem: Case 1 open
+    - listitem: Case 2 to come
+    - listitem: Case 3 to come
+    - listitem: Case 4 to come
+    - listitem: Case 5 to come
+    - listitem: Case 6 to come
+    - listitem: Case 7 to come
+    - listitem: Case 8 to come
+    - listitem: Case 9 to come
+    - listitem: Case 10 to come
+  - paragraph: Every clue is true on 31 December of the hidden year.
+  - button "Start case 1"
+  - button "How it works"
+- navigation "Main":
+  - button "Today"
+  - button "Practice"
+  - button "Archive"
+  - button "Settings"
+- status

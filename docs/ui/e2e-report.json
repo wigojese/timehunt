@@ -1,0 +1,794 @@
+{
+  "generated": "2026-11-23",
+  "checks": [
+    {
+      "name": "first run shows onboarding step 1 of 3",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "onboarding step 3 names the one Lock",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "trail: title and next action",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "trail: bank and case structure visible without a legend",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "dossier: focus moves to the case title after navigation",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "dossier: shows case count, notes and possible years",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "hunt: possible years are listed and none is pre-selected",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "wrong tap: Lock with no year gives a message and opens no dialog",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "hunt: choosing a year updates the Lock label",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "lock asks for confirmation",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Escape cancels the lock; nothing happened; focus returns to the Lock button",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "spend is confirmed with the cost and what is left",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "cancel spends nothing",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "reveal charges 2, once",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "result: solved, answer shown, focus on the answer",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "case 2 spent Insight",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "crash before save: told nothing was charged",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "reload mid-case: resume banner, same Insight, same case",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "retry charges once",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "miss: shown as missed with the answer; day continues",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "World Reveal entry opens and Back returns",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "back from World Reveal returns to the result",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "last Insight spent on case 9",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "zero Insight: bank shows 0 and says so",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "zero Insight: clue buttons disabled with a reason",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "finish: 9 of 10 solved, 0 Insight left",
+      "pass": true,
+      "detail": "9 of 10 solved. 0 Insight left."
+    },
+    {
+      "name": "finish share text has no answers",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "archive lists the finished day",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "A: no page errors",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "skip link is first in tab order",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "keyboard: Enter starts the case; focus on title",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "keyboard: arrow keys move the radio selection",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "keyboard: dialog traps focus on its first control",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "keyboard: focus stays inside the open dialog",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "typed precision path: an out-of-play year is refused with a message",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "typed precision path: a valid year selects it",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "keyboard: every focus stop is visible on screen",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "loading: busy state with text",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "loading ends",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "offline: banner says play continues",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "offline: play works",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "invalid pack: refused, nothing started, no nav",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "held saved game: explained, with one explicit action",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "settings: text size 200% applies to the whole page",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "settings persist across reload",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "practice: starts one case with 2 Insight",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "confirm-off: reveal happens without a dialog",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "practice: finishing returns to the Practice list",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "practice never touched the daily: still 8 Insight, case 1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "delete is confirmed first",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "no horizontal scroll at 320px",
+      "pass": true,
+      "detail": "scrollWidth 320"
+    },
+    {
+      "name": "no horizontal scroll at 360px",
+      "pass": true,
+      "detail": "scrollWidth 360"
+    },
+    {
+      "name": "no horizontal scroll at 390px",
+      "pass": true,
+      "detail": "scrollWidth 390"
+    },
+    {
+      "name": "no horizontal scroll at 430px",
+      "pass": true,
+      "detail": "scrollWidth 430"
+    },
+    {
+      "name": "no horizontal scroll at 768px",
+      "pass": true,
+      "detail": "scrollWidth 768"
+    },
+    {
+      "name": "no horizontal scroll at 1024px",
+      "pass": true,
+      "detail": "scrollWidth 1024"
+    },
+    {
+      "name": "text 100%: no horizontal scroll",
+      "pass": true,
+      "detail": "scrollWidth 390"
+    },
+    {
+      "name": "text 100%: the Lock button is still reachable by scrolling",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "text 100%: nothing clipped",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "text 130%: no horizontal scroll",
+      "pass": true,
+      "detail": "scrollWidth 390"
+    },
+    {
+      "name": "text 130%: the Lock button is still reachable by scrolling",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "text 130%: nothing clipped",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "text 160%: no horizontal scroll",
+      "pass": true,
+      "detail": "scrollWidth 390"
+    },
+    {
+      "name": "text 160%: the Lock button is still reachable by scrolling",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "text 160%: nothing clipped",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "text 200%: no horizontal scroll",
+      "pass": true,
+      "detail": "scrollWidth 390"
+    },
+    {
+      "name": "text 200%: the Lock button is still reachable by scrolling",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "text 200%: nothing clipped",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "pseudo-locale (+40% long, accented) trail: no horizontal scroll",
+      "pass": true,
+      "detail": "scrollWidth 360"
+    },
+    {
+      "name": "pseudo-locale trail: nothing clipped",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "pseudo-locale (+40% long, accented) hunt: no horizontal scroll",
+      "pass": true,
+      "detail": "scrollWidth 360"
+    },
+    {
+      "name": "pseudo-locale hunt: nothing clipped",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "pseudo-locale (+40% long, accented) evidence: no horizontal scroll",
+      "pass": true,
+      "detail": "scrollWidth 360"
+    },
+    {
+      "name": "pseudo-locale evidence: nothing clipped",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Trace variant: sheet offers Trace with a price",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Trace variant: result is stated in words",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "no rendered text under 14 px on trail, dossier, hunt, evidence or result",
+      "pass": true,
+      "detail": "15px at trail: Draft pack, not publishable. S"
+    },
+    {
+      "name": "year numerals are tabular",
+      "pass": true,
+      "detail": "lining-nums tabular-nums"
+    }
+  ],
+  "passed": 78,
+  "total": 78,
+  "axe": {
+    "screens": 33,
+    "violations": [
+      {
+        "screen": "practice",
+        "id": "target-size",
+        "impact": "serious",
+        "help": "All touch targets must be 24px large, or leave sufficient space",
+        "nodes": 1,
+        "target": "button[data-case=\"case-08\"]",
+        "why": "Fix any of the following: Target has insufficient size because it is partially obscured (smallest space is 114px by 22.9px, should be at least 24px by 24px) Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 22.8px i"
+      }
+    ]
+  },
+  "reach": [
+    {
+      "screen": "onboarding-1",
+      "text": "Next",
+      "top": 726,
+      "bottom": 774,
+      "h": 48,
+      "w": 350,
+      "vh": 844,
+      "inLower45": true
+    },
+    {
+      "screen": "trail-start",
+      "text": "Start case 1",
+      "top": 674,
+      "bottom": 722,
+      "h": 48,
+      "w": 350,
+      "vh": 844,
+      "inLower45": true
+    },
+    {
+      "screen": "dossier",
+      "text": "Choose a year",
+      "top": 784,
+      "bottom": 832,
+      "h": 48,
+      "w": 350,
+      "vh": 844,
+      "inLower45": true
+    },
+    {
+      "screen": "hunt",
+      "text": "Lock",
+      "top": 784,
+      "bottom": 832,
+      "h": 48,
+      "w": 170,
+      "vh": 844,
+      "inLower45": true
+    },
+    {
+      "screen": "lock-confirm",
+      "text": "Lock 1969",
+      "top": 767,
+      "bottom": 815,
+      "h": 48,
+      "w": 170,
+      "vh": 844,
+      "inLower45": true
+    },
+    {
+      "screen": "lock-confirm",
+      "text": "Lock 1969",
+      "top": 773,
+      "bottom": 821,
+      "h": 48,
+      "w": 167,
+      "vh": 844,
+      "inLower45": true
+    },
+    {
+      "screen": "evidence",
+      "text": "Back to the years",
+      "top": 784,
+      "bottom": 832,
+      "h": 48,
+      "w": 350,
+      "vh": 844,
+      "inLower45": true
+    },
+    {
+      "screen": "result-solved",
+      "text": "Next case",
+      "top": 773,
+      "bottom": 832,
+      "h": 59,
+      "w": 170,
+      "vh": 844,
+      "inLower45": true
+    },
+    {
+      "screen": "result-missed",
+      "text": "Next case",
+      "top": 773,
+      "bottom": 832,
+      "h": 59,
+      "w": 170,
+      "vh": 844,
+      "inLower45": true
+    },
+    {
+      "screen": "world-entry",
+      "text": "Back",
+      "top": 784,
+      "bottom": 832,
+      "h": 48,
+      "w": 350,
+      "vh": 844,
+      "inLower45": true
+    },
+    {
+      "screen": "zero-insight",
+      "text": "Back to the years",
+      "top": 784,
+      "bottom": 832,
+      "h": 48,
+      "w": 350,
+      "vh": 844,
+      "inLower45": true
+    },
+    {
+      "screen": "finish",
+      "text": "World Reveal (prototype)",
+      "top": 721,
+      "bottom": 780,
+      "h": 59,
+      "w": 170,
+      "vh": 844,
+      "inLower45": true
+    },
+    {
+      "screen": "world-all",
+      "text": "Back",
+      "top": 784,
+      "bottom": 832,
+      "h": 48,
+      "w": 350,
+      "vh": 844,
+      "inLower45": true
+    },
+    {
+      "screen": "offline",
+      "text": "Lock 1969",
+      "top": 784,
+      "bottom": 832,
+      "h": 48,
+      "w": 170,
+      "vh": 844,
+      "inLower45": true
+    },
+    {
+      "screen": "held",
+      "text": "Start a new expedition",
+      "top": 784,
+      "bottom": 832,
+      "h": 48,
+      "w": 350,
+      "vh": 844,
+      "inLower45": true
+    },
+    {
+      "screen": "practice",
+      "text": "Pick one for me",
+      "top": 732,
+      "bottom": 780,
+      "h": 48,
+      "w": 350,
+      "vh": 844,
+      "inLower45": true
+    },
+    {
+      "screen": "hunt-w320",
+      "text": "Lock 1969",
+      "top": 700,
+      "bottom": 748,
+      "h": 48,
+      "w": 280,
+      "vh": 760,
+      "inLower45": true
+    },
+    {
+      "screen": "hunt-w360",
+      "text": "Lock 1969",
+      "top": 700,
+      "bottom": 748,
+      "h": 48,
+      "w": 155,
+      "vh": 760,
+      "inLower45": true
+    },
+    {
+      "screen": "hunt-w390",
+      "text": "Lock 1969",
+      "top": 700,
+      "bottom": 748,
+      "h": 48,
+      "w": 170,
+      "vh": 760,
+      "inLower45": true
+    },
+    {
+      "screen": "hunt-w430",
+      "text": "Lock 1969",
+      "top": 700,
+      "bottom": 748,
+      "h": 48,
+      "w": 190,
+      "vh": 760,
+      "inLower45": true
+    },
+    {
+      "screen": "hunt-w768",
+      "text": "Lock 1969",
+      "top": 840,
+      "bottom": 888,
+      "h": 48,
+      "w": 235,
+      "vh": 900,
+      "inLower45": true
+    },
+    {
+      "screen": "hunt-w1024",
+      "text": "Lock 1969",
+      "top": 840,
+      "bottom": 888,
+      "h": 48,
+      "w": 235,
+      "vh": 900,
+      "inLower45": true
+    },
+    {
+      "screen": "hunt-t100",
+      "text": "Lock 1969",
+      "top": 784,
+      "bottom": 832,
+      "h": 48,
+      "w": 170,
+      "vh": 844,
+      "inLower45": true
+    },
+    {
+      "screen": "hunt-t130",
+      "text": "Lock 1969",
+      "top": 766,
+      "bottom": 828,
+      "h": 62,
+      "w": 338,
+      "vh": 844,
+      "inLower45": true
+    },
+    {
+      "screen": "hunt-t160",
+      "text": "Lock 1969",
+      "top": 748,
+      "bottom": 825,
+      "h": 77,
+      "w": 326,
+      "vh": 844,
+      "inLower45": true
+    },
+    {
+      "screen": "hunt-t200",
+      "text": "Lock 1969",
+      "top": 724,
+      "bottom": 820,
+      "h": 96,
+      "w": 310,
+      "vh": 844,
+      "inLower45": true
+    },
+    {
+      "screen": "pseudo-trail",
+      "text": "[Stàrt çàšé 1 ~~~~~~]",
+      "top": 570,
+      "bottom": 618,
+      "h": 48,
+      "w": 320,
+      "vh": 740,
+      "inLower45": true
+    },
+    {
+      "screen": "pseudo-hunt",
+      "text": "[Lôçk  ~~]",
+      "top": 669,
+      "bottom": 728,
+      "h": 59,
+      "w": 155,
+      "vh": 740,
+      "inLower45": true
+    },
+    {
+      "screen": "pseudo-evidence",
+      "text": "[Bàçk tô thé ýéàrš ~~~~~~~~]",
+      "top": 680,
+      "bottom": 728,
+      "h": 48,
+      "w": 320,
+      "vh": 740,
+      "inLower45": true
+    },
+    {
+      "screen": "trace-variant",
+      "text": "Back to the years",
+      "top": 784,
+      "bottom": 832,
+      "h": 48,
+      "w": 350,
+      "vh": 844,
+      "inLower45": true
+    }
+  ],
+  "targetsUnder44": [],
+  "overflow": [],
+  "responsive": [
+    {
+      "w": 320,
+      "f": "resp-hunt-w320.png",
+      "scrollW": 320
+    },
+    {
+      "w": 360,
+      "f": "resp-hunt-w360.png",
+      "scrollW": 360
+    },
+    {
+      "w": 390,
+      "f": "resp-hunt-w390.png",
+      "scrollW": 390
+    },
+    {
+      "w": 430,
+      "f": "resp-hunt-w430.png",
+      "scrollW": 430
+    },
+    {
+      "w": 768,
+      "f": "resp-hunt-w768.png",
+      "scrollW": 768
+    },
+    {
+      "w": 1024,
+      "f": "resp-hunt-w1024.png",
+      "scrollW": 1024
+    }
+  ],
+  "textScales": [
+    {
+      "s": 100,
+      "f": "text-hunt-100.png"
+    },
+    {
+      "s": 130,
+      "f": "text-hunt-130.png"
+    },
+    {
+      "s": 160,
+      "f": "text-hunt-160.png"
+    },
+    {
+      "s": 200,
+      "f": "text-hunt-200.png"
+    }
+  ],
+  "screenshots": [
+    "01-onboarding-1.png",
+    "02-onboarding-3.png",
+    "03-trail-start.png",
+    "04-dossier.png",
+    "05-hunt-empty.png",
+    "06-hunt-nothing-chosen.png",
+    "07-hunt-selected.png",
+    "08-lock-confirm.png",
+    "09-evidence.png",
+    "10-reveal-confirm.png",
+    "11-evidence-revealed.png",
+    "12-result-solved.png",
+    "13-save-failed.png",
+    "14-resume-trail.png",
+    "15-result-missed.png",
+    "16-world-entry.png",
+    "17-zero-insight.png",
+    "18-finish.png",
+    "19-world-all.png",
+    "20-archive.png",
+    "21-loading.png",
+    "22-offline.png",
+    "23-invalid-pack.png",
+    "24-held.png",
+    "25-settings.png",
+    "26-practice.png",
+    "27-trace-variant.png"
+  ]
+}

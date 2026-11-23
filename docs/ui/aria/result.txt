@@ -1,0 +1,28 @@
+- link "Skip to content":
+  - /url: "#main"
+- complementary "Notices": Draft pack, not publishable. Sample content for testing.
+- main:
+  - text: Case 1 of 10 Insight 6 of 8
+  - 'img "The day so far: 1 solved, 0 missed, 9 still to come. Now on case 1."'
+  - status:
+    - paragraph: Solved. You locked 1969.
+    - heading "1969" [level=1]
+    - paragraph: First flight of Concorde prototype 001 from Toulouse.
+  - paragraph: "The year of the first flight of prototype 001, not of supersonic flight (1 October 1969) and not of passenger service (1976). Event: first flight. Not the first supersonic flight, not certification, not scheduled service."
+  - group: + Why not the others
+  - paragraph:
+    - strong: Prototype 001, F-WTSS.
+    - text: Concorde 001 first flew from Toulouse on 2 March 1969 with André Turcat at the controls. It first went supersonic on 1 October 1969.
+  - paragraph:
+    - strong: Two bets, one month apart.
+    - text: The Boeing 747 first flew on 9 February 1969, three weeks before Concorde 001 (2 March 1969).
+  - group: + Sources (4)
+  - strong: Test tools
+  - button "Arm crash before next save"
+  - button "Arm crash after next save"
+  - paragraph:
+    - text: State digest
+    - code: 08e7270a3332bc
+  - button "The world around 1969"
+  - button "Next case"
+- status: Revealed. 2 Insight spent.

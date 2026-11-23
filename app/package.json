@@ -9,5 +9,8 @@
     "serve": "node scripts/serve.mjs",
     "demo": "node scripts/demo-run.mjs",
     "record": "node scripts/record-video.mjs"
+  },
+  "devDependencies": {
+    "axe-core": "^4.10.2"
   }
 }

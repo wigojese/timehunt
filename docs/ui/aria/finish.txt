@@ -1,0 +1,29 @@
+- link "Skip to content":
+  - /url: "#main"
+- complementary "Notices": Draft pack, not publishable. Sample content for testing.
+- main:
+  - text: Timehunt Insight 0 of 8
+  - 'img "The day so far: 9 solved, 1 missed, 0 still to come. Now on case 10."'
+  - heading "9 of 10 solved. 0 Insight left." [level=1]
+  - paragraph: 3 with no Insight, 6 with help, 1 missed.
+  - list:
+    - listitem: 2 CE The first count of a whole empire solved with help
+    - listitem: 1325 Who was on the road? solved with help
+    - listitem: 1446 Sounds for the people solved with help
+    - listitem: 1565 The way back across the Pacific solved with help
+    - listitem: 1799 A slab found by soldiers missed
+    - listitem: 1893 The first nation where women voted solved with help
+    - listitem: 1919 A research institute in Berlin solved
+    - listitem: 1969 A very fast prototype solved with help
+    - listitem: 1977 The last case that was not a laboratory's solved
+    - listitem: 1977 Greetings to the universe solved
+  - heading "Share (no answers)" [level=2]
+  - text: TIMEHUNT Daily Ten, pack daily-draft-001 ▣▣▣■□■▣▣▣■ 9/10 solved, 0 Insight left
+  - button "Copy"
+  - button "World Reveal (prototype)"
+- navigation "Main":
+  - button "Today"
+  - button "Practice"
+  - button "Archive"
+  - button "Settings"
+- status: Revealed. 1 Insight spent.

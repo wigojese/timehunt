@@ -46,3 +46,10 @@
 - Added `docs/art/strata2/` (three composition boards, grayscale twins, brand system board, contrast report, generator sources) and `docs/STAGE_6_ART_DIRECTION.md`.
 - Pack fix: case 6 `target.event` no longer says "Merca"; regenerated `docs/pack/`, `app/data/` and `app/fixtures/` (71 tests pass).
 - Recorded D-037 to D-042, F-025 to F-029, Q-45 to Q-48.
+
+## Stage 7 (2026-11-23)
+- Replaced the gray-box UI with the Option I mid-fidelity UI: `app/index.html`, `app/ui.css`, `app/src/ui/app.js`, `app/src/ui/strings.js` (pseudo-locale included). Engine and store unchanged apart from two read-only additions to `publicView` (`lens`, `freeCandidates`).
+- Added `app/scripts/e2e-ui.mjs` (78 assertions, axe-core on 33 screens, reach, tap targets, overflow, text sizes, pseudo-locale, keyboard) and `app/scripts/make-flows.mjs`. `axe-core` is a dev dependency (`npm install` once).
+- Retired `app/scripts/record-video.mjs`; updated `study-smoke.mjs` to the new DOM.
+- Added `docs/ui/` (flow sheets, screens, accessibility trees, e2e report) and `docs/STAGE_7_UI.md`.
+- Recorded D-043 to D-050, F-030 to F-034, Q-49 to Q-52.

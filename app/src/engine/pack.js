@@ -89,7 +89,7 @@ export function validatePack(raw, { allowDraft = false } = {}) {
     if (printsYear(c.question || '', t) || printsYear(c.title || '', t)) bad('LEAK_TITLE', P, 'title or question prints the target year');
     for (const x of c.context_free || []) if (printsYear(x.text, t)) bad('LEAK_CONTEXT', P, 'free context prints the target year');
     cases.push({
-      id: c.id, order: c.order, title: c.title, question: c.question, corridor: cor.slice(), target: t, c0,
+      id: c.id, order: c.order, title: c.title, lens: c.lens || '', question: c.question, corridor: cor.slice(), target: t, c0,
       free: free.filter(f => f.kind !== 'relation').map(f => ({ id: f.id, text: f.text, sourceIds: f.source_ids || [] })),
       relation: relation ? { id: relation.id, text: relation.text, sourceIds: relation.source_ids || [] } : null,
       context: (c.context_free || []).map(x => ({ text: x.text, sourceIds: x.sources || [] })),

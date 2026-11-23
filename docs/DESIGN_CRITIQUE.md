@@ -33,3 +33,6 @@ Plan: bone and oxide tokens from STRATA, Young Serif and Sofia Sans, left-aligne
 
 ## Stage 6 critique
 See `STAGE_6_ART_DIRECTION.md` section 6 for the rated table and nine named weaknesses. Short version: Option I scores 7.5 of 10 by my own reading; the atlas is weak in all three; nothing has been seen by anyone else or run on a device.
+
+## Stage 7 critique
+See `STAGE_7_UI.md` section 8. Short version: clear and calm, 8 out of 10 on next action and reach; 5 on visual character and 3 on delight; confirm friction and the three-view case are unproven; nothing has been run on a real device or with assistive technology.

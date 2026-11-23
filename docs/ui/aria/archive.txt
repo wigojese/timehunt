@@ -1,0 +1,15 @@
+- link "Skip to content":
+  - /url: "#main"
+- complementary "Notices": Draft pack, not publishable. Sample content for testing.
+- main:
+  - heading "Archive" [level=1]
+  - list:
+    - listitem:
+      - strong: daily-draft-001
+      - text: "9 of 10 solved, 0 Insight left Case 1: solved with help. Case 2: solved with help. Case 3: solved with help. Case 4: solved. Case 5: missed. Case 6: solved. Case 7: solved with help. Case 8: solved with help. Case 9: solved with help. Case 10: solved"
+- navigation "Main":
+  - button "Today"
+  - button "Practice"
+  - button "Archive"
+  - button "Settings"
+- status

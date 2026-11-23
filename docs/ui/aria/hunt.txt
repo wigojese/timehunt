@@ -1,0 +1,29 @@
+- link "Skip to content":
+  - /url: "#main"
+- complementary "Notices": Draft pack, not publishable. Sample content for testing.
+- main:
+  - text: Case 1 of 10 Insight 8 of 8
+  - 'img "The day so far: 0 solved, 0 missed, 10 still to come. Now on case 1."'
+  - heading "In which year did the first Concorde prototype make its first flight?" [level=1]
+  - group: + Re-read the 3 notes
+  - group "Choose a year. 3 are possible.":
+    - text: Choose a year. 3 are possible.
+    - radiogroup "Choose a year. 3 are possible.":
+      - text: 1970 to 1985 ruled out by free evidence
+      - radio "1969 Press to select"
+      - text: 1969 Press to select
+      - radio "1968 Press to select"
+      - text: 1968 Press to select
+      - radio "1967 Press to select"
+      - text: 1967 Press to select 1960 to 1966 ruled out by free evidence
+  - group: + Type a year instead
+  - alert
+  - strong: Test tools
+  - button "Arm crash before next save"
+  - button "Arm crash after next save"
+  - paragraph:
+    - text: State digest
+    - code: 1cfda9c27f0574
+  - button "Evidence"
+  - button "Lock"
+- status

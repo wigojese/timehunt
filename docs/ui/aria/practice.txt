@@ -1,0 +1,46 @@
+- link "Skip to content":
+  - /url: "#main"
+- complementary "Notices": Draft pack, not publishable. Sample content for testing.
+- main:
+  - heading "Practice" [level=1]
+  - paragraph: One case at a time, 2 Insight, saved separately. Practice never changes your day.
+  - text: Seed
+  - textbox "Seed": "1"
+  - list:
+    - listitem:
+      - text: A curious invention
+      - button "Practice case 1"
+    - listitem:
+      - text: A political turning point
+      - button "Practice case 2"
+    - listitem:
+      - text: Food and trade routes
+      - button "Practice case 3"
+    - listitem:
+      - text: Queer communities and institutions
+      - button "Practice case 4"
+    - listitem:
+      - text: "Archaeology: found, made, decoded"
+      - button "Practice case 5"
+    - listitem:
+      - text: Medicine and public health
+      - button "Practice case 6"
+    - listitem:
+      - text: Surprising coexistence
+      - button "Practice case 7"
+    - listitem:
+      - text: A moment outside the usual chronology
+      - button "Practice case 8"
+    - listitem:
+      - text: Numbers and records
+      - button "Practice case 9"
+    - listitem:
+      - text: The convergence
+      - button "Practice case 10"
+  - button "Pick one for me"
+- navigation "Main":
+  - button "Today"
+  - button "Practice"
+  - button "Archive"
+  - button "Settings"
+- status

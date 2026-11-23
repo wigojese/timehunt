@@ -1,0 +1,19 @@
+- link "Skip to content":
+  - /url: "#main"
+- complementary "Notices": Draft pack, not publishable. Sample content for testing.
+- main:
+  - text: Case 1 of 10 Insight 8 of 8
+  - 'img "The day so far: 0 solved, 0 missed, 10 still to come. Now on case 1."'
+  - paragraph: A curious invention
+  - heading "A very fast prototype" [level=1]
+  - paragraph: In which year did the first Concorde prototype make its first flight?
+  - heading "Notes" [level=2]
+  - list:
+    - listitem: By the end of that year, the Boeing 737 had already made its first flight (9 April 1967).
+    - listitem: By the end of that year, the Boeing 747 had not yet carried passengers (first passenger service 22 January 1970).
+    - listitem: It flew one calendar year after Apollo 8 first took people into lunar orbit (21 to 27 December 1968).
+    - listitem: Concorde entered scheduled passenger service on 21 January 1976.
+  - group: + Sources (3)
+  - paragraph: 3 possible years. Every clue is true on 31 December of the hidden year.
+  - button "Choose a year"
+- status

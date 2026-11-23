@@ -1,0 +1,10 @@
+- link "Skip to content":
+  - /url: "#main"
+- complementary "Notices": Draft pack, not publishable. Sample content for testing.
+- main:
+  - paragraph: Step 1 of 3
+  - heading "Read, then choose" [level=1]
+  - paragraph: Each case hides one year. Reading the evidence is free. It rules some years out.
+  - button "Next"
+  - button "Skip"
+- status

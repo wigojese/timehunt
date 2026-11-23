@@ -130,3 +130,26 @@ Status values: **FIXED** (user decision), **PROVISIONAL** (user-named but must b
 | F-027 | In grayscale the dark clue buttons outweighed the oxide primary. Outlining them fixed it. | `strata2-o1-gray.png` |
 | F-028 | Option II prints both anchor years as large numerals, which makes the deduction more visible and, given F-020, risks making the game easier. | `strata2-o2.png` |
 | F-029 | Case 6's `target.event` still named "Merca", a detail removed as unverified in Stage 3. Fixed in the pack. | `pack_data.py` |
+
+## Added in Stage 7 (2026-11-23)
+
+| ID | Date | Decision | Status | Source / approval | Alternatives | Reversal condition |
+|---|---|---|---|---|---|---|
+| D-043 | 2026-11-23 | Primary year selector: a native radio group styled as stacked 56 px layers, with labelled hatch bands for years ruled out by free evidence and stipple rows for years ruled out by a clue. | PROPOSED | `STAGE_7_UI.md` | Scrolling ruler; chips row | Candidate sets above about 8; player evidence |
+| D-044 | 2026-11-23 | Precision alternative: "Type a year instead" accepting `1920`, `2 CE`, `5 BCE`, with refusal messages. | PROPOSED | `app.js` | Stepper | Player evidence |
+| D-045 | 2026-11-23 | No gesture is required for any action. Every action is a button, radio, checkbox, disclosure or link. | PROPOSED | e2e keyboard run | Swipe and pinch shortcuts | Never for required actions |
+| D-046 | 2026-11-23 | Lock is always confirmed. Spending is confirmed by default and can be switched off in Settings. | PROPOSED | `STAGE_7_UI.md` | No confirmation | Stage 5 evidence on confirm fatigue |
+| D-047 | 2026-11-23 | Evidence notes are numbered serif text on the main path: dossier, hunt disclosure, evidence sheet. | PROPOSED | Stage 6 borrowing | Hide notes behind a sheet | Player evidence |
+| D-048 | 2026-11-23 | Lining figures are forced everywhere, tabular on years. Young Serif's old-style figures make "1900" read as "19oo". | PROPOSED | Rendered test | Old-style figures | A font change |
+| D-049 | 2026-11-23 | Stage 6 approved (`APPROVE STAGE 6`). Option I with Option III's notes is the working direction. | **FIXED** | User message | n/a | n/a |
+| D-050 | 2026-11-23 | The Stage 4 browser recorder is retired. `scripts/e2e-ui.mjs` replaces it and asserts the same behaviours on the new UI. The Stage 4 video and report remain as the record of that stage. | PROPOSED | Changelog | Keep both | n/a |
+
+## Findings added in Stage 7
+
+| ID | Finding | Evidence |
+|---|---|---|
+| F-030 | The Stage 6 boards used Young Serif's old-style figures, so years with zeros and scores of 0 read as letters. The app now forces lining figures. | Rendered test |
+| F-031 | The sticky action bar and a sticky bottom nav overlapped and hid a button. | axe target-size |
+| F-032 | At 200% text, fixed-size pegs and a single-row HUD overflowed to 477 px. | e2e overflow check |
+| F-033 | 78 end-to-end assertions pass; axe finds 1 issue on 33 screens (a list row obscured by the sticky bar at scroll top). | `docs/ui/e2e-report.json` |
+| F-034 | All 30 primary buttons sit in the bottom 45% of the viewport. This is a geometric proxy for one-hand reach, not a hand study. | `e2e-report.json` |

@@ -142,7 +142,7 @@ export function publicView(state, content, rules) {
         return { id: c.id, tier: c.tier, cost: c.cost, category: c.category, revealed: rev, ...(rev ? { text: c.text, sourceIds: c.sourceIds } : {}) };
       });
       const open = {
-        ...base, title: cc.title, question: cc.question, corridor: cc.corridor, candidates: cs.C, spent: cs.spent, trace: cs.trace,
+        ...base, title: cc.title, lens: cc.lens, question: cc.question, corridor: cc.corridor, candidates: cs.C, freeCandidates: cc.c0, spent: cs.spent, trace: cs.trace,
         free: cc.free, relation: rules.relationTier === 'free' ? cc.relation : null, context: cc.context, clues,
         lock: cs.lock,
       };

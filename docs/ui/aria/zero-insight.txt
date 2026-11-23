@@ -1,0 +1,36 @@
+- link "Skip to content":
+  - /url: "#main"
+- complementary "Notices": Draft pack, not publishable. Sample content for testing.
+- main:
+  - text: Case 10 of 10 Insight 0 of 8
+  - 'img "The day so far: 8 solved, 1 missed, 1 still to come. Now on case 10."'
+  - heading "Evidence" [level=1]
+  - paragraph: 3 possible years left
+  - heading "Notes" [level=2]
+  - list:
+    - listitem: By the end of that year, the Viking 1 lander had already touched down on Mars (20 July 1976).
+    - listitem: By the end of that year, Voyager 1 had not yet made its closest approach to Jupiter (5 March 1979).
+    - listitem: They launched one calendar year after Concorde began scheduled passenger service (21 January 1976).
+    - listitem: Voyager 2 launched first, on 20 August; Voyager 1 followed on 5 September.
+  - group: + Sources (3)
+  - heading "Extra clues" [level=2]
+  - status: You have no Insight left. Reading and locking are still free.
+  - list:
+    - listitem:
+      - strong: Medicine
+      - text: Nudge. Not enough Insight
+      - button "Reveal, 1 Insight" [disabled]
+    - listitem:
+      - strong: Medicine
+      - text: Deep clue. Not enough Insight
+      - button "Reveal, 2 Insight" [disabled]
+  - paragraph: A clue that tells you nothing new costs nothing.
+  - alert
+  - strong: Test tools
+  - button "Arm crash before next save"
+  - button "Arm crash after next save"
+  - paragraph:
+    - text: State digest
+    - code: 06d9ebad1e1b86
+  - button "Back to the years"
+- status: Revealed. 1 Insight spent.

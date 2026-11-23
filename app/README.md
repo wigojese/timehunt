@@ -1,6 +1,6 @@
-# TIMEHUNT Daily Ten, gray-box (Stage 4)
+# TIMEHUNT Daily Ten (Stage 7 UI)
 
-A working, resumable ten-case game with a deliberately plain interface. It has **no dependencies** and needs only Node 22 and a browser. The interface is throw-away; the engine, rules and store are written to be ported (see `docs/STAGE_4_GRAYBOX.md`).
+A working, resumable ten-case game with a mid-fidelity accessible UI (STRATA Option I). Runtime needs only Node 22 and a browser; `axe-core` is a dev dependency for the audit script. The UI is a prototype; the engine, rules and store are written to be ported (see `docs/STAGE_4_GRAYBOX.md`, `docs/STAGE_7_UI.md`).
 
 ## Run it
 ```bash
@@ -11,7 +11,8 @@ Open `http://127.0.0.1:5173/`. Useful switches:
 
 | URL | What it does |
 |---|---|
-| `/?debug=1` | Test tools: arm a crash before or after the next save, reload, show the state digest |
+| `/?debug=1` | Test tools: arm a crash before or after the next save, show the state digest |
+| `/?pseudo=1` | Pseudo-locale: every string 40% longer and accented, to test long and translated copy |
 | `/?variant=trace` | Adds Trace at 2 Insight (off in the C1 default) |
 | `/?variant=cap1` | At most 1 Insight spent per case (D-017 switch) |
 | `/?variant=deep` | Hides the relation clue from free evidence and sells it as a Deep clue (Q-32) |
@@ -24,16 +25,18 @@ Saved progress lives in this browser's local storage. To start over, clear site 
 ## Test it
 ```bash
 cd app
-npm test                        # 70 tests, about 3 seconds, no install needed
+npm test                        # 71 engine tests, about 3 seconds, no install needed
 node scripts/demo-run.mjs       # replays the scripted and seeded days, rewrites fixtures/scenario-*.json
-node scripts/record-video.mjs   # real-browser run, asserts 26 behaviours, writes docs/gray-box/ video and screenshots
+npm install                     # once, for axe-core
+node scripts/e2e-ui.mjs         # real-browser run: 78 assertions, axe on 33 screens, reach, text sizes, keyboard; writes docs/ui/
+node scripts/make-flows.mjs     # composes the annotated flow sheets from those screenshots
 ```
 `record-video.mjs` uses the Playwright that is pre-installed in the cloud environment at `/opt/node22/lib/node_modules/playwright`. Change that path on another machine.
 
 ## Layout
 ```
 app/
-  index.html, style.css          plain UI shell
+  index.html, ui.css             UI shell and styles (rem-based, so the Text size setting scales everything)
   data/daily-pack-draft.json     copy of docs/pack/daily-pack-draft.json (build_pack.py writes both; a test checks they match)
   src/engine/                    PURE: no DOM, no storage, no clock, no randomness
     rules.js                     the one canonical rules module (numbers and switches)
@@ -41,7 +44,7 @@ app/
     engine.js                    createExpedition, transition, publicView, score, replay
     years.js, canon.js, rng.js   year labels (no year zero), canonical JSON + hash, seeded PRNG
   src/store/                     controller: transactional Session, storage adapters, crash simulator
-  src/ui/main.js                 DOM rendering only
+  src/ui/app.js, strings.js      DOM rendering, routing, strings (with pseudo-locale)
   src/sim/scenarios.js           scripted day and seeded bot (tests and tools only)
   test/                          node:test suites
   fixtures/                      documented JSON fixtures (see fixtures/README.md)

@@ -45,3 +45,6 @@ Stage 5 is complete as a plan and simulation stage and awaits `APPROVE STAGE 5`.
 
 ## After Stage 6
 Stage 6 is complete and awaits `APPROVE STAGE 6`. Boards rebuild with `cd docs/art/strata2 && node build.mjs`. Recommended direction: Option I (Instrument) plus Option III's evidence notes (D-038, unapproved). No STRATA styling exists in `app/`; Stage 7 builds the real screens. Do not start Stage 7 without approval.
+
+## After Stage 7
+Stage 7 is complete and awaits `APPROVE STAGE 7`. Play it: `cd app && node scripts/serve.mjs`. Audit it: `npm install` once, then `node scripts/e2e-ui.mjs` and `node scripts/make-flows.mjs` (rewrites `docs/ui/`). Strings live in `app/src/ui/strings.js`; try `?pseudo=1`. Do not start Stage 8 without approval.

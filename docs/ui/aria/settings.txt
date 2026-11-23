@@ -1,0 +1,30 @@
+- link "Skip to content":
+  - /url: "#main"
+- complementary "Notices": Draft pack, not publishable. Sample content for testing.
+- main:
+  - heading "Settings" [level=1]
+  - group "Text size":
+    - text: Text size
+    - strong: Text size
+    - text: Standard
+    - radio "Standard" [checked]
+    - text: Large
+    - radio "Large"
+    - text: Larger
+    - radio "Larger"
+    - text: Largest
+    - radio "Largest"
+  - text: Reduce motion
+  - checkbox "Reduce motion"
+  - text: Ask before spending Insight
+  - checkbox "Ask before spending Insight" [checked]
+  - text: Language English
+  - paragraph: Other languages are not available yet.
+  - button "How it works"
+  - button "Delete saved games and settings"
+- navigation "Main":
+  - button "Today"
+  - button "Practice"
+  - button "Archive"
+  - button "Settings"
+- status

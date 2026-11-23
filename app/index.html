@@ -3,14 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>TIMEHUNT Daily Ten (gray-box)</title>
-<link rel="stylesheet" href="style.css">
+<title>Timehunt, The Daily Ten</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Sofia+Sans:wght@400;600;700&family=Sofia+Sans+Extra+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ui.css">
 </head>
 <body>
-<a class="skip" href="#main">Skip to the case</a>
-<div id="banner" role="note"></div>
-<main id="main" tabindex="-1"><p>Loading.</p></main>
-<div id="live" class="sr" aria-live="polite" role="status"></div>
-<script type="module" src="src/ui/main.js"></script>
+<a class="skip" href="#main">Skip to content</a>
+<aside id="banner" aria-label="Notices"></aside>
+<div id="app" class="app">
+  <main id="main" tabindex="-1" aria-busy="true"><h1 class="loading">Loading today's cases</h1></main>
+  <nav id="nav" aria-label="Main"></nav>
+</div>
+<dialog id="dlg" aria-labelledby="dlgT"></dialog>
+<div id="live" class="sr" role="status" aria-live="polite"></div>
+<script type="module" src="src/ui/app.js"></script>
 </body>
 </html>

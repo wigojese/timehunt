@@ -85,3 +85,11 @@ Urgency: **H** blocks the next stage, **M** needed within two stages, **L** late
 | Q-46 | The atlas is the weakest screen in all three options. Should Stage 8 or 9 own a real spatial atlas, and what should it show? | M | User | 8 or 9 |
 | Q-47 | Does Option I's stacked rows replace the zoomable ruler for good? It breaks if a case ever has more than about 8 candidates. | M | Stage 7 design and pack rules | 7 |
 | Q-48 | Real cleared images for reveals. Until they exist, reveals use drawings made from case data. Who sources and clears images? | M | User | 9 |
+
+## Added in Stage 7
+| ID | Question | Urg | How to settle | Owner stage |
+|---|---|---|---|---|
+| Q-49 | Is a confirmation on every Lock protective or tedious? Measure taps, time per case and cancel rate. | H | Stage 5 protocol on this UI | 5 follow-up |
+| Q-50 | Real devices: VoiceOver, TalkBack, 568 px height, one-hand observation. Who runs them? | H | User | 11 or earlier |
+| Q-51 | Which second language is first, and who translates? Georgian needs a tested font (Q-16). | M | User | 7 follow-up |
+| Q-52 | Should Practice hide case lenses to avoid spoiling topics? | L | Design | 8 |
