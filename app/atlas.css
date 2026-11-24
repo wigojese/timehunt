@@ -11,13 +11,13 @@
 :root{--paper:#F7F0DE;--paper2:#EFE2C9;--sand:#D6BE91;--ink:#252B28;--forest:#274B41;--green:#4B8068;--sage:#A7C3A1;--teal:#4F9298;--sky:#A7C6CF;--gold:#E1A52C;--rust:#A94A28;--cream:#FFF9EC;
 --bone:#F7F0DE;--bone-soot:#EFE2C9;--muted:#4F5750;--rule:#7A7060;--faint:#D6BE91;--oxide:#A94A28;--moss:#274B41;
 --serif:Fraunces,'Iowan Old Style',Georgia,serif;--sans:'Source Sans 3','Segoe UI',system-ui,sans-serif;--cond:Fraunces,Georgia,serif;--brand:Archivo,'Arial Narrow',Impact,sans-serif;
---grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .34 0 0 0 0 .2 0 0 0 .11 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+--grain:url(assets/textures/paper-grain.webp);
 --contour:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='160'%3E%3Cg fill='none' stroke='%23A7C3A1' stroke-width='1.6' opacity='.55'%3E%3Cpath d='M-10 30c40-24 80 20 120-4s80-14 120 6'/%3E%3Cpath d='M-10 70c40-24 80 20 120-4s80-14 120 6'/%3E%3Cpath d='M-10 110c40-24 80 20 120-4s80-14 120 6'/%3E%3Cpath d='M-10 150c40-24 80 20 120-4s80-14 120 6'/%3E%3C/g%3E%3C/svg%3E");
 --r:1.125rem}
 body{font-family:var(--sans);color:var(--ink);background:var(--paper) var(--grain);font-size:1.0625rem}
 @media (min-width:640px){body{background:#C9B78F var(--grain)}.app{box-shadow:0 0 0 3px var(--ink),0 1.5rem 3rem rgba(37,43,40,.25);border-radius:0}}
 .app{background:var(--paper) var(--grain)}
-.app[data-theme="map"]{background:var(--contour) 0 0/220px 160px,var(--green)}
+.app[data-theme="map"]{background:url(assets/textures/case-frame-ornaments.webp) center top/100% auto no-repeat fixed,url(assets/textures/map-green.webp) 0 0/512px 512px,var(--green)}
 .app[data-theme="map"] main{padding:0 .75rem .75rem}
 h1,h2,.q,.lens{font-family:var(--serif)}
 h1{font-weight:600;font-size:clamp(1.75rem,7.4vw,2.25rem);line-height:1.08;letter-spacing:-.01em}
@@ -180,3 +180,9 @@ dialog{border:.1875rem solid var(--ink);border-radius:var(--r) var(--r) 0 0;back
 .trace-guide{width:6rem;margin:.5rem auto 0}
 .rest-guide{width:12rem;margin:1rem auto}
 .howstep .picture .guide{width:9.5rem}
+
+/* banners: a skyline strip above a colour wash; the ribbon sits in the wash. The strip's rounded corners are cropped by a slight zoom. */
+.banner>img{transform:scale(1.045);object-position:center center}
+.banner.aqueduct>img{object-position:left center;transform:none}
+.banner:not(.aqueduct) .ribbon{left:50%;top:76%}
+.stipple{background:url(assets/textures/stipple.webp) 0 0/256px,#C3D3B8}

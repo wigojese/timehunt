@@ -98,7 +98,9 @@ const POSE = { master: 'guide-lantern-map', idle: 'guide-idle', clue: 'guide-clu
 const guide = (pose, cls = '') => `<div class="guide ${cls}" aria-hidden="true"><img src="assets/characters/${POSE[pose] || POSE.master}.webp?v=3" width="520" height="650" alt="" decoding="async"></div>`;
 const scene = (pose, cls = '') => `<div class="scene ${cls}" aria-hidden="true"><img class="scene-img" src="assets/scenes/home-hero.webp?v=3" width="820" height="1121" alt="" decoding="async">${guide(pose, 'scene-guide')}</div>`;
 const wordmark = () => `<p class="wordmark"><span class="hg" aria-hidden="true">${hourglass()}</span><span class="wm">${t('appName')}</span><span class="tag">${t('tagline')}</span></p>`;
-const banner = label => `<div class="banner" aria-hidden="true"><img src="assets/scenes/banner-aqueduct.webp?v=3" width="1170" height="450" alt="" decoding="async"><span class="ribbon">${label}</span></div>`;
+// Decorative archetypes only (D-086): the landscape is chosen per case for variety, not as evidence of where or how an event happened.
+const BANNER = { 'case-01': 'aqueduct', 'case-02': 'mountain', 'case-03': 'coast', 'case-04': 'city', 'case-05': 'desert', 'case-06': 'desert', 'case-07': 'mountain', 'case-08': 'mountain', 'case-09': 'city', 'case-10': 'aqueduct' };
+const banner = (label, caseId) => { const k = BANNER[caseId] || 'aqueduct'; return `<div class="banner ${k}" aria-hidden="true"><img src="assets/scenes/banner-${k}.webp?v=4" width="1170" height="450" alt="" decoding="async"><span class="ribbon">${label}</span></div>`; };
 const bar = (html, two = false) => `<div class="bar ${two ? 'two' : ''}">${html}</div>`;
 const btn = (action, label, cls = '', extra = '') => `<button type="button" class="btn ${cls}" data-action="${action}" ${extra}>${label}</button>`;
 function mainNav(active) {
@@ -309,7 +311,7 @@ function render(opts = {}) {
   if (onPlay) {
     const v = view(), c = v.cases && v.cases[v.cursor];
     const lab = v.mode === 'practice' ? 'Practice' : t('caseOf', { n: c.order });
-    html = routeKey === 'result' ? `<div class="paper" style="margin-top:.75rem">${html}</div>` : `${banner(lab)}<div class="paper">${html}</div>`;
+    html = routeKey === 'result' ? `<div class="paper" style="margin-top:.75rem">${html}</div>` : `${banner(lab, c.id)}<div class="paper">${html}</div>`;
   }
   $('#app').dataset.theme = onPlay ? 'map' : 'paper';
   main.innerHTML = html;

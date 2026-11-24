@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Case banners</title>
+<link rel="stylesheet" href="../ui.css"><link rel="stylesheet" href="../atlas.css">
+<style>body{padding:.75rem}.app{display:block;min-height:0;background:var(--green) url(../assets/textures/map-green.webp) 0 0/512px}.banner{margin:.5rem 0}</style></head>
+<body><div class="app" data-theme="map" id="a"></div>
+<script type="module">
+const kinds=['aqueduct','mountain','coast','city','desert'];
+document.getElementById('a').innerHTML=kinds.map((k,i)=>`<div class="banner ${k}"><img src="../assets/scenes/banner-${k}.webp" width="1170" height="450" alt=""><span class="ribbon">Case ${i+1} of 10</span></div>`).join('');
+</script></body></html>

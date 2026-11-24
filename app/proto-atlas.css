@@ -7,7 +7,7 @@
 @font-face{font-family:'Source Sans 3';font-weight:700;font-display:swap;src:url(fonts/source-sans-3-latin-700-normal.woff2) format('woff2')}
 :root{--bone:#F7F0DE;--paper:#FFF9EC;--ink:#252B28;--muted:#4F5750;--rule:#7A7060;--faint:#D6BE91;--oxide:#A94A28;--moss:#274B41;--soot:#1B3A4F;--bs:#FFF9EC;--brass:#E1A52C;--green:#4B8068;
 --serif:Fraunces,'Iowan Old Style',Georgia,serif;--sans:'Source Sans 3','Segoe UI',system-ui,sans-serif;--cond:Fraunces,Georgia,serif;--r:1.125rem;
---grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .34 0 0 0 0 .2 0 0 0 .11 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+--grain:url(assets/textures/paper-grain.webp)}
 body{background:var(--bone) var(--grain);font-family:var(--sans)}
 h1,h2,.read{font-family:var(--serif);font-weight:600}
 #note{background:#F6E4B0;border-bottom:.125rem solid var(--ink)}

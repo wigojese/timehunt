@@ -10,7 +10,7 @@ The squirrel you supplied (`app/assets/characters/guide-master.webp`) is the **s
 **Delivery:** drop files in `app/assets/<folder>/` with the names below, at least the stated width, PNG or WebP. Tell me when they are in and I wire them up. Keep a note of the tool, date and prompt for each file (rights record, see below).
 
 ## Status (2026-11-24)
-Received and in use: all eight poses, `home-hero`, `banner-aqueduct`. Still needed: `banner-city`, `banner-coast`, `banner-desert`, `banner-mountain` (each case needs its own landscape; every case uses the aqueduct for now), `reveal-cloud-edge`, the three textures, and a map-green background. The case-screen banner already contains the squirrel, so new banners should leave the left fifth for it or be drawn without it (tell me which).
+Received and in use: eight poses, `home-hero`, `banner-aqueduct`, `banner-city`, `banner-coast`, `banner-desert`, `banner-mountain`, `reveal-cloud-edge` (installed, not yet placed), `paper-grain`, `map-green`, `stipple`, `case-frame-ornaments`. Still needed for the full set: a banner or scene per remaining place type if cases need them (each case currently maps to one of five landscapes, see D-086), and the research-backed reveal vignettes. Better quality would come from separate full-height banner compositions at 2340 x 900 instead of crops of a board.
 
 ## 1. Character poses (same squirrel, same scarf, satchel, tail, eye) — `app/assets/characters/`
 Size: 1080 x 1350. Use the master as reference and say "same character, new pose".
