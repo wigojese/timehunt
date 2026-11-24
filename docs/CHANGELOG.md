@@ -77,3 +77,7 @@
 - New visual layer `app/atlas.css`, art kit `app/src/ui/art.js`, self-hosted fonts `app/fonts/`, pose sheet `app/atlas/poses.html`.
 - Screens restyled: welcome, how it works, home, dossier, hunt, evidence, result. Settings gains a guide toggle.
 - Screenshots and contact sheet in `docs/atlas/`. D-077 to D-080, Q-67 to Q-69.
+
+## Supplied art installed (2026-11-24)
+- `design/art-originals/` (archive), `app/assets/characters`, `app/assets/scenes`; UI uses real illustrations for the guide poses, home hero and case banner.
+- Motion and Reveal restyled via `app/proto-atlas.css`. Screenshots in `docs/atlas/` and `docs/atlas/protos/`. D-084, D-085.

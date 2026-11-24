@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-23",
+  "generated": "2026-11-24",
   "passed": 72,
   "total": 72,
   "checks": [
@@ -366,15 +366,7 @@
   ],
   "axe": {
     "screens": 19,
-    "violations": [
-      {
-        "screen": "lanes",
-        "id": "target-size",
-        "impact": "serious",
-        "target": ".on",
-        "why": "Fix any of the following: Target has insufficient size because it is partially obscured (smallest space is 350px by 12.5px, should be at least 24px by 24px) Target has insufficient"
-      }
-    ]
+    "violations": []
   },
   "overflow": [],
   "screenshots": [

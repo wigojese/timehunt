@@ -7,7 +7,7 @@ import { rng } from '../engine/rng.js';
 import { Session } from '../store/session.js';
 import { browserStorage, FaultyStorage } from '../store/storage.js';
 import { t, setPseudo } from './strings.js';
-import { squirrel, hourglass, hero, landscape, sunburst, pin, icons, foliage } from './art.js';
+import { hourglass, sunburst, pin, icons } from './art.js';
 
 const $ = s => document.querySelector(s);
 const main = $('#main'), nav = $('#nav'), dlg = $('#dlg');
@@ -93,10 +93,12 @@ function strip(v) {
   const summary = t('stripSummary', { solved: n('solved_clean') + n('solved_assisted'), missed: n('missed'), todo: v.cases.length - n('solved_clean') - n('solved_assisted') - n('missed'), now: v.cursor + 1 });
   return `<div role="img" aria-label="${summary}"><ol class="strip" aria-hidden="true">${v.cases.map((c, i) => `<li ${i === v.cursor && v.status === 'active' ? 'class="now"' : ''}><span class="seg ${stKey(c.status)}"></span></li>`).join('')}</ol></div>`;
 }
-// The guide is the user's illustrated squirrel (assets/characters). One pose for now; art.js squirrel() remains as the fallback for other poses until more are supplied.
-const guide = (pose, cls = '', flip = false) => `<div class="guide ${cls}" aria-hidden="true"><img src="assets/characters/guide-lantern-map.webp?v=2" width="720" height="900" alt="" decoding="async"></div>`;
+// The guide and scenes are the supplied illustrations (assets/characters, assets/scenes). Poses: master, idle, clue, discovery, uncertain, earlier, later, rest, back.
+const POSE = { master: 'guide-lantern-map', idle: 'guide-idle', clue: 'guide-clue', discovery: 'guide-discovery', uncertain: 'guide-uncertain', earlier: 'guide-earlier', later: 'guide-later', rest: 'guide-rest', back: 'guide-back' };
+const guide = (pose, cls = '') => `<div class="guide ${cls}" aria-hidden="true"><img src="assets/characters/${POSE[pose] || POSE.master}.webp?v=3" width="520" height="650" alt="" decoding="async"></div>`;
+const scene = (pose, cls = '') => `<div class="scene ${cls}" aria-hidden="true"><img class="scene-img" src="assets/scenes/home-hero.webp?v=3" width="820" height="1121" alt="" decoding="async">${guide(pose, 'scene-guide')}</div>`;
 const wordmark = () => `<p class="wordmark"><span class="hg" aria-hidden="true">${hourglass()}</span><span class="wm">${t('appName')}</span><span class="tag">${t('tagline')}</span></p>`;
-const banner = (label, pose = 'idle') => `<div class="banner" aria-hidden="true">${landscape()}<span class="ribbon">${label}</span>${guide(pose)}</div>`;
+const banner = label => `<div class="banner" aria-hidden="true"><img src="assets/scenes/banner-aqueduct.webp?v=3" width="1170" height="450" alt="" decoding="async"><span class="ribbon">${label}</span></div>`;
 const bar = (html, two = false) => `<div class="bar ${two ? 'two' : ''}">${html}</div>`;
 const btn = (action, label, cls = '', extra = '') => `<button type="button" class="btn ${cls}" data-action="${action}" ${extra}>${label}</button>`;
 function mainNav(active) {
@@ -130,9 +132,9 @@ function renderOnboarding() {
   const n = ui.onbStep, k = ['onb1', 'onb2', 'onb3'][n - 1];
   noNav();
   const nextBtns = bar(`${n < 3 ? btn('onb-next', t('next'), 'primary') : btn('onb-done', t('done'), 'primary')}${n < 3 ? btn('onb-done', t('skip')) : ''}`);
-  if (n === 1) return `${wordmark()}<div class="welcome poster">${guide('lantern', 'poster-guide')}</div>
+  if (n === 1) return `${wordmark()}${scene('discovery', 'welcome')}
     <p class="note" style="text-align:center">${t('stepOf', { n })}</p><h1 id="h" tabindex="-1" style="text-align:center">${t(k + 't')}</h1><div class="bubble">${t(k)}</div><div class="spacer"></div>${nextBtns}`;
-  const picture = n === 2 ? `<span class="pegs">${Array.from({ length: 8 }, () => '<span class="peg"></span>').join('')}</span>${guide('think')}` : `${guide('lantern')}${pin()}`;
+  const picture = n === 2 ? `<span class="pegs">${Array.from({ length: 8 }, () => '<span class="peg"></span>').join('')}</span>${guide('clue')}` : `${guide('back')}`;
   return `<div class="paper" style="margin-top:1rem"><p class="note" style="margin-top:.5rem">${t('stepOf', { n })}</p><h1 id="h" tabindex="-1">${t(k + 't')}</h1>
     <div class="howstep"><span class="n" aria-hidden="true">${n}</span><span class="picture" aria-hidden="true">${picture}</span><p>${t(k)}</p></div><div class="spacer"></div>${nextBtns}</div>`;
 }
@@ -145,7 +147,7 @@ function renderTrail() {
   const started = v.cases.some(x => x.status !== 'not_started' && x.status !== 'active') || (c && c.spent > 0);
   const label = done ? t('seeDay') : started || v.cursor > 0 ? t('resumeCase', { n: v.cursor + 1 }) : t('startCase', { n: 1 });
   const rows = v.cases.map((x, i) => `<li class="${i === v.cursor && !done ? 'cur' : ''}">${pin(i === v.cursor && !done ? '#E1A52C' : '#A94A28')}<span class="card"><span><span class="mk ${stKey(x.status)}" aria-hidden="true"></span>${t('caseOf', { n: i + 1 }).replace(' of 10', '')}</span><span class="note">${stWord(x.status)}</span></span></li>`).join('');
-  return `${wordmark()}<div class="homehero poster">${guide('lantern', 'poster-guide')}</div>${hud(v, t('trailTitle'))}${strip(v)}
+  return `${wordmark()}${scene('idle', 'homehero')}${hud(v, t('trailTitle'))}${strip(v)}
   <h1 id="h" tabindex="-1" class="sr">${t('trailTitle')}</h1><p>${t('trailLead')}</p>
   <ol class="path">${rows}</ol>
   <p class="note" style="margin-top:.75rem">${t('conv')}</p>
@@ -198,7 +200,7 @@ function renderEvidence(v, c) {
     const poor = cl.cost > v.insight;
     return `<li class="clue"><span><strong>${esc(cl.category)}</strong><br><span class="note">${tier}${poor ? '. ' + t('notEnough') : ''}</span></span>${btn('reveal', t('reveal', { cost: cl.cost }), '', `data-clue="${esc(cl.id)}" ${poor ? 'disabled' : ''}`)}</li>`;
   }).join('');
-  const trace = v.rules.trace.enabled ? `<h2 style="font:700 1.0625rem var(--sans)">${t('traceTitle')}</h2><div class="ctl"><label class="l" for="trsel">${t('traceLabel')}</label><select id="trsel">${c.freeCandidates.map(y => `<option value="${y}">${yearLabel(y)}</option>`).join('')}</select></div>${btn('trace', t('traceBtn', { cost: v.rules.trace.cost }), '', v.rules.trace.cost > v.insight ? 'disabled' : '')}${c.trace.length ? `<p>${c.trace.map(x => t('traceResult', { year: yearLabel(x.year), r: t({ earlier: 'rEarlier', later: 'rLater', same: 'rSame' }[x.result]) })).join('; ')}</p>` : ''}` : '';
+  const trace = v.rules.trace.enabled ? `<h2 style="font:700 1.0625rem var(--sans)">${t('traceTitle')}</h2><div class="ctl"><label class="l" for="trsel">${t('traceLabel')}</label><select id="trsel">${c.freeCandidates.map(y => `<option value="${y}">${yearLabel(y)}</option>`).join('')}</select></div>${btn('trace', t('traceBtn', { cost: v.rules.trace.cost }), '', v.rules.trace.cost > v.insight ? 'disabled' : '')}${c.trace.length ? `<p>${c.trace.map(x => t('traceResult', { year: yearLabel(x.year), r: t({ earlier: 'rEarlier', later: 'rLater', same: 'rSame' }[x.result]) })).join('; ')}</p>${c.trace[c.trace.length - 1].result === 'same' ? '' : guide(c.trace[c.trace.length - 1].result, 'trace-guide')}` : ''}` : '';
   return `${caseHead(v, c)}<h1 id="h" tabindex="-1">${t('evidenceTitle')}</h1><p class="note">${t('yearsLeft', { n: c.candidates.length })}</p>
   <h2 style="font:700 1.0625rem var(--sans)">${t('notes')}</h2>${notesHtml(c)}${freeSrc(c)}
   <h2 style="font:700 1.0625rem var(--sans)">${t('extraClues')}</h2>
@@ -214,7 +216,7 @@ function renderResult(v, c) {
   const srcs = [...c.free.flatMap(f => f.sourceIds), ...c.clues.flatMap(x => x.sourceIds || []), ...(c.relation ? c.relation.sourceIds : []), ...r.reveal.flatMap(x => x.sourceIds)];
   const nextLabel = practiceMode ? t('navPractice') : last ? t('seeDay') : t('nextCase');
   return `${caseHead(v, c)}<div class="result ${hit ? 'hit' : 'miss'}" role="status"><p><span class="mk ${hit ? (c.status === 'solved_clean' ? 'clean' : 'assisted') : 'missed'}" aria-hidden="true"></span>&nbsp; ${cap(hit ? t('stSolved') : t('stMissed'))}. ${t('youLocked', { year: yearLabel(c.lock.year) })}</p>
-  <span class="yearwrap">${hit ? sunburst() : ''}<h1 id="h" tabindex="-1" class="big">${yearLabel(r.answer)}</h1></span><p>${esc(r.event)}.</p>${guide(hit ? 'lantern' : 'think')}</div>
+  <span class="yearwrap">${hit ? sunburst() : ''}<h1 id="h" tabindex="-1" class="big">${yearLabel(r.answer)}</h1></span><p>${esc(r.event)}.</p>${guide(hit ? 'discovery' : 'uncertain')}</div>
   ${hit ? '' : `<p style="margin-top:.75rem">${esc(r.missExplanation)}</p><p class="note">${t('missNote')}</p>`}
   <p class="note" style="margin-top:.75rem">${esc(r.definition)} ${esc(r.discoveryVsEvent)}</p>
   ${proof ? `<details><summary>${t('whyNot')}</summary><ul style="padding-left:1.25rem">${proof}</ul></details>` : ''}
@@ -254,7 +256,7 @@ function renderArchive() {
   mainNav('archive');
   const list = archive();
   const rows = list.map(a => `<li class="row" style="display:block"><strong>${esc(a.dailyId)}</strong><br>${t('archiveRow', { solved: a.score.solved, total: a.marks.length, left: a.score.insightLeft })}<br><span aria-hidden="true">${a.marks.map(m => `<span class="mk ${stKey(m)}"></span>`).join(' ')}</span><span class="sr">${a.marks.map((m, i) => `Case ${i + 1}: ${stWord(m)}`).join('. ')}</span></li>`).join('');
-  return `<h1 id="h" tabindex="-1">${t('archiveTitle')}</h1>${list.length ? `<ul class="sheet" style="list-style:none">${rows}</ul>` : `<p>${t('archiveEmpty')}</p>`}`;
+  return `<h1 id="h" tabindex="-1">${t('archiveTitle')}</h1>${list.length ? `<ul class="sheet" style="list-style:none">${rows}</ul>` : `<p>${t('archiveEmpty')}</p>${guide('rest', 'rest-guide')}`}`;
 }
 function renderSettings() {
   mainNav('settings');
@@ -307,8 +309,7 @@ function render(opts = {}) {
   if (onPlay) {
     const v = view(), c = v.cases && v.cases[v.cursor];
     const lab = v.mode === 'practice' ? 'Practice' : t('caseOf', { n: c.order });
-    const pose = routeKey === 'evidence' ? 'map' : 'idle';
-    html = routeKey === 'result' ? `<div class="paper" style="margin-top:.75rem">${html}</div>` : `${banner(lab, pose)}<div class="paper">${html}</div>`;
+    html = routeKey === 'result' ? `<div class="paper" style="margin-top:.75rem">${html}</div>` : `${banner(lab)}<div class="paper">${html}</div>`;
   }
   $('#app').dataset.theme = onPlay ? 'map' : 'paper';
   main.innerHTML = html;

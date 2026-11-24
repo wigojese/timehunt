@@ -1,0 +1,36 @@
+/* Temporal Atlas look for the Motion and Reveal prototypes. Loaded after motion.css / reveal.css: it re-points their tokens and restyles shared components. */
+@font-face{font-family:Fraunces;font-style:normal;font-weight:600;font-display:swap;src:url(fonts/fraunces-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:Fraunces;font-style:italic;font-weight:600;font-display:swap;src:url(fonts/fraunces-latin-600-italic.woff2) format('woff2')}
+@font-face{font-family:Fraunces;font-style:italic;font-weight:800;font-display:swap;src:url(fonts/fraunces-latin-800-italic.woff2) format('woff2')}
+@font-face{font-family:'Source Sans 3';font-weight:400;font-display:swap;src:url(fonts/source-sans-3-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Source Sans 3';font-weight:600;font-display:swap;src:url(fonts/source-sans-3-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Source Sans 3';font-weight:700;font-display:swap;src:url(fonts/source-sans-3-latin-700-normal.woff2) format('woff2')}
+:root{--bone:#F7F0DE;--paper:#FFF9EC;--ink:#252B28;--muted:#4F5750;--rule:#7A7060;--faint:#D6BE91;--oxide:#A94A28;--moss:#274B41;--soot:#1B3A4F;--bs:#FFF9EC;--brass:#E1A52C;--green:#4B8068;
+--serif:Fraunces,'Iowan Old Style',Georgia,serif;--sans:'Source Sans 3','Segoe UI',system-ui,sans-serif;--cond:Fraunces,Georgia,serif;--r:1.125rem;
+--grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .34 0 0 0 0 .2 0 0 0 .11 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+body{background:var(--bone) var(--grain);font-family:var(--sans)}
+h1,h2,.read{font-family:var(--serif);font-weight:600}
+#note{background:#F6E4B0;border-bottom:.125rem solid var(--ink)}
+.atlas-head{position:relative;max-width:34rem;margin:.75rem auto 0;aspect-ratio:2.6/1;border:.125rem solid var(--ink);border-radius:var(--r);overflow:hidden;background:#E9DFBE;box-shadow:.1875rem .1875rem 0 rgba(37,43,40,.3)}
+.atlas-head img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:left center}
+.atlas-head .ribbon{position:absolute;left:62%;top:50%;transform:translate(-50%,-50%);white-space:nowrap;font:italic 600 1.2rem/1.1 var(--serif);background:var(--paper);border:.125rem solid var(--ink);padding:.4rem 1.2rem;border-radius:.2rem;box-shadow:.15rem .15rem 0 rgba(37,43,40,.35)}
+@media (max-width:34rem){.atlas-head{margin-left:.75rem;margin-right:.75rem}}
+:focus-visible{outline:.1875rem solid var(--ink);outline-offset:.1875rem;box-shadow:0 0 0 .3125rem var(--brass)}
+.btn{border-radius:var(--r);background:var(--paper);box-shadow:0 .2rem 0 var(--ink);font:italic 600 1.05rem/1.1 var(--serif)}
+.btn.primary{background:var(--oxide);border-color:var(--ink);color:#FFF9EC;background-image:linear-gradient(rgba(255,255,255,.12),transparent 55%);text-shadow:0 .06rem 0 rgba(0,0,0,.25)}
+.btn:active:not(:disabled){transform:translateY(.15rem);box-shadow:0 .05rem 0 var(--ink)}
+.btn:disabled{box-shadow:none;background:#EFE2C9;color:#5b5446;border-color:#5b5446;font-style:normal}
+.btn[aria-pressed="true"],.btn[aria-checked="true"],.btn.on{background:var(--moss);color:#FFF9EC}
+.card,.hubcard,.relation,.stone,.bigyears div,.svgc,.band,.rows,.rowstat{border-radius:.9rem}
+.card,.hubcard,.relation,.stone{box-shadow:.1875rem .1875rem 0 rgba(37,43,40,.25);background:var(--paper)}
+.hubcard .yr,.bigyears div{font-family:var(--serif);font-weight:600}
+.hubcard{border-width:.125rem}
+.band{background:var(--paper)}.band.sel{box-shadow:inset .5rem 0 0 var(--brass)}
+.steps li{border-radius:.5rem}.steps li.now{background:var(--brass);border-color:var(--ink)}.steps li.done{background:var(--green)}
+.dock{background:linear-gradient(transparent,var(--bone) .6rem)}
+.entry{background:radial-gradient(circle at 50% 35%,#2D6C86,#1B3A4F 70%);color:var(--bs)}
+.entry .y{font-family:var(--serif);font-style:italic;font-weight:800}
+.tag{border-radius:1rem}
+details.src,.opts>summary{border-radius:.8rem}
+.lens,.after{font-family:var(--serif)}
+.hubcard{grid-template-columns:6.5rem 1fr}.hubcard .yr{font-size:2rem;white-space:nowrap}

@@ -31,6 +31,6 @@
   - button "Arm crash after next save"
   - paragraph:
     - text: State digest
-    - code: 1968282014822d
+    - code: 092e26b2c94288
   - button "Back to the years"
 - status: Revealed. 1 Insight spent.
