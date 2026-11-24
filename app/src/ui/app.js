@@ -423,9 +423,24 @@ function setBanner() {
   if (!persistent) parts.push(t('unsaved'));
   if (!navigator.onLine) parts.push(t('offline'));
   if (ui.resumeNote) parts.push(ui.resumeNote);
+  if (ui.updateNote) parts.push(ui.updateNote);
   $('#banner').textContent = parts.join(' ');
 }
 window.addEventListener('online', setBanner); window.addEventListener('offline', setBanner);
+
+// Offline support (ADR-001): register the service worker on real hosts, or on localhost only with ?sw=1 so development and tests are not served stale files.
+// A new version waits until the app is closed; the banner says so and never interrupts a case. ?nosw removes any worker.
+function registerWorker() {
+  if (!('serviceWorker' in navigator)) return;
+  const local = ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname);
+  if (params.has('nosw') || (local && !params.has('sw'))) { navigator.serviceWorker.getRegistrations().then(rs => rs.forEach(r => r.unregister())).catch(() => {}); return; }
+  navigator.serviceWorker.register('sw.js').then(reg => {
+    reg.addEventListener('updatefound', () => {
+      const w = reg.installing;
+      if (w) w.addEventListener('statechange', () => { if (w.state === 'installed' && navigator.serviceWorker.controller) { ui.updateNote = t('updateReady'); setBanner(); } });
+    });
+  }).catch(() => { /* no worker: the app still works online */ });
+}
 
 async function boot() {
   const bs = browserStorage(); storage = bs.storage; persistent = bs.persistent;
@@ -447,6 +462,7 @@ async function boot() {
   if (!daily.state) { ui.heldStatus = status; ui.route = 'held'; setBanner(); return render(); }
   if (status === 'resumed' && daily.state.status === 'active' && (daily.state.cursor > 0 || daily.state.cases[0].spent > 0 || daily.state.cases[0].status !== 'active')) ui.resumeNote = t('resumeBanner', { n: daily.state.cursor + 1 });
   setBanner();
+  registerWorker();
   ui.route = settings.onboarded ? 'trail' : 'onboarding';
   const h = location.hash.replace('#/', '').split('/')[0];
   if (settings.onboarded && ['practice', 'archive', 'settings'].includes(h)) ui.route = h;

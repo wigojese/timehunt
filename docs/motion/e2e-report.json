@@ -24,7 +24,7 @@
     {
       "name": "a one-finger swipe on the path surface scrolls the page (touch-action pan-y)",
       "pass": true,
-      "detail": "scrollY 617"
+      "detail": "scrollY 620"
     },
     {
       "name": "Next case button moves the path one mark at a time (non-scroll path)",
@@ -244,12 +244,12 @@
     {
       "name": "reduced motion: zoom, branch and lock arrive at their end state at once",
       "pass": true,
-      "detail": "{\"zoomSettleMs\":34,\"branchAt30ms\":1,\"branchEnd\":1,\"lockAt40ms\":1,\"lockEnd\":1,\"verdictShown\":true,\"answerYear\":\"1799\"}"
+      "detail": "{\"zoomSettleMs\":47,\"branchAt30ms\":1,\"branchEnd\":1,\"lockAt40ms\":1,\"lockEnd\":1,\"verdictShown\":true,\"answerYear\":\"1799\"}"
     },
     {
       "name": "full motion: the same transitions take visible time",
       "pass": true,
-      "detail": "{\"zoomSettleMs\":436,\"branchAt30ms\":0.1,\"branchEnd\":1,\"lockAt40ms\":0.05,\"lockEnd\":1,\"verdictShown\":true,\"answerYear\":\"1799\"}"
+      "detail": "{\"zoomSettleMs\":419,\"branchAt30ms\":0.1,\"branchEnd\":1,\"lockAt40ms\":0.05,\"lockEnd\":1,\"verdictShown\":true,\"answerYear\":\"1799\"}"
     },
     {
       "name": "reduced motion loses no information: verdict and answer year still shown",
@@ -299,7 +299,7 @@
     {
       "name": "performance @4x CPU: input-to-frame 95th percentile under 50 ms",
       "pass": true,
-      "detail": "{\"n\":400,\"p50\":30.9,\"p95\":31.9,\"max\":32.5}"
+      "detail": "{\"n\":400,\"p50\":31,\"p95\":31.9,\"max\":32.4}"
     }
   ],
   "passed": 60,
@@ -307,7 +307,7 @@
   "axe": [],
   "reducedMotion": {
     "full": {
-      "zoomSettleMs": 436,
+      "zoomSettleMs": 419,
       "branchAt30ms": 0.1,
       "branchEnd": 1,
       "lockAt40ms": 0.05,
@@ -316,7 +316,7 @@
       "answerYear": "1799"
     },
     "reduced": {
-      "zoomSettleMs": 34,
+      "zoomSettleMs": 47,
       "branchAt30ms": 1,
       "branchEnd": 1,
       "lockAt40ms": 1,

@@ -6,6 +6,7 @@ const EN = {
   loading: "Loading today's cases",
   draftBanner: 'Draft pack, not publishable. Sample content for testing.',
   offline: 'You are offline. You can keep playing. Sources open when you are back online.',
+  updateReady: 'A new version is ready. It will load the next time you open the app.',
   unsaved: 'Progress cannot be saved in this browser mode.',
   resumeBanner: 'Welcome back. You are on case {n} of 10.',
   navToday: 'Today', navPractice: 'Practice', navArchive: 'Archive', navSettings: 'Settings',

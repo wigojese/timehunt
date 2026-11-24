@@ -1,0 +1,17 @@
+{
+  "name": "Timehunt: The Daily Ten",
+  "short_name": "Timehunt",
+  "description": "A historical deduction game. Ten hidden years a day.",
+  "lang": "en",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F7F0DE",
+  "theme_color": "#274B41",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

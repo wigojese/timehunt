@@ -8,7 +8,7 @@ import { networkInterfaces } from 'node:os';
 const root = join(fileURLToPath(new URL('.', import.meta.url)), '..');
 const lan = process.argv.includes('--lan');
 const port = Number(process.argv.find(a => /^\d+$/.test(a)) || process.env.PORT || 5173);
-const types = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.json': 'application/json; charset=utf-8' };
+const types = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.json': 'application/json; charset=utf-8', '.webmanifest': 'application/manifest+json', '.png': 'image/png', '.webp': 'image/webp', '.jpg': 'image/jpeg', '.svg': 'image/svg+xml', '.woff2': 'font/woff2' };
 export function start(p = port) {
   const srv = createServer(async (req, res) => {
     const path = normalize(decodeURIComponent(new URL(req.url, 'http://x').pathname)).replace(/^(\.\.[/\\])+/, '');

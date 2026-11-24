@@ -11,7 +11,9 @@
     "record": "node scripts/record-video.mjs",
     "lint": "eslint src motion reveal scripts test",
     "typecheck": "tsc -p tsconfig.json && tsc -p tsconfig.contracts.json",
-    "verify": "npm run lint && npm run typecheck && npm test"
+    "verify": "npm run lint && npm run typecheck && npm test",
+    "build:sw": "node scripts/build-sw.mjs",
+    "e2e:offline": "node scripts/e2e-offline.mjs"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

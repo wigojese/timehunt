@@ -54,3 +54,4 @@ jobs:
       - run: node scripts/e2e-reveal.mjs
       - run: node scripts/e2e-motion.mjs
       - run: node ../tools/verify/xss-probe.mjs
+      - run: node scripts/e2e-offline.mjs

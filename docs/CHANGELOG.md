@@ -81,3 +81,6 @@
 ## Supplied art installed (2026-11-24)
 - `design/art-originals/` (archive), `app/assets/characters`, `app/assets/scenes`; UI uses real illustrations for the guide poses, home hero and case banner.
 - Motion and Reveal restyled via `app/proto-atlas.css`. Screenshots in `docs/atlas/` and `docs/atlas/protos/`. D-084, D-085.
+
+## Stage 11, installable and offline (2026-11-24)
+- Added `app/manifest.webmanifest`, `app/icons/`, `app/sw.js`, `scripts/build-sw.mjs` (generates `sw-manifest.js`), `scripts/e2e-offline.mjs` (16 checks), `test/sw.test.js`. `docs/STAGE_11_SLICE.md` tracks what remains. D-088.
