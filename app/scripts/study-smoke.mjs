@@ -17,7 +17,7 @@ await p.locator('[data-action=trail-go]').click(); await p.locator('[data-action
 ok('condition B sells the relation as a Key link clue', (await p.locator('li.clue', { hasText: 'Key link' }).count()) === 1);
 await p.locator('li.clue', { hasText: 'Key link' }).locator('button').click(); await p.getByRole('dialog').getByRole('button', { name: /^Reveal for/ }).click(); await p.waitForTimeout(200);
 await p.locator('[data-action=to-hunt]').click();
-await p.locator('label.layer', { hasText: '1969' }).first().click(); await p.getByRole('button', { name: /^Lock/ }).click(); await p.getByRole('dialog').getByRole('button', { name: /^Lock/ }).click(); await p.waitForTimeout(200);
+await p.locator('#yr').evaluate(el => { el.value = 1969; el.dispatchEvent(new Event('input', { bubbles: true })); }); await p.getByRole('button', { name: /^Lock/ }).click(); await p.getByRole('dialog').getByRole('button', { name: /^Lock/ }).click(); await p.waitForTimeout(200);
 await p.getByRole('button', { name: 'Today' }).click().catch(() => {});
 await p.goto('http://127.0.0.1:5198/?study=P01&cond=B&r=1#/settings'); await p.waitForTimeout(600);
 const [dl] = await Promise.all([p.waitForEvent('download'), p.locator('[data-action=dlstudy]').click()]);

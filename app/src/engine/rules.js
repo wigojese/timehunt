@@ -2,7 +2,7 @@
 // Every field is a test value, not a validated economy (see docs/RULES_CANDIDATES.md).
 import { digest } from './canon.js';
 
-export const RULES_VERSION = 'c1-0.1';
+export const RULES_VERSION = 'c1-0.2';   // 0.2: Lock accepts any year in the case's range (open choice), not only the remaining candidates
 
 export const DEFAULT_RULES = Object.freeze({
   insight: 8,                        // shared bank for the day, never refills

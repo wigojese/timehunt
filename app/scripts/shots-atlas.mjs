@@ -33,7 +33,7 @@ await page.click('[data-action="to-evidence"]'); await page.waitForTimeout(150);
 const rev = await page.$('[data-action="reveal"]:not([disabled]):not([aria-disabled="true"])');
 if (rev) { await rev.click(); await page.waitForTimeout(200); await shot('5b-confirm-spend'); await page.click('dialog[open] [data-d="yes"]'); await page.waitForTimeout(300); await shot('6-evidence-revealed'); }
 await click('to-hunt');
-await page.check(`input[name="yr"][value="${target}"]`).catch(async () => { await page.click(`label.layer:has(input[value="${target}"])`); });
+await page.locator('#yr').evaluate((el, v) => { el.value = v; el.dispatchEvent(new Event('input', { bubbles: true })); }, target);
 await shot('7-year-chosen');
 await click('lock'); await page.waitForTimeout(300);
 const confirm = await page.$('dialog[open] [data-d="yes"]'); if (confirm) { await confirm.click(); await page.waitForTimeout(300); }

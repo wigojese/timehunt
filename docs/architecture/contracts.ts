@@ -43,7 +43,7 @@ export type Command =
   | { type: 'TRACE'; caseId: CaseId; year: Year; actionId: string }
   | { type: 'LOCK'; caseId: CaseId; year: Year; actionId: string }
   | { type: 'ADVANCE'; caseId: CaseId; actionId: string };
-export type ErrorCode = 'BAD_COMMAND' | 'NO_ACTION_ID' | 'EXPEDITION_OVER' | 'NOT_CURRENT_CASE' | 'CASE_RESOLVED' | 'UNKNOWN_CLUE' | 'ALREADY_REVEALED' | 'INSUFFICIENT_INSIGHT' | 'CASE_CAP' | 'INVARIANT' | 'TRACE_DISABLED' | 'TRACE_UNINFORMATIVE' | 'BAD_YEAR' | 'RULED_OUT' | 'NOT_RESOLVED' | 'UNKNOWN_COMMAND';
+export type ErrorCode = 'BAD_COMMAND' | 'NO_ACTION_ID' | 'EXPEDITION_OVER' | 'NOT_CURRENT_CASE' | 'CASE_RESOLVED' | 'UNKNOWN_CLUE' | 'ALREADY_REVEALED' | 'INSUFFICIENT_INSIGHT' | 'CASE_CAP' | 'INVARIANT' | 'TRACE_DISABLED' | 'TRACE_UNINFORMATIVE' | 'BAD_YEAR' | 'OUT_OF_RANGE' | 'NOT_RESOLVED' | 'UNKNOWN_COMMAND';
 export type GameEvent =
   | { type: 'CLUE_REVEALED'; clueId: string; charged: number; refunded: number; removed: Year[]; insight: number }
   | { type: 'TRACED'; year: Year; result: 'earlier' | 'later' | 'same'; charged: number; insight: number }

@@ -4,7 +4,7 @@
   "rulesOverrides": {
     "relationTier": "deep"
   },
-  "rulesId": "0424992a7050a0",
+  "rulesId": "023dbff8d50c2e",
   "seed": 7,
   "log": [
     {
@@ -161,7 +161,7 @@
     }
   ],
   "expected": {
-    "stateDigest": "16e52afb51405b",
+    "stateDigest": "0a4dc7658ecf63",
     "score": {
       "solved": 3,
       "clean": 0,

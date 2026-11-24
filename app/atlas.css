@@ -186,3 +186,70 @@ dialog{border:.1875rem solid var(--ink);border-radius:var(--r) var(--r) 0 0;back
 .banner.aqueduct>img{object-position:left center;transform:none}
 .banner:not(.aqueduct) .ribbon{left:50%;top:76%}
 .stipple{background:url(assets/textures/stipple.webp) 0 0/256px,#C3D3B8}
+
+/* ----- the year dial: an open choice across the whole range (D-089) ----- */
+.dialbox{margin-top:.75rem}
+.dial{border:.125rem solid var(--ink);border-radius:var(--r);background:var(--paper2);padding:1rem .9rem .9rem;box-shadow:.1875rem .1875rem 0 rgba(37,43,40,.25)}
+.readout{display:block;width:max-content;max-width:100%;margin:0 auto .5rem;padding:.15rem 1.1rem;border:.125rem solid var(--ink);border-radius:1rem;background:var(--cream);font:italic 800 clamp(2.2rem,11vw,2.9rem)/1.1 var(--serif);font-variant-numeric:tabular-nums lining-nums;box-shadow:0 .2rem 0 var(--ink);color:#4F5750}
+.dial.touched .readout{background:var(--gold);color:var(--ink)}
+.track{position:relative;padding:.4rem .7rem 2.1rem}
+.rng{-webkit-appearance:none;appearance:none;display:block;width:100%;height:2.75rem;margin:0;background:transparent;cursor:pointer;touch-action:pan-y}
+.rng::-webkit-slider-runnable-track{height:.7rem;border:.125rem solid var(--ink);border-radius:.5rem;background:linear-gradient(var(--cream),var(--sand))}
+.rng::-moz-range-track{height:.7rem;border:.125rem solid var(--ink);border-radius:.5rem;background:linear-gradient(var(--cream),var(--sand))}
+.rng::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:2.4rem;height:2.4rem;margin-top:-1rem;border-radius:50%;border:.15rem solid var(--ink);background:var(--gold) radial-gradient(circle at 35% 30%,rgba(255,255,255,.6),transparent 45%);box-shadow:0 .2rem 0 var(--ink)}
+.rng::-moz-range-thumb{width:2.2rem;height:2.2rem;border-radius:50%;border:.15rem solid var(--ink);background:var(--gold);box-shadow:0 .2rem 0 var(--ink)}
+.dial:not(.touched) .rng::-webkit-slider-thumb{opacity:0;box-shadow:none}
+.dial:not(.touched) .rng::-moz-range-thumb{opacity:0;box-shadow:none}
+.dial:not(.touched) .readout{font:italic 600 1.3rem/1.2 var(--serif);font-variant-numeric:tabular-nums lining-nums;padding:.55rem 1.1rem;color:#4F5750}
+.dialhint{text-align:center;font:600 .9375rem/1.3 var(--sans);color:var(--muted);margin:.1rem 0 0}
+.dial.touched .dialhint{display:none}
+.rng:focus-visible{outline:.1875rem solid var(--ink);outline-offset:.25rem;box-shadow:0 0 0 .3125rem var(--gold)}
+.marks{position:absolute;left:.7rem;right:.7rem;top:2.55rem;height:1.6rem;pointer-events:none}
+.mark{position:absolute;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;font:600 .875rem/1.2 var(--sans);color:var(--ink)}
+.mark i{display:block;width:.125rem;height:.5rem;background:var(--ink);margin-bottom:.1rem}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(2.9rem,1fr));gap:.5rem}
+.btn.step{min-height:3rem;min-width:0;padding:.25rem 0;font:700 1.15rem/1 var(--sans);font-style:normal}
+.dialbox legend{font:italic 600 1.05rem/1.3 var(--serif);color:var(--ink);margin:.25rem 0 .5rem;padding:0}
+
+/* ----- life: slow, calm motion. Everything below is decorative and off for reduced motion ----- */
+.spark,.pollen{position:absolute;left:var(--x);top:var(--y);pointer-events:none}
+.spark{width:.9rem;height:.9rem;margin:-.45rem 0 0 -.45rem;background:#FFE9A8;clip-path:polygon(50% 0,60% 40%,100% 50%,60% 60%,50% 100%,40% 60%,0 50%,40% 40%);opacity:0}
+.pollen{width:.35rem;height:.35rem;border-radius:50%;background:#FFF3C4;box-shadow:0 0 .5rem .15rem rgba(255,226,140,.8);opacity:0}
+.guide .lantern-glow{display:none}
+.guide[data-pose="discovery"]::after,.guide[data-pose="master"]::after{content:"";position:absolute;width:46%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(255,214,110,.75),rgba(255,214,110,0) 65%);mix-blend-mode:screen;pointer-events:none;opacity:.55}
+.guide[data-pose="discovery"]::after{left:63%;top:8%}
+.guide[data-pose="master"]::after{left:58%;top:12%}
+.guide{position:relative}
+@media (prefers-reduced-motion:no-preference){
+  html:not([data-motion="reduce"]) .guide img{transform-origin:50% 100%;animation:bob 4.6s ease-in-out infinite}
+  html:not([data-motion="reduce"]) .guide[data-pose="rest"] img{animation:breathe-slow 5.5s ease-in-out infinite}
+  html:not([data-motion="reduce"]) .guide[data-pose="discovery"]::after,html:not([data-motion="reduce"]) .guide[data-pose="master"]::after{animation:flicker 2.3s ease-in-out infinite}
+  html:not([data-motion="reduce"]) .scene-img{animation:drift 22s ease-in-out infinite alternate}
+  html:not([data-motion="reduce"]) .banner>img{animation:pan 26s ease-in-out infinite alternate}
+  html:not([data-motion="reduce"]) .banner .ribbon,html:not([data-motion="reduce"]) .atlas-head .ribbon{animation:sway 6s ease-in-out infinite}
+  html:not([data-motion="reduce"]) .spark{animation:twinkle 3.4s ease-in-out infinite var(--d)}
+  html:not([data-motion="reduce"]) .pollen{animation:float var(--T) ease-in-out infinite var(--d)}
+  html:not([data-motion="reduce"]) .yearwrap .burst{animation:glow 3.2s ease-in-out infinite}
+  html:not([data-motion="reduce"]) .result .big{animation:pop .7s cubic-bezier(.2,1.4,.4,1) both}
+  html:not([data-motion="reduce"]) .result .guide{animation:hop .8s ease-out both .25s}
+  html:not([data-motion="reduce"]) .dial:not(.touched) .rng::-webkit-slider-runnable-track{animation:ping 2.2s ease-out infinite}
+  html:not([data-motion="reduce"]) .peg:not(.off){animation:shimmer 5s ease-in-out infinite}
+  html:not([data-motion="reduce"]) .peg:nth-child(2n){animation-delay:.6s}.peg:nth-child(3n){animation-delay:1.3s}
+  @keyframes bob{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-.3rem) rotate(.7deg)}}
+  @keyframes breathe-slow{0%,100%{transform:scale(1,1)}50%{transform:scale(1.015,1.03)}}
+  @keyframes flicker{0%,100%{opacity:.45;transform:scale(.95)}35%{opacity:.85;transform:scale(1.08)}60%{opacity:.6;transform:scale(1)}}
+  @keyframes drift{from{transform:scale(1) translate(0,0)}to{transform:scale(1.06) translate(-1.2%,-1%)}}
+  @keyframes pan{from{transform:scale(1.07) translateX(-1.6%)}to{transform:scale(1.07) translateX(1.6%)}}
+  @keyframes sway{0%,100%{transform:translate(-50%,-50%) rotate(-.7deg)}50%{transform:translate(-50%,-50%) rotate(.7deg)}}
+  @keyframes twinkle{0%,100%{opacity:0;transform:scale(.4)}45%{opacity:.95;transform:scale(1)}70%{opacity:.2;transform:scale(.6)}}
+  @keyframes float{0%{opacity:0;transform:translate(0,0)}15%{opacity:.9}85%{opacity:.7}100%{opacity:0;transform:translate(1.4rem,-6rem)}}
+  @keyframes glow{0%,100%{opacity:.55}50%{opacity:1}}
+  @keyframes pop{from{transform:scale(.7);opacity:0}to{transform:scale(1);opacity:1}}
+  @keyframes hop{0%{transform:translateY(.8rem);opacity:0}60%{transform:translateY(-.35rem);opacity:1}100%{transform:translateY(0)}}
+  @keyframes ping{0%{box-shadow:0 0 0 0 rgba(225,165,44,.7)}100%{box-shadow:0 0 0 1.1rem rgba(225,165,44,0)}}
+  @keyframes shimmer{0%,86%,100%{filter:none}92%{filter:brightness(1.35)}}
+}
+@media (prefers-reduced-motion:no-preference){
+  html:not([data-motion="reduce"]) .banner.aqueduct>img{animation-name:pan-aq}
+  @keyframes pan-aq{from{transform:scale(1.03) translateX(1.4%)}to{transform:scale(1.03) translateX(-1.4%)}}
+}

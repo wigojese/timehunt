@@ -2,6 +2,8 @@
 // to test long and translated copy. There is no real second language yet (Georgian needs a font and a human translator).
 const EN = {
   appName: 'Timehunt',
+  dialLegend: 'Which year is it? Choose any year from {lo} to {hi}.', dialEmpty: 'Choose a year', dialHint: 'Drag along the ruler, tap it, or use the buttons.', dialSteps: 'Move the year', back5: 'Back 5 years', back1: 'Back 1 year', fwd1: 'Forward 1 year', fwd5: 'Forward 5 years',
+  rangeLine: 'The year is somewhere from {lo} to {hi}.', evidenceLead: 'Each clue is true on 31 December of the hidden year. Work out what they rule out.',
   tagline: 'A historical deduction game',
   loading: "Loading today's cases",
   draftBanner: 'Draft pack, not publishable. Sample content for testing.',
@@ -24,7 +26,7 @@ const EN = {
   chooseYear: 'Choose a year. {n} are possible.', ruledFree: '{range} ruled out by free evidence', ruledClue: 'ruled out by a clue you bought',
   selected: 'Selected', pressSelect: 'Press to select',
   typeYear: 'Type a year instead', typeYearLabel: 'Year (for example 1920, or 2 CE)', useYear: 'Use this year',
-  badYear: 'That is not a year in play. Choose from the list.', ruledOutYear: 'That year is ruled out.',
+  badYear: 'That year is outside this case. Choose a year in the range.',
   evidenceBtn: 'Evidence', lockBtn: 'Lock {year}', chooseFirst: 'Choose a year first.',
   backToYears: 'Back to the years',
   nudge: 'Nudge', deep: 'Deep clue', reveal: 'Reveal, {cost} Insight', revealed: 'Revealed',

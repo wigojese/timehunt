@@ -129,3 +129,5 @@ Urgency: **H** blocks the next stage, **M** needed within two stages, **L** late
 | Q-68 | Apply the Atlas look to the Motion and World Reveal prototypes next? | M | User | 11 |
 | Q-69 | Georgian font choice for the new type system. | M | User | 12 |
 | Q-70 | Who owns the squirrel and under what licence (tool, terms, commercial use)? Same for every later asset. | H | User | Before any release |
+| Q-71 | Open choice makes each case harder than the Stage 2 to 5 models assumed (they chose among 3 to 6 remaining years). Solve rates and the Insight economy must be re-tested with people. Should the game offer an optional, off-by-default "show what the evidence rules out" helper for new players? | H | User and playtests | 11 |
+| Q-72 | For real character animation (blinking, tail swish), can the squirrel be supplied as layers (body, tail, eyes, lantern arm) or as a Rive or Lottie file? | M | User | 11 |

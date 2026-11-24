@@ -60,7 +60,7 @@ const fontOk = await page.evaluate(async () => { await document.fonts.ready; ret
 ok('fonts load offline', fontOk >= 3, 'loaded ' + fontOk);
 await page.click('[data-action="onb-next"]'); await page.click('[data-action="onb-next"]'); await page.click('[data-action="onb-done"]');
 await page.click('[data-action="trail-go"]'); await page.click('[data-action="to-hunt"]');
-await page.click(`label.layer:has(input[value="${target}"])`);
+await page.locator('#yr').evaluate((el, v) => { el.value = v; el.dispatchEvent(new Event('input', { bubbles: true })); }, target);
 await page.click('[data-action="lock"]');
 const yes = page.locator('dialog[open] [data-d="yes"]'); if (await yes.count()) await yes.click();
 await page.waitForSelector('.result');

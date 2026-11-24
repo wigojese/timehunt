@@ -95,8 +95,11 @@ function strip(v) {
 }
 // The guide and scenes are the supplied illustrations (assets/characters, assets/scenes). Poses: master, idle, clue, discovery, uncertain, earlier, later, rest, back.
 const POSE = { master: 'guide-lantern-map', idle: 'guide-idle', clue: 'guide-clue', discovery: 'guide-discovery', uncertain: 'guide-uncertain', earlier: 'guide-earlier', later: 'guide-later', rest: 'guide-rest', back: 'guide-back' };
-const guide = (pose, cls = '') => `<div class="guide ${cls}" aria-hidden="true"><img src="assets/characters/${POSE[pose] || POSE.master}.webp?v=3" width="520" height="650" alt="" decoding="async"></div>`;
-const scene = (pose, cls = '') => `<div class="scene ${cls}" aria-hidden="true"><img class="scene-img" src="assets/scenes/home-hero.webp?v=3" width="820" height="1121" alt="" decoding="async">${guide(pose, 'scene-guide')}</div>`;
+const guide = (pose, cls = '') => `<div class="guide ${cls}" data-pose="${pose}" aria-hidden="true"><img src="assets/characters/${POSE[pose] || POSE.master}.webp?v=3" width="520" height="650" alt="" decoding="async"></div>`;
+// Living details over the still scene (decorative, CSS only): star glints on the stars already painted, and drifting pollen.
+const SPARKS = [[47, 6, 0], [60, 8, 1.1], [68, 9.5, 2.2], [25, 18, .6], [73, 15, 1.7], [29, 13, 2.6], [79, 20, .3], [75, 24, 1.4], [28, 24, 2.1]].map(([x, y, d]) => `<i class="spark" style="--x:${x}%;--y:${y}%;--d:${d}s"></i>`).join('');
+const POLLEN = [[12, 70, 0, 9], [30, 78, 2, 11], [52, 66, 4, 10], [70, 74, 1, 12], [86, 68, 3, 9], [44, 82, 5, 13]].map(([x, y, d, T]) => `<i class="pollen" style="--x:${x}%;--y:${y}%;--d:${d}s;--T:${T}s"></i>`).join('');
+const scene = (pose, cls = '') => `<div class="scene ${cls}" aria-hidden="true"><img class="scene-img" src="assets/scenes/home-hero.webp?v=3" width="820" height="1121" alt="" decoding="async">${SPARKS}${POLLEN}${guide(pose, 'scene-guide')}</div>`;
 const wordmark = () => `<p class="wordmark"><span class="hg" aria-hidden="true">${hourglass()}</span><span class="wm">${t('appName')}</span><span class="tag">${t('tagline')}</span></p>`;
 // Decorative archetypes only (D-086): the landscape is chosen per case for variety, not as evidence of where or how an event happened.
 const BANNER = { 'case-01': 'aqueduct', 'case-02': 'mountain', 'case-03': 'coast', 'case-04': 'city', 'case-05': 'desert', 'case-06': 'desert', 'case-07': 'mountain', 'case-08': 'mountain', 'case-09': 'city', 'case-10': 'aqueduct' };
@@ -157,19 +160,22 @@ function renderTrail() {
   ${bar(btn('trail-go', label, 'primary') + btn('howto', t('howItWorks')))}`;
 }
 
-function bands(c) {
-  const free = c.freeCandidates, lo = c.corridor[0], hi = c.corridor[1];
-  const later = hi > free[free.length - 1] ? `<div class="band hatch"><span>${t('ruledFree', { range: `${yearLabel(free[free.length - 1] + 1)} to ${yearLabel(hi)}` })}</span></div>` : '';
-  const earlier = lo < free[0] ? `<div class="band hatch"><span>${t('ruledFree', { range: `${yearLabel(lo)} to ${yearLabel(free[0] - 1)}` })}</span></div>` : '';
-  return { later, earlier };
+// The year dial (D-089): an open choice over the whole range. It never lists, highlights or defaults to any year, and shows nothing the evidence has ruled out.
+function niceMarks(lo, hi) {
+  const span = hi - lo, step = [1, 2, 5, 10, 25, 50, 100, 250, 500].find(k => span / k <= 6) || 1000, marks = [];
+  for (let y = Math.ceil(lo / step) * step; y <= hi; y += step) marks.push(y);
+  return marks;
 }
-function yearStack(c) {
-  const b = bands(c), sel = ui.selected[c.id];
-  const items = [...c.freeCandidates].reverse().map(y => {
-    const live = c.candidates.includes(y);
-    return `<label class="layer ${live ? '' : 'out stipple'}"><input type="radio" name="yr" value="${y}" ${live ? '' : 'disabled'} ${sel === y ? 'checked' : ''}><span class="y">${yearLabel(y)}</span><span class="st">${live ? (sel === y ? t('selected') : t('pressSelect')) : t('ruledClue')}</span></label>`;
-  }).join('');
-  return `<fieldset><legend id="lg">${t('chooseYear', { n: c.candidates.length })}</legend><div class="core" role="radiogroup" aria-labelledby="lg">${b.later}${items}${b.earlier}</div></fieldset>`;
+function dial(c) {
+  const [lo, hi] = c.corridor, sel = ui.selected[c.id], touched = sel !== undefined;
+  const pct = y => ((y - lo) / (hi - lo)) * 100;
+  const marks = niceMarks(lo, hi).map(y => `<span class="mark" style="left:${pct(y).toFixed(2)}%"><i></i><b>${yearLabel(y)}</b></span>`).join('');
+  const steps = [[-5, 'back5'], [-1, 'back1'], [1, 'fwd1'], [5, 'fwd5']].map(([d, k]) => `<button type="button" class="btn step" data-action="step" data-d="${d}" aria-label="${t(k)}">${d < 0 ? '\u2212' : '+'}${Math.abs(d)}</button>`).join('');
+  return `<fieldset class="dialbox" data-lo="${lo}" data-hi="${hi}"><legend id="lg">${t('dialLegend', { lo: yearLabel(lo), hi: yearLabel(hi) })}</legend>
+    <div class="dial ${touched ? 'touched' : ''}"><output class="readout" id="rd" for="yr" aria-live="polite">${touched ? yearLabel(sel) : t('dialEmpty')}</output>
+    <p class="dialhint">${t('dialHint')}</p>
+    <div class="track"><input id="yr" class="rng" type="range" min="${lo}" max="${hi}" step="1" value="${touched ? sel : Math.round((lo + hi) / 2)}" aria-labelledby="lg" aria-valuetext="${touched ? yearLabel(sel) : t('dialEmpty')}"><div class="marks" aria-hidden="true">${marks}</div></div>
+    <div class="steps" role="group" aria-label="${t('dialSteps')}">${steps}</div></div></fieldset>`;
 }
 function precise(c) {
   return `<details class="precise"><summary>${t('typeYear')}</summary><label class="l" for="ty">${t('typeYearLabel')}</label><input id="ty" type="text" inputmode="numeric" autocomplete="off"><button type="button" class="btn" data-action="typeyear">${t('useYear')}</button><p class="msg" id="tymsg" role="status"></p></details>`;
@@ -184,14 +190,14 @@ function renderDossier(v, c) {
   noNav();
   return `${caseHead(v, c)}<p class="lens" style="margin-top:.75rem">${esc(c.lens)}</p><h1 id="h" tabindex="-1">${esc(c.title)}</h1><p class="q">${esc(c.question)}</p>
   <h2 style="font:700 1.0625rem var(--sans);margin-top:1rem">${t('notes')}</h2>${notesHtml(c)}${freeSrc(c)}
-  <p class="note" style="margin-top:.75rem">${t('yearsFreeLine', { n: c.candidates.length })}. ${t('conv')}</p><div class="spacer"></div>
+  <p class="note" style="margin-top:.75rem">${t('rangeLine', { lo: yearLabel(c.corridor[0]), hi: yearLabel(c.corridor[1]) })} ${t('conv')}</p><div class="spacer"></div>
   ${bar(btn('to-hunt', t('readEvidence'), 'primary'))}`;
 }
 function renderHunt(v, c) {
   noNav();
   return `${caseHead(v, c)}<h1 id="h" tabindex="-1" style="font-size:1.375rem;font-family:var(--serif)">${esc(c.question)}</h1>
   <details><summary>${t('rereadNotes', { n: c.free.length + (c.relation ? 1 : 0) })}</summary>${notesHtml(c)}</details>
-  ${yearStack(c)}${precise(c)}<p class="msg" id="msg" role="alert">${esc(ui.msg)}</p><div class="spacer"></div>${debugHtml()}
+  ${dial(c)}${precise(c)}<p class="msg" id="msg" role="alert">${esc(ui.msg)}</p><div class="spacer"></div>${debugHtml()}
   ${bar(`${btn('to-evidence', t('evidenceBtn'))}${btn('lock', t('lockBtn', { year: ui.selected[c.id] !== undefined ? yearLabel(ui.selected[c.id]) : '' }).replace(/\s+$/, '') || t('lockBtn', { year: '' }), 'primary')}`, true)}`;
 }
 function renderEvidence(v, c) {
@@ -203,7 +209,7 @@ function renderEvidence(v, c) {
     return `<li class="clue"><span><strong>${esc(cl.category)}</strong><br><span class="note">${tier}${poor ? '. ' + t('notEnough') : ''}</span></span>${btn('reveal', t('reveal', { cost: cl.cost }), '', `data-clue="${esc(cl.id)}" ${poor ? 'disabled' : ''}`)}</li>`;
   }).join('');
   const trace = v.rules.trace.enabled ? `<h2 style="font:700 1.0625rem var(--sans)">${t('traceTitle')}</h2><div class="ctl"><label class="l" for="trsel">${t('traceLabel')}</label><select id="trsel">${c.freeCandidates.map(y => `<option value="${y}">${yearLabel(y)}</option>`).join('')}</select></div>${btn('trace', t('traceBtn', { cost: v.rules.trace.cost }), '', v.rules.trace.cost > v.insight ? 'disabled' : '')}${c.trace.length ? `<p>${c.trace.map(x => t('traceResult', { year: yearLabel(x.year), r: t({ earlier: 'rEarlier', later: 'rLater', same: 'rSame' }[x.result]) })).join('; ')}</p>${c.trace[c.trace.length - 1].result === 'same' ? '' : guide(c.trace[c.trace.length - 1].result, 'trace-guide')}` : ''}` : '';
-  return `${caseHead(v, c)}<h1 id="h" tabindex="-1">${t('evidenceTitle')}</h1><p class="note">${t('yearsLeft', { n: c.candidates.length })}</p>
+  return `${caseHead(v, c)}<h1 id="h" tabindex="-1">${t('evidenceTitle')}</h1><p class="note">${t('evidenceLead')}</p>
   <h2 style="font:700 1.0625rem var(--sans)">${t('notes')}</h2>${notesHtml(c)}${freeSrc(c)}
   <h2 style="font:700 1.0625rem var(--sans)">${t('extraClues')}</h2>
   ${v.insight === 0 ? `<p class="note" role="status">${t('zeroInsight')}</p>` : ''}
@@ -344,7 +350,7 @@ document.addEventListener('click', async e => {
   if (a === 'back') return history.length > 1 ? history.back() : go('trail');
   if (a === 'lock') {
     const y = ui.selected[c.id];
-    if (y === undefined) { ui.msg = t('chooseFirst'); say(ui.msg); $('#msg').textContent = ui.msg; const first = main.querySelector('input[name=yr]:not(:disabled)'); if (first) first.focus(); return; }
+    if (y === undefined) { ui.msg = t('chooseFirst'); say(ui.msg); $('#msg').textContent = ui.msg; const first = $('#yr'); if (first) first.focus(); return; }
     const ok = await ask({ title: t('confirmLockT', { year: yearLabel(y) }), body: t('confirmLock'), yes: t('confirmLockYes', { year: yearLabel(y) }), no: t('keepChoosing') });
     if (!ok) return;
     const r = dispatch({ type: 'LOCK', caseId: c.id, year: y });
@@ -367,14 +373,18 @@ document.addEventListener('click', async e => {
     const r = dispatch({ type: 'TRACE', caseId: c.id, year: y });
     ui.msg = r.ok ? '' : r.error.message; say(ui.msg); return render({ focus: false });
   }
+  if (a === 'step') {
+    const [lo, hi] = c.corridor, cur = ui.selected[c.id], d = Number(el.dataset.d);
+    const y = Math.min(hi, Math.max(lo, (cur === undefined ? Math.round((lo + hi) / 2) - Math.sign(d) * 0 : cur + d)));
+    ui.selected[c.id] = y; logEvent('select_year', { caseId: c.id, year: y, via: 'step' }); setDial(y); return;
+  }
   if (a === 'typeyear') {
     const raw = $('#ty').value.trim().toUpperCase(), m = raw.match(/^(\d{1,4})\s*(BCE|BC|CE|AD)?$/), out = $('#tymsg');
     if (!m) { out.textContent = t('badYear'); return; }
     const n = Number(m[1]), year = /^BC/.test(m[2] || '') ? 1 - n : n;
-    if (!c.freeCandidates.includes(year)) { out.textContent = t('badYear'); return; }
-    if (!c.candidates.includes(year)) { out.textContent = t('ruledOutYear'); return; }
+    if (year < c.corridor[0] || year > c.corridor[1]) { out.textContent = t('badYear'); return; }
     ui.selected[c.id] = year; logEvent('select_year', { caseId: c.id, year, via: 'typed' }); render({ focus: false });
-    const r = main.querySelector(`input[name=yr][value="${year}"]`); if (r) r.focus(); return;
+    const r = $('#yr'); if (r) r.focus(); return;
   }
   if (a === 'advance') {
     const r = dispatch({ type: 'ADVANCE', caseId: c.id });
@@ -399,9 +409,22 @@ document.addEventListener('click', async e => {
   if (a === 'crash-before') { faulty && faulty.arm('before'); say('Next save will crash before writing.'); return; }
   if (a === 'crash-after') { faulty && faulty.arm('after'); say('Next save will crash after writing.'); return; }
 });
+// Dragging the dial updates the readout and the Lock label in place (no re-render, so the drag is never interrupted).
+function setDial(y) {
+  const r = $('#yr'); if (!r) return;
+  r.value = y; r.setAttribute('aria-valuetext', yearLabel(y));
+  const o = $('#rd'); if (o) o.textContent = yearLabel(y);
+  const d = main.querySelector('.dial'); if (d) d.classList.add('touched');
+  const l = main.querySelector('[data-action="lock"]'); if (l) l.textContent = t('lockBtn', { year: yearLabel(y) });
+}
+document.addEventListener('input', e => {
+  if (e.target.id !== 'yr') return;
+  const c = view().cases[view().cursor], y = Number(e.target.value);
+  ui.selected[c.id] = y; setDial(y);
+});
 document.addEventListener('change', e => {
+  if (e.target.id === 'yr') { const c = view().cases[view().cursor]; logEvent('select_year', { caseId: c.id, year: Number(e.target.value), via: 'dial' }); }
   const el = e.target;
-  if (el.name === 'yr') { const c = view().cases[view().cursor]; ui.selected[c.id] = Number(el.value); logEvent('select_year', { caseId: c.id, year: Number(el.value) }); main.querySelectorAll('.layer .st').forEach(s => { const lab = s.closest('.layer'); const inp = lab.querySelector('input'); if (!inp.disabled) s.textContent = inp.checked ? t('selected') : t('pressSelect'); }); const lock = main.querySelector('[data-action=lock]'); if (lock) lock.textContent = t('lockBtn', { year: yearLabel(Number(el.value)) }); $('#msg') && ($('#msg').textContent = ''); }
   if (el.name === 'ts') { settings.textScale = Number(el.value); saveSettings(); }
   if (el.id === 'rm') { settings.reduceMotion = el.checked; saveSettings(); }
   if (el.id === 'gd') { settings.guide = el.checked; saveSettings(); }

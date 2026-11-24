@@ -5,7 +5,7 @@
   - text: Case 1 of 10 Insight 8 of 8
   - 'img "The day so far: 0 solved, 0 missed, 10 still to come. Now on case 1."'
   - heading "Evidence" [level=1]
-  - paragraph: 3 possible years left
+  - paragraph: Each clue is true on 31 December of the hidden year. Work out what they rule out.
   - heading "Notes" [level=2]
   - list:
     - listitem: By the end of that year, the Boeing 737 had already made its first flight (9 April 1967).
@@ -30,6 +30,6 @@
   - button "Arm crash after next save"
   - paragraph:
     - text: State digest
-    - code: 1e2c05e5e090f2
+    - code: 1053be7832b6b6
   - button "Back to the years"
 - status: Choose a year first.

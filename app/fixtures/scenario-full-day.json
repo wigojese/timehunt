@@ -2,7 +2,7 @@
   "_about": "Scripted day under the default C1 rules (no Trace): miss on case 5, Deep clue on case 2, Nudge on case 7, last Insight spent on case 9, case 10 finished with zero Insight. Replaying the log must reproduce expected.stateDigest.",
   "packDigest": "10a1f94892415e",
   "rulesOverrides": {},
-  "rulesId": "0bd5f6eff38c63",
+  "rulesId": "1d8ed685903353",
   "log": [
     {
       "type": "REVEAL",
@@ -152,7 +152,7 @@
     }
   ],
   "expected": {
-    "stateDigest": "0197fee6855bca",
+    "stateDigest": "1094f37ea71c66",
     "score": {
       "solved": 9,
       "clean": 3,

@@ -11,6 +11,10 @@ Status: **IN PROGRESS.** Not ready for `APPROVE STAGE 11`. This file records wha
 | Offline play: versioned precache (47 files, 2.4 MB), network-first pack, update waits, kill switch | Built and tested in Chromium | `e2e-offline.mjs` 16/16 |
 | Onboarding, Evidence, Lock, miss, solve, shared Insight, Practice, share text, settings, accessibility | Existing from Stages 4 to 7, restyled | `e2e-ui.mjs` |
 
+## Changes on 2026-11-24 after user feedback
+- **Open year choice (D-089):** the multiple-choice ladder is gone. Rules `c1-0.2`. **Balance is unverified:** the Stage 2 to 5 models assumed a choice among remaining years. Needs people (Q-71).
+- **Motion (D-090):** guide, lantern, stars, pollen, banners, ribbon, result. Reduced motion respected.
+
 ## Still to do before the Stage 11 checkpoint
 1. **Three connected cases as part of the ten-case trail** with the real shared bank and final state shape, and a feature flag to switch provisional economy variants without contradictory labels.
 2. **One World Reveal story inside the game flow** (today the reveal prototype is a separate page).

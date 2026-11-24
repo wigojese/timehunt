@@ -84,3 +84,7 @@
 
 ## Stage 11, installable and offline (2026-11-24)
 - Added `app/manifest.webmanifest`, `app/icons/`, `app/sw.js`, `scripts/build-sw.mjs` (generates `sw-manifest.js`), `scripts/e2e-offline.mjs` (16 checks), `test/sw.test.js`. `docs/STAGE_11_SLICE.md` tracks what remains. D-088.
+
+## Open year choice and motion (2026-11-24)
+- Replaced the candidate ladder with an open year dial (`dial()` in `app/src/ui/app.js`). Engine: Lock accepts any in-range year (`OUT_OF_RANGE` replaces `RULED_OUT`); rules version `c1-0.2`; fixtures regenerated; tests and e2e updated.
+- Added calm motion (`atlas.css`), `scripts/record-atlas.mjs`, `docs/atlas/motion/` (video, filmstrip). D-089, D-090, Q-71, Q-72.

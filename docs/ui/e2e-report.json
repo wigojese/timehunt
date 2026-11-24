@@ -32,9 +32,9 @@
       "detail": ""
     },
     {
-      "name": "hunt: possible years are listed and none is pre-selected",
+      "name": "hunt: an open dial spans the whole range, nothing is pre-selected, no year is listed or marked ruled out",
       "pass": true,
-      "detail": ""
+      "detail": "{\"min\":1960,\"max\":1985,\"readout\":\"Choose a year\",\"layers\":0,\"ruledOutText\":false}"
     },
     {
       "name": "wrong tap: Lock with no year gives a message and opens no dialog",
@@ -157,7 +157,7 @@
       "detail": ""
     },
     {
-      "name": "keyboard: arrow keys move the radio selection",
+      "name": "keyboard: arrow keys move the year dial and update the readout",
       "pass": true,
       "detail": ""
     },
@@ -177,7 +177,7 @@
       "detail": ""
     },
     {
-      "name": "typed precision path: a valid year selects it",
+      "name": "typed precision path: a valid year sets the dial",
       "pass": true,
       "detail": ""
     },
@@ -442,7 +442,7 @@
     {
       "screen": "lock-confirm",
       "text": "Lock 1969",
-      "top": 767,
+      "top": 768,
       "bottom": 817,
       "h": 50,
       "w": 160,

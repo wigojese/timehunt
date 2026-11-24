@@ -22,7 +22,7 @@
   - button "Arm crash after next save"
   - paragraph:
     - text: State digest
-    - code: 122deaea24fee1
+    - code: 1e82c5f7d84606
   - button "The world around 1969"
   - button "Next case"
 - status: Revealed. 2 Insight spent.

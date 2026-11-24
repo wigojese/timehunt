@@ -106,9 +106,13 @@ test('lock: correct with no spending is solved_clean; with spending is solved_as
   assert.equal(r.events[0].correct, false);
 });
 
-test('a ruled-out year cannot be locked, and a second lock is refused', () => {
+test('a year outside the range cannot be locked; a year the evidence rules out can (and misses); a second lock is refused', () => {
   const s = fresh(); const c = cur(s);
-  assert.equal(T(s, { type: 'LOCK', caseId: c.id, year: c.corridor[0] - 1 }).error.code, 'RULED_OUT');
+  assert.equal(T(s, { type: 'LOCK', caseId: c.id, year: c.corridor[0] - 1 }).error.code, 'OUT_OF_RANGE');
+  assert.equal(T(s, { type: 'LOCK', caseId: c.id, year: c.corridor[1] + 1 }).error.code, 'OUT_OF_RANGE');
+  const ruledOut = [...Array(c.corridor[1] - c.corridor[0] + 1).keys()].map(i => c.corridor[0] + i).find(y => !s.cases[0].C.includes(y));
+  const m = T(s, { type: 'LOCK', caseId: c.id, year: ruledOut });
+  assert.equal(m.error, null); assert.equal(m.next.cases[0].status, 'missed');
   const l = T(s, { type: 'LOCK', caseId: c.id, year: c.target }).next;
   assert.equal(T(l, { type: 'LOCK', caseId: c.id, year: c.target }).error.code, 'CASE_RESOLVED');
 });

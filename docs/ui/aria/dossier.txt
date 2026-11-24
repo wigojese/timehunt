@@ -14,6 +14,6 @@
     - listitem: It flew one calendar year after Apollo 8 first took people into lunar orbit (21 to 27 December 1968).
     - listitem: Concorde entered scheduled passenger service on 21 January 1976.
   - group: + Sources (3)
-  - paragraph: 3 possible years. Every clue is true on 31 December of the hidden year.
+  - paragraph: The year is somewhere from 1960 to 1985. Every clue is true on 31 December of the hidden year.
   - button "Choose a year"
 - status

@@ -48,7 +48,7 @@ async function aria(page, name) { const s = await page.locator('body').ariaSnaps
 const h1 = p => p.locator('#h').first().textContent().then(s => s.trim());
 const focusedId = p => p.evaluate(() => document.activeElement && (document.activeElement.id || document.activeElement.tagName));
 const insight = p => p.locator('.hudr > span:last-child').first().textContent().then(s => Number(s.match(/Insight (\d+) of/)[1]));
-async function pickYear(page, y) { await page.locator('label.layer', { hasText: new RegExp(`^\\s*${label(y)}`) }).first().click(); }
+async function pickYear(page, y) { await page.locator('#yr').evaluate((el, v) => { el.value = v; el.dispatchEvent(new Event('input', { bubbles: true })); el.dispatchEvent(new Event('change', { bubbles: true })); }, y); }
 async function lockFlow(page, y) { await pickYear(page, y); await page.getByRole('button', { name: /^Lock/ }).click(); await page.getByRole('dialog').getByRole('button', { name: /^Lock/ }).click(); await page.waitForTimeout(150); }
 async function reveal(page, clueIdx, expectCost) {
   await page.getByRole('button', { name: /^Evidence$/ }).click(); await page.waitForTimeout(100);
@@ -85,7 +85,8 @@ console.log('A. full day');
   ok('dossier: shows case count, notes and possible years', (await page.locator('.hud').textContent()).includes('Case 1 of 10') && (await page.locator('ol.notes li').count()) >= 3);
   await snap(page, 'dossier'); await audit(page, 'dossier'); await aria(page, 'dossier');
   await page.getByRole('button', { name: 'Choose a year' }).click();
-  ok('hunt: possible years are listed and none is pre-selected', (await page.locator('input[name=yr]:not(:disabled)').count()) === content.cases[0].c0.length && (await page.locator('input[name=yr]:checked').count()) === 0);
+  { const [lo, hi] = content.cases[0].corridor; const d = await page.evaluate(() => { const r = document.querySelector('#yr'); return { min: Number(r.min), max: Number(r.max), readout: document.querySelector('#rd').textContent, layers: document.querySelectorAll('.layer, input[type=radio]').length, ruledOutText: /ruled out/i.test(document.querySelector('main').innerText) }; });
+  ok('hunt: an open dial spans the whole range, nothing is pre-selected, no year is listed or marked ruled out', d.min === lo && d.max === hi && d.readout === 'Choose a year' && d.layers === 0 && !d.ruledOutText, JSON.stringify(d)); }
   await snap(page, 'hunt-empty'); await audit(page, 'hunt'); await aria(page, 'hunt');
   // wrong tap: lock with nothing chosen
   await page.getByRole('button', { name: /^Lock/ }).click();
@@ -193,9 +194,9 @@ console.log('B. keyboard');
   await page.getByRole('button', { name: 'Start case 1' }).focus(); await page.keyboard.press('Enter'); await page.waitForTimeout(150);
   ok('keyboard: Enter starts the case; focus on title', (await focusedId(page)) === 'h');
   await page.getByRole('button', { name: 'Choose a year' }).focus(); await page.keyboard.press('Space'); await page.waitForTimeout(150);
-  await page.locator('input[name=yr]:not(:disabled)').first().focus();
-  await page.keyboard.press('ArrowDown'); await page.keyboard.press('ArrowDown'); await page.waitForTimeout(100);
-  ok('keyboard: arrow keys move the radio selection', (await page.locator('input[name=yr]:checked').count()) === 1);
+  await page.locator('#yr').focus();
+  await page.keyboard.press('ArrowRight'); await page.keyboard.press('ArrowRight'); await page.waitForTimeout(100);
+  ok('keyboard: arrow keys move the year dial and update the readout', (await page.locator('#rd').textContent()) !== 'Choose a year');
   await page.getByRole('button', { name: /^Lock/ }).focus(); await page.keyboard.press('Enter'); await page.waitForTimeout(150);
   ok('keyboard: dialog traps focus on its first control', (await page.evaluate(() => document.activeElement.closest('dialog') !== null)));
   await page.keyboard.press('Tab');
@@ -203,9 +204,9 @@ console.log('B. keyboard');
   await page.keyboard.press('Escape');
   await page.locator('details.precise > summary').focus(); await page.keyboard.press('Enter');
   await page.locator('#ty').fill('1999'); await page.getByRole('button', { name: 'Use this year' }).click();
-  ok('typed precision path: an out-of-play year is refused with a message', (await page.locator('#tymsg').textContent()).includes('not a year in play'));
+  ok('typed precision path: an out-of-play year is refused with a message', (await page.locator('#tymsg').textContent()).includes('outside this case'));
   await page.locator('#ty').fill(String(T(0))); await page.getByRole('button', { name: 'Use this year' }).click();
-  ok('typed precision path: a valid year selects it', (await page.locator('input[name=yr]:checked').inputValue()) === String(T(0)));
+  ok('typed precision path: a valid year sets the dial', (await page.locator('#yr').inputValue()) === String(T(0)));
   const tabs = []; for (let i = 0; i < 40; i++) { await page.keyboard.press('Tab'); tabs.push(await page.evaluate(() => { const e = document.activeElement; const r = e.getBoundingClientRect(); const s = getComputedStyle(e); return { vis: r.width > 0, ring: s.outlineStyle !== 'none' || (e.closest('label.layer') && getComputedStyle(e.closest('label.layer')).outlineStyle !== 'none') }; })); }
   ok('keyboard: every focus stop is visible on screen', tabs.every(t => t.vis));
   await page.ctx.close();
@@ -226,7 +227,7 @@ console.log('C. states');
   await ctx.setOffline(true); await p.waitForTimeout(300);
   ok('offline: banner says play continues', (await p.locator('#banner').textContent()).includes('offline'));
   await p.getByRole('button', { name: 'Start case 1' }).click(); await p.getByRole('button', { name: 'Choose a year' }).click(); await pickYear(p, T(0));
-  ok('offline: play works', (await p.locator('input[name=yr]:checked').count()) === 1);
+  ok('offline: play works', (await p.locator('#rd').textContent()) === label(T(0)));
   await snap(p, 'offline'); await audit(p, 'offline');
   await ctx.setOffline(false); await ctx.close();
   // invalid pack
@@ -264,8 +265,8 @@ console.log('D. settings and practice');
   ok('confirm-off: reveal happens without a dialog', (await insight(page)) <= 1);
   await page.getByRole('button', { name: 'Back to the years' }).click();
   const tgt = await page.evaluate(() => 0);
-  const firstLive = await page.locator('input[name=yr]:not(:disabled)').first().inputValue();
-  await page.locator('label.layer', { hasText: label(Number(firstLive)) }).first().click(); await page.getByRole('button', { name: /^Lock/ }).click(); await page.getByRole('dialog').getByRole('button', { name: /^Lock/ }).click(); await page.waitForTimeout(200);
+  { const [lo, hi] = content.cases[0].corridor; const wrong = T(0) < hi ? T(0) + 1 : T(0) - 1; await pickYear(page, wrong); }
+  await page.getByRole('button', { name: /^Lock/ }).click(); await page.getByRole('dialog').getByRole('button', { name: /^Lock/ }).click(); await page.waitForTimeout(200);
   await page.getByRole('button', { name: /^Practice/ }).last().click(); await page.waitForTimeout(250);
   ok('practice: finishing returns to the Practice list', (await h1(page)) === 'Practice');
   await page.getByRole('button', { name: 'Today' }).click(); await page.waitForTimeout(200);
@@ -344,7 +345,7 @@ for (const [name, steps] of [['trail', async p => {}], ['hunt', async p => { awa
 {
   const page = await newPage();
   await page.getByRole('button', { name: 'Start case 1' }).click(); await page.getByRole('button', { name: 'Choose a year' }).click();
-  const tn = await page.evaluate(() => getComputedStyle(document.querySelector('.layer .y')).fontVariantNumeric);
+  const tn = await page.evaluate(() => getComputedStyle(document.querySelector('.readout')).fontVariantNumeric);
   ok('year numerals are tabular', tn.includes('tabular-nums'), tn);
   await page.ctx.close();
 }

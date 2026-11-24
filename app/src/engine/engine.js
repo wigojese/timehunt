@@ -97,7 +97,8 @@ export function transition(state, cmd, content, rules) {
   if (cmd.type === 'LOCK') {
     if (resolved) return fail(state, 'CASE_RESOLVED', 'this case is already resolved');
     if (!Number.isInteger(cmd.year)) return fail(state, 'BAD_YEAR', 'year must be an integer');
-    if (!cs.C.includes(cmd.year)) return fail(state, 'RULED_OUT', 'that year is already ruled out');
+    // The choice is open across the whole range (D-089): the game never lists candidates. A year the evidence rules out is a legal, losing Lock.
+    if (cmd.year < cc.corridor[0] || cmd.year > cc.corridor[1]) return fail(state, 'OUT_OF_RANGE', 'that year is outside the range of this case');
     const correct = cmd.year === cc.target;
     const next = clone(state);
     const ns = next.cases[next.cursor];

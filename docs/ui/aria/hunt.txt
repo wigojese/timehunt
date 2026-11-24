@@ -6,16 +6,16 @@
   - 'img "The day so far: 0 solved, 0 missed, 10 still to come. Now on case 1."'
   - heading "In which year did the first Concorde prototype make its first flight?" [level=1]
   - group: + Re-read the 3 notes
-  - group "Choose a year. 3 are possible.":
-    - text: Choose a year. 3 are possible.
-    - radiogroup "Choose a year. 3 are possible.":
-      - text: 1970 to 1985 ruled out by free evidence
-      - radio "1969 Press to select"
-      - text: 1969 Press to select
-      - radio "1968 Press to select"
-      - text: 1968 Press to select
-      - radio "1967 Press to select"
-      - text: 1967 Press to select 1960 to 1966 ruled out by free evidence
+  - group "Which year is it? Choose any year from 1960 to 1985.":
+    - text: Which year is it? Choose any year from 1960 to 1985.
+    - status: Choose a year
+    - paragraph: Drag along the ruler, tap it, or use the buttons.
+    - slider "Which year is it? Choose any year from 1960 to 1985.": "1973"
+    - group "Move the year":
+      - button "Back 5 years": −5
+      - button "Back 1 year": −1
+      - button "Forward 1 year": "+1"
+      - button "Forward 5 years": "+5"
   - group: + Type a year instead
   - alert
   - strong: Test tools
@@ -23,7 +23,7 @@
   - button "Arm crash after next save"
   - paragraph:
     - text: State digest
-    - code: 1e2c05e5e090f2
+    - code: 1053be7832b6b6
   - button "Evidence"
   - button "Lock"
 - status

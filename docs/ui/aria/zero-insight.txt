@@ -5,7 +5,7 @@
   - text: Case 10 of 10 Insight 0 of 8
   - 'img "The day so far: 8 solved, 1 missed, 1 still to come. Now on case 10."'
   - heading "Evidence" [level=1]
-  - paragraph: 3 possible years left
+  - paragraph: Each clue is true on 31 December of the hidden year. Work out what they rule out.
   - heading "Notes" [level=2]
   - list:
     - listitem: By the end of that year, the Viking 1 lander had already touched down on Mars (20 July 1976).
@@ -31,6 +31,6 @@
   - button "Arm crash after next save"
   - paragraph:
     - text: State digest
-    - code: 1023c798d399db
+    - code: 045c8880940b02
   - button "Back to the years"
 - status: Revealed. 1 Insight spent.
