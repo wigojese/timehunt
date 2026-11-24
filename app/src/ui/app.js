@@ -93,17 +93,19 @@ function strip(v) {
   const summary = t('stripSummary', { solved: n('solved_clean') + n('solved_assisted'), missed: n('missed'), todo: v.cases.length - n('solved_clean') - n('solved_assisted') - n('missed'), now: v.cursor + 1 });
   return `<div role="img" aria-label="${summary}"><ol class="strip" aria-hidden="true">${v.cases.map((c, i) => `<li ${i === v.cursor && v.status === 'active' ? 'class="now"' : ''}><span class="seg ${stKey(c.status)}"></span></li>`).join('')}</ol></div>`;
 }
+// In the single-file build (scripts/build-single.mjs) the art is embedded and found through globalThis.__ASSETS.
+const asset = p => (globalThis.__ASSETS && globalThis.__ASSETS[p]) || `assets/${p}?v=3`;
 // The guide and scenes are the supplied illustrations (assets/characters, assets/scenes). Poses: master, idle, clue, discovery, uncertain, earlier, later, rest, back.
 const POSE = { master: 'guide-lantern-map', idle: 'guide-idle', clue: 'guide-clue', discovery: 'guide-discovery', uncertain: 'guide-uncertain', earlier: 'guide-earlier', later: 'guide-later', rest: 'guide-rest', back: 'guide-back' };
-const guide = (pose, cls = '') => `<div class="guide ${cls}" data-pose="${pose}" aria-hidden="true"><img src="assets/characters/${POSE[pose] || POSE.master}.webp?v=3" width="520" height="650" alt="" decoding="async"></div>`;
+const guide = (pose, cls = '') => `<div class="guide ${cls}" data-pose="${pose}" aria-hidden="true"><img src="${asset(`characters/${POSE[pose] || POSE.master}.webp`)}" width="520" height="650" alt="" decoding="async"></div>`;
 // Living details over the still scene (decorative, CSS only): star glints on the stars already painted, and drifting pollen.
 const SPARKS = [[47, 6, 0], [60, 8, 1.1], [68, 9.5, 2.2], [25, 18, .6], [73, 15, 1.7], [29, 13, 2.6], [79, 20, .3], [75, 24, 1.4], [28, 24, 2.1]].map(([x, y, d]) => `<i class="spark" style="--x:${x}%;--y:${y}%;--d:${d}s"></i>`).join('');
 const POLLEN = [[12, 70, 0, 9], [30, 78, 2, 11], [52, 66, 4, 10], [70, 74, 1, 12], [86, 68, 3, 9], [44, 82, 5, 13]].map(([x, y, d, T]) => `<i class="pollen" style="--x:${x}%;--y:${y}%;--d:${d}s;--T:${T}s"></i>`).join('');
-const scene = (pose, cls = '') => `<div class="scene ${cls}" aria-hidden="true"><img class="scene-img" src="assets/scenes/home-hero.webp?v=3" width="820" height="1121" alt="" decoding="async">${SPARKS}${POLLEN}${guide(pose, 'scene-guide')}</div>`;
+const scene = (pose, cls = '') => `<div class="scene ${cls}" aria-hidden="true"><img class="scene-img" src="${asset('scenes/home-hero.webp')}" width="820" height="1121" alt="" decoding="async">${SPARKS}${POLLEN}${guide(pose, 'scene-guide')}</div>`;
 const wordmark = () => `<p class="wordmark"><span class="hg" aria-hidden="true">${hourglass()}</span><span class="wm">${t('appName')}</span><span class="tag">${t('tagline')}</span></p>`;
 // Decorative archetypes only (D-086): the landscape is chosen per case for variety, not as evidence of where or how an event happened.
 const BANNER = { 'case-01': 'aqueduct', 'case-02': 'mountain', 'case-03': 'coast', 'case-04': 'city', 'case-05': 'desert', 'case-06': 'desert', 'case-07': 'mountain', 'case-08': 'mountain', 'case-09': 'city', 'case-10': 'aqueduct' };
-const banner = (label, caseId) => { const k = BANNER[caseId] || 'aqueduct'; return `<div class="banner ${k}" aria-hidden="true"><img src="assets/scenes/banner-${k}.webp?v=4" width="1170" height="450" alt="" decoding="async"><span class="ribbon">${label}</span></div>`; };
+const banner = (label, caseId) => { const k = BANNER[caseId] || 'aqueduct'; return `<div class="banner ${k}" aria-hidden="true"><img src="${asset(`scenes/banner-${k}.webp`)}" width="1170" height="450" alt="" decoding="async"><span class="ribbon">${label}</span></div>`; };
 const bar = (html, two = false) => `<div class="bar ${two ? 'two' : ''}">${html}</div>`;
 const btn = (action, label, cls = '', extra = '') => `<button type="button" class="btn ${cls}" data-action="${action}" ${extra}>${label}</button>`;
 function mainNav(active) {
@@ -454,7 +456,7 @@ window.addEventListener('online', setBanner); window.addEventListener('offline',
 // Offline support (ADR-001): register the service worker on real hosts, or on localhost only with ?sw=1 so development and tests are not served stale files.
 // A new version waits until the app is closed; the banner says so and never interrupts a case. ?nosw removes any worker.
 function registerWorker() {
-  if (!('serviceWorker' in navigator)) return;
+  if (!('serviceWorker' in navigator) || globalThis.__ASSETS) return;
   const local = ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname);
   if (params.has('nosw') || (local && !params.has('sw'))) { navigator.serviceWorker.getRegistrations().then(rs => rs.forEach(r => r.unregister())).catch(() => {}); return; }
   navigator.serviceWorker.register('sw.js').then(reg => {
@@ -471,9 +473,12 @@ async function boot() {
   if (debug) { faulty = new FaultyStorage(storage); storage = faulty; }
   let raw;
   try {
-    const res = await fetch('data/daily-pack-draft.json', { cache: 'no-store' });
-    if (!res.ok) throw new Error('HTTP ' + res.status);
-    raw = await res.json();
+    if (globalThis.__PACK) raw = globalThis.__PACK;
+    else {
+      const res = await fetch('data/daily-pack-draft.json', { cache: 'no-store' });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      raw = await res.json();
+    }
   } catch (e) { main.innerHTML = renderError(t('errLoad'), [{ code: 'LOAD', path: 'data/daily-pack-draft.json', msg: String(e.message) }]); main.setAttribute('aria-busy', 'false'); main.querySelector('#h').focus(); return; }
   const v = validatePack(raw, { allowDraft: true });
   if (!v.ok) { main.innerHTML = renderError(t('errPack'), v.errors); main.setAttribute('aria-busy', 'false'); main.querySelector('#h').focus(); return; }

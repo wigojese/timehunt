@@ -67,3 +67,11 @@ For each thing that felt wrong: what you did, what you expected, what happened, 
 - Fonts load from Google Fonts, so the phone needs internet. Without it, the layout is the same in fallback fonts.
 - The pack is a draft and the day's results on the trail are illustrative.
 - Over plain `http` on a local address, "Copy" in the game falls back to selecting the text, because browsers allow clipboard writes only on secure pages.
+
+## One-file build (no server)
+```bash
+cd app
+npm ci --ignore-scripts
+node scripts/build-single.mjs timehunt.html
+```
+Open `timehunt.html` in any browser, including a phone. It needs no network. Progress is saved in the browser when the browser allows it.
